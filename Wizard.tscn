@@ -1,10 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://2ub8tjjgslhi"]
+[gd_scene load_steps=12 format=3 uid="uid://2ub8tjjgslhi"]
 
 [ext_resource type="Script" path="res://Wizard.gd" id="1_bqdg8"]
+[ext_resource type="Texture2D" uid="uid://cdhm1w0s8hxmv" path="res://Abajo idle.png" id="2_5a2m7"]
 [ext_resource type="Texture2D" uid="uid://c22by4prvkljp" path="res://Assets Videojuego/Sprites/Personajes/Abajo/Walk/Abajo.png" id="2_6egme"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glctq"]
 size = Vector2(48, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddhlk"]
+atlas = ExtResource("2_5a2m7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd8tc"]
+atlas = ExtResource("2_5a2m7")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gyqos"]
 atlas = ExtResource("2_6egme")
@@ -24,6 +33,17 @@ region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p3m2i"]
 animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_ddhlk")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_dd8tc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gyqos")
@@ -57,5 +77,4 @@ texture_filter = 3
 position = Vector2(13.25, -14)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_p3m2i")
-animation = &"walk"
-frame_progress = 0.857198
+animation = &"idle"
