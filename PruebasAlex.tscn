@@ -184,6 +184,7 @@ sources/1 = SubResource("TileSetAtlasSource_cn0rq")
 [node name="PruebasAlex" type="Node2D"]
 
 [node name="Wizard" parent="." instance=ExtResource("1_nmuww")]
+top_level = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_6xp8n")
