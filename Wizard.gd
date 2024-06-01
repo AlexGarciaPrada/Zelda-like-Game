@@ -6,7 +6,6 @@ const SPEED = 300.0
 func _physics_process(delta):
 	_movement()
 	
-	
 func _movement():
 	var directionx = Input.get_axis("ui_left", "ui_right")
 	var directiony = Input.get_axis("ui_up","ui_down")
@@ -20,7 +19,7 @@ func _movement():
 		animation.play("idle")
 #	_run()
 	
-	move_and_slide()	
+	move_and_slide()
 func _run():
 	if Input.is_key_pressed(KEY_CTRL) :
 		velocity = velocity*3
