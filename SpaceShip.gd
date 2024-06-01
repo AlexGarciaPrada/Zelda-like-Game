@@ -18,8 +18,8 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y,0,SPEED)
-	
+#	_run()
 	move_and_slide()
 func _run():
-	if KEY_CTRL :
-		velocity = velocity*1.5
+	if Input.is_key_pressed(KEY_CTRL) :
+		velocity = velocity*3

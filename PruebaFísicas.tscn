@@ -548,6 +548,9 @@ sources/1 = SubResource("TileSetAtlasSource_vpnwu")
 top_level = true
 position = Vector2(14, 40)
 
+[node name="Camera2D" type="Camera2D" parent="SpaceShip"]
+position = Vector2(-14, -40)
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kopyf")
 format = 2
