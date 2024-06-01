@@ -34,8 +34,7 @@ func _run():
 	if Input.is_key_pressed(KEY_CTRL):
 		velocity = velocity * 3
 func _short_attack():
-	await get_tree().create_timer(0.5).timeout
-	if Input.is_action_just_pressed("Attack") and Input.is_key_pressed(KEY_M):
+	if Input.is_action_just_pressed("Attack") and (is_not_previously_attacking()) :
 		var maxdir = max(abs(lastMovement.x),abs(lastMovement.y))
 		if sign(lastMovement.x)>=0 && maxdir==abs(lastMovement.x):
 			weapon2.visible=true;
@@ -57,4 +56,5 @@ func _short_attack():
 			
 			
 			
-		
+func is_not_previously_attacking():
+	return (!weapon1.visible) and (!weapon2.visible) and (!weapon3.visible) and (!weapon4.visible)
