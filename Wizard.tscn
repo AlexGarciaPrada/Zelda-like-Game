@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://2ub8tjjgslhi"]
 
 [ext_resource type="Script" path="res://Wizard.gd" id="1_bqdg8"]
-[ext_resource type="Texture2D" path="res://Abajo idle.png" id="2_5a2m7"]
+[ext_resource type="Texture2D" uid="uid://bl3ikjsloy3mt" path="res://Assets Videojuego/Sprites/Personajes/Abajo/Idle/Abajo idle.png" id="2_5a2m7"]
 [ext_resource type="Texture2D" uid="uid://c22by4prvkljp" path="res://Assets Videojuego/Sprites/Personajes/Abajo/Walk/Abajo.png" id="2_6egme"]
 [ext_resource type="Texture2D" uid="uid://cc70unaca17v6" path="res://Assets Videojuego/Sprites/Personajes/Arriba/Idle/Arriba idle.png" id="3_yuej2"]
 [ext_resource type="PackedScene" uid="uid://bjbcy3deg87lu" path="res://Weapon.tscn" id="4_u0s80"]
@@ -240,8 +240,7 @@ texture_filter = 3
 position = Vector2(13.25, -14)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_p3m2i")
-animation = &"walk izquierda"
-frame_progress = 0.653913
+animation = &"walk arriba"
 
 [node name="Weapon" parent="." instance=ExtResource("4_u0s80")]
 visible = false
