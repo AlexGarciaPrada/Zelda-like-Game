@@ -185,7 +185,6 @@ sources/1 = SubResource("TileSetAtlasSource_cn0rq")
 [node name="PruebasAlex" type="Node2D"]
 
 [node name="Wizard" parent="." instance=ExtResource("1_nmuww")]
-unique_name_in_owner = true
 top_level = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -196,3 +195,12 @@ layer_0/tile_data = PackedInt32Array(131069, 1, 10, 196605, 1, 11, 131070, 65537
 
 [node name="EnemyProof" parent="." instance=ExtResource("3_ves6u")]
 position = Vector2(469, 191)
+
+[node name="EnemyProof2" parent="." instance=ExtResource("3_ves6u")]
+position = Vector2(-418, 228)
+
+[node name="EnemyProof3" parent="." instance=ExtResource("3_ves6u")]
+position = Vector2(-420, -216)
+
+[node name="EnemyProof4" parent="." instance=ExtResource("3_ves6u")]
+position = Vector2(481, -185)

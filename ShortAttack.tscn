@@ -5,15 +5,15 @@ size = Vector2(20, 8)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_eal6f"]
 
-[node name="Weapon" type="Node2D"]
+[node name="ShortAttack" type="Node2D" groups=["Weapon"]]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["Weapon"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Weapon"]]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_lwcj2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Weapon"]]
 position = Vector2(-4.76837e-07, -4)
 scale = Vector2(20, 8)
 texture = SubResource("CanvasTexture_eal6f")
