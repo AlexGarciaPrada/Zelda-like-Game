@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdhm1w0s8hxmv"
-path="res://.godot/imported/Abajo idle.png-51cc6e5ddba067db1e060c75ceb1aeb3.ctex"
+uid="uid://bl3ikjsloy3mt"
+path="res://.godot/imported/Abajo idle.png-a26d58953250a5b37eb4d3316811846d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Abajo idle.png"
-dest_files=["res://.godot/imported/Abajo idle.png-51cc6e5ddba067db1e060c75ceb1aeb3.ctex"]
+source_file="res://Assets Videojuego/Sprites/Personajes/Abajo/Idle/Abajo idle.png"
+dest_files=["res://.godot/imported/Abajo idle.png-a26d58953250a5b37eb4d3316811846d.ctex"]
 
 [params]
 
