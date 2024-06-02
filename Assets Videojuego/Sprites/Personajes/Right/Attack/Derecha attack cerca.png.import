@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc70unaca17v6"
-path="res://.godot/imported/Arriba idle.png-2476fd3f7e8feaad7289524b7e50d681.ctex"
+uid="uid://byih3xsfp4nsc"
+path="res://.godot/imported/Derecha attack cerca.png-6a5017a57f84bfc05b58e02e1e7f8bc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Personajes/Arriba/Idle/Arriba idle.png"
-dest_files=["res://.godot/imported/Arriba idle.png-2476fd3f7e8feaad7289524b7e50d681.ctex"]
+source_file="res://Assets Videojuego/Sprites/Personajes/Right/Attack/Derecha attack cerca.png"
+dest_files=["res://.godot/imported/Derecha attack cerca.png-6a5017a57f84bfc05b58e02e1e7f8bc5.ctex"]
 
 [params]
 

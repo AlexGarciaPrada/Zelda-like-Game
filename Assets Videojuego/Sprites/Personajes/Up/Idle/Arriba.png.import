@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c87qvuhbeyr1x"
-path="res://.godot/imported/Izquierda idle.png-1dbada869e77df01c0b203954789e73f.ctex"
+uid="uid://p0piq6btvyyf"
+path="res://.godot/imported/Arriba.png-280f4afe9517aacd7d02cbd9243da2a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Personajes/Izquierda/Idle/Izquierda idle.png"
-dest_files=["res://.godot/imported/Izquierda idle.png-1dbada869e77df01c0b203954789e73f.ctex"]
+source_file="res://Assets Videojuego/Sprites/Personajes/Up/Idle/Arriba.png"
+dest_files=["res://.godot/imported/Arriba.png-280f4afe9517aacd7d02cbd9243da2a9.ctex"]
 
 [params]
 

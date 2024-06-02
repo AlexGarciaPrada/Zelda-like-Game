@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c22by4prvkljp"
-path="res://.godot/imported/Abajo.png-f3f8af06b11dd4300e35c9b02c6cbfba.ctex"
+uid="uid://dhqyi2euhfboi"
+path="res://.godot/imported/Izquierda walk.png-6ad05ed18b6deaecae8218c5b99f7b59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Personajes/Abajo/Walk/Abajo.png"
-dest_files=["res://.godot/imported/Abajo.png-f3f8af06b11dd4300e35c9b02c6cbfba.ctex"]
+source_file="res://Assets Videojuego/Sprites/Personajes/Left/Walk/Izquierda walk.png"
+dest_files=["res://.godot/imported/Izquierda walk.png-6ad05ed18b6deaecae8218c5b99f7b59.ctex"]
 
 [params]
 
