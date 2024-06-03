@@ -43,7 +43,7 @@ func _movement():
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-		animation.play("idle " + clue)
+		animation.play("idle " + clue+ " wizard")
 
 func _run():
 	if Input.is_key_pressed(KEY_CTRL):
