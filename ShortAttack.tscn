@@ -1,9 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjbcy3deg87lu"]
+[gd_scene load_steps=2 format=3 uid="uid://bjbcy3deg87lu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwcj2"]
 size = Vector2(20, 8)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_eal6f"]
 
 [node name="ShortAttack" type="Node2D" groups=["Weapon"]]
 
@@ -12,8 +10,3 @@ size = Vector2(20, 8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Weapon"]]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_lwcj2")
-
-[node name="Sprite2D" type="Sprite2D" parent="." groups=["Weapon"]]
-position = Vector2(-4.76837e-07, -4)
-scale = Vector2(20, 8)
-texture = SubResource("CanvasTexture_eal6f")
