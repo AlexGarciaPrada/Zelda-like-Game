@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byt86jwvpkyv6"
-path="res://.godot/imported/Abajo prota attack azul.png-5d50d2ddcced28a7bc138d7a554962d1.ctex"
+uid="uid://bwmudtt2a7enr"
+path="res://.godot/imported/Tilesheet Hierba.png-e1be33a762580a8857a114af5ff20dee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Personajes/Down/Attack/Abajo prota attack azul.png"
-dest_files=["res://.godot/imported/Abajo prota attack azul.png-5d50d2ddcced28a7bc138d7a554962d1.ctex"]
+source_file="res://Assets Videojuego/Sprites/Tilesheet/Bosque/Tilesheet Hierba.png"
+dest_files=["res://.godot/imported/Tilesheet Hierba.png-e1be33a762580a8857a114af5ff20dee.ctex"]
 
 [params]
 

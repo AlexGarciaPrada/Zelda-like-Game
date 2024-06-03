@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://030lnmaad1xp"
-path="res://.godot/imported/Abajo prota attack.png-ea909fa7bab5c551dee3361ce8cde2a7.ctex"
+uid="uid://c3ml3i3nlv5od"
+path="res://.godot/imported/Arriba prota attack morado (1).png-e3caf77cd90d89dd9e91ebeb67e42863.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Personajes/Down/Attack/Abajo prota attack.png"
-dest_files=["res://.godot/imported/Abajo prota attack.png-ea909fa7bab5c551dee3361ce8cde2a7.ctex"]
+source_file="res://Assets Videojuego/Sprites/Personajes/Protagonista/Up/Attack/Close Attack/Morado/Arriba prota attack morado (1).png"
+dest_files=["res://.godot/imported/Arriba prota attack morado (1).png-e3caf77cd90d89dd9e91ebeb67e42863.ctex"]
 
 [params]
 
