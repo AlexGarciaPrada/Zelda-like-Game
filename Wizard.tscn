@@ -1,10 +1,11 @@
-[gd_scene load_steps=71 format=3 uid="uid://2ub8tjjgslhi"]
+[gd_scene load_steps=75 format=3 uid="uid://2ub8tjjgslhi"]
 
 [ext_resource type="Script" path="res://ShortAttack.gd" id="1_oux7l"]
 [ext_resource type="Texture2D" uid="uid://brra152o3c87p" path="res://Assets Videojuego/Sprites/Personajes/Down/Attack/Abajo attack cerca.png" id="2_2knl1"]
 [ext_resource type="Texture2D" uid="uid://bl3ikjsloy3mt" path="res://Assets Videojuego/Sprites/Personajes/Down/Idle/Abajo idle.png" id="2_5a2m7"]
 [ext_resource type="Texture2D" uid="uid://c22by4prvkljp" path="res://Assets Videojuego/Sprites/Personajes/Down/Walk/Abajo.png" id="2_6egme"]
 [ext_resource type="Texture2D" uid="uid://cyvrbpeckvqe0" path="res://Assets Videojuego/Sprites/Personajes/Left/Attack/Izquierda attack cerca.png" id="3_bucp0"]
+[ext_resource type="Texture2D" uid="uid://drw8hnhfx6w5s" path="res://Assets Videojuego/Sprites/Personajes/Down/Attack/Abajo prota attack verde.png" id="3_sou3v"]
 [ext_resource type="Texture2D" uid="uid://cc70unaca17v6" path="res://Assets Videojuego/Sprites/Personajes/Up/Idle/Arriba idle.png" id="3_yuej2"]
 [ext_resource type="Texture2D" uid="uid://byih3xsfp4nsc" path="res://Assets Videojuego/Sprites/Personajes/Right/Attack/Derecha attack cerca.png" id="4_woond"]
 [ext_resource type="Texture2D" uid="uid://dumv7hxlkhyoc" path="res://Assets Videojuego/Sprites/Personajes/Right/Idle/Derecha idle.png" id="4_yhna1"]
@@ -32,6 +33,18 @@ region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpf7b"]
 atlas = ExtResource("2_2knl1")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upgg6"]
+atlas = ExtResource("3_sou3v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swa4y"]
+atlas = ExtResource("3_sou3v")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys7or"]
+atlas = ExtResource("3_sou3v")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u7gmg"]
@@ -236,6 +249,20 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upgg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swa4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys7or")
+}],
+"loop": true,
+"name": &"attack down wizard",
 "speed": 5.0
 }, {
 "frames": [{
@@ -471,8 +498,8 @@ texture_filter = 1
 position = Vector2(13.25, -14)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_p3m2i")
-animation = &"idle down wizard"
-frame_progress = 0.522935
+animation = &"attack down wizard"
+frame_progress = 0.0235418
 
 [node name="Weapon" parent="." instance=ExtResource("10_exo8t")]
 visible = false

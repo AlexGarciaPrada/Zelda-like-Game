@@ -54,7 +54,7 @@ func _run():
 func _short_attack():
 	if Input.is_action_just_pressed("Attack") and is_not_previously_attacking() and !is_attacking:
 		is_attacking = true
-		animation.play("attack " + clue)
+		animation.play("attack " + clue + " wizard")
 		match clue:
 			"right":
 				weaponr.visible = true
