@@ -17,8 +17,9 @@ func _physics_process(delta):
 		_movement()
 		_fireball()
 		_invisiblity()
+		move_and_slide()
 	_short_attack()
-	move_and_slide()
+	
 
 func _movement():
 	var directionx = Input.get_axis("ui_left", "ui_right")
@@ -101,7 +102,7 @@ func _fireball():
 				fireball_instance.rotate(PI)
 				fireball_instance.velocity = Vector2(0,fireball_instance.SPEED)
 func _invisiblity():
-	if Input.is_action_just_pressed("Invisiblity"):
+	if Input.is_action_just_pressed("Invisiblity") && !is_invisible:
 		is_invisible = true
 		modulate.a8=50
 		await get_tree().create_timer(5).timeout
