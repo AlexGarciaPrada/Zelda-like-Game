@@ -20,7 +20,7 @@ func _physics_process(delta):
 		queue_free()
 	
 	var distance_to_player = position.distance_to(player.position)
-	if distance_to_player <= range:
+	if distance_to_player <= range && !player.is_invisible:
 		velocity = position.direction_to(player.position) * speed
 		move_and_slide()
 

@@ -7,15 +7,17 @@ var SPEED= 300
 @onready var weaponl = $Weapon3
 @onready var weaponu = $Weapon4
 @onready var fireball_scene = preload("res://FireBall.tscn")
-
+#await get_tree().create_timer(5).timeout Para acordarme
 var clue = "down"
 var is_attacking = false
+var is_invisible = false
 
 func _physics_process(delta):
 	if !is_attacking:
 		_movement()
+		_fireball()
+		_invisiblity()
 	_short_attack()
-	_fireball()
 	move_and_slide()
 
 func _movement():
@@ -95,4 +97,10 @@ func _fireball():
 			"down":
 				fireball_instance.position = weapond.global_position
 				fireball_instance.velocity = Vector2(0,fireball_instance.SPEED)
-
+func _invisiblity():
+	if Input.is_action_just_pressed("Invisiblity"):
+		is_invisible = true
+		modulate.a8=50
+		await get_tree().create_timer(5).timeout
+		modulate.a8=255
+		is_invisible = false
