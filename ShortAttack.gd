@@ -87,15 +87,18 @@ func _fireball():
 		match clue:
 			"right":
 				fireball_instance.position = weaponr.global_position
+				fireball_instance.rotate(PI/2)
 				fireball_instance.velocity = Vector2(fireball_instance.SPEED, 0)
 			"left":
 				fireball_instance.position = weaponl.global_position
+				fireball_instance.rotate(-PI/2)
 				fireball_instance.velocity = Vector2(-fireball_instance.SPEED, 0)
 			"up":
 				fireball_instance.position = weaponu.global_position
 				fireball_instance.velocity = Vector2(0, -fireball_instance.SPEED)
 			"down":
 				fireball_instance.position = weapond.global_position
+				fireball_instance.rotate(PI)
 				fireball_instance.velocity = Vector2(0,fireball_instance.SPEED)
 func _invisiblity():
 	if Input.is_action_just_pressed("Invisiblity"):
