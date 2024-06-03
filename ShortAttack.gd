@@ -38,6 +38,8 @@ func _movement():
 		
 		velocity.x = directionx * SPEED
 		velocity.y = directiony * SPEED
+		if directionx !=0 && directiony!=0:
+			velocity=velocity/1.41
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
