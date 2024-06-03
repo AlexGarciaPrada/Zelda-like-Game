@@ -261,7 +261,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ys7or")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack down wizard",
 "speed": 5.0
 }, {
@@ -499,7 +499,8 @@ position = Vector2(13.25, -14)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_p3m2i")
 animation = &"attack down wizard"
-frame_progress = 0.0235418
+frame = 2
+frame_progress = 1.0
 
 [node name="Weapon" parent="." instance=ExtResource("10_exo8t")]
 visible = false
