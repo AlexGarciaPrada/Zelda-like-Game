@@ -43,7 +43,7 @@ animations = [{
 }]
 
 [node name="FireBall" type="CharacterBody2D" groups=["Weapon"]]
-scale = Vector2(0.61, 0.61)
+scale = Vector2(0.36, 0.36)
 script = ExtResource("1_eo5ir")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Weapon"]]
