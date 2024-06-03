@@ -467,13 +467,12 @@ one_way_collision = true
 zoom = Vector2(1.5, 1.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-show_behind_parent = true
-texture_filter = 3
+texture_filter = 1
 position = Vector2(13.25, -14)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_p3m2i")
-animation = &"idle left wizard"
-frame_progress = 0.459884
+animation = &"idle down wizard"
+frame_progress = 0.522935
 
 [node name="Weapon" parent="." instance=ExtResource("10_exo8t")]
 visible = false

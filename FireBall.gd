@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
-const SPEED = 1000
-
-
+const SPEED = 600
+@onready var animation =$AnimatedSprite2D
+func _ready():
+	animation.play("fireball")
 func _physics_process(delta):
 	position += velocity * delta
 
