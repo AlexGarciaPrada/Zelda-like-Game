@@ -7,7 +7,7 @@ const SPEED = 300.0
 @onready var weapon2 = $Weapon2
 @onready var weapon3 = $Weapon3
 @onready var weapon4 = $Weapon4
-var clue = "abajo"
+var clue = "down"
 var is_attacking = false
 
 func _physics_process(delta):
@@ -22,17 +22,17 @@ func _movement():
 	
 	if directionx != 0 or directiony != 0:
 		if directiony > 0:
-			animation.play("walk abajo")
-			clue = "abajo"
+			animation.play("walk down")
+			clue = "down"
 		elif directiony < 0:
-			animation.play("walk arriba")
-			clue = "arriba"
+			animation.play("walk up")
+			clue = "up"
 		elif directionx > 0:
-			animation.play("walk derecha")
-			clue = "derecha"
+			animation.play("walk right")
+			clue = "right"
 		elif directionx < 0:
-			animation.play("walk izquierda")
-			clue = "izquierda"
+			animation.play("walk left")
+			clue = "left"
 		
 		velocity.x = directionx * SPEED
 		velocity.y = directiony * SPEED
@@ -52,13 +52,13 @@ func _short_attack():
 		is_attacking = true
 		
 		match clue:
-			"derecha":
+			"right":
 				weapon2.visible = true
-			"izquierda":
+			"left":
 				weapon3.visible = true
-			"arriba":
+			"up":
 				weapon4.visible = true
-			"abajo":
+			"down":
 				weapon1.visible = true
 		
 		await get_tree().create_timer(0.2).timeout
