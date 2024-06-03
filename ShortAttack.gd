@@ -1,21 +1,21 @@
 extends CharacterBody2D
-
-const SPEED = 300.0
+var SPEED= 300
 @onready var animation = $AnimatedSprite2D
 @onready var shape = $CollisionShape2D
-@onready var weapon1 = $Weapon
-@onready var weapon2 = $Weapon2
-@onready var weapon3 = $Weapon3
-@onready var weapon4 = $Weapon4
+@onready var weapond = $Weapon
+@onready var weaponr = $Weapon2
+@onready var weaponl = $Weapon3
+@onready var weaponu = $Weapon4
+@onready var fireball_scene = preload("res://FireBall.tscn")
+
 var clue = "down"
 var is_attacking = false
-
-
 
 func _physics_process(delta):
 	if !is_attacking:
 		_movement()
 	_short_attack()
+	_fireball()
 	move_and_slide()
 
 func _movement():
@@ -38,8 +38,8 @@ func _movement():
 		
 		velocity.x = directionx * SPEED
 		velocity.y = directiony * SPEED
-		if directionx !=0 && directiony!=0:
-			velocity=velocity/1.41
+		if directionx != 0 and directiony != 0:
+			velocity /= 1.41
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
@@ -47,7 +47,7 @@ func _movement():
 
 func _run():
 	if Input.is_key_pressed(KEY_CTRL):
-		velocity = velocity * 3
+		velocity *= 3
 
 func _short_attack():
 	if Input.is_action_just_pressed("Attack") and is_not_previously_attacking() and !is_attacking:
@@ -55,25 +55,44 @@ func _short_attack():
 		animation.play("attack " + clue)
 		match clue:
 			"right":
-				weapon2.visible = true
+				weaponr.visible = true
 			"left":
-				weapon3.visible = true
+				weaponl.visible = true
 			"up":
-				weapon4.visible = true
+				weaponu.visible = true
 			"down":
-				weapon1.visible = true
+				weapond.visible = true
 
 func _hide_weapons():
-	weapon1.visible = false
-	weapon2.visible = false
-	weapon3.visible = false
-	weapon4.visible = false
+	weaponr.visible = false
+	weaponl.visible = false
+	weaponu.visible = false
+	weapond.visible = false
 
-func is_not_previously_attacking():
-	return !weapon1.visible and !weapon2.visible and !weapon3.visible and !weapon4.visible
+func is_not_previously_attacking() -> bool:
+	return !weaponr.visible and !weaponl.visible and !weaponu.visible and !weapond.visible
 
 func _on_animated_sprite_2d_animation_finished():
 	if is_attacking:
 		is_attacking = false
 		_hide_weapons()
+
+func _fireball():
+	if Input.is_action_just_pressed("FireBall"):
+		var fireball_instance = fireball_scene.instantiate()
+		get_parent().add_child(fireball_instance)
+		fireball_instance.global_position = global_position # Set initial position to character's position
+		match clue:
+			"right":
+				fireball_instance.position = weaponr.global_position
+				fireball_instance.velocity = Vector2(fireball_instance.SPEED, 0)
+			"left":
+				fireball_instance.position = weaponl.global_position
+				fireball_instance.velocity = Vector2(-fireball_instance.SPEED, 0)
+			"up":
+				fireball_instance.position = weaponu.global_position
+				fireball_instance.velocity = Vector2(0, -fireball_instance.SPEED)
+			"down":
+				fireball_instance.position = weapond.global_position
+				fireball_instance.velocity = Vector2(0,fireball_instance.SPEED)
 

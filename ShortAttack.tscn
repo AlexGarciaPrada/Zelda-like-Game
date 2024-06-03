@@ -6,6 +6,8 @@ size = Vector2(20, 8)
 [node name="ShortAttack" type="Node2D" groups=["Weapon"]]
 
 [node name="Area2D" type="Area2D" parent="." groups=["Weapon"]]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Weapon"]]
 position = Vector2(0, -4)
