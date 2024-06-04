@@ -540,6 +540,7 @@ animations = [{
 }]
 
 [node name="Wizard" type="CharacterBody2D"]
+scale = Vector2(0.695, 0.695)
 script = ExtResource("1_oux7l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
