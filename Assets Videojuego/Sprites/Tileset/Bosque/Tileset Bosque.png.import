@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7ydi0adu1dx5"
-path="res://.godot/imported/Tileset Hierba.png-c2bff90a66a9deb3419f9b2f8f1b92eb.ctex"
+uid="uid://cm4vl644j3a1b"
+path="res://.godot/imported/Tileset Bosque.png-daa7161e9b4ed2e20013a159f9b7758c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Hierba.png"
-dest_files=["res://.godot/imported/Tileset Hierba.png-c2bff90a66a9deb3419f9b2f8f1b92eb.ctex"]
+source_file="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque.png"
+dest_files=["res://.godot/imported/Tileset Bosque.png-daa7161e9b4ed2e20013a159f9b7758c.ctex"]
 
 [params]
 
