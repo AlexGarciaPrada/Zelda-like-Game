@@ -117,7 +117,7 @@ func _invisiblity():
 	if Input.is_action_just_pressed("Invisiblity") && !is_invisible:
 		_sorcery()
 		is_invisible = true
-		modulate.a8=50
+		modulate.a8=100
 		await get_tree().create_timer(5).timeout
 		modulate.a8=255
 		is_invisible = false

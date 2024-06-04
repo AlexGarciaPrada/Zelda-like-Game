@@ -20,11 +20,9 @@ func _physics_process(delta):
 				life -= 1
 				weapons_in_area.erase(weapon)
 				if weapon.is_in_group("ShortAttack") && life > 0:
-					print ("Hello")
 					var knockback_speed = 6000
 					var newdirection = (position - player.position).normalized()
 					velocity = newdirection * knockback_speed
-					print("Knockback direction: ", newdirection) # Debugging
 					move_and_slide()
 				if life >=1:
 					animation.modulate.r=255
