@@ -273,13 +273,13 @@ region = Rect2(32, 32, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_p3m2i"]
 animations = [{
 "frames": [{
-"duration": 0.7,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_upgg6")
 }, {
-"duration": 0.7,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_swa4y")
 }, {
-"duration": 0.7,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_ys7or")
 }],
 "loop": false,
@@ -287,13 +287,13 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.7,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_d42ep")
 }, {
-"duration": 0.7,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_1bvvs")
 }, {
-"duration": 0.7,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_806ja")
 }],
 "loop": false,
@@ -301,13 +301,13 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.7,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_v3swu")
 }, {
-"duration": 0.7,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_haryt")
 }, {
-"duration": 0.7,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_e7r26")
 }],
 "loop": false,
@@ -315,13 +315,13 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.7,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_sj48t")
 }, {
-"duration": 0.7,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_yqkry")
 }, {
-"duration": 0.7,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_poww6")
 }],
 "loop": false,
@@ -556,7 +556,7 @@ texture_filter = 1
 position = Vector2(13.25, -14)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_p3m2i")
-animation = &"walk down wizard"
+animation = &"attack down wizard"
 
 [node name="Weapon" parent="." instance=ExtResource("10_exo8t")]
 visible = false
