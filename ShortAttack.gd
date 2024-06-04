@@ -11,14 +11,16 @@ var SPEED= 300
 var clue = "down"
 var is_attacking = false
 var is_invisible = false
+var is_spelling = false
 
 func _physics_process(delta):
-	if !is_attacking:
+	if is_not_acting():
 		_movement()
 		_fireball()
 		_invisiblity()
-		move_and_slide()
-	_short_attack()
+		_short_attack()
+	move_and_slide()
+	
 	
 
 func _movement():
@@ -53,9 +55,10 @@ func _run():
 		velocity *= 3
 
 func _short_attack():
-	if Input.is_action_just_pressed("Attack") and is_not_previously_attacking() and !is_attacking:
+	if Input.is_action_just_pressed("Attack") and is_not_previously_attacking() and is_not_acting:
 		is_attacking = true
 		animation.play("attack " + clue + " wizard")
+		velocity = Vector2(0,0)
 		match clue:
 			"right":
 				weaponr.visible = true
@@ -65,7 +68,7 @@ func _short_attack():
 				weaponu.visible = true
 			"down":
 				weapond.visible = true
-
+	
 func _hide_weapons():
 	weaponr.visible = false
 	weaponl.visible = false
@@ -79,9 +82,18 @@ func _on_animated_sprite_2d_animation_finished():
 	if is_attacking:
 		is_attacking = false
 		_hide_weapons()
+	elif is_spelling:
+		is_spelling=false	
 
+func _sorcery():
+	is_spelling=true
+	animation.play("spell attack "+clue+ " wizard")
+	velocity = Vector2(0,0)
+	
+	
 func _fireball():
 	if Input.is_action_just_pressed("FireBall"):
+		_sorcery()
 		var fireball_instance = fireball_scene.instantiate()
 		get_parent().add_child(fireball_instance)
 		fireball_instance.global_position = global_position # Set initial position to character's position
@@ -103,8 +115,12 @@ func _fireball():
 				fireball_instance.velocity = Vector2(0,fireball_instance.SPEED)
 func _invisiblity():
 	if Input.is_action_just_pressed("Invisiblity") && !is_invisible:
+		_sorcery()
 		is_invisible = true
 		modulate.a8=50
 		await get_tree().create_timer(5).timeout
 		modulate.a8=255
 		is_invisible = false
+	
+func is_not_acting():
+	return !is_attacking and !is_spelling

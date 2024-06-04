@@ -555,7 +555,9 @@ texture_filter = 1
 position = Vector2(13.25, -14)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_p3m2i")
-animation = &"walk down wizard"
+animation = &"spell attack down wizard"
+frame = 1
+frame_progress = 1.0
 
 [node name="Weapon" parent="." instance=ExtResource("10_exo8t")]
 visible = false
