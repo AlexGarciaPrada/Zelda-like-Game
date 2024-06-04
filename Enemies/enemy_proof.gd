@@ -19,6 +19,13 @@ func _physics_process(delta):
 			if weapon.is_visible_in_tree():
 				life -= 1
 				weapons_in_area.erase(weapon)
+				if weapon.is_in_group("ShortAttack") && life > 0:
+					print ("Hello")
+					var knockback_speed = 6000
+					var newdirection = (position - player.position).normalized()
+					velocity = newdirection * knockback_speed
+					print("Knockback direction: ", newdirection) # Debugging
+					move_and_slide()
 				if life >=1:
 					animation.modulate.r=255
 					await get_tree().create_timer(0.5).timeout
@@ -64,8 +71,6 @@ func _short_attack_area():
 	for weapon in enemyarea.get_overlapping_areas():
 		if weapon.is_in_group("ShortAttack") && !weapons_in_area.has(weapon) && !weapon.is_visible_in_tree():
 			weapons_in_area.append(weapon)
-	
-
 
 func _on_animated_sprite_2d_animation_finished():
 	if is_dying:
