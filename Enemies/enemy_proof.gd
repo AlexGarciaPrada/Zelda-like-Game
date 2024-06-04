@@ -7,23 +7,34 @@ var life = 2
 var weapons_in_area = []
 var clue ="down"
 var is_dying = false
+var knockback_mode = false
 @onready var animation= $AnimatedSprite2D
 @onready var enemyarea=$Area2D
+var knockback_speed = 450
+var current_frame = 0
+var newdirection = Vector2(0,0)
+
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Weapon"):
 		weapons_in_area.append(area)
 
 func _physics_process(delta):
-	if !is_dying:
+	if knockback_mode:
+		velocity = newdirection * knockback_speed
+		move_and_slide()
+		current_frame +=1
+		if current_frame == 15:
+			knockback_mode=false
+			current_frame=0
+	elif !is_dying:
 		for weapon in weapons_in_area:
 			if weapon.is_visible_in_tree():
 				life -= 1
 				weapons_in_area.erase(weapon)
 				if weapon.is_in_group("ShortAttack") && life > 0:
-					var knockback_speed = 6000
-					var newdirection = (position - player.position).normalized()
-					velocity = newdirection * knockback_speed
-					move_and_slide()
+					knockback_mode= true
+					newdirection = (position - player.position).normalized()
+					current_frame=0
 				if life >=1:
 					animation.modulate.r=255
 					await get_tree().create_timer(0.5).timeout
