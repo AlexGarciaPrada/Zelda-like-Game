@@ -27,16 +27,16 @@ func _movement():
 	
 	if directionx != 0 or directiony != 0:
 		if directiony > 0:
-			animation.play("walk down")
+			animation.play("walk down wizard")
 			clue = "down"
 		elif directiony < 0:
-			animation.play("walk up")
+			animation.play("walk up wizard")
 			clue = "up"
 		elif directionx > 0:
-			animation.play("walk right")
+			animation.play("walk right wizard")
 			clue = "right"
 		elif directionx < 0:
-			animation.play("walk left")
+			animation.play("walk left wizard")
 			clue = "left"
 		
 		velocity.x = directionx * SPEED

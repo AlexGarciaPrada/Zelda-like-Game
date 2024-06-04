@@ -1,16 +1,12 @@
-[gd_scene load_steps=71 format=3 uid="uid://2ub8tjjgslhi"]
+[gd_scene load_steps=83 format=3 uid="uid://2ub8tjjgslhi"]
 
 [ext_resource type="Script" path="res://ShortAttack.gd" id="1_oux7l"]
-[ext_resource type="Texture2D" uid="uid://c22by4prvkljp" path="res://Assets Videojuego/Sprites/Personajes/Modelo/Down/Walk/Abajo.png" id="2_6egme"]
 [ext_resource type="Texture2D" uid="uid://drw8hnhfx6w5s" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Attack/Close Attack/Green/Abajo prota attack verde.png" id="3_sou3v"]
 [ext_resource type="Texture2D" uid="uid://bbof812u2jnuq" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Attack/Close Attack/Green/Izquierda prota attack verde.png" id="5_btylt"]
-[ext_resource type="Texture2D" uid="uid://bqvy5ev11cpbd" path="res://Assets Videojuego/Sprites/Personajes/Modelo/Up/Walk/Arriba walk.png" id="7_6lcvy"]
 [ext_resource type="Texture2D" uid="uid://bxwv70kbkk105" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Attack/Close Attack/Green/Derecha prota attack verde.png" id="7_7opwa"]
 [ext_resource type="Texture2D" uid="uid://bbgllh2tar76v" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Idle/Abajo prota idle.png" id="7_fltrc"]
-[ext_resource type="Texture2D" uid="uid://roictpoht6qe" path="res://Assets Videojuego/Sprites/Personajes/Modelo/Right/Walk/Derecha walk.png" id="8_wjhos"]
 [ext_resource type="Texture2D" uid="uid://cwxiw758l4od5" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Idle/Izquierda idle prota.png" id="9_7jxq4"]
 [ext_resource type="Texture2D" uid="uid://celmmawhxcnvp" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Up/Attack/Close Attack/Green/Arriba prota attack verde (1).png" id="9_nih7w"]
-[ext_resource type="Texture2D" uid="uid://dhqyi2euhfboi" path="res://Assets Videojuego/Sprites/Personajes/Modelo/Left/Walk/Izquierda walk.png" id="9_r0bdq"]
 [ext_resource type="Texture2D" uid="uid://cplfff6ck2t50" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Attack/Large Attack/Green/Abajo prota attack verde.png" id="10_bqqb2"]
 [ext_resource type="PackedScene" uid="uid://bjbcy3deg87lu" path="res://ShortAttack.tscn" id="10_exo8t"]
 [ext_resource type="Texture2D" uid="uid://68l2jnw3qg0n" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Attack/Large Attack/Green/Izquierda prota attack verde.png" id="11_chbd5"]
@@ -18,6 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://crnmtdutdpu5x" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Idle/Derecha idle prota.png" id="11_rfj4j"]
 [ext_resource type="Texture2D" uid="uid://dtqdvejtf0bqu" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Attack/Large Attack/Green/Derecha prota attack verde.png" id="12_tjoxb"]
 [ext_resource type="Texture2D" uid="uid://d0qfapmgt6knp" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Up/Attack/Large Attack/Green/Arriba prota attack verde.png" id="13_2l1od"]
+[ext_resource type="Texture2D" uid="uid://dej67sfcvt0up" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Walk/walk abajo prota.png" id="14_8rqe3"]
+[ext_resource type="Texture2D" uid="uid://cb5i53jjjri1j" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Walk/Izquierda walk prota.png" id="16_4ultb"]
+[ext_resource type="Texture2D" uid="uid://d2tmnswrkn1af" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Up/Walk/walk up protagonista.png" id="17_l5p7h"]
+[ext_resource type="Texture2D" uid="uid://oudr7k6mrpwr" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Walk/Derecha walk prota.png" id="18_rr3e5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glctq"]
 size = Vector2(41, 49)
@@ -158,68 +158,116 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("13_2l1od")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gyqos"]
-atlas = ExtResource("2_6egme")
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw1da"]
+atlas = ExtResource("14_8rqe3")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kqtjq"]
-atlas = ExtResource("2_6egme")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lipon"]
+atlas = ExtResource("14_8rqe3")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5htrc"]
-atlas = ExtResource("2_6egme")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gfim"]
+atlas = ExtResource("14_8rqe3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncldg"]
+atlas = ExtResource("14_8rqe3")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cu4p4"]
-atlas = ExtResource("2_6egme")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xulaq"]
+atlas = ExtResource("14_8rqe3")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hxsjo"]
-atlas = ExtResource("9_r0bdq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkil6"]
+atlas = ExtResource("14_8rqe3")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vi8a"]
+atlas = ExtResource("14_8rqe3")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g5vg"]
+atlas = ExtResource("14_8rqe3")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7cxn"]
+atlas = ExtResource("16_4ultb")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0vajg"]
-atlas = ExtResource("9_r0bdq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmuqr"]
+atlas = ExtResource("16_4ultb")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pclts"]
-atlas = ExtResource("9_r0bdq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_riu30"]
+atlas = ExtResource("16_4ultb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3skf"]
+atlas = ExtResource("16_4ultb")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bsbbt"]
-atlas = ExtResource("9_r0bdq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uoks"]
+atlas = ExtResource("16_4ultb")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7y0by"]
-atlas = ExtResource("8_wjhos")
+[sub_resource type="AtlasTexture" id="AtlasTexture_he7gd"]
+atlas = ExtResource("16_4ultb")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl4l6"]
+atlas = ExtResource("16_4ultb")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjrvq"]
+atlas = ExtResource("16_4ultb")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smqd8"]
+atlas = ExtResource("18_rr3e5")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3fwe7"]
-atlas = ExtResource("8_wjhos")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bya0c"]
+atlas = ExtResource("18_rr3e5")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fa8yo"]
-atlas = ExtResource("8_wjhos")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibqdk"]
+atlas = ExtResource("18_rr3e5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5q65"]
+atlas = ExtResource("18_rr3e5")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wwysq"]
-atlas = ExtResource("8_wjhos")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvuoj"]
+atlas = ExtResource("18_rr3e5")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jsrk6"]
-atlas = ExtResource("7_6lcvy")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlmcq"]
+atlas = ExtResource("18_rr3e5")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5ohd"]
+atlas = ExtResource("18_rr3e5")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj4dy"]
+atlas = ExtResource("18_rr3e5")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2nbw"]
+atlas = ExtResource("17_l5p7h")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q1fv8"]
-atlas = ExtResource("7_6lcvy")
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb6aj"]
+atlas = ExtResource("17_l5p7h")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kq6ec"]
-atlas = ExtResource("7_6lcvy")
+[sub_resource type="AtlasTexture" id="AtlasTexture_085jd"]
+atlas = ExtResource("17_l5p7h")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fu8f0"]
-atlas = ExtResource("7_6lcvy")
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh0hx"]
+atlas = ExtResource("17_l5p7h")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p3m2i"]
@@ -388,70 +436,106 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gyqos")
+"texture": SubResource("AtlasTexture_sw1da")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kqtjq")
+"texture": SubResource("AtlasTexture_lipon")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5htrc")
+"texture": SubResource("AtlasTexture_3gfim")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cu4p4")
+"texture": SubResource("AtlasTexture_ncldg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xulaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkil6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vi8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g5vg")
 }],
 "loop": true,
-"name": &"walk down",
+"name": &"walk down wizard",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hxsjo")
+"texture": SubResource("AtlasTexture_s7cxn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0vajg")
+"texture": SubResource("AtlasTexture_nmuqr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pclts")
+"texture": SubResource("AtlasTexture_riu30")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bsbbt")
+"texture": SubResource("AtlasTexture_q3skf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uoks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he7gd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl4l6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjrvq")
 }],
 "loop": true,
-"name": &"walk left",
+"name": &"walk left wizard",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7y0by")
+"texture": SubResource("AtlasTexture_smqd8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3fwe7")
+"texture": SubResource("AtlasTexture_bya0c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fa8yo")
+"texture": SubResource("AtlasTexture_ibqdk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wwysq")
+"texture": SubResource("AtlasTexture_t5q65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvuoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlmcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5ohd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wj4dy")
 }],
 "loop": true,
-"name": &"walk right",
+"name": &"walk right wizard",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jsrk6")
+"texture": SubResource("AtlasTexture_t2nbw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q1fv8")
+"texture": SubResource("AtlasTexture_nb6aj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kq6ec")
+"texture": SubResource("AtlasTexture_085jd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fu8f0")
+"texture": SubResource("AtlasTexture_sh0hx")
 }],
 "loop": true,
-"name": &"walk up",
+"name": &"walk up wizard",
 "speed": 5.0
 }]
 
@@ -471,9 +555,7 @@ texture_filter = 1
 position = Vector2(13.25, -14)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_p3m2i")
-animation = &"spell attack down wizard"
-frame = 1
-frame_progress = 1.0
+animation = &"walk down wizard"
 
 [node name="Weapon" parent="." instance=ExtResource("10_exo8t")]
 visible = false
