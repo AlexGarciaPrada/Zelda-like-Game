@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://oudr7k6mrpwr" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Walk/Derecha walk prota.png" id="18_rr3e5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glctq"]
-size = Vector2(29.8763, 35.1719)
+size = Vector2(29.8763, 43.1579)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_upgg6"]
 atlas = ExtResource("3_sou3v")
@@ -544,7 +544,7 @@ scale = Vector2(0.695, 0.695)
 script = ExtResource("1_oux7l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(12.5, -15.5)
+position = Vector2(12.5, -11.507)
 shape = SubResource("RectangleShape2D_glctq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
