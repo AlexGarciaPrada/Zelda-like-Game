@@ -7,19 +7,45 @@ var SPEED= 300
 @onready var weaponl = $Weapon3
 @onready var weaponu = $Weapon4
 @onready var fireball_scene = preload("res://FireBall.tscn")
+var life = 10
 #await get_tree().create_timer(5).timeout Para acordarme
+var enemies_in_area = []
 var clue = "down"
+var current_frame=0
+var newdirection = Vector2(0,0)
 var is_attacking = false
 var is_invisible = false
 var is_spelling = false
+var knockback_mode = false
+var knockback_speed = 300
+@onready var area = $Area2D
 
 func _physics_process(delta):
+	print(life)
+	if knockback_mode:
+		velocity = newdirection * knockback_speed
+		move_and_slide()
+		modulate.r=255
+		await get_tree().create_timer(0.05).timeout
+		modulate.r=1
+		await get_tree().create_timer(0.05).timeout
+		current_frame +=1
+		if current_frame == 15:
+			knockback_mode=false
+			current_frame=0
+		if !enemies_in_area.is_empty():
+			var enemy = enemies_in_area[0]
+			knockback_mode=true
+			newdirection = (position - enemy.position).normalized()
+			life -=1
+			return
 	if is_not_acting():
 		_movement()
 		_fireball()
 		_invisiblity()
 		_short_attack()
 	move_and_slide()
+	
 	
 	
 
@@ -124,3 +150,18 @@ func _invisiblity():
 	
 func is_not_acting():
 	return !is_attacking and !is_spelling
+
+	
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("Enemy") && !knockback_mode:
+		var enemy = area.get_parent()
+		enemies_in_area.append(enemy)
+		knockback_mode=true
+		newdirection = (position - enemy.position).normalized()
+		life-=1
+
+
+func _on_area_2d_area_exited(area):
+	if area.is_in_group("Enemy"):
+		enemies_in_area.erase(area.get_parent())

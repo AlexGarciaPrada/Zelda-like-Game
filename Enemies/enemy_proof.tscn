@@ -184,25 +184,25 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="EnemyProof" type="CharacterBody2D"]
+[node name="EnemyProof" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_glkta")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 2
-visibility_layer = 2
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
+light_mask = 4
+visibility_layer = 4
 shape = SubResource("CircleShape2D_18ce5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
 sprite_frames = SubResource("SpriteFrames_k62fx")
 animation = &"death down"
 frame = 2
 frame_progress = 1.0
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
+[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+collision_layer = 6
+collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Enemy"]]
 light_mask = 2
 visibility_layer = 2
 shape = SubResource("CircleShape2D_18ce5")
