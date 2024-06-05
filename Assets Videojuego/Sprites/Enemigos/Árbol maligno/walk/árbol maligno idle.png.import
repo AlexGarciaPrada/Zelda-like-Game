@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5b86lktgbgvv"
-path="res://.godot/imported/Slime abajo muerte.png-13359f9329792661365a9188a4094a22.ctex"
+uid="uid://b4n8hv35ccbgy"
+path="res://.godot/imported/árbol maligno idle.png-d7fe2a19e4c12e9465c9a7a0296e0dbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Enemigos/Slime/Slime abajo muerte.png"
-dest_files=["res://.godot/imported/Slime abajo muerte.png-13359f9329792661365a9188a4094a22.ctex"]
+source_file="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/árbol maligno idle.png"
+dest_files=["res://.godot/imported/árbol maligno idle.png-d7fe2a19e4c12e9465c9a7a0296e0dbf.ctex"]
 
 [params]
 
