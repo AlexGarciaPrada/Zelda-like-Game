@@ -161,7 +161,8 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_3k1m8"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 5
+physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_2ieaf")
 
 [node name="PruebasAlex" type="Node2D"]
@@ -171,15 +172,23 @@ top_level = true
 
 [node name="EnemyProof" parent="." instance=ExtResource("3_ves6u")]
 position = Vector2(469, 191)
+collision_layer = 4
+collision_mask = 4
 
 [node name="EnemyProof2" parent="." instance=ExtResource("3_ves6u")]
 position = Vector2(-418, 228)
+collision_layer = 4
+collision_mask = 4
 
 [node name="EnemyProof3" parent="." instance=ExtResource("3_ves6u")]
 position = Vector2(-420, -216)
+collision_layer = 4
+collision_mask = 4
 
 [node name="EnemyProof4" parent="." instance=ExtResource("3_ves6u")]
 position = Vector2(481, -185)
+collision_layer = 4
+collision_mask = 4
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
