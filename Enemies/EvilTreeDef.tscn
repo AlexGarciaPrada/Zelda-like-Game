@@ -1,84 +1,87 @@
-[gd_scene load_steps=27 format=3 uid="uid://cpoope72we2rv"]
+[gd_scene load_steps=27 format=3 uid="uid://dnwql2wgo57yq"]
 
-[ext_resource type="Texture2D" uid="uid://b4n8hv35ccbgy" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/árbol maligno idle.png" id="1_tlp2o"]
-[ext_resource type="Script" path="res://Enemies/EvilTree.gd" id="1_v26s2"]
-[ext_resource type="Texture2D" uid="uid://c3j8mcbkn1idj" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk abajo.png" id="2_8ovvk"]
-[ext_resource type="Texture2D" uid="uid://dy2qy2sqmkiwd" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk izquierda.png" id="3_rs6k3"]
-[ext_resource type="Texture2D" uid="uid://dxg0sjvyop2qv" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk derecha.png" id="4_qixhq"]
-[ext_resource type="Texture2D" uid="uid://50urflfb2yd7" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk arriba.png" id="5_2tbv2"]
+[ext_resource type="Script" path="res://Enemies/EvilTree.gd" id="1_q46pt"]
+[ext_resource type="Texture2D" uid="uid://b4n8hv35ccbgy" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/árbol maligno idle.png" id="2_vohil"]
+[ext_resource type="Texture2D" uid="uid://c3j8mcbkn1idj" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk abajo.png" id="3_p1y7w"]
+[ext_resource type="Texture2D" uid="uid://dy2qy2sqmkiwd" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk izquierda.png" id="4_wpvvx"]
+[ext_resource type="Texture2D" uid="uid://dxg0sjvyop2qv" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk derecha.png" id="5_oegao"]
+[ext_resource type="Texture2D" uid="uid://50urflfb2yd7" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk arriba.png" id="6_jbwgm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fc4n7"]
-size = Vector2(53, 51)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_420e7"]
+size = Vector2(64, 62)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_18ce5"]
+radius = 33.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4w527"]
-atlas = ExtResource("1_tlp2o")
+atlas = ExtResource("2_vohil")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_by765"]
-atlas = ExtResource("2_8ovvk")
+atlas = ExtResource("3_p1y7w")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_co5w6"]
-atlas = ExtResource("2_8ovvk")
+atlas = ExtResource("3_p1y7w")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hkqd2"]
-atlas = ExtResource("2_8ovvk")
+atlas = ExtResource("3_p1y7w")
 region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_htn3c"]
-atlas = ExtResource("2_8ovvk")
+atlas = ExtResource("3_p1y7w")
 region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjljy"]
-atlas = ExtResource("3_rs6k3")
+atlas = ExtResource("4_wpvvx")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pp7bv"]
-atlas = ExtResource("3_rs6k3")
+atlas = ExtResource("4_wpvvx")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xc0br"]
-atlas = ExtResource("3_rs6k3")
+atlas = ExtResource("4_wpvvx")
 region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lseoa"]
-atlas = ExtResource("3_rs6k3")
+atlas = ExtResource("4_wpvvx")
 region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_js1kn"]
-atlas = ExtResource("4_qixhq")
+atlas = ExtResource("5_oegao")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cjsve"]
-atlas = ExtResource("4_qixhq")
+atlas = ExtResource("5_oegao")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhecr"]
-atlas = ExtResource("4_qixhq")
+atlas = ExtResource("5_oegao")
 region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_amhql"]
-atlas = ExtResource("4_qixhq")
+atlas = ExtResource("5_oegao")
 region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0x8m"]
-atlas = ExtResource("5_2tbv2")
+atlas = ExtResource("6_jbwgm")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75ros"]
-atlas = ExtResource("5_2tbv2")
+atlas = ExtResource("6_jbwgm")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4pvmt"]
-atlas = ExtResource("5_2tbv2")
+atlas = ExtResource("6_jbwgm")
 region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hijso"]
-atlas = ExtResource("5_2tbv2")
+atlas = ExtResource("6_jbwgm")
 region = Rect2(64, 64, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1kwwa"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qt46w"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -157,30 +160,28 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e7t18"]
-radius = 36.0139
-
 [node name="EvilTree" type="CharacterBody2D" groups=["Enemy"]]
-script = ExtResource("1_v26s2")
+script = ExtResource("1_q46pt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(-1.5, 0.5)
-shape = SubResource("RectangleShape2D_fc4n7")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
-texture_filter = 3
-sprite_frames = SubResource("SpriteFrames_1kwwa")
-animation = &"walk down"
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_420e7")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+collision_layer = 6
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Enemy"]]
 light_mask = 2
 visibility_layer = 2
-shape = SubResource("CircleShape2D_e7t18")
+shape = SubResource("CircleShape2D_18ce5")
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_qt46w")
+animation = &"walk down"
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
