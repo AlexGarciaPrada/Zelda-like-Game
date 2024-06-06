@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://o0atprpi6rwm"
-path="res://.godot/imported/Explosión polvo.png-6a0d88f1cef5c221cbe50dd8f015aab2.ctex"
+path="res://.godot/imported/Explosión polvo.png-fe111e679a694fb4001885c1c856c9bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Hechizos/Explosión polvo.png"
-dest_files=["res://.godot/imported/Explosión polvo.png-6a0d88f1cef5c221cbe50dd8f015aab2.ctex"]
+source_file="res://Assets Videojuego/Sprites/Hechizos/Fireball/Explosión polvo.png"
+dest_files=["res://.godot/imported/Explosión polvo.png-fe111e679a694fb4001885c1c856c9bc.ctex"]
 
 [params]
 

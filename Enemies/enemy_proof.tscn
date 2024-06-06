@@ -1,15 +1,13 @@
 [gd_scene load_steps=30 format=3 uid="uid://ugytydn6gcks"]
 
 [ext_resource type="Script" path="res://Enemies/enemy_proof.gd" id="1_glkta"]
-[ext_resource type="Texture2D" uid="uid://085im7aft2ow" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Slime abajo daño.png" id="2_b3w6i"]
 [ext_resource type="Texture2D" uid="uid://dfyrgj87m436y" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Walk/Down/Slime walk abajo.png" id="2_h6nuv"]
-[ext_resource type="Texture2D" uid="uid://b5b86lktgbgvv" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Slime abajo muerte.png" id="2_wsjvh"]
+[ext_resource type="Texture2D" uid="uid://b5b86lktgbgvv" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Death/Slime abajo muerte.png" id="2_wsjvh"]
 [ext_resource type="Texture2D" uid="uid://hy68ftscip46" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Walk/Left/Slime walk izquierda.png" id="3_fcbfn"]
 [ext_resource type="Texture2D" uid="uid://cq7a105tdssnm" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Walk/Right/Slime walk derecha.png" id="4_kc18t"]
 [ext_resource type="Texture2D" uid="uid://bvsk5u18na5ku" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Walk/Up/Slime walk arriba.png" id="5_imv6w"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_18ce5"]
-radius = 13.1529
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_420e7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ex4iy"]
 atlas = ExtResource("2_wsjvh")
@@ -24,11 +22,9 @@ atlas = ExtResource("2_wsjvh")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_678jl"]
-atlas = ExtResource("2_b3w6i")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vqty6"]
-atlas = ExtResource("2_b3w6i")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igbdp"]
@@ -184,13 +180,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_18ce5"]
+radius = 13.1529
+
 [node name="EnemyProof" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_glkta")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
 light_mask = 4
 visibility_layer = 4
-shape = SubResource("CircleShape2D_18ce5")
+shape = SubResource("RectangleShape2D_420e7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
 sprite_frames = SubResource("SpriteFrames_k62fx")

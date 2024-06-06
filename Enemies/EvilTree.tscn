@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bp7jgq3dx510y"]
+
+[node name="EvilTree" type="CharacterBody2D"]
