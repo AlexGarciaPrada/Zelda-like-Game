@@ -192,6 +192,7 @@ visibility_layer = 4
 shape = SubResource("RectangleShape2D_420e7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
+texture_filter = 3
 sprite_frames = SubResource("SpriteFrames_k62fx")
 animation = &"death down"
 frame = 2
