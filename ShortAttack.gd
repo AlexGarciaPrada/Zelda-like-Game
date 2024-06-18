@@ -125,7 +125,6 @@ func _lure():
 	if Input.is_action_just_pressed("Lure"):
 		_sorcery()
 		var lure_instance = lure_scene.instantiate()
-		print(get_tree().get_current_scene())
 		get_tree().get_current_scene().add_child(lure_instance)
 		lure_instance.global_position = global_position
 		var lure_animation = animation.duplicate()
