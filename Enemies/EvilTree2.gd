@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var player = $"../Wizard"
 var speed = 200
 var range = 200
-var life = 1
+var life = 2
 var weapons_in_area = []
 var clue ="down"
 var is_dying = false
@@ -16,10 +16,9 @@ var newdirection = Vector2(0,0)
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Weapon"):
-		queue_free()
+		weapons_in_area.append(area)
 
 func _physics_process(delta):
-	print(weapons_in_area)
 	if knockback_mode:
 		velocity = newdirection * knockback_speed
 		move_and_slide()
@@ -47,7 +46,7 @@ func _physics_process(delta):
 		_movement()			
 		if life < 1:
 			is_dying=true
-			#Quitar esto cuando haya animación de muerte
+			#Quitar Cuando Esté Arreglado
 			queue_free()
 			animation.play("death down")
 		
@@ -60,6 +59,7 @@ func _on_area_2d_area_exited(area):
 		weapons_in_area.erase(area)
 		
 func _movement():
+	
 	var distance_to_player = position.distance_to(player.position)
 	if distance_to_player <= range && !player.is_invisible && !is_dying:
 		velocity = position.direction_to(player.position) * speed

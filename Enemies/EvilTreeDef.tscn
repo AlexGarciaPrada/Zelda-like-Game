@@ -1,17 +1,109 @@
-[gd_scene load_steps=27 format=3 uid="uid://dnwql2wgo57yq"]
+[gd_scene load_steps=27 format=3 uid="uid://b0syejwim54dp"]
 
-[ext_resource type="Script" path="res://Enemies/EvilTree.gd" id="1_q46pt"]
 [ext_resource type="Texture2D" uid="uid://b4n8hv35ccbgy" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/árbol maligno idle.png" id="2_vohil"]
 [ext_resource type="Texture2D" uid="uid://c3j8mcbkn1idj" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk abajo.png" id="3_p1y7w"]
 [ext_resource type="Texture2D" uid="uid://dy2qy2sqmkiwd" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk izquierda.png" id="4_wpvvx"]
 [ext_resource type="Texture2D" uid="uid://dxg0sjvyop2qv" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk derecha.png" id="5_oegao"]
 [ext_resource type="Texture2D" uid="uid://50urflfb2yd7" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk arriba.png" id="6_jbwgm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_420e7"]
-size = Vector2(64, 62)
+[sub_resource type="GDScript" id="GDScript_4ixj6"]
+script/source = "extends CharacterBody2D
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_18ce5"]
-radius = 33.0
+@onready var player = $\"../Wizard\"
+var speed = 200
+var range = 200
+var life = 2
+var weapons_in_area = []
+var clue =\"down\"
+var is_dying = false
+var knockback_mode = false
+@onready var animation= $AnimatedSprite2D
+@onready var enemyarea=$Area2D
+var knockback_speed = 450
+var current_frame = 0
+var newdirection = Vector2(0,0)
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group(\"Weapon\"):
+		queue_free()
+
+func _physics_process(delta):
+	print(weapons_in_area)
+	if knockback_mode:
+		print(\"Attacked\")
+		velocity = newdirection * knockback_speed
+		move_and_slide()
+		current_frame +=1
+		if current_frame == 15:
+			knockback_mode=false
+			current_frame=0
+	elif !is_dying:
+		for weapon in weapons_in_area:
+			if weapon.is_visible_in_tree():
+				life -= 1
+				weapons_in_area.erase(weapon)
+				if weapon.is_in_group(\"ShortAttack\") && life > 0:
+					knockback_mode= true
+					newdirection = (position - player.position).normalized()
+					current_frame=0
+				if life >=1:
+					animation.modulate.r=255
+					await get_tree().create_timer(0.5).timeout
+					animation.modulate.r=1
+				break
+			else:
+				weapons_in_area.erase(weapon)	
+		_short_attack_area()	
+		_movement()			
+		if life < 1:
+			is_dying=true
+			#Quitar esto cuando haya animación de muerte
+			queue_free()
+			animation.play(\"death down\")
+		
+	
+	
+
+
+func _on_area_2d_area_exited(area):
+	print(\"Hello\")
+	if area.is_in_group(\"Weapon\"):
+		weapons_in_area.erase(area)
+		
+func _movement():
+	var distance_to_player = position.distance_to(player.position)
+	if distance_to_player <= range && !player.is_invisible && !is_dying:
+		velocity = position.direction_to(player.position) * speed
+		move_and_slide()
+		var direction= position.direction_to(player.position)	
+		if abs(direction.y) > abs(direction.x):
+			if direction.y > 0:
+				animation.play(\"walk down\")
+				clue = \"down\"
+			elif direction.y < 0 :
+				animation.play(\"walk up\")
+				clue = \"up\"
+		else:
+			if direction.x > 0 :
+				animation.play(\"walk right\")
+				clue = \"right\"
+			elif direction.x < 0:
+				animation.play(\"walk left\")
+				clue = \"left\"	
+	else:
+		animation.play(\"idle\")
+func _short_attack_area():
+	for weapon in enemyarea.get_overlapping_areas():
+		if weapon.is_in_group(\"ShortAttack\") && !weapons_in_area.has(weapon) && !weapon.is_visible_in_tree():
+			weapons_in_area.append(weapon)
+
+func _on_animated_sprite_2d_animation_finished():
+	if is_dying:
+		queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_420e7"]
+size = Vector2(45, 49)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4w527"]
 atlas = ExtResource("2_vohil")
@@ -160,28 +252,34 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_18ce5"]
+radius = 33.0151
+
 [node name="EvilTree" type="CharacterBody2D" groups=["Enemy"]]
-script = ExtResource("1_q46pt")
+script = SubResource("GDScript_4ixj6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(1, 0)
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_420e7")
-
-[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
-collision_layer = 6
-collision_mask = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Enemy"]]
-light_mask = 2
-visibility_layer = 2
-shape = SubResource("CircleShape2D_18ce5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
 texture_filter = 3
 sprite_frames = SubResource("SpriteFrames_qt46w")
 animation = &"walk down"
 
+[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+light_mask = 6
+visibility_layer = 6
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Enemy"]]
+light_mask = 6
+visibility_layer = 6
+shape = SubResource("CircleShape2D_18ce5")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

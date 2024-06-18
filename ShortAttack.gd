@@ -2,6 +2,7 @@ extends CharacterBody2D
 var SPEED= 300
 @onready var animation = $AnimatedSprite2D
 @onready var shape = $CollisionShape2D
+@onready var selfarea= $Area2D
 @onready var weapond = $Weapon
 @onready var weaponr = $Weapon2
 @onready var weaponl = $Weapon3
@@ -21,18 +22,20 @@ var knockback_speed = 300
 @onready var area = $Area2D
 
 func _physics_process(delta):
-	print(life)
 	if knockback_mode:
 		velocity = newdirection * knockback_speed
 		move_and_slide()
 		modulate.r=255
+		selfarea.disable_mode=true
 		await get_tree().create_timer(0.05).timeout
 		modulate.r=1
 		await get_tree().create_timer(0.05).timeout
 		current_frame +=1
+		
 		if current_frame == 15:
 			knockback_mode=false
 			current_frame=0
+			selfarea.disable_mode=false
 		if !enemies_in_area.is_empty():
 			var enemy = enemies_in_area[0]
 			knockback_mode=true

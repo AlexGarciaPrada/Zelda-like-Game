@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 600
 @onready var animation =$AnimatedSprite2D
+@onready var selfarea = $Area2D
 var collision = false
 func _ready():
 	animation.play("fireball")
@@ -18,6 +19,7 @@ func _on_area_2d_area_entered(area):
 	if !area.is_in_group("Player") && !area.is_in_group("Weapon"):
 		animation.scale = animation.scale * 0.6
 		animation.play("explosion")
+		selfarea.queue_free()
 		velocity = Vector2(0,0)
 		collision=true
 
