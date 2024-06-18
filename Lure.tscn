@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://chqo7bcgcqqx2"]
+
+[ext_resource type="Script" path="res://Lure.gd" id="1_b8umh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goi7b"]
+size = Vector2(29.8763, 43.1579)
+
+[node name="Lure" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_b8umh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 7
+visibility_layer = 7
+position = Vector2(12.5, -11.507)
+shape = SubResource("RectangleShape2D_goi7b")

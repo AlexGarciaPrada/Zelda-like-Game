@@ -27,6 +27,7 @@ func _physics_process(delta):
 			knockback_mode=false
 			current_frame=0
 	elif !is_dying:
+		_movement()	
 		for weapon in weapons_in_area:
 			if weapon.is_visible_in_tree():
 				life -= 1
@@ -42,9 +43,9 @@ func _physics_process(delta):
 				break
 			else:
 				weapons_in_area.erase(weapon)	
-		_short_attack_area()	
-		_movement()			
+		_short_attack_area()			
 		if life < 1:
+			
 			is_dying=true
 			animation.play("death down")
 		
@@ -57,25 +58,27 @@ func _on_area_2d_area_exited(area):
 		weapons_in_area.erase(area)
 		
 func _movement():
-	var distance_to_player = position.distance_to(player.position)
-	if distance_to_player <= range && !player.is_invisible && !is_dying:
-		velocity = position.direction_to(player.position) * speed
-		move_and_slide()
-		var direction= position.direction_to(player.position)	
-		if abs(direction.y) > abs(direction.x):
-			if direction.y > 0:
-				animation.play("walk down")
-				clue = "down"
-			elif direction.y < 0 :
-				animation.play("walk up")
-				clue = "up"
-		else:
-			if direction.x > 0 :
-				animation.play("walk right")
-				clue = "right"
-			elif direction.x < 0:
-				animation.play("walk left")
-				clue = "left"	
+	var targets = get_objects_within_distance("Player",range)
+	if !targets.is_empty():
+		var objective = get_min_distance_obj(targets)
+		if objective != null:
+			var direction= position.direction_to(objective.position)	
+			velocity = direction * speed
+			move_and_slide()
+			if abs(direction.y) > abs(direction.x):
+				if direction.y > 0:
+					animation.play("walk down")
+					clue = "down"
+				elif direction.y < 0 :
+					animation.play("walk up")
+					clue = "up"
+			else:
+				if direction.x > 0 :
+					animation.play("walk right")
+					clue = "right"
+				elif direction.x < 0:
+					animation.play("walk left")
+					clue = "left"	
 func _short_attack_area():
 	for weapon in enemyarea.get_overlapping_areas():
 		if weapon.is_in_group("ShortAttack") && !weapons_in_area.has(weapon) && !weapon.is_visible_in_tree():
@@ -84,3 +87,25 @@ func _short_attack_area():
 func _on_animated_sprite_2d_animation_finished():
 	if is_dying:
 		queue_free()
+func get_objects_within_distance(group_name, distance):
+	var nodes_in_group = get_tree().get_nodes_in_group(group_name)
+	var objects_within_distance = []
+	for node in nodes_in_group:
+		var node_distance = global_position.distance_to(node.global_position)
+		if node_distance <= distance:
+			objects_within_distance.append(node)
+	return objects_within_distance
+
+func get_min_distance_obj(ObjectList):
+	var result = range
+	var object
+	for target in ObjectList:
+		if result >= position.distance_to(target.global_position) && !is_dying:
+			if target == player:
+				if !player.is_invisible:
+					result= position.distance_to(target.global_position)
+					object= player
+			else:
+				result= position.distance_to(target.global_position)
+				object= target
+	return object

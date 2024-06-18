@@ -8,6 +8,7 @@ var SPEED= 300
 @onready var weaponl = $Weapon3
 @onready var weaponu = $Weapon4
 @onready var fireball_scene = preload("res://FireBall.tscn")
+@onready var lure_scene = preload("res://Lure.tscn")
 var life = 10
 #await get_tree().create_timer(5).timeout Para acordarme
 var enemies_in_area = []
@@ -46,6 +47,7 @@ func _physics_process(delta):
 		_movement()
 		_fireball()
 		_invisiblity()
+		_lure()
 		_short_attack()
 	move_and_slide()
 	
@@ -119,7 +121,20 @@ func _sorcery():
 	animation.play("spell attack "+clue+ " wizard")
 	velocity = Vector2(0,0)
 	
-	
+func _lure():
+	if Input.is_action_just_pressed("Lure"):
+		_sorcery()
+		var lure_instance = lure_scene.instantiate()
+		print(get_tree().get_current_scene())
+		get_tree().get_current_scene().add_child(lure_instance)
+		lure_instance.global_position = global_position
+		var lure_animation = animation.duplicate()
+		lure_instance.add_child(lure_animation)
+		lure_instance.modulate.r=5
+		lure_instance.modulate.g=0
+		lure_instance.modulate.b=5
+		lure_animation.play("idle "+ clue+" wizard")
+		
 func _fireball():
 	if Input.is_action_just_pressed("FireBall"):
 		_sorcery()

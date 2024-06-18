@@ -543,21 +543,21 @@ animations = [{
 scale = Vector2(0.695, 0.695)
 script = ExtResource("1_oux7l")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12.5, -11.507)
 shape = SubResource("RectangleShape2D_glctq")
 
-[node name="Camera2D" type="Camera2D" parent="." groups=["Player"]]
+[node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.2, 2.2)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Player"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(13.25, -14)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_p3m2i")
 animation = &"attack down wizard"
 
-[node name="Weapon" parent="." groups=["Player"] instance=ExtResource("10_exo8t")]
+[node name="Weapon" parent="." instance=ExtResource("10_exo8t")]
 visible = false
 position = Vector2(14, 31)
 scale = Vector2(3, 3)

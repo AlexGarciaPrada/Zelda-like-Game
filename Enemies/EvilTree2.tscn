@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://50urflfb2yd7" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk arriba.png" id="6_cvc3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_420e7"]
-size = Vector2(52, 53)
+size = Vector2(60, 60)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_18ce5"]
 radius = 28.0179
@@ -161,6 +161,8 @@ animations = [{
 }]
 
 [node name="EnemyProof" type="CharacterBody2D" groups=["Enemy"]]
+light_mask = 6
+visibility_layer = 6
 script = ExtResource("1_svufd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]

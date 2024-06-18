@@ -184,6 +184,8 @@ animations = [{
 radius = 13.1529
 
 [node name="EnemyProof" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 6
+collision_mask = 6
 script = ExtResource("1_glkta")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
