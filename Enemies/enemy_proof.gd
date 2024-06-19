@@ -16,7 +16,6 @@ var newdirection = Vector2(0,0)
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Weapon"):
-		print(area)
 		weapons_in_area.append(area)
 
 func _physics_process(delta):
