@@ -16,6 +16,7 @@ var newdirection = Vector2(0,0)
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Weapon"):
+		print(area)
 		weapons_in_area.append(area)
 
 func _physics_process(delta):
@@ -32,7 +33,7 @@ func _physics_process(delta):
 			if weapon.is_visible_in_tree():
 				life -= 1
 				weapons_in_area.erase(weapon)
-				if weapon.is_in_group("ShortAttack") && life > 0:
+				if (weapon.is_in_group("ShortAttack") or weapon.is_in_group("Lure")) && life > 0:
 					knockback_mode= true
 					newdirection = (position - player.position).normalized()
 					current_frame=0
@@ -43,7 +44,7 @@ func _physics_process(delta):
 				break
 			else:
 				weapons_in_area.erase(weapon)	
-		_short_attack_area()			
+		_short_attack_area()		
 		if life < 1:
 			
 			is_dying=true
@@ -81,7 +82,7 @@ func _movement():
 					clue = "left"	
 func _short_attack_area():
 	for weapon in enemyarea.get_overlapping_areas():
-		if weapon.is_in_group("ShortAttack") && !weapons_in_area.has(weapon) && !weapon.is_visible_in_tree():
+		if (weapon.is_in_group("ShortAttack") or weapon.is_in_group("Lure")) && !weapons_in_area.has(weapon) && !weapon.is_visible_in_tree():
 			weapons_in_area.append(weapon)
 
 func _on_animated_sprite_2d_animation_finished():

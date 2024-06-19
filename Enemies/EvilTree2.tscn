@@ -161,13 +161,13 @@ animations = [{
 }]
 
 [node name="EnemyProof" type="CharacterBody2D" groups=["Enemy"]]
-light_mask = 6
-visibility_layer = 6
+collision_layer = 6
+collision_mask = 6
 script = ExtResource("1_svufd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
-light_mask = 4
-visibility_layer = 4
+light_mask = 6
+visibility_layer = 6
 shape = SubResource("RectangleShape2D_420e7")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
