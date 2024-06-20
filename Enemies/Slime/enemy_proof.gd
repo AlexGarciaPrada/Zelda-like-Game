@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var player = $"../Wizard"
 var speed = 150
-var range = 150
+var range = 250
 var life = 2
 var weapons_in_area = []
 var clue ="down"
