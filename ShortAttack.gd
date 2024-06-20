@@ -43,7 +43,7 @@ func _physics_process(delta):
 			newdirection = (position - enemy.position).normalized()
 			life -=1
 			return
-	if is_not_acting():
+	elif is_not_acting():
 		_movement()
 		_fireball()
 		_invisiblity()
@@ -177,6 +177,7 @@ func _on_area_2d_area_entered(area):
 		knockback_mode=true
 		newdirection = (position - enemy.position).normalized()
 		life-=1
+		
 
 
 func _on_area_2d_area_exited(area):

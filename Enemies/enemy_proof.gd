@@ -10,6 +10,7 @@ var is_dying = false
 var knockback_mode = false
 @onready var animation= $AnimatedSprite2D
 @onready var enemyarea=$Area2D
+@onready var enemycollision= $CollisionShape2D
 var knockback_speed = 450
 var current_frame = 0
 var newdirection = Vector2(0,0)
@@ -45,8 +46,10 @@ func _physics_process(delta):
 				weapons_in_area.erase(weapon)	
 		_short_attack_area()		
 		if life < 1:
-			
 			is_dying=true
+			enemyarea.queue_free()
+			enemycollision.queue_free()
+			
 			animation.play("death down")
 		
 	
