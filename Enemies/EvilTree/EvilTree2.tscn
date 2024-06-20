@@ -1,6 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://48tle54pd5rg"]
+[gd_scene load_steps=27 format=3 uid="uid://g6oh3aoqo30t"]
 
-[ext_resource type="Script" path="res://Enemies/EvilTree2.gd" id="1_svufd"]
+[ext_resource type="Script" path="res://Enemies/EvilTree/EvilTree2.gd" id="1_svufd"]
 [ext_resource type="Texture2D" uid="uid://b4n8hv35ccbgy" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/árbol maligno idle.png" id="2_y3uj0"]
 [ext_resource type="Texture2D" uid="uid://c3j8mcbkn1idj" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk abajo.png" id="3_tg7v1"]
 [ext_resource type="Texture2D" uid="uid://dy2qy2sqmkiwd" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk izquierda.png" id="4_vxlok"]

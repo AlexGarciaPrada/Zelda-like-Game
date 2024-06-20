@@ -1,6 +1,6 @@
-[gd_scene load_steps=30 format=3 uid="uid://ugytydn6gcks"]
+[gd_scene load_steps=30 format=3 uid="uid://btej75ff0gnky"]
 
-[ext_resource type="Script" path="res://Enemies/enemy_proof.gd" id="1_glkta"]
+[ext_resource type="Script" path="res://Enemies/Slime/enemy_proof.gd" id="1_glkta"]
 [ext_resource type="Texture2D" uid="uid://dfyrgj87m436y" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Walk/Down/Slime walk abajo.png" id="2_h6nuv"]
 [ext_resource type="Texture2D" uid="uid://b5b86lktgbgvv" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Death/Slime abajo muerte.png" id="2_wsjvh"]
 [ext_resource type="Texture2D" uid="uid://hy68ftscip46" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Walk/Left/Slime walk izquierda.png" id="3_fcbfn"]

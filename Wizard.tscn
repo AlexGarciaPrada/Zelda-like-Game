@@ -560,24 +560,24 @@ animation = &"attack down wizard"
 [node name="Weapon" parent="." instance=ExtResource("10_exo8t")]
 visible = false
 position = Vector2(14, 31)
-scale = Vector2(3, 3)
+scale = Vector2(3.5, 3.5)
 
 [node name="Weapon2" parent="." instance=ExtResource("10_exo8t")]
 visible = false
 position = Vector2(30, -14)
 rotation = 1.5708
-scale = Vector2(3, 3)
+scale = Vector2(3.5, 3.5)
 
 [node name="Weapon3" parent="." instance=ExtResource("10_exo8t")]
 visible = false
 position = Vector2(-29, -14)
 rotation = 1.5708
-scale = Vector2(3, 3)
+scale = Vector2(3.5, 3.5)
 
 [node name="Weapon4" parent="." instance=ExtResource("10_exo8t")]
 visible = false
 position = Vector2(12, -36)
-scale = Vector2(3, 3)
+scale = Vector2(3.5, 3.5)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 5
