@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfp605ql41mo5"]
+
+[ext_resource type="Script" path="res://UI.gd" id="1_quuoh"]
+
+[node name="Ui" type="Camera2D"]
+script = ExtResource("1_quuoh")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

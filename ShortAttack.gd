@@ -9,6 +9,7 @@ var SPEED= 300
 @onready var weaponu = $Weapon4
 @onready var fireball_scene = preload("res://FireBall.tscn")
 @onready var lure_scene = preload("res://Lure.tscn")
+@onready var life_label = $Camera2D/Label
 var life = 10
 #await get_tree().create_timer(5).timeout Para acordarme
 var enemies_in_area = []
@@ -23,6 +24,7 @@ var knockback_speed = 300
 @onready var area = $Area2D
 
 func _physics_process(delta):
+	life_label.text = "Life:"+ str(life)
 	if knockback_mode:
 		velocity = newdirection * knockback_speed
 		move_and_slide()
