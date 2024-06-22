@@ -10,6 +10,7 @@ var is_dying = false
 var knockback_mode = false
 @onready var animation= $AnimatedSprite2D
 @onready var enemyarea=$Area2D
+@onready var enemycollision=$CollisionShape2D
 var knockback_speed = 450
 var current_frame = 0
 var newdirection = Vector2(0,0)
@@ -20,10 +21,12 @@ func _on_area_2d_area_entered(area):
 
 func _physics_process(delta):
 	if knockback_mode:
+		enemycollision.disabled=true
 		velocity = newdirection * knockback_speed
 		move_and_slide()
 		current_frame +=1
 		if current_frame == 15:
+			enemycollision.disabled=false
 			knockback_mode=false
 			current_frame=0
 	elif !is_dying:
