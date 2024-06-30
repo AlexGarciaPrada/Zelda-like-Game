@@ -26,32 +26,41 @@ var knockback_speed = 300
 func _physics_process(delta):
 	life_label.text = "Life:"+ str(life)
 	if knockback_mode:
-		velocity = newdirection * knockback_speed
-		move_and_slide()
-		modulate.r=255
-		selfarea.disable_mode=true
-		await get_tree().create_timer(0.05).timeout
-		modulate.r=1
-		await get_tree().create_timer(0.05).timeout
-		current_frame +=1
+		if current_frame < 8:
+			velocity = newdirection * knockback_speed
+			move_and_slide()
+			modulate.r=255
+			selfarea.disable_mode=true
+			await get_tree().create_timer(0.05).timeout
+			modulate.r=1
+			await get_tree().create_timer(0.05).timeout
+			current_frame +=1
 		
-		if current_frame == 15:
-			knockback_mode=false
-			current_frame=0
-			selfarea.disable_mode=false
-		if !enemies_in_area.is_empty():
-			var enemy = enemies_in_area[0]
-			knockback_mode=true
-			newdirection = (position - enemy.position).normalized()
-			life -=1
-			return
+		if current_frame >= 8:
+			_movement()
+			current_frame +=1
+			modulate.r=255
+			await get_tree().create_timer(0.05).timeout
+			modulate.r=1
+			await get_tree().create_timer(0.05).timeout
+			if current_frame >= 30:
+				selfarea.disable_mode=false
+				knockback_mode=false
+				current_frame=0
+				if !enemies_in_area.is_empty():
+					knockback_mode=true
+					await get_tree().create_timer(0.05).timeout
+					modulate.r=1
+					await get_tree().create_timer(0.05).timeout
+					life-=1
+					return
+				return
 	elif is_not_acting():
 		_movement()
 		_fireball()
 		_invisiblity()
 		_lure()
 		_short_attack()
-	move_and_slide()
 	
 	
 	
@@ -82,7 +91,7 @@ func _movement():
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 		animation.play("idle " + clue+ " wizard")
-
+	move_and_slide()
 func _run():
 	if Input.is_key_pressed(KEY_CTRL):
 		velocity *= 3
@@ -173,12 +182,13 @@ func is_not_acting():
 	
 
 func _on_area_2d_area_entered(area):
-	if area.is_in_group("Enemy") && !knockback_mode:
+	if area.is_in_group("Enemy") :
 		var enemy = area.get_parent()
 		enemies_in_area.append(enemy)
-		knockback_mode=true
-		newdirection = (position - enemy.position).normalized()
-		life-=1
+		if !knockback_mode:
+			knockback_mode=true
+			newdirection = (position - enemy.position).normalized()
+			life-=1
 		
 
 
