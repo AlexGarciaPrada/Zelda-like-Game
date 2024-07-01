@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://ShortAttack.gd" id="1_oux7l"]
 [ext_resource type="Texture2D" uid="uid://drw8hnhfx6w5s" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Attack/Close Attack/Green/Abajo prota attack verde.png" id="3_sou3v"]
-[ext_resource type="Texture2D" uid="uid://bbof812u2jnuq" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Attack/Close Attack/Green/Izquierda prota attack verde.png" id="5_btylt"]
-[ext_resource type="Texture2D" uid="uid://bxwv70kbkk105" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Attack/Close Attack/Green/Derecha prota attack verde.png" id="7_7opwa"]
+[ext_resource type="Texture2D" uid="uid://dkt4kd4eks0j8" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Attack/Close Attack/Green/Izquierda prota attack verde.png" id="5_btylt"]
+[ext_resource type="Texture2D" uid="uid://b1rt7ejtw0kta" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Attack/Close Attack/Green/Derecha prota attack verde.png" id="7_7opwa"]
 [ext_resource type="Texture2D" uid="uid://bbgllh2tar76v" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Idle/Abajo prota idle.png" id="7_fltrc"]
 [ext_resource type="Texture2D" uid="uid://cwxiw758l4od5" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Idle/Izquierda idle prota.png" id="9_7jxq4"]
 [ext_resource type="Texture2D" uid="uid://celmmawhxcnvp" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Up/Attack/Close Attack/Green/Arriba prota attack verde (1).png" id="9_nih7w"]
@@ -284,7 +284,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack down wizard",
-"speed": 10.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 0.5,
@@ -298,7 +298,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack left wizard",
-"speed": 10.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 0.5,
@@ -312,7 +312,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack right wizard",
-"speed": 10.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 0.5,
@@ -326,7 +326,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack up wizard",
-"speed": 10.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.5,
