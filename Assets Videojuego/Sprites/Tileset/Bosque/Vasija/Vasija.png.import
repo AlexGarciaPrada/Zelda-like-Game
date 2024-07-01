@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cajbp86mc0ukk"
-path="res://.godot/imported/Vasija rota.png-54b7a428eb880f678b8c777c44ef7877.ctex"
+uid="uid://b73ue338fpsyg"
+path="res://.godot/imported/Vasija.png-76231af512b44eaf62a1c2188576542c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Tileset/Bosque/Vasija/Vasija rota.png"
-dest_files=["res://.godot/imported/Vasija rota.png-54b7a428eb880f678b8c777c44ef7877.ctex"]
+source_file="res://Assets Videojuego/Sprites/Tileset/Bosque/Vasija/Vasija.png"
+dest_files=["res://.godot/imported/Vasija.png-76231af512b44eaf62a1c2188576542c.ctex"]
 
 [params]
 
