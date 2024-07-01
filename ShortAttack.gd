@@ -20,42 +20,24 @@ var is_attacking = false
 var is_invisible = false
 var is_spelling = false
 var knockback_mode = false
+var inmunity_mode=false
 var knockback_speed = 300
 @onready var area = $Area2D
 
 func _physics_process(delta):
 	life_label.text = "Life:"+ str(life)
 	if knockback_mode:
-		if current_frame < 8:
-			velocity = newdirection * knockback_speed
-			move_and_slide()
-			modulate.r=255
-			selfarea.disable_mode=true
-			await get_tree().create_timer(0.05).timeout
-			modulate.r=1
-			await get_tree().create_timer(0.05).timeout
-			current_frame +=1
-		
-		if current_frame >= 8:
+		_knockback()
+		if is_not_acting():
 			_movement()
-			current_frame +=1
-			modulate.r=255
-			await get_tree().create_timer(0.05).timeout
-			modulate.r=1
-			await get_tree().create_timer(0.05).timeout
-			if current_frame >= 30:
-				selfarea.disable_mode=false
-				knockback_mode=false
-				current_frame=0
-				if !enemies_in_area.is_empty():
-					knockback_mode=true
-					await get_tree().create_timer(0.05).timeout
-					modulate.r=1
-					await get_tree().create_timer(0.05).timeout
-					life-=1
-					return
-				return
-	elif is_not_acting():
+			_fireball()
+			_invisiblity()
+			_lure()
+			_short_attack()
+		
+	if inmunity_mode:
+		_inmunity()
+	if is_not_acting() && !knockback_mode:
 		_movement()
 		_fireball()
 		_invisiblity()
@@ -64,7 +46,25 @@ func _physics_process(delta):
 	
 	
 	
-
+func _inmunity():
+	current_frame +=1
+	if current_frame >= 60:
+		selfarea.disable_mode=false
+		inmunity_mode=false
+		current_frame=0
+		if !enemies_in_area.is_empty():
+			knockback_mode=true
+			life-=1
+			return
+		return
+func _knockback():
+	velocity = newdirection * knockback_speed
+	move_and_slide()
+	selfarea.disable_mode=true
+	current_frame +=1
+	if current_frame > 20:
+		inmunity_mode = true
+		knockback_mode=false
 func _movement():
 	var directionx = Input.get_axis("ui_left", "ui_right")
 	var directiony = Input.get_axis("ui_up", "ui_down")
