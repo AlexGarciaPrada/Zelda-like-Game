@@ -34,7 +34,6 @@ func _physics_process(delta):
 			_invisiblity()
 			_lure()
 			_short_attack()
-		
 	if inmunity_mode:
 		_inmunity()
 	if is_not_acting() && !knockback_mode:
@@ -185,7 +184,7 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("Enemy") :
 		var enemy = area.get_parent()
 		enemies_in_area.append(enemy)
-		if !knockback_mode:
+		if !knockback_mode && !inmunity_mode:
 			knockback_mode=true
 			newdirection = (position - enemy.position).normalized()
 			life-=1

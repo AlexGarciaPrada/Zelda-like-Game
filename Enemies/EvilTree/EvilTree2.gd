@@ -21,12 +21,10 @@ func _on_area_2d_area_entered(area):
 
 func _physics_process(delta):
 	if knockback_mode:
-		enemycollision.disabled=true
 		velocity = newdirection * knockback_speed
 		move_and_slide()
 		current_frame +=1
 		if current_frame == 15:
-			enemycollision.disabled=false
 			knockback_mode=false
 			current_frame=0
 	elif !is_dying:
