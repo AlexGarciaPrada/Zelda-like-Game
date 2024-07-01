@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://r6vw3644gtuu"]
+[gd_scene load_steps=10 format=3 uid="uid://r6vw3644gtuu"]
 
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="1_nmuww"]
 [ext_resource type="Texture2D" uid="uid://cm4vl644j3a1b" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque.png" id="2_dweov"]
 [ext_resource type="PackedScene" uid="uid://btej75ff0gnky" path="res://Enemies/Mushroom/Mushroom.tscn" id="3_ves6u"]
 [ext_resource type="Texture2D" uid="uid://b27e866ewka1e" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Arbol tileset.png" id="4_lch2g"]
 [ext_resource type="PackedScene" uid="uid://g6oh3aoqo30t" path="res://Enemies/EvilTree/EvilTree2.tscn" id="5_aivw1"]
+[ext_resource type="PackedScene" uid="uid://lafgg3mq2b1b" path="res://Dialogues/Dialogues.tscn" id="6_u30by"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ieaf"]
 texture = ExtResource("2_dweov")
@@ -239,3 +240,5 @@ layer_3/tile_data = PackedInt32Array(65539, 1, 0, 131075, 1, 1, 65540, 65537, 0,
 
 [node name="EnemyProof7" parent="." instance=ExtResource("5_aivw1")]
 position = Vector2(323, -16)
+
+[node name="Dialogues" parent="." instance=ExtResource("6_u30by")]
