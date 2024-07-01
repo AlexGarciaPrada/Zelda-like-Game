@@ -298,7 +298,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack left wizard",
-"speed": 10.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 0.5,
@@ -312,7 +312,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack right wizard",
-"speed": 10.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 0.5,
@@ -326,7 +326,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack up wizard",
-"speed": 10.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.5,
@@ -552,7 +552,7 @@ texture_filter = 1
 position = Vector2(13.25, -14)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_p3m2i")
-animation = &"attack up wizard"
+animation = &"attack down wizard"
 
 [node name="Weapon" parent="." instance=ExtResource("10_exo8t")]
 visible = false
