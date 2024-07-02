@@ -1,10 +1,34 @@
-[gd_scene format=3 uid="uid://burn3ir5takxb"]
+[gd_scene load_steps=4 format=3 uid="uid://burn3ir5takxb"]
+
+[ext_resource type="Texture2D" uid="uid://b73ue338fpsyg" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Vasija/Vasija.png" id="1_itn2u"]
+[ext_resource type="Texture2D" uid="uid://cajbp86mc0ukk" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Vasija/Vasija rota.png" id="2_3uwcc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3q25"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_itn2u")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3uwcc")
+}],
+"loop": true,
+"name": &"roto",
+"speed": 5.0
+}]
 
 [node name="Jar" type="StaticBody2D"]
 collision_layer = 7
 collision_mask = 7
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o3q25")
+animation = &"roto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 7
