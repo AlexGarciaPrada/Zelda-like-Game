@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://2ub8tjjgslhi"]
+[gd_scene load_steps=84 format=3 uid="uid://2ub8tjjgslhi"]
 
 [ext_resource type="Script" path="res://ShortAttack.gd" id="1_oux7l"]
 [ext_resource type="Texture2D" uid="uid://drw8hnhfx6w5s" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Attack/Close Attack/Green/Abajo prota attack verde.png" id="3_sou3v"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cb5i53jjjri1j" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Walk/Izquierda walk prota.png" id="16_4ultb"]
 [ext_resource type="Texture2D" uid="uid://d2tmnswrkn1af" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Up/Walk/walk up protagonista.png" id="17_l5p7h"]
 [ext_resource type="Texture2D" uid="uid://oudr7k6mrpwr" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Walk/Derecha walk prota.png" id="18_rr3e5"]
+[ext_resource type="PackedScene" uid="uid://hqa8in30kvgo" path="res://Dialogues/Dialogues.tscn" id="19_rqass"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glctq"]
 size = Vector2(29.8763, 43.1579)
@@ -589,8 +590,22 @@ shape = SubResource("RectangleShape2D_glctq")
 zoom = Vector2(2.2, 2.2)
 
 [node name="Label" type="Label" parent="Camera2D"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -342.446
+offset_top = -166.906
+offset_right = -302.446
+offset_bottom = -143.906
+
+[node name="Dialogues" parent="Camera2D" instance=ExtResource("19_rqass")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = 0.0
+offset_top = 125.18
+offset_right = 0.0
+offset_bottom = 125.18
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

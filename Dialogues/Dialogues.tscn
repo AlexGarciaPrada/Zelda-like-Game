@@ -1,30 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://hqa8in30kvgo"]
+[gd_scene load_steps=3 format=3 uid="uid://hqa8in30kvgo"]
 
 [ext_resource type="Script" path="res://Dialogues/Dialogues.gd" id="1_yc7ly"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oeb33"]
 
 [node name="Dialogues" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 212.0
-offset_right = -244.0
+offset_left = 41.0
+offset_top = 276.0
+offset_right = -15.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yc7ly")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 108.0
-offset_top = 168.0
-offset_right = 692.0
-offset_bottom = 375.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.855, 0.855)
+transform = Transform2D(0.855, 0, 0, 0.855, 0, 0)
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 146.0
-offset_top = 246.0
-offset_right = 386.0
-offset_bottom = 348.0
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 106.433
+offset_top = 501.754
+offset_right = 1201.43
+offset_bottom = 716.754
+texture = SubResource("CanvasTexture_oeb33")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
+top_level = true
+clip_contents = true
+layout_mode = 0
+offset_left = 201.17
+offset_top = 543.86
+offset_right = 1086.17
+offset_bottom = 687.86

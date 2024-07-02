@@ -6,9 +6,8 @@ var dialogues = []
 var current_dialogue_index = 0
 
 # Referencias a los nodos Label y Button
-@onready var dialogue_label = $Label
-@onready var next_button = $Button
-
+@onready var dialogue_label =$CanvasLayer/TextureRect/Label
+@onready var dialogue_box=$CanvasLayer
 # Función para inicializar el diálogo
 func _ready():
 	dialogues = [
@@ -18,7 +17,8 @@ func _ready():
 		"¡Espero que esto te haya sido útil!"
 	]
 	update_dialogue()
-
+func _physics_process(delta):
+	_dialogue_pass()
 # Función para actualizar el texto del diálogo
 func update_dialogue():
 	if current_dialogue_index < dialogues.size():
@@ -29,10 +29,11 @@ func update_dialogue():
 
 # Función para ocultar el diálogo cuando se termine
 func hide_dialogue():
-	self.hide()
+	dialogue_box.visible=false
 	# Aquí puedes añadir lógica adicional para lo que debería suceder después del diálogo
 
 
-func _on_button_pressed():
-	current_dialogue_index += 1
-	update_dialogue()
+func _dialogue_pass():
+	if Input.is_action_just_pressed("Lure"):
+		current_dialogue_index += 1
+		update_dialogue()
