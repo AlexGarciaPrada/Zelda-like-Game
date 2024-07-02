@@ -196,7 +196,7 @@ func _on_area_2d_area_exited(area):
 	if area.is_in_group("Enemy"):
 		enemies_in_area.erase(area.get_parent())
 func _speak():
-	if Input.is_action_just_pressed("Speak"):
+	if Input.is_action_just_pressed("Speak") && clue=="up":
 		for npc in area.get_overlapping_areas():
 			if npc.is_in_group("NPC"):
 				var dialogue_instance = dialogue_scene.instantiate()

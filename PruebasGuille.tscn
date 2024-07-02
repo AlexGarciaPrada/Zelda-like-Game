@@ -391,6 +391,11 @@ layer_2/tile_data = PackedInt32Array()
 
 [node name="Sign" parent="." instance=ExtResource("7_ccjuv")]
 position = Vector2(176, -59)
+dialogues = ["Hola que tal", "Hola que ase", "Hola que tal"]
 
 [node name="Jar" parent="." instance=ExtResource("8_d5h05")]
 position = Vector2(129, 91)
+
+[node name="Sign2" parent="." instance=ExtResource("7_ccjuv")]
+position = Vector2(11, 79)
+dialogues = ["Que habrá aquí", "No lo sé"]
