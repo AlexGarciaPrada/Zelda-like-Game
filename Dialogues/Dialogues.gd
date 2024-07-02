@@ -16,6 +16,7 @@ func _ready():
 		"Puedes avanzar haciendo clic en el botón.",
 		"¡Espero que esto te haya sido útil!"
 	]
+	Singleton.is_stopped = true
 	update_dialogue()
 func _physics_process(delta):
 	_dialogue_pass()
@@ -24,6 +25,7 @@ func update_dialogue():
 	if current_dialogue_index < dialogues.size():
 		dialogue_label.text = dialogues[current_dialogue_index]
 	else:
+		Singleton.is_stopped = false
 		hide_dialogue()
 
 

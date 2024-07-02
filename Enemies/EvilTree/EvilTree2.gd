@@ -20,38 +20,39 @@ func _on_area_2d_area_entered(area):
 		weapons_in_area.append(area)
 
 func _physics_process(delta):
-	if knockback_mode:
-		collision_layer =2
-		velocity = newdirection * knockback_speed
-		move_and_slide()
-		current_frame +=1
-		if current_frame == 15:
-			knockback_mode=false
-			collision_layer =6
-			current_frame=0
-	elif !is_dying:
-		_movement()	
-		for weapon in weapons_in_area:
-			if weapon.is_visible_in_tree():
-				life -= 1
-				weapons_in_area.erase(weapon)
-				if weapon.is_in_group("ShortAttack") && life > 0:
-					knockback_mode= true
-					newdirection = (position - player.position).normalized()
-					current_frame=0
-				if life >=1:
-					animation.modulate.r=255
-					await get_tree().create_timer(0.5).timeout
-					animation.modulate.r=1
-				break
-			else:
-				weapons_in_area.erase(weapon)	
-		_short_attack_area()			
-		if life < 1:
+	if !Singleton.is_stopped:
+		if knockback_mode:
+			collision_layer =2
+			velocity = newdirection * knockback_speed
+			move_and_slide()
+			current_frame +=1
+			if current_frame == 15:
+				knockback_mode=false
+				collision_layer =6
+				current_frame=0
+		elif !is_dying:
+			_movement()	
+			for weapon in weapons_in_area:
+				if weapon.is_visible_in_tree():
+					life -= 1
+					weapons_in_area.erase(weapon)
+					if weapon.is_in_group("ShortAttack") && life > 0:
+						knockback_mode= true
+						newdirection = (position - player.position).normalized()
+						current_frame=0
+					if life >=1:
+						animation.modulate.r=255
+						await get_tree().create_timer(0.5).timeout
+						animation.modulate.r=1
+					break
+				else:
+					weapons_in_area.erase(weapon)	
+			_short_attack_area()			
+			if life < 1:
 			#Quitar más adelante
-			queue_free()
-			is_dying=true
-			animation.play("death down")
+				queue_free()
+				is_dying=true
+				animation.play("death down")
 		
 	
 	

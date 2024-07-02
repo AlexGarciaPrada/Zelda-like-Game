@@ -25,26 +25,24 @@ var knockback_speed = 300
 @onready var area = $Area2D
 
 func _physics_process(delta):
-	life_label.text = "Life:"+ str(life)
-	if knockback_mode:
-		_knockback()
-		if is_not_acting():
+	if !Singleton.is_stopped:
+		life_label.text = "Life:"+ str(life)
+		if knockback_mode:
+			_knockback()
+			if is_not_acting():
+				_movement()
+				_fireball()
+				_invisiblity()
+				_lure()
+				_short_attack()
+		if inmunity_mode:
+			_inmunity()
+		if is_not_acting() && !knockback_mode:
 			_movement()
 			_fireball()
 			_invisiblity()
 			_lure()
 			_short_attack()
-	if inmunity_mode:
-		_inmunity()
-	if is_not_acting() && !knockback_mode:
-		_movement()
-		_fireball()
-		_invisiblity()
-		_lure()
-		_short_attack()
-	
-	
-	
 func _inmunity():
 	current_frame +=1
 	if current_frame >= 60:
