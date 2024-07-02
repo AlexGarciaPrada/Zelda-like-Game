@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://burn3ir5takxb"]
+[gd_scene load_steps=6 format=3 uid="uid://burn3ir5takxb"]
 
 [ext_resource type="Texture2D" uid="uid://b73ue338fpsyg" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Vasija/Vasija.png" id="1_itn2u"]
+[ext_resource type="Script" path="res://Destructibles/Jar/Jar.gd" id="1_t4fxa"]
 [ext_resource type="Texture2D" uid="uid://cajbp86mc0ukk" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Vasija/Vasija rota.png" id="2_3uwcc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o3q25"]
@@ -22,16 +23,33 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Jar" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6pkw"]
+
+[node name="Jar" type="CharacterBody2D"]
+show_behind_parent = true
 collision_layer = 7
 collision_mask = 7
+script = ExtResource("1_t4fxa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+show_behind_parent = true
+texture_filter = 3
 sprite_frames = SubResource("SpriteFrames_o3q25")
-animation = &"roto"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 7
 visibility_layer = 7
+shape = SubResource("RectangleShape2D_j6pkw")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 7
+visibility_layer = 7
+shape = SubResource("RectangleShape2D_j6pkw")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

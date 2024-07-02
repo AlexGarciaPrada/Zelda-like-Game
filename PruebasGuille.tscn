@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwplidr6mb6j3"]
+[gd_scene load_steps=16 format=3 uid="uid://cwplidr6mb6j3"]
 
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="1_4cap6"]
 [ext_resource type="PackedScene" uid="uid://btej75ff0gnky" path="res://Enemies/Slime/enemy_proof.tscn" id="2_01vsq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b27e866ewka1e" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Árbol/Arbol tileset.png" id="5_5avbc"]
 [ext_resource type="Texture2D" uid="uid://vht43vaoyo5t" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Cartel/Cartel.png" id="6_ri4ia"]
 [ext_resource type="PackedScene" uid="uid://kq508wjfnsd2" path="res://Dialogues/Sign/Sign.tscn" id="7_ccjuv"]
+[ext_resource type="PackedScene" uid="uid://burn3ir5takxb" path="res://Destructibles/Jar/Jar.tscn" id="8_d5h05"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4f4xu"]
 texture = ExtResource("3_qcrkx")
@@ -390,3 +391,6 @@ layer_2/tile_data = PackedInt32Array()
 
 [node name="Sign" parent="." instance=ExtResource("7_ccjuv")]
 position = Vector2(176, -59)
+
+[node name="Jar" parent="." instance=ExtResource("8_d5h05")]
+position = Vector2(129, 91)
