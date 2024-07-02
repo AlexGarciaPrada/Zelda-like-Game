@@ -9,7 +9,9 @@ var SPEED= 300
 @onready var weaponu = $Weapon4
 @onready var fireball_scene = preload("res://FireBall.tscn")
 @onready var lure_scene = preload("res://Lure.tscn")
+@onready var dialogue_scene = preload("res://Dialogues/Dialogues.tscn")
 @onready var life_label = $Camera2D/Label
+@onready var dialogue = $Camera2D/Dialogues
 var life = 10
 #await get_tree().create_timer(5).timeout Para acordarme
 var enemies_in_area = []
@@ -43,6 +45,7 @@ func _physics_process(delta):
 			_invisiblity()
 			_lure()
 			_short_attack()
+			_speak()
 func _inmunity():
 	current_frame +=1
 	if current_frame >= 60:
@@ -192,3 +195,11 @@ func _on_area_2d_area_entered(area):
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("Enemy"):
 		enemies_in_area.erase(area.get_parent())
+func _speak():
+	if Input.is_action_just_pressed("Speak"):
+		for npc in area.get_overlapping_areas():
+			if npc.is_in_group("NPC"):
+				var dialogue_instance = dialogue_scene.instantiate()
+				dialogue_instance.dialogues = npc.get_parent().dialogues
+				dialogue_instance.global_position = dialogue.global_position
+				self.add_child(dialogue_instance)

@@ -10,12 +10,6 @@ var current_dialogue_index = 0
 @onready var dialogue_box=$CanvasLayer
 # Función para inicializar el diálogo
 func _ready():
-	dialogues = [
-		"Hola, ¿cómo estás?",
-		"Este es un sistema de diálogos en Godot.",
-		"Puedes avanzar haciendo clic en el botón.",
-		"¡Espero que esto te haya sido útil!"
-	]
 	Singleton.is_stopped = true
 	update_dialogue()
 func _physics_process(delta):
@@ -31,6 +25,8 @@ func update_dialogue():
 
 # Función para ocultar el diálogo cuando se termine
 func hide_dialogue():
+	if current_dialogue_index !=0:
+		queue_free()
 	dialogue_box.visible=false
 	# Aquí puedes añadir lógica adicional para lo que debería suceder después del diálogo
 
