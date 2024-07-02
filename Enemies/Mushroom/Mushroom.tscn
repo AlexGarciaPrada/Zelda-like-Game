@@ -104,7 +104,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_txeji")
 }],
-"loop": true,
+"loop": false,
 "name": &"death down",
 "speed": 5.0
 }, {
@@ -198,7 +198,7 @@ shape = SubResource("RectangleShape2D_420e7")
 texture_filter = 3
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_k62fx")
-animation = &"walk down"
+animation = &"death down"
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 collision_layer = 6
