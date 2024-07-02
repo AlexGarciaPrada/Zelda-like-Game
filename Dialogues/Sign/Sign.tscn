@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://vht43vaoyo5t" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Cartel/Cartel.png" id="2_d71tv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qb4re"]
-size = Vector2(20, 32)
+size = Vector2(20, 19)
 
 [node name="Sign" type="CharacterBody2D" groups=["NPC"]]
+show_behind_parent = true
 script = ExtResource("1_242ad")
 
 [node name="Area2D" type="Area2D" parent="." groups=["NPC"]]
@@ -20,4 +21,5 @@ texture_filter = 3
 texture = ExtResource("2_d71tv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["NPC"]]
+position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_qb4re")
