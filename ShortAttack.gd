@@ -201,5 +201,6 @@ func _speak():
 			if npc.is_in_group("NPC"):
 				var dialogue_instance = dialogue_scene.instantiate()
 				dialogue_instance.dialogues = npc.get_parent().dialogues
-				dialogue_instance.global_position = dialogue.global_position
+				dialogue_instance.global_position = Vector2(0,125)
+				animation.play("idle "+clue+" wizard")
 				self.add_child(dialogue_instance)

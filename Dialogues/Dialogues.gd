@@ -25,13 +25,12 @@ func update_dialogue():
 
 # Función para ocultar el diálogo cuando se termine
 func hide_dialogue():
-	if current_dialogue_index !=0:
-		queue_free()
+	queue_free()
 	dialogue_box.visible=false
 	# Aquí puedes añadir lógica adicional para lo que debería suceder después del diálogo
 
 
 func _dialogue_pass():
-	if Input.is_action_just_pressed("Lure"):
+	if Input.is_action_just_pressed("Speak"):
 		current_dialogue_index += 1
 		update_dialogue()
