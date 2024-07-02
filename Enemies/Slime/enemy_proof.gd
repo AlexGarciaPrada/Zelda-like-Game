@@ -50,10 +50,11 @@ func _physics_process(delta):
 					weapons_in_area.erase(weapon)	
 			_short_attack_area()		
 			if life < 1:
+				if enemycollision!=null:
+					enemycollision.queue_free()
+				if enemycollision != null:
+					enemyarea.queue_free()
 				is_dying=true
-				enemyarea.queue_free()
-				enemycollision.queue_free()
-			
 				animation.play("death down")
 		
 	
@@ -87,9 +88,10 @@ func _movement():
 					animation.play("walk left")
 					clue = "left"	
 func _short_attack_area():
-	for weapon in enemyarea.get_overlapping_areas():
-		if (weapon.is_in_group("ShortAttack") or weapon.is_in_group("Lure")) && !weapons_in_area.has(weapon) && !weapon.is_visible_in_tree() && !weapon == null:
-			weapons_in_area.append(weapon)
+	if enemyarea != null && enemyarea.has_overlapping_areas && !is_dying: 
+		for weapon in enemyarea.get_overlapping_areas():
+			if (weapon.is_in_group("ShortAttack") or weapon.is_in_group("Lure")) && !weapons_in_area.has(weapon) && !weapon.is_visible_in_tree() && !weapon == null:
+				weapons_in_area.append(weapon)
 
 func _on_animated_sprite_2d_animation_finished():
 	if is_dying:
