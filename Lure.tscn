@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://85og5srfobln"]
 
-[ext_resource type="Script" path="res://Lure.gd" id="1_b8umh"]
+[ext_resource type="Script" path="res://Spells/Lure/Lure.gd" id="1_b8umh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goi7b"]
 size = Vector2(29.8763, 43.1579)

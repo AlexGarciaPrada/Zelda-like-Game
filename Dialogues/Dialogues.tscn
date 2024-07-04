@@ -55,8 +55,8 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -149.0
-offset_right = 204.0
-offset_bottom = 91.0
+offset_right = 233.0
+offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("CanvasTexture_oeb33")
@@ -75,8 +75,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
-visible = false
-position = Vector2(502.924, 795.322)
+position = Vector2(721.637, 811.696)
 rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_8uvse")
 animation = &"triangle"
