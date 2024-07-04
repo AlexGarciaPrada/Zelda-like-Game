@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://cf7ls4pa83kf5"]
 
 [ext_resource type="Script" path="res://Destructibles/Jar/Jar.gd" id="1_i41oi"]
-[ext_resource type="Texture2D" uid="uid://b73ue338fpsyg" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Vasija/Vasija.png" id="2_7cs3k"]
+[ext_resource type="Texture2D" uid="uid://b2epv7d2nnh3s" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Vasija/Vasija con tapa.png" id="2_rpnkc"]
 [ext_resource type="Texture2D" uid="uid://cajbp86mc0ukk" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Vasija/Vasija rota.png" id="3_wvucb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o3q25"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7cs3k")
+"texture": ExtResource("2_rpnkc")
 }],
 "loop": true,
 "name": &"idle",
@@ -25,7 +25,7 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6pkw"]
 
-[node name="Jar" type="CharacterBody2D"]
+[node name="TapJar" type="CharacterBody2D"]
 show_behind_parent = true
 collision_layer = 7
 collision_mask = 7
