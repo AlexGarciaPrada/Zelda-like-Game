@@ -1,6 +1,6 @@
 [gd_scene load_steps=84 format=3 uid="uid://2ub8tjjgslhi"]
 
-[ext_resource type="Script" path="res://ShortAttack.gd" id="1_oux7l"]
+[ext_resource type="Script" path="res://Wizard.gd" id="1_oux7l"]
 [ext_resource type="Texture2D" uid="uid://drw8hnhfx6w5s" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Attack/Close Attack/Green/Abajo prota attack verde.png" id="3_sou3v"]
 [ext_resource type="Texture2D" uid="uid://dkt4kd4eks0j8" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Attack/Close Attack/Green/Izquierda prota attack verde.png" id="5_btylt"]
 [ext_resource type="Texture2D" uid="uid://b1rt7ejtw0kta" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Attack/Close Attack/Green/Derecha prota attack verde.png" id="7_7opwa"]
