@@ -110,6 +110,7 @@ func _speak():
 				dialogue_instance.global_position = Vector2(0,125)
 				animation.play("idle "+clue+" wizard")
 				self.add_child(dialogue_instance)
+
 #-----------------------Animaciones-----------------------
 func _on_animated_sprite_2d_animation_finished():
 	if is_attacking:
@@ -122,7 +123,6 @@ func is_not_acting():
 
 
 #-----------------------Físicas-----------------------
-
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Enemy") :
 		var enemy = area.get_parent()
@@ -158,7 +158,6 @@ func _on_area_2d_area_exited(area):
 		enemies_in_area.erase(area.get_parent())
 
 #----------------------- Hechizos-----------------------
-
 func _sorcery():
 	is_spelling=true
 	animation.play("spell attack "+clue+ " wizard")
@@ -170,12 +169,7 @@ func _lure():
 		var lure_instance = lure_scene.instantiate()
 		get_tree().get_current_scene().add_child(lure_instance)
 		lure_instance.global_position = global_position
-		var lure_animation = animation.duplicate()
-		lure_instance.add_child(lure_animation)
-		lure_instance.modulate.r=5
-		lure_instance.modulate.g=0
-		lure_instance.modulate.b=5
-		lure_animation.play("idle "+ clue+" wizard")
+	#	lure_instance.get_animation().play("idle")
 		
 func _fireball():
 	if Input.is_action_just_pressed("FireBall"):
