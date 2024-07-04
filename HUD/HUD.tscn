@@ -30,7 +30,7 @@ text = "Life:
 
 [node name="Dialogues" parent="." instance=ExtResource("2_3y1ny")]
 layout_mode = 1
-offset_left = 56.0
-offset_top = 224.0
-offset_right = 0.0
-offset_bottom = -60.0
+offset_left = 1106.75
+offset_top = 436.0
+offset_right = 1050.75
+offset_bottom = 152.0
