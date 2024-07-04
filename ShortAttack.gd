@@ -10,8 +10,6 @@ var SPEED= 300
 @onready var fireball_scene = preload("res://FireBall.tscn")
 @onready var lure_scene = preload("res://Lure.tscn")
 @onready var dialogue_scene = preload("res://Dialogues/Dialogues.tscn")
-@onready var life_label = $Camera2D/Label
-@onready var dialogue = $Camera2D/Dialogues
 var life = 10
 #await get_tree().create_timer(5).timeout Para acordarme
 var enemies_in_area = []
@@ -28,7 +26,6 @@ var knockback_speed = 300
 
 func _physics_process(delta):
 	if !Singleton.is_stopped:
-		life_label.text = "Life:"+ str(life)
 		if knockback_mode:
 			_knockback()
 			if is_not_acting():
@@ -46,25 +43,9 @@ func _physics_process(delta):
 			_lure()
 			_short_attack()
 			_speak()
-func _inmunity():
-	current_frame +=1
-	if current_frame >= 60:
-		selfarea.disable_mode=false
-		inmunity_mode=false
-		current_frame=0
-		if !enemies_in_area.is_empty():
-			knockback_mode=true
-			life-=1
-			return
-		return
-func _knockback():
-	velocity = newdirection * knockback_speed
-	move_and_slide()
-	selfarea.disable_mode=true
-	current_frame +=1
-	if current_frame > 20:
-		inmunity_mode = true
-		knockback_mode=false
+
+#-----------------------Acciones Básicas-----------------------
+
 func _movement():
 	var directionx = Input.get_axis("ui_left", "ui_right")
 	var directiony = Input.get_axis("ui_up", "ui_down")
@@ -92,9 +73,6 @@ func _movement():
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 		animation.play("idle " + clue+ " wizard")
 	move_and_slide()
-func _run():
-	if Input.is_key_pressed(KEY_CTRL):
-		velocity *= 3
 
 func _short_attack():
 	if Input.is_action_just_pressed("Attack") and is_not_previously_attacking() and is_not_acting:
@@ -120,12 +98,63 @@ func _hide_weapons():
 func is_not_previously_attacking() -> bool:
 	return !weaponr.visible and !weaponl.visible and !weaponu.visible and !weapond.visible
 
+func _speak():
+	if Input.is_action_just_pressed("Speak") && clue=="up":
+		for npc in area.get_overlapping_areas():
+			if npc.is_in_group("NPC"):
+				var dialogue_instance = dialogue_scene.instantiate()
+				dialogue_instance.dialogues = npc.get_parent().dialogues
+				dialogue_instance.global_position = Vector2(0,125)
+				animation.play("idle "+clue+" wizard")
+				self.add_child(dialogue_instance)
+#-----------------------Animaciones-----------------------
 func _on_animated_sprite_2d_animation_finished():
 	if is_attacking:
 		is_attacking = false
 		_hide_weapons()
 	elif is_spelling:
 		is_spelling=false	
+func is_not_acting():
+	return !is_attacking and !is_spelling
+
+
+#-----------------------Físicas-----------------------
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("Enemy") :
+		var enemy = area.get_parent()
+		enemies_in_area.append(enemy)
+		if !knockback_mode && !inmunity_mode:
+			knockback_mode=true
+			newdirection = (position - enemy.position).normalized()
+			life-=1
+
+func _inmunity():
+	current_frame +=1
+	if current_frame >= 60:
+		selfarea.disable_mode=false
+		inmunity_mode=false
+		current_frame=0
+		if !enemies_in_area.is_empty():
+			knockback_mode=true
+			life-=1
+			return
+		return
+		
+func _knockback():
+	velocity = newdirection * knockback_speed
+	move_and_slide()
+	selfarea.disable_mode=true
+	current_frame +=1
+	if current_frame > 20:
+		inmunity_mode = true
+		knockback_mode=false
+		
+func _on_area_2d_area_exited(area):
+	if area.is_in_group("Enemy"):
+		enemies_in_area.erase(area.get_parent())
+
+#----------------------- Hechizos-----------------------
 
 func _sorcery():
 	is_spelling=true
@@ -176,31 +205,3 @@ func _invisiblity():
 		modulate.a8=255
 		is_invisible = false
 	
-func is_not_acting():
-	return !is_attacking and !is_spelling
-
-	
-
-func _on_area_2d_area_entered(area):
-	if area.is_in_group("Enemy") :
-		var enemy = area.get_parent()
-		enemies_in_area.append(enemy)
-		if !knockback_mode && !inmunity_mode:
-			knockback_mode=true
-			newdirection = (position - enemy.position).normalized()
-			life-=1
-		
-
-
-func _on_area_2d_area_exited(area):
-	if area.is_in_group("Enemy"):
-		enemies_in_area.erase(area.get_parent())
-func _speak():
-	if Input.is_action_just_pressed("Speak") && clue=="up":
-		for npc in area.get_overlapping_areas():
-			if npc.is_in_group("NPC"):
-				var dialogue_instance = dialogue_scene.instantiate()
-				dialogue_instance.dialogues = npc.get_parent().dialogues
-				dialogue_instance.global_position = Vector2(0,125)
-				animation.play("idle "+clue+" wizard")
-				self.add_child(dialogue_instance)

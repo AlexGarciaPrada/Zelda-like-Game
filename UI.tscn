@@ -2,9 +2,20 @@
 
 [ext_resource type="Script" path="res://UI.gd" id="1_quuoh"]
 
-[node name="Ui" type="Camera2D"]
+[node name="UI" type="Camera2D"]
+zoom = Vector2(2, 2)
+drag_top_margin = 1.0
+editor_draw_limits = true
 script = ExtResource("1_quuoh")
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_contents = true
+offset_left = -280.0
+offset_top = -200.0
+offset_right = 211.0
+offset_bottom = -160.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+z_index = 100
+z_as_relative = false
+layout_mode = 2
