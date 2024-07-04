@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvs27p0ksp3or"
-path="res://.godot/imported/Prueba pared.png-1a7602b87cb8db0b413c4ce74542b5b2.ctex"
+uid="uid://bnyoq05waaobp"
+path="res://.godot/imported/Tileset altura.png-fb6aa2f15fa0dce8933a6155a5db6c17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Tileset/Bosque/Prueba pared.png"
-dest_files=["res://.godot/imported/Prueba pared.png-1a7602b87cb8db0b413c4ce74542b5b2.ctex"]
+source_file="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset altura.png"
+dest_files=["res://.godot/imported/Tileset altura.png-fb6aa2f15fa0dce8933a6155a5db6c17.ctex"]
 
 [params]
 
