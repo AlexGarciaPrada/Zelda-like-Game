@@ -9,6 +9,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_50vrn"]
 font = ExtResource("2_0u4bd")
 font_size = 40
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36nmn"]
 atlas = ExtResource("3_cn30n")
@@ -49,7 +50,7 @@ scale = Vector2(0.855, 0.855)
 transform = Transform2D(0.855, 0, 0, 0.855, 0, 0)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0.746242, 0.941535, 0.790966, 1)
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -75,6 +76,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -87,6 +89,7 @@ grow_vertical = 0
 texture = SubResource("CanvasTexture_oeb33")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(721.637, 810.526)
 rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_8uvse")
