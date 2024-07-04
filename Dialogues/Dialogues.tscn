@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://hqa8in30kvgo"]
+[gd_scene load_steps=8 format=3 uid="uid://hqa8in30kvgo"]
 
 [ext_resource type="Script" path="res://Dialogues/Dialogues.gd" id="1_yc7ly"]
 [ext_resource type="FontFile" uid="uid://e7fhnvqovtac" path="res://Assets Videojuego/Font/easvhs/easvhs.ttf" id="2_aefh2"]
@@ -14,14 +14,6 @@ font_size = 40
 atlas = ExtResource("3_cn30n")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q6jpi"]
-atlas = ExtResource("3_cn30n")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3nc2a"]
-atlas = ExtResource("3_cn30n")
-region = Rect2(0, 32, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_8uvse"]
 animations = [{
 "frames": [{
@@ -29,10 +21,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_36nmn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q6jpi")
+"texture": SubResource("AtlasTexture_36nmn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3nc2a")
+"texture": null
 }],
 "loop": true,
 "name": &"triangle",
@@ -83,6 +75,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+visible = false
 position = Vector2(502.924, 795.322)
 rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_8uvse")

@@ -8,6 +8,7 @@ var current_dialogue_index = 0
 # Referencias a los nodos Label y Button
 @onready var dialogue_label =$CanvasLayer/TextureRect/Label
 @onready var dialogue_box=$CanvasLayer
+@onready var triangle= $CanvasLayer/AnimatedSprite2D
 # Función para inicializar el diálogo
 func _ready():
 	Singleton.is_stopped = true
@@ -17,6 +18,11 @@ func _physics_process(delta):
 # Función para actualizar el texto del diálogo
 func update_dialogue():
 	if current_dialogue_index < dialogues.size():
+		if current_dialogue_index+1 < dialogues.size():
+			triangle.visible=true
+			triangle.play("triangle")
+		else:
+			triangle.visible=false
 		dialogue_label.text = dialogues[current_dialogue_index]
 	else:
 		Singleton.is_stopped = false
