@@ -7,8 +7,9 @@ var SPEED= 300
 @onready var weaponr = $Weapon2
 @onready var weaponl = $Weapon3
 @onready var weaponu = $Weapon4
-@onready var fireball_scene = preload("res://FireBall.tscn")
-@onready var lure_scene = preload("res://Lure.tscn")
+@onready var fireball_scene = preload("res://Spells/FireBall/FireBall.tscn")
+@onready var lure_scene = preload("res://Spells/Lure/Lure.tscn")
+@onready var spine_scene = preload("res://Spells/Spines/Spines.tscn")
 @onready var dialogue_scene = preload("res://Dialogues/Dialogues.tscn")
 var life = 10
 #await get_tree().create_timer(5).timeout Para acordarme
@@ -34,6 +35,7 @@ func _physics_process(delta):
 				_invisiblity()
 				_lure()
 				_short_attack()
+				_spines()
 		if inmunity_mode:
 			_inmunity()
 		if is_not_acting() && !knockback_mode:
@@ -43,6 +45,7 @@ func _physics_process(delta):
 			_lure()
 			_short_attack()
 			_speak()
+			_spines()
 
 #-----------------------Acciones Básicas-----------------------
 
@@ -179,7 +182,6 @@ func _fireball():
 		_sorcery()
 		var fireball_instance = fireball_scene.instantiate()
 		get_parent().add_child(fireball_instance)
-		fireball_instance.global_position = global_position # Set initial position to character's position
 		match clue:
 			"right":
 				fireball_instance.position = weaponr.global_position
@@ -205,3 +207,26 @@ func _invisiblity():
 		modulate.a8=255
 		is_invisible = false
 	
+func _spines():
+	if Input.is_action_just_pressed("Spine"):
+		_sorcery()
+		var spine_up_instance = spine_scene.instantiate()
+		var spine_left_instance = spine_scene.instantiate()
+		var spine_down_instance = spine_scene.instantiate()
+		var spine_right_instance = spine_scene.instantiate()
+		spine_up_instance.rotate(-PI/2)
+		spine_down_instance.rotate(PI/2)
+		spine_left_instance.rotate(PI)
+		spine_up_instance.velocity = Vector2(0, -spine_up_instance.SPEED)
+		spine_down_instance.velocity= Vector2(0, spine_down_instance.SPEED)
+		spine_left_instance.velocity= Vector2(-spine_left_instance.SPEED,0)
+		spine_right_instance.velocity= Vector2(spine_left_instance.SPEED,0)
+		get_parent().add_child(spine_up_instance)
+		get_parent().add_child(spine_left_instance)
+		get_parent().add_child(spine_down_instance)
+		get_parent().add_child(spine_right_instance)
+		spine_up_instance.global_position = weaponu.global_position
+		spine_left_instance.global_position = weaponl.global_position
+		spine_down_instance.global_position = weapond.global_position
+		spine_right_instance.global_position = weaponr.global_position
+		

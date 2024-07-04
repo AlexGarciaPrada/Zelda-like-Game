@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwd7ue680srnv"]
+
+[ext_resource type="Script" path="res://Spells/Spines/Spines.gd" id="1_d2n1i"]
+[ext_resource type="Texture2D" uid="uid://b2ngctql08klm" path="res://Assets Videojuego/Sprites/Hechizos/Espina/Pincho.png" id="2_j04ub"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jrl6q"]
+radius = 46.0977
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56jpw"]
+atlas = ExtResource("2_j04ub")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65f1h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56jpw")
+}],
+"loop": false,
+"name": &"spine",
+"speed": 5.0
+}]
+
+[node name="FireBall" type="CharacterBody2D" groups=["Weapon"]]
+scale = Vector2(0.36, 0.36)
+script = ExtResource("1_d2n1i")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Weapon"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Weapon"]]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, -11.405)
+shape = SubResource("CircleShape2D_jrl6q")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-2, 2.00001)
+scale = Vector2(6.45, 6.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 3
+scale = Vector2(4.205, 4.205)
+sprite_frames = SubResource("SpriteFrames_65f1h")
+animation = &"spine"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

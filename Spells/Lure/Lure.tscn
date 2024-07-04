@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://chqo7bcgcqqx2"]
 
-[ext_resource type="Script" path="res://Lure.gd" id="1_b8umh"]
+[ext_resource type="Script" path="res://Spells/Lure/Lure.gd" id="1_ijwbo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goi7b"]
 size = Vector2(29.8763, 43.1579)
@@ -13,7 +13,7 @@ light_mask = 2
 visibility_layer = 2
 collision_layer = 6
 collision_mask = 6
-script = ExtResource("1_b8umh")
+script = ExtResource("1_ijwbo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Lure"]]
 light_mask = 7
