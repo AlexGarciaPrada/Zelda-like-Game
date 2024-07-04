@@ -21,8 +21,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="FireBall" type="CharacterBody2D" groups=["Weapon"]]
-scale = Vector2(0.36, 0.36)
+[node name="Spines" type="CharacterBody2D" groups=["Weapon"]]
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_d2n1i")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Weapon"]]

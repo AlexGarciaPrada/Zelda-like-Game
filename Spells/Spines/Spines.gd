@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 600
+@export var SPEED = 600
 @onready var animation =$AnimatedSprite2D
 @onready var selfarea = $Area2D
 var collision = false
