@@ -218,6 +218,7 @@ func _spines():
 		spine_down_instance.rotate(PI/2)
 		spine_left_instance.rotate(PI)
 		spine_left_instance.scale.y = -spine_left_instance.scale.y
+		spine_up_instance.scale.y = -spine_up_instance.scale.y
 		spine_up_instance.velocity = Vector2(0, -spine_up_instance.SPEED)
 		spine_down_instance.velocity= Vector2(0, spine_down_instance.SPEED)
 		spine_left_instance.velocity= Vector2(-spine_left_instance.SPEED,0)
