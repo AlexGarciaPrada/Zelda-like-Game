@@ -13,11 +13,16 @@ config_version=5
 config/name="WeirdProject"
 run/main_scene="res://PruebasGuille.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/fullsize=false
 config/icon="res://icon.svg"
 
 [autoload]
 
 Singleton="*res://Singleton.gd"
+
+[display]
+
+window/size/resizable=false
 
 [input]
 
