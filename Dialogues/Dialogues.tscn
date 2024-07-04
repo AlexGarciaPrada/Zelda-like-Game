@@ -55,11 +55,13 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -149.0
-offset_right = 233.0
-offset_bottom = 144.0
+offset_left = 46.0
+offset_top = -142.737
+offset_right = 279.0
+offset_bottom = 150.263
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.906433, 0.719298)
 texture = SubResource("CanvasTexture_oeb33")
 
 [node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
@@ -81,16 +83,18 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -149.0
-offset_right = 233.0
-offset_bottom = -142.0
+offset_left = 46.0
+offset_top = -152.094
+offset_right = 279.0
+offset_bottom = -145.094
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.906421, 2)
 texture = SubResource("CanvasTexture_oeb33")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(721.637, 810.526)
+position = Vector2(725.146, 687.719)
 rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_8uvse")
 animation = &"triangle"

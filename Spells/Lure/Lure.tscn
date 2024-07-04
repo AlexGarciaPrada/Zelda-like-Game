@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://chqo7bcgcqqx2"]
+[gd_scene load_steps=4 format=3 uid="uid://chqo7bcgcqqx2"]
 
 [ext_resource type="Script" path="res://Spells/Lure/Lure.gd" id="1_ijwbo"]
-[ext_resource type="Texture2D" uid="uid://bg416ji0na3ga" path="res://Assets Videojuego/Sprites/Personajes/Modelo/Down/Idle/Abajo.png" id="2_jt8ar"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goi7b"]
 size = Vector2(29.8763, 43.1579)
@@ -9,23 +8,7 @@ size = Vector2(29.8763, 43.1579)
 [sub_resource type="CircleShape2D" id="CircleShape2D_udxh2"]
 radius = 55.109
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o7ayo"]
-atlas = ExtResource("2_jt8ar")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cboqe"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o7ayo")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
 [node name="Lure" type="CharacterBody2D" groups=["Lure", "Player"]]
-show_behind_parent = true
 light_mask = 2
 visibility_layer = 2
 collision_layer = 6
@@ -47,10 +30,3 @@ collision_mask = 2
 light_mask = 7
 visibility_layer = 7
 shape = SubResource("CircleShape2D_udxh2")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 3
-position = Vector2(0.72, 0)
-scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_cboqe")
-animation = &"idle"

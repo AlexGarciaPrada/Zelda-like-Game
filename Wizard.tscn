@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cb5i53jjjri1j" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Walk/Izquierda walk prota.png" id="16_4ultb"]
 [ext_resource type="Texture2D" uid="uid://d2tmnswrkn1af" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Up/Walk/walk up protagonista.png" id="17_l5p7h"]
 [ext_resource type="Texture2D" uid="uid://oudr7k6mrpwr" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Walk/Derecha walk prota.png" id="18_rr3e5"]
-[ext_resource type="PackedScene" uid="uid://bfp605ql41mo5" path="res://UI.tscn" id="19_frmkl"]
+[ext_resource type="PackedScene" uid="uid://ce6bwbo4htu22" path="res://HUD/HUD.tscn" id="19_shcxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glctq"]
 size = Vector2(34.3498, 45.6328)
@@ -584,7 +584,14 @@ position = Vector2(0.187358, -0.801252)
 scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_glctq")
 
-[node name="Camera2D" parent="." instance=ExtResource("19_frmkl")]
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Hud" parent="Camera2D" instance=ExtResource("19_shcxt")]
+offset_left = -414.388
+offset_top = -233.0
+offset_right = 414.112
+offset_bottom = 233.1
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
