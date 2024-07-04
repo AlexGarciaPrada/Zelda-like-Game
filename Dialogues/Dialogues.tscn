@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://hqa8in30kvgo"]
 
 [ext_resource type="Script" path="res://Dialogues/Dialogues.gd" id="1_yc7ly"]
-[ext_resource type="FontFile" uid="uid://e7fhnvqovtac" path="res://Assets Videojuego/Font/easvhs/easvhs.ttf" id="2_aefh2"]
+[ext_resource type="FontFile" uid="uid://bgcjl3ucwhxgk" path="res://Assets Videojuego/Font/pixellari/Pixellari.ttf" id="2_0u4bd"]
 [ext_resource type="Texture2D" uid="uid://cxaggwohq4n71" path="res://Assets Videojuego/Font/Triangulo.png" id="3_cn30n"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_oeb33"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_50vrn"]
-font = ExtResource("2_aefh2")
+font = ExtResource("2_0u4bd")
 font_size = 40
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36nmn"]
@@ -74,8 +74,20 @@ label_settings = SubResource("LabelSettings_50vrn")
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -149.0
+offset_right = 233.0
+offset_bottom = -142.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CanvasTexture_oeb33")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(721.637, 811.696)
+position = Vector2(721.637, 810.526)
 rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_8uvse")
 animation = &"triangle"
