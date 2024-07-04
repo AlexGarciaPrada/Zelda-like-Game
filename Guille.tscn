@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://crllaailugvpu"]
+[gd_scene load_steps=14 format=3 uid="uid://y2g32q7c1jtt"]
 
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="1_bqiox"]
 [ext_resource type="Texture2D" uid="uid://vl6sjjmopt4y" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset Bosque.png" id="2_r6g1l"]
 [ext_resource type="Texture2D" uid="uid://b27e866ewka1e" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Árbol/Arbol tileset.png" id="3_e47la"]
-[ext_resource type="Texture2D" uid="uid://k2iy3mmqlaru" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa.png" id="4_m2y64"]
+[ext_resource type="Texture2D" uid="uid://ctcpdhqvdoavo" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa.png" id="4_m2y64"]
 [ext_resource type="Texture2D" uid="uid://bnyoq05waaobp" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset altura.png" id="5_3c3y4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ao6mg"]
@@ -143,19 +143,19 @@ texture_region_size = Vector2i(32, 32)
 0:3/0 = 0
 0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:3/0/physics_layer_0/angular_velocity = 0.0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.71231, -16, 16, -16, 16, 5.48008, 16, 5.375, -4.125, 5.125)
 1:3/0 = 0
 1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:3/0/physics_layer_0/angular_velocity = 0.0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 3.625, -16, 3.625)
 2:3/0 = 0
 2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:3/0/physics_layer_0/angular_velocity = 0.0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 4.77297, -16, 4.77297)
 3:3/0 = 0
 3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:3/0/physics_layer_0/angular_velocity = 0.0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 2.65165, -16, 2.91682, -13.877, 2.91682, 5.03814, -16, 5.12652)
 
 [sub_resource type="TileSet" id="TileSet_2tdv0"]
 tile_size = Vector2i(32, 32)
