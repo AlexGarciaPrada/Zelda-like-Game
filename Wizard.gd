@@ -133,8 +133,10 @@ func _on_area_2d_area_entered(area):
 			life-=1
 
 func _inmunity():
+	collision_layer=6
 	current_frame +=1
 	if current_frame >= 60:
+		collision_layer=1
 		selfarea.disable_mode=false
 		inmunity_mode=false
 		current_frame=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://2ub8tjjgslhi"]
+[gd_scene load_steps=85 format=3 uid="uid://2ub8tjjgslhi"]
 
 [ext_resource type="Script" path="res://Wizard.gd" id="1_oux7l"]
 [ext_resource type="Texture2D" uid="uid://drw8hnhfx6w5s" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Attack/Close Attack/Green/Abajo prota attack verde.png" id="3_sou3v"]
@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ce6bwbo4htu22" path="res://HUD/HUD.tscn" id="19_shcxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glctq"]
-size = Vector2(34.3498, 45.6328)
+size = Vector2(23.0216, 41.8574)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_upgg6"]
 atlas = ExtResource("3_sou3v")
@@ -540,6 +540,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kt8v"]
+size = Vector2(46.0432, 46.0432)
+
 [node name="Wizard" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.695, 0.695)
 script = ExtResource("1_oux7l")
@@ -580,9 +583,7 @@ collision_layer = 5
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.187358, -0.801252)
-scale = Vector2(1.1, 1.1)
-shape = SubResource("RectangleShape2D_glctq")
+shape = SubResource("RectangleShape2D_1kt8v")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
