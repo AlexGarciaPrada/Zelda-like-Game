@@ -1,0 +1,100 @@
+[gd_scene load_steps=13 format=3 uid="uid://2ur73sh44opk"]
+
+[ext_resource type="Script" path="res://FireBall.gd" id="1_eo5ir"]
+[ext_resource type="Texture2D" uid="uid://cfk7esr8rgs4p" path="res://Assets Videojuego/Sprites/Hechizos/Fireball/Fireball.png" id="2_lo133"]
+[ext_resource type="Texture2D" uid="uid://co0g3yt6xhf5j" path="res://Assets Videojuego/Sprites/Hechizos/Fireball/Explosión fireball.png" id="2_x5wxa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jrl6q"]
+radius = 46.0977
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7oqs"]
+atlas = ExtResource("2_x5wxa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne42j"]
+atlas = ExtResource("2_x5wxa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvvpf"]
+atlas = ExtResource("2_x5wxa")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4mfy"]
+atlas = ExtResource("2_lo133")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urba3"]
+atlas = ExtResource("2_lo133")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5o2a"]
+atlas = ExtResource("2_lo133")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjkni"]
+atlas = ExtResource("2_lo133")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65f1h"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_p7oqs")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ne42j")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_tvvpf")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_o4mfy")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_urba3")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_c5o2a")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_cjkni")
+}],
+"loop": true,
+"name": &"fireball",
+"speed": 5.0
+}]
+
+[node name="FireBall" type="CharacterBody2D" groups=["Weapon"]]
+scale = Vector2(0.36, 0.36)
+script = ExtResource("1_eo5ir")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Weapon"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Weapon"]]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, -11.405)
+shape = SubResource("CircleShape2D_jrl6q")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-2, 2.00001)
+scale = Vector2(6.45, 6.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 3
+scale = Vector2(4.205, 4.205)
+sprite_frames = SubResource("SpriteFrames_65f1h")
+animation = &"explosion"
+frame = 2
+frame_progress = 1.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

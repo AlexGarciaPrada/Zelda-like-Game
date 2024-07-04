@@ -1,10 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://hqa8in30kvgo"]
+[gd_scene load_steps=10 format=3 uid="uid://hqa8in30kvgo"]
 
 [ext_resource type="Script" path="res://Dialogues/Dialogues.gd" id="1_yc7ly"]
+[ext_resource type="FontFile" uid="uid://e7fhnvqovtac" path="res://Assets Videojuego/Font/easvhs/easvhs.ttf" id="2_aefh2"]
+[ext_resource type="Texture2D" uid="uid://cxaggwohq4n71" path="res://Assets Videojuego/Font/Triangulo.png" id="3_cn30n"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_oeb33"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_50vrn"]
+font = ExtResource("2_aefh2")
+font_size = 40
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36nmn"]
+atlas = ExtResource("3_cn30n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6jpi"]
+atlas = ExtResource("3_cn30n")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nc2a"]
+atlas = ExtResource("3_cn30n")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8uvse"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36nmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6jpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nc2a")
+}],
+"loop": true,
+"name": &"triangle",
+"speed": 5.0
+}]
 
 [node name="Dialogues" type="Control"]
 layout_mode = 3
@@ -38,12 +71,19 @@ texture = SubResource("CanvasTexture_oeb33")
 
 [node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
 top_level = true
+texture_filter = 1
 clip_contents = true
 layout_mode = 0
-offset_left = 178.947
-offset_top = 540.351
-offset_right = 1063.95
-offset_bottom = 684.351
+offset_left = 130.994
+offset_top = 561.404
+offset_right = 1016.0
+offset_bottom = 705.404
 label_settings = SubResource("LabelSettings_50vrn")
-horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(502.924, 795.322)
+rotation = 3.14159
+sprite_frames = SubResource("SpriteFrames_8uvse")
+animation = &"triangle"
