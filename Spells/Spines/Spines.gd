@@ -1,11 +1,14 @@
 extends CharacterBody2D
 
 @export var SPEED = 600
+@export var duration = 0.2
 @onready var animation =$AnimatedSprite2D
 @onready var selfarea = $Area2D
 var collision = false
 func _ready():
 	animation.play("spine")
+	await get_tree().create_timer(duration).timeout
+	queue_free()
 func _physics_process(delta):
 	position += velocity * delta
 
