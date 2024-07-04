@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="1_4cap6"]
 [ext_resource type="PackedScene" uid="uid://btej75ff0gnky" path="res://Enemies/Slime/Slime.tscn" id="2_01vsq"]
 [ext_resource type="Texture2D" uid="uid://vl6sjjmopt4y" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset Bosque.png" id="3_qcrkx"]
-[ext_resource type="Texture2D" uid="uid://ctcpdhqvdoavo" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa.png" id="4_xa4d5"]
+[ext_resource type="Texture2D" uid="uid://k2iy3mmqlaru" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa.png" id="4_xa4d5"]
 [ext_resource type="Texture2D" uid="uid://b27e866ewka1e" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Árbol/Arbol tileset.png" id="5_5avbc"]
 [ext_resource type="Texture2D" uid="uid://vht43vaoyo5t" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Cartel/Cartel.png" id="6_ri4ia"]
 [ext_resource type="PackedScene" uid="uid://kq508wjfnsd2" path="res://Dialogues/Sign/Sign.tscn" id="7_ccjuv"]
