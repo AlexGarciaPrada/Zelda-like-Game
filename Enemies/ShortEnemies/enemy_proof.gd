@@ -55,7 +55,8 @@ func _physics_process(delta):
 				if enemycollision != null:
 					enemyarea.queue_free()
 				is_dying=true
-				animation.play("death down")
+				animation.play("death")
+				
 		
 	
 	
@@ -86,7 +87,9 @@ func _movement():
 					clue = "right"
 				elif direction.x < 0:
 					animation.play("walk left")
-					clue = "left"	
+					clue = "left"
+	else:
+		animation.play("idle "+ clue)	
 func _short_attack_area():
 	if enemyarea != null && enemyarea.has_overlapping_areas && !is_dying: 
 		for weapon in enemyarea.get_overlapping_areas():
