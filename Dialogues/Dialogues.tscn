@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://hqa8in30kvgo"]
+[gd_scene load_steps=4 format=3 uid="uid://hqa8in30kvgo"]
 
 [ext_resource type="Script" path="res://Dialogues/Dialogues.gd" id="1_yc7ly"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_oeb33"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_50vrn"]
 
 [node name="Dialogues" type="Control"]
 layout_mode = 3
@@ -42,3 +44,6 @@ offset_left = 178.947
 offset_top = 540.351
 offset_right = 1063.95
 offset_bottom = 684.351
+label_settings = SubResource("LabelSettings_50vrn")
+horizontal_alignment = 1
+vertical_alignment = 1
