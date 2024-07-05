@@ -21,7 +21,7 @@ animations = [{
 [node name="RotatingFireball" type="CharacterBody2D"]
 scale = Vector2(-1, -1)
 script = ExtResource("1_bpx5a")
-orbit_speed = 4.0
+orbit_speed = 3.0
 metadata/_edit_pinned_properties_ = [&"orbit_speed"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -1,15 +1,15 @@
 [gd_scene load_steps=41 format=3 uid="uid://drll14udosm8m"]
 
 [ext_resource type="Script" path="res://Enemies/ShortEnemies/enemy_proof.gd" id="1_4src3"]
-[ext_resource type="Texture2D" uid="uid://6aoqgh60lc5v" path="res://Assets Videojuego/Sprites/Enemigos/Mushroom/walk/Mushroom walk down.png" id="2_2i7o1"]
-[ext_resource type="Texture2D" uid="uid://bd0wbei74lvum" path="res://Assets Videojuego/Sprites/Enemigos/Mushroom/death/Mushroom death.png" id="2_bo0yh"]
-[ext_resource type="Texture2D" uid="uid://dqmpoqn1000vs" path="res://Assets Videojuego/Sprites/Enemigos/Mushroom/walk/Mushroom walk left.png" id="3_sml0b"]
-[ext_resource type="Texture2D" uid="uid://d1sinpjiuhrrn" path="res://Assets Videojuego/Sprites/Enemigos/Mushroom/idle/Mushroom idle down.png" id="3_ueghr"]
-[ext_resource type="Texture2D" uid="uid://dmwavtv1683n7" path="res://Assets Videojuego/Sprites/Enemigos/Mushroom/idle/Mushroom idle left.png" id="4_8s2ef"]
-[ext_resource type="Texture2D" uid="uid://f53pjcy0a6je" path="res://Assets Videojuego/Sprites/Enemigos/Mushroom/walk/Mushroom walk right.png" id="4_rekfv"]
-[ext_resource type="Texture2D" uid="uid://80v516tq7v4i" path="res://Assets Videojuego/Sprites/Enemigos/Mushroom/walk/Mushroom walk up.png" id="5_d084q"]
-[ext_resource type="Texture2D" uid="uid://w56848p756y7" path="res://Assets Videojuego/Sprites/Enemigos/Mushroom/idle/Mushroom idle right (1).png" id="5_maa50"]
-[ext_resource type="Texture2D" uid="uid://bgogquqhhemgl" path="res://Assets Videojuego/Sprites/Enemigos/Mushroom/idle/Mushroom idle up.png" id="6_gqu1e"]
+[ext_resource type="Texture2D" uid="uid://6aoqgh60lc5v" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/walk/Mushroom walk down.png" id="2_2i7o1"]
+[ext_resource type="Texture2D" uid="uid://bd0wbei74lvum" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/death/Mushroom death.png" id="2_bo0yh"]
+[ext_resource type="Texture2D" uid="uid://dqmpoqn1000vs" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/walk/Mushroom walk left.png" id="3_sml0b"]
+[ext_resource type="Texture2D" uid="uid://d1sinpjiuhrrn" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/idle/Mushroom idle down.png" id="3_ueghr"]
+[ext_resource type="Texture2D" uid="uid://dmwavtv1683n7" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/idle/Mushroom idle left.png" id="4_8s2ef"]
+[ext_resource type="Texture2D" uid="uid://f53pjcy0a6je" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/walk/Mushroom walk right.png" id="4_rekfv"]
+[ext_resource type="Texture2D" uid="uid://80v516tq7v4i" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/walk/Mushroom walk up.png" id="5_d084q"]
+[ext_resource type="Texture2D" uid="uid://w56848p756y7" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/idle/Mushroom idle right (1).png" id="5_maa50"]
+[ext_resource type="Texture2D" uid="uid://bgogquqhhemgl" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/idle/Mushroom idle up.png" id="6_gqu1e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_420e7"]
 
@@ -133,7 +133,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qujt2")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {

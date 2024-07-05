@@ -1,13 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://crllaailugvpu"]
+[gd_scene load_steps=22 format=3 uid="uid://crllaailugvpu"]
 
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="1_bqiox"]
 [ext_resource type="Texture2D" uid="uid://vl6sjjmopt4y" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset Bosque.png" id="2_r6g1l"]
 [ext_resource type="Texture2D" uid="uid://b27e866ewka1e" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Árbol/Arbol tileset.png" id="3_e47la"]
-[ext_resource type="Texture2D" uid="uid://ctcpdhqvdoavo" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa.png" id="4_m2y64"]
+[ext_resource type="Texture2D" uid="uid://k2iy3mmqlaru" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa.png" id="4_m2y64"]
 [ext_resource type="Texture2D" uid="uid://bnyoq05waaobp" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset altura.png" id="5_3c3y4"]
 [ext_resource type="PackedScene" uid="uid://kq508wjfnsd2" path="res://Dialogues/Sign/Sign.tscn" id="6_8oyiv"]
+[ext_resource type="Texture2D" uid="uid://dsapbma2bd8n7" path="res://Assets Videojuego/Sprites/Tileset/Bosque/puerta/puerta montaña cueva.png" id="6_qppfm"]
 [ext_resource type="PackedScene" uid="uid://burn3ir5takxb" path="res://Destructibles/Jar/Jar.tscn" id="7_iflao"]
 [ext_resource type="PackedScene" uid="uid://btej75ff0gnky" path="res://Enemies/Slime/Slime.tscn" id="8_fcjhr"]
+[ext_resource type="PackedScene" uid="uid://g6oh3aoqo30t" path="res://Enemies/EvilTree/EvilTree2.tscn" id="9_18xes"]
+[ext_resource type="PackedScene" uid="uid://drll14udosm8m" path="res://Enemies/Mushroom/Mushroom.tscn" id="10_q1kkd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ao6mg"]
 texture = ExtResource("2_r6g1l")
@@ -707,11 +710,19 @@ texture_region_size = Vector2i(32, 32)
 0:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:8/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tp4ep"]
+texture = ExtResource("6_qppfm")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_3174x"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5r7e0")
 sources/1 = SubResource("TileSetAtlasSource_gbm5b")
+sources/2 = SubResource("TileSetAtlasSource_tp4ep")
 
 [node name="Guille" type="Node2D"]
 
@@ -763,4 +774,10 @@ position = Vector2(-512, 135)
 position = Vector2(-481, 135)
 
 [node name="EnemyProof" parent="." instance=ExtResource("8_fcjhr")]
-position = Vector2(-537, -26)
+position = Vector2(100, 256)
+
+[node name="EnemyProof2" parent="." instance=ExtResource("9_18xes")]
+position = Vector2(350, -192)
+
+[node name="Mushroom" parent="." instance=ExtResource("10_q1kkd")]
+position = Vector2(291, 117)

@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ce6bwbo4htu22" path="res://HUD/HUD.tscn" id="19_shcxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glctq"]
-size = Vector2(34.3498, 45.6328)
+size = Vector2(33.0935, 40.9328)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_upgg6"]
 atlas = ExtResource("3_sou3v")
@@ -545,6 +545,7 @@ scale = Vector2(0.695, 0.695)
 script = ExtResource("1_oux7l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.719425, -3.59712)
 shape = SubResource("RectangleShape2D_glctq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -580,7 +581,7 @@ collision_layer = 5
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.187358, -0.801252)
+position = Vector2(0.187358, -1.94739)
 scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_glctq")
 

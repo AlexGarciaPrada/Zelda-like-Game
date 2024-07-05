@@ -98,6 +98,7 @@ func _short_attack_area():
 
 func _on_animated_sprite_2d_animation_finished():
 	if is_dying:
+		animation.visible=false
 		queue_free()
 func get_objects_within_distance(group_name, distance):
 	var nodes_in_group = get_tree().get_nodes_in_group(group_name)

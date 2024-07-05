@@ -1,17 +1,34 @@
-[gd_scene load_steps=27 format=3 uid="uid://g6oh3aoqo30t"]
+[gd_scene load_steps=32 format=3 uid="uid://g6oh3aoqo30t"]
 
 [ext_resource type="Script" path="res://Enemies/ShortEnemies/enemy_proof.gd" id="1_a8p38"]
-[ext_resource type="Texture2D" uid="uid://b4n8hv35ccbgy" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/árbol maligno idle.png" id="2_y3uj0"]
-[ext_resource type="Texture2D" uid="uid://c3j8mcbkn1idj" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk abajo.png" id="3_tg7v1"]
-[ext_resource type="Texture2D" uid="uid://dy2qy2sqmkiwd" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk izquierda.png" id="4_vxlok"]
-[ext_resource type="Texture2D" uid="uid://dxg0sjvyop2qv" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk derecha.png" id="5_f5jfw"]
-[ext_resource type="Texture2D" uid="uid://50urflfb2yd7" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk arriba.png" id="6_cvc3y"]
+[ext_resource type="Texture2D" uid="uid://uk0a23x12wro" path="res://Assets Videojuego/Sprites/Humo/Explosion humo.png" id="2_532th"]
+[ext_resource type="Texture2D" uid="uid://b4n8hv35ccbgy" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Árbol maligno/walk/árbol maligno idle.png" id="2_y3uj0"]
+[ext_resource type="Texture2D" uid="uid://c3j8mcbkn1idj" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Árbol maligno/walk/arbol maligno walk abajo.png" id="3_tg7v1"]
+[ext_resource type="Texture2D" uid="uid://dy2qy2sqmkiwd" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Árbol maligno/walk/arbol maligno walk izquierda.png" id="4_vxlok"]
+[ext_resource type="Texture2D" uid="uid://dxg0sjvyop2qv" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Árbol maligno/walk/arbol maligno walk derecha.png" id="5_f5jfw"]
+[ext_resource type="Texture2D" uid="uid://50urflfb2yd7" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Árbol maligno/walk/arbol maligno walk arriba.png" id="6_cvc3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_420e7"]
 size = Vector2(60, 60)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_18ce5"]
 radius = 28.0179
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsw6q"]
+atlas = ExtResource("2_532th")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v180"]
+atlas = ExtResource("2_532th")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbv3r"]
+atlas = ExtResource("2_532th")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwpdq"]
+atlas = ExtResource("2_532th")
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4w527"]
 atlas = ExtResource("2_y3uj0")
@@ -83,6 +100,26 @@ region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4kf1g"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsw6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v180")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbv3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwpdq")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4w527")
@@ -208,7 +245,7 @@ shape = SubResource("CircleShape2D_18ce5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
 texture_filter = 3
 sprite_frames = SubResource("SpriteFrames_4kf1g")
-animation = &"idle right"
+animation = &"death"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

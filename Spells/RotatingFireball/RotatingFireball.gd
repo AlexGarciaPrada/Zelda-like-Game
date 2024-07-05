@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 var center = Node2D
 @export var orbit_radius: float = 50.0
-@export var orbit_speed: float = 4.0  # Radianes por segundo
+@export var orbit_speed: float = 3.0  # Radianes por segundo
 var angle: float = 0.0
 
 func _ready():
