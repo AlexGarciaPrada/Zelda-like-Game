@@ -8,4 +8,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	life_label.text = "Life: "+ str(get_parent().get_parent().life)
+	life_label.text = str(get_parent().get_parent().life)
