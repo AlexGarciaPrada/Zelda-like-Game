@@ -8,7 +8,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_50vrn"]
 font = ExtResource("2_0u4bd")
-font_size = 40
+font_size = 50
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36nmn"]
@@ -69,12 +69,12 @@ top_level = true
 texture_filter = 1
 clip_contents = true
 layout_mode = 0
-offset_left = 130.994
-offset_top = 561.404
-offset_right = 1016.0
-offset_bottom = 705.404
+offset_left = 97.0
+offset_top = 538.0
+offset_right = 1269.0
+offset_bottom = 683.0
+text = "Hola"
 label_settings = SubResource("LabelSettings_50vrn")
-vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
@@ -94,7 +94,7 @@ texture = SubResource("CanvasTexture_oeb33")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(725.146, 687.719)
+position = Vector2(715.5, 687.719)
 rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_8uvse")
 animation = &"triangle"
