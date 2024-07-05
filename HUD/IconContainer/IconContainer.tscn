@@ -12,12 +12,12 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 64.0
 
-[node name="ColorRect" type="ColorRect" parent="Panel"]
+[node name="TextureRect" type="TextureRect" parent="Panel"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="Panel/ColorRect"]
+[node name="Label" type="Label" parent="Panel/TextureRect"]
 layout_mode = 0
 offset_top = 40.0
 offset_right = 40.0

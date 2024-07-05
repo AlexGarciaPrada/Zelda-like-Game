@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce6bwbo4htu22"]
+[gd_scene load_steps=9 format=3 uid="uid://ce6bwbo4htu22"]
 
 [ext_resource type="Script" path="res://HUD/HUD.gd" id="1_fhhq4"]
 [ext_resource type="PackedScene" uid="uid://hqa8in30kvgo" path="res://Dialogues/Dialogues.tscn" id="2_3y1ny"]
 [ext_resource type="FontFile" uid="uid://bgcjl3ucwhxgk" path="res://Assets Videojuego/Font/pixellari/Pixellari.ttf" id="2_ftl7u"]
 [ext_resource type="Texture2D" uid="uid://dsle5dy1ns6ts" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Vida/Corazón.png" id="3_kosq6"]
 [ext_resource type="PackedScene" uid="uid://ds6ch8x7ykk8f" path="res://HUD/IconContainer/IconContainer.tscn" id="5_pgnq1"]
+[ext_resource type="PackedScene" uid="uid://dfo17tgk3shw0" path="res://HUD/Inventory/Inventory.tscn" id="6_jqvny"]
+[ext_resource type="PackedScene" uid="uid://d0ie82c4ckf8b" path="res://HUD/Icon/Icon.tscn" id="7_y2afp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i2n0l"]
 font = ExtResource("2_ftl7u")
@@ -104,3 +106,12 @@ label_text = "9"
 [node name="IconContainer10" parent="GridContainer" instance=ExtResource("5_pgnq1")]
 layout_mode = 2
 label_text = "0"
+
+[node name="Inventory" parent="." instance=ExtResource("6_jqvny")]
+offset_left = 248.0
+offset_top = 120.0
+offset_right = 248.0
+offset_bottom = 120.0
+
+[node name="Icon" parent="." instance=ExtResource("7_y2afp")]
+layout_mode = 1

@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dfo17tgk3shw0"]
+[gd_scene load_steps=2 format=3 uid="uid://dfo17tgk3shw0"]
+
+[ext_resource type="PackedScene" uid="uid://d04ir3lntdrb1" path="res://HUD/InventoryContainer/InventoryContainer.tscn" id="1_8p7hw"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -6,6 +8,80 @@ anchors_preset = 0
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-columns = 16
+offset_right = 544.0
+offset_bottom = 192.0
+theme_override_constants/h_separation = 70
+theme_override_constants/v_separation = 70
+columns = 8
+
+[node name="InventoryContainer" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer2" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer3" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer4" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer5" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer6" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer7" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer8" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer9" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer10" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer11" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer12" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer13" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer14" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer15" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer16" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer17" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer18" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer19" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer20" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer21" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer22" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer23" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
+
+[node name="InventoryContainer24" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+layout_mode = 2
