@@ -75,6 +75,7 @@ offset_right = 1269.0
 offset_bottom = 683.0
 text = "Hola"
 label_settings = SubResource("LabelSettings_50vrn")
+horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
