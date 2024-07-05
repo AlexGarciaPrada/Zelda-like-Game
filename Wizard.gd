@@ -10,6 +10,7 @@ var SPEED= 300
 @onready var fireball_scene = preload("res://Spells/FireBall/FireBall.tscn")
 @onready var lure_scene = preload("res://Spells/Lure/Lure.tscn")
 @onready var spine_scene = preload("res://Spells/Spines/Spines.tscn")
+@onready var rotatefireball_scene = preload("res://Spells/RotatingFireball/RotatingFireball.tscn")
 @onready var dialogue_scene = preload("res://Dialogues/Dialogues.tscn")
 var life = 10
 #await get_tree().create_timer(5).timeout Para acordarme
@@ -36,6 +37,7 @@ func _physics_process(delta):
 				_lure()
 				_short_attack()
 				_spines()
+				_rotatefireball()
 		if inmunity_mode:
 			_inmunity()
 		if is_not_acting() && !knockback_mode:
@@ -46,6 +48,7 @@ func _physics_process(delta):
 			_short_attack()
 			_speak()
 			_spines()
+			_rotatefireball()
 
 #-----------------------Acciones Básicas-----------------------
 
@@ -228,3 +231,9 @@ func _spines():
 		spine_down_instance.global_position = weapond.global_position
 		spine_right_instance.global_position = weaponr.global_position
 		
+func _rotatefireball():
+	if Input.is_action_just_pressed("RotateFireball"):
+		_sorcery()
+		var rotatefireball_instance = rotatefireball_scene.instantiate()
+		rotatefireball_instance.center = self
+		get_parent().add_child(rotatefireball_instance)

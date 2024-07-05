@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cwxiw758l4od5" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Idle/Izquierda idle prota.png" id="9_7jxq4"]
 [ext_resource type="Texture2D" uid="uid://celmmawhxcnvp" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Up/Attack/Close Attack/Green/Arriba prota attack verde (1).png" id="9_nih7w"]
 [ext_resource type="Texture2D" uid="uid://cplfff6ck2t50" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Attack/Large Attack/Green/Abajo prota attack verde.png" id="10_bqqb2"]
-[ext_resource type="PackedScene" uid="uid://bjbcy3deg87lu" path="res://ShortAttack.tscn" id="10_exo8t"]
 [ext_resource type="Texture2D" uid="uid://68l2jnw3qg0n" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Attack/Large Attack/Green/Izquierda prota attack verde.png" id="11_chbd5"]
 [ext_resource type="Texture2D" uid="uid://b7hss45ro8yd0" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Up/Idle/Arriba idle prota.png" id="11_mrr0d"]
 [ext_resource type="Texture2D" uid="uid://crnmtdutdpu5x" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Idle/Derecha idle prota.png" id="11_rfj4j"]
@@ -17,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dej67sfcvt0up" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Walk/walk abajo prota.png" id="14_8rqe3"]
 [ext_resource type="Texture2D" uid="uid://cb5i53jjjri1j" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Walk/Izquierda walk prota.png" id="16_4ultb"]
 [ext_resource type="Texture2D" uid="uid://d2tmnswrkn1af" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Up/Walk/walk up protagonista.png" id="17_l5p7h"]
+[ext_resource type="PackedScene" uid="uid://bjbcy3deg87lu" path="res://Spells/ShortAttack/ShortAttack.tscn" id="18_i03lr"]
 [ext_resource type="Texture2D" uid="uid://oudr7k6mrpwr" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Walk/Derecha walk prota.png" id="18_rr3e5"]
 [ext_resource type="PackedScene" uid="uid://ce6bwbo4htu22" path="res://HUD/HUD.tscn" id="19_shcxt"]
 
@@ -553,24 +553,24 @@ scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_p3m2i")
 animation = &"idle down wizard"
 
-[node name="Weapon" parent="." instance=ExtResource("10_exo8t")]
+[node name="Weapon" parent="." instance=ExtResource("18_i03lr")]
 visible = false
 position = Vector2(0, 40)
 scale = Vector2(3.5, 3.5)
 
-[node name="Weapon2" parent="." instance=ExtResource("10_exo8t")]
+[node name="Weapon2" parent="." instance=ExtResource("18_i03lr")]
 visible = false
 position = Vector2(30, 0)
 rotation = 1.5708
 scale = Vector2(3.5, 3.5)
 
-[node name="Weapon3" parent="." instance=ExtResource("10_exo8t")]
+[node name="Weapon3" parent="." instance=ExtResource("18_i03lr")]
 visible = false
 position = Vector2(-30, 0)
 rotation = 1.5708
 scale = Vector2(3.5, 3.5)
 
-[node name="Weapon4" parent="." instance=ExtResource("10_exo8t")]
+[node name="Weapon4" parent="." instance=ExtResource("18_i03lr")]
 visible = false
 position = Vector2(0, -40)
 scale = Vector2(3.5, 3.5)

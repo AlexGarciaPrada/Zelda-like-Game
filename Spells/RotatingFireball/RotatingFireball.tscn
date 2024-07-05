@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://k22sg8y6b5jh"]
+
+[ext_resource type="Script" path="res://Spells/RotatingFireball/RotatingFireball.gd" id="1_bpx5a"]
+[ext_resource type="Texture2D" uid="uid://djo6tk2crp8tm" path="res://Assets Videojuego/Sprites/Hechizos/Rotate Fireball/Bola de fuego orbitar.png" id="2_yrud5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3jt8"]
+atlas = ExtResource("2_yrud5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hgsnl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3jt8")
+}],
+"loop": true,
+"name": &"orbit",
+"speed": 5.0
+}]
+
+[node name="RotatingFireball" type="CharacterBody2D"]
+scale = Vector2(-1, -1)
+script = ExtResource("1_bpx5a")
+orbit_speed = 4.0
+metadata/_edit_pinned_properties_ = [&"orbit_speed"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 3
+position = Vector2(0, 7)
+rotation = 6.28319
+sprite_frames = SubResource("SpriteFrames_hgsnl")
+animation = &"orbit"
+frame_progress = 0.793127
