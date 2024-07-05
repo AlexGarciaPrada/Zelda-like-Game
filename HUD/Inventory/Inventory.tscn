@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dfo17tgk3shw0"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 16
