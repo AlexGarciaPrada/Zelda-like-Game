@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://cwplidr6mb6j3"]
+[gd_scene load_steps=18 format=3 uid="uid://cwplidr6mb6j3"]
 
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="1_4cap6"]
 [ext_resource type="PackedScene" uid="uid://btej75ff0gnky" path="res://Enemies/Slime/Slime.tscn" id="2_01vsq"]
 [ext_resource type="Texture2D" uid="uid://vl6sjjmopt4y" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset Bosque.png" id="3_qcrkx"]
-[ext_resource type="Texture2D" uid="uid://k2iy3mmqlaru" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa.png" id="4_xa4d5"]
+[ext_resource type="Texture2D" uid="uid://ctcpdhqvdoavo" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa.png" id="4_xa4d5"]
 [ext_resource type="Texture2D" uid="uid://b27e866ewka1e" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Árbol/Arbol tileset.png" id="5_5avbc"]
 [ext_resource type="Texture2D" uid="uid://vht43vaoyo5t" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Cartel/Cartel.png" id="6_ri4ia"]
 [ext_resource type="PackedScene" uid="uid://kq508wjfnsd2" path="res://Dialogues/Sign/Sign.tscn" id="7_ccjuv"]
 [ext_resource type="PackedScene" uid="uid://burn3ir5takxb" path="res://Destructibles/Jar/Jar.tscn" id="8_d5h05"]
 [ext_resource type="PackedScene" uid="uid://drll14udosm8m" path="res://Enemies/Mushroom/Mushroom.tscn" id="9_snssf"]
+[ext_resource type="PackedScene" uid="uid://g6oh3aoqo30t" path="res://Enemies/EvilTree/EvilTree2.tscn" id="10_mq8f0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rnmj"]
 texture = ExtResource("3_qcrkx")
@@ -628,3 +629,9 @@ position = Vector2(-188, -68)
 [node name="Sign3" parent="." instance=ExtResource("7_ccjuv")]
 position = Vector2(-206, -186)
 dialogues = ["Dragones rojos", "Hola Marco"]
+
+[node name="EnemyProof2" parent="." instance=ExtResource("10_mq8f0")]
+position = Vector2(358, 29)
+
+[node name="EnemyProof3" parent="." instance=ExtResource("10_mq8f0")]
+position = Vector2(254, -91)

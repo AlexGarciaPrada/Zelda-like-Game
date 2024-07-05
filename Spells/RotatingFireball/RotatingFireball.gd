@@ -28,4 +28,4 @@ func update_position():
 
 func update_rotation():
 	var direction = Vector2(sin(angle),cos(angle))
-	rotation = -direction.angle()
+	rotation = -direction.angle() +90

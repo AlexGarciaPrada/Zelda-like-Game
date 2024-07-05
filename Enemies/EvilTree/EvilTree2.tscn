@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://g6oh3aoqo30t"]
 
-[ext_resource type="Script" path="res://Enemies/EvilTree/EvilTree2.gd" id="1_svufd"]
+[ext_resource type="Script" path="res://Enemies/ShortEnemies/enemy_proof.gd" id="1_a8p38"]
 [ext_resource type="Texture2D" uid="uid://b4n8hv35ccbgy" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/árbol maligno idle.png" id="2_y3uj0"]
 [ext_resource type="Texture2D" uid="uid://c3j8mcbkn1idj" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk abajo.png" id="3_tg7v1"]
 [ext_resource type="Texture2D" uid="uid://dy2qy2sqmkiwd" path="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk izquierda.png" id="4_vxlok"]
@@ -88,7 +88,31 @@ animations = [{
 "texture": SubResource("AtlasTexture_4w527")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idle down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y3uj0")
+}],
+"loop": true,
+"name": &"idle left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y3uj0")
+}],
+"loop": true,
+"name": &"idle right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y3uj0")
+}],
+"loop": true,
+"name": &"idle up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -163,7 +187,9 @@ animations = [{
 [node name="EnemyProof" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 6
 collision_mask = 6
-script = ExtResource("1_svufd")
+script = ExtResource("1_a8p38")
+range = 200
+life = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
 light_mask = 6
@@ -182,7 +208,7 @@ shape = SubResource("CircleShape2D_18ce5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
 texture_filter = 3
 sprite_frames = SubResource("SpriteFrames_4kf1g")
-animation = &"walk down"
+animation = &"idle right"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
