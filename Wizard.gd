@@ -11,7 +11,7 @@ var SPEED= 300
 @onready var lure_scene = preload("res://Spells/Lure/Lure.tscn")
 @onready var spine_scene = preload("res://Spells/Spines/Spines.tscn")
 @onready var dialogue_scene = preload("res://Dialogues/Dialogues.tscn")
-var life = 10
+var life = 5
 #await get_tree().create_timer(5).timeout Para acordarme
 var enemies_in_area = []
 var clue = "down"

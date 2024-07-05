@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://crllaailugvpu"]
+[gd_scene load_steps=18 format=3 uid="uid://crllaailugvpu"]
 
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="1_bqiox"]
 [ext_resource type="Texture2D" uid="uid://vl6sjjmopt4y" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset Bosque.png" id="2_r6g1l"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bnyoq05waaobp" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset altura.png" id="5_3c3y4"]
 [ext_resource type="PackedScene" uid="uid://kq508wjfnsd2" path="res://Dialogues/Sign/Sign.tscn" id="6_8oyiv"]
 [ext_resource type="PackedScene" uid="uid://burn3ir5takxb" path="res://Destructibles/Jar/Jar.tscn" id="7_iflao"]
+[ext_resource type="PackedScene" uid="uid://btej75ff0gnky" path="res://Enemies/Slime/Slime.tscn" id="8_fcjhr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ao6mg"]
 texture = ExtResource("2_r6g1l")
@@ -760,3 +761,6 @@ position = Vector2(-512, 135)
 
 [node name="Jar2" parent="." instance=ExtResource("7_iflao")]
 position = Vector2(-481, 135)
+
+[node name="EnemyProof" parent="." instance=ExtResource("8_fcjhr")]
+position = Vector2(-537, -26)
