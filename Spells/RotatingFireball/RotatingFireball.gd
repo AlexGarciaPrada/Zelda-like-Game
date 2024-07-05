@@ -29,3 +29,9 @@ func update_position():
 func update_rotation():
 	var direction = Vector2(sin(angle),cos(angle))
 	rotation = -direction.angle() +90
+
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("Enemy"):
+		queue_free()

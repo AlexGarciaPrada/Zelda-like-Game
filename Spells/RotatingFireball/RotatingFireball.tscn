@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://k22sg8y6b5jh"]
+[gd_scene load_steps=6 format=3 uid="uid://k22sg8y6b5jh"]
 
 [ext_resource type="Script" path="res://Spells/RotatingFireball/RotatingFireball.gd" id="1_bpx5a"]
 [ext_resource type="Texture2D" uid="uid://djo6tk2crp8tm" path="res://Assets Videojuego/Sprites/Hechizos/Rotate Fireball/Bola de fuego orbitar.png" id="2_yrud5"]
@@ -18,16 +18,31 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="RotatingFireball" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_6rm85"]
+radius = 8.06226
+
+[node name="RotatingFireball" type="CharacterBody2D" groups=["Weapon"]]
+light_mask = 7
+visibility_layer = 7
 scale = Vector2(-1, -1)
 script = ExtResource("1_bpx5a")
 orbit_speed = 3.0
 metadata/_edit_pinned_properties_ = [&"orbit_speed"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Weapon"]]
 texture_filter = 3
 position = Vector2(0, 7)
 rotation = 6.28319
 sprite_frames = SubResource("SpriteFrames_hgsnl")
 animation = &"orbit"
 frame_progress = 0.793127
+
+[node name="Area2D" type="Area2D" parent="." groups=["Weapon"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Weapon"]]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_6rm85")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
