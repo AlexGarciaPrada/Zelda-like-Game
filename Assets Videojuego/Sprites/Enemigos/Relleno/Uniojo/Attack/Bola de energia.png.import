@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4qdsag6uh5x7"
-path="res://.godot/imported/Bola de energia.png-c0552bc544b367fcc88d1d5016b9a8e2.ctex"
+path="res://.godot/imported/Bola de energia.png-f27cc618febd160c9181ffe96f35c5dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Enemigos/Uniojo/Attack/Bola de energia.png"
-dest_files=["res://.godot/imported/Bola de energia.png-c0552bc544b367fcc88d1d5016b9a8e2.ctex"]
+source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/Uniojo/Attack/Bola de energia.png"
+dest_files=["res://.godot/imported/Bola de energia.png-f27cc618febd160c9181ffe96f35c5dc.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm68qqosjd0li"
-path="res://.godot/imported/Uniojo attack arriba.png-4b83a44cbcbc28251e30c35d4786eb69.ctex"
+uid="uid://cnigtqnqhwd84"
+path="res://.godot/imported/Boss seta walk down.png-e5e4b848e491a05aa475e8eaedf8194b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/Uniojo/Attack/Uniojo attack arriba.png"
-dest_files=["res://.godot/imported/Uniojo attack arriba.png-4b83a44cbcbc28251e30c35d4786eb69.ctex"]
+source_file="res://Assets Videojuego/Sprites/Enemigos/Bosses/Seta gigante/Boss seta walk down.png"
+dest_files=["res://.godot/imported/Boss seta walk down.png-e5e4b848e491a05aa475e8eaedf8194b.ctex"]
 
 [params]
 

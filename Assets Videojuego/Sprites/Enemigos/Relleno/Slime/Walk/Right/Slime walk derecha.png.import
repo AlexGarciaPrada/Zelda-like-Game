@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cq7a105tdssnm"
-path="res://.godot/imported/Slime walk derecha.png-f4af26c2ac76064fb18a6fa199d87d95.ctex"
+path="res://.godot/imported/Slime walk derecha.png-daae12830fca90e15007e8bc7531dfca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Enemigos/Slime/Walk/Right/Slime walk derecha.png"
-dest_files=["res://.godot/imported/Slime walk derecha.png-f4af26c2ac76064fb18a6fa199d87d95.ctex"]
+source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/Slime/Walk/Right/Slime walk derecha.png"
+dest_files=["res://.godot/imported/Slime walk derecha.png-daae12830fca90e15007e8bc7531dfca.ctex"]
 
 [params]
 

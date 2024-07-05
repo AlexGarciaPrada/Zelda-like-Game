@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd0wbei74lvum"
-path="res://.godot/imported/Mushroom death.png-683a84cf77175263721f90bb703ce446.ctex"
+path="res://.godot/imported/Mushroom death.png-0e34c11ff1debe71f94a6ab4a7ec6996.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Enemigos/Mushroom/death/Mushroom death.png"
-dest_files=["res://.godot/imported/Mushroom death.png-683a84cf77175263721f90bb703ce446.ctex"]
+source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/death/Mushroom death.png"
+dest_files=["res://.godot/imported/Mushroom death.png-0e34c11ff1debe71f94a6ab4a7ec6996.ctex"]
 
 [params]
 

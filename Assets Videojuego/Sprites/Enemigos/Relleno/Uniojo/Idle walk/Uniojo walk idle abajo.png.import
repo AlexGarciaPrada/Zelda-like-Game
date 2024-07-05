@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://doiad38gaqkm1"
-path="res://.godot/imported/Uniojo walk idle abajo.png-2e681eaa50a040af0cd1da07346789a9.ctex"
+path="res://.godot/imported/Uniojo walk idle abajo.png-8d954c4ee6f7c0a772212590e92e84b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Enemigos/Uniojo/Idle walk/Uniojo walk idle abajo.png"
-dest_files=["res://.godot/imported/Uniojo walk idle abajo.png-2e681eaa50a040af0cd1da07346789a9.ctex"]
+source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/Uniojo/Idle walk/Uniojo walk idle abajo.png"
+dest_files=["res://.godot/imported/Uniojo walk idle abajo.png-8d954c4ee6f7c0a772212590e92e84b1.ctex"]
 
 [params]
 

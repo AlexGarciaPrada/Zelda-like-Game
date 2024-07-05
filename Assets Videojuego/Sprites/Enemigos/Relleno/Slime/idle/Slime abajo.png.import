@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgt3mmwftc584"
-path="res://.godot/imported/Slime abajo.png-7e91f0c3e8c0fe36a5e34ff3a265fdc6.ctex"
+path="res://.godot/imported/Slime abajo.png-56102c21cc6f35bc4a4a6f5d722a2e9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Enemigos/Slime/idle/Slime abajo.png"
-dest_files=["res://.godot/imported/Slime abajo.png-7e91f0c3e8c0fe36a5e34ff3a265fdc6.ctex"]
+source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/Slime/idle/Slime abajo.png"
+dest_files=["res://.godot/imported/Slime abajo.png-56102c21cc6f35bc4a4a6f5d722a2e9e.ctex"]
 
 [params]
 

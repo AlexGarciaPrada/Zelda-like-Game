@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://v6dmmhtww1c"
-path="res://.godot/imported/Uniojo attack derecha (1).png-621cd45662887a43b7f214bfccfb5bf3.ctex"
+path="res://.godot/imported/Uniojo attack derecha (1).png-fa70a37bd0779b9e463b14c006be9f80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Enemigos/Uniojo/Attack/Uniojo attack derecha (1).png"
-dest_files=["res://.godot/imported/Uniojo attack derecha (1).png-621cd45662887a43b7f214bfccfb5bf3.ctex"]
+source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/Uniojo/Attack/Uniojo attack derecha (1).png"
+dest_files=["res://.godot/imported/Uniojo attack derecha (1).png-fa70a37bd0779b9e463b14c006be9f80.ctex"]
 
 [params]
 

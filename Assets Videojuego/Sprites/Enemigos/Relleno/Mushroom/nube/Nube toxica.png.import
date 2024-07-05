@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv1s5v4fgm1sj"
-path="res://.godot/imported/Nube toxica.png-70229b96e47e20f6a5ffbb4733433534.ctex"
+path="res://.godot/imported/Nube toxica.png-641d6f10350d1a9c0ecec89dd90e6dfb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Enemigos/Mushroom/nube/Nube toxica.png"
-dest_files=["res://.godot/imported/Nube toxica.png-70229b96e47e20f6a5ffbb4733433534.ctex"]
+source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/nube/Nube toxica.png"
+dest_files=["res://.godot/imported/Nube toxica.png-641d6f10350d1a9c0ecec89dd90e6dfb.ctex"]
 
 [params]
 

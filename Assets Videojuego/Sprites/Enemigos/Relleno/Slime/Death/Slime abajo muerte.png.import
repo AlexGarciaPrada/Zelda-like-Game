@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5b86lktgbgvv"
-path="res://.godot/imported/Slime abajo muerte.png-d754469108d3b1a5592135082b81b451.ctex"
+path="res://.godot/imported/Slime abajo muerte.png-fad5dc84d2205dc03442e4c44bf240fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Enemigos/Slime/Death/Slime abajo muerte.png"
-dest_files=["res://.godot/imported/Slime abajo muerte.png-d754469108d3b1a5592135082b81b451.ctex"]
+source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/Slime/Death/Slime abajo muerte.png"
+dest_files=["res://.godot/imported/Slime abajo muerte.png-fad5dc84d2205dc03442e4c44bf240fc.ctex"]
 
 [params]
 

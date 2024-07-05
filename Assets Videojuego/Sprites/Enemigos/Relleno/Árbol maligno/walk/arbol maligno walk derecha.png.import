@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxg0sjvyop2qv"
-path="res://.godot/imported/arbol maligno walk derecha.png-d33aa729febc9b1ebc052f242d02af67.ctex"
+path="res://.godot/imported/arbol maligno walk derecha.png-7b86d7908436e902b1153efdad790497.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Enemigos/Árbol maligno/walk/arbol maligno walk derecha.png"
-dest_files=["res://.godot/imported/arbol maligno walk derecha.png-d33aa729febc9b1ebc052f242d02af67.ctex"]
+source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/Árbol maligno/walk/arbol maligno walk derecha.png"
+dest_files=["res://.godot/imported/arbol maligno walk derecha.png-7b86d7908436e902b1153efdad790497.ctex"]
 
 [params]
 
