@@ -1,27 +1,31 @@
-extends Control
+extends TextureRect
 
-@onready var icon = $TextureRect
-var dragging = false
-var drag_offset = Vector2()
-var mouse_over = false
+@onready var label = $Label
+@export var number = "1"
 
 func _ready():
-	# Asegura que el nodo reciba los eventos de entrada
-	set_process_input(true)
+	label.text = number
 
-func _input(event):
-	if event is InputEventMouseButton:
-		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT and mouse_over:
-			dragging = true
-			drag_offset = get_local_mouse_position() - icon.position
-		elif not event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			dragging = false
+func _get_drag_data(position):
+	var preview_texture = TextureRect.new()
+	preview_texture.texture = texture
+	preview_texture.expand_mode = 0
+	preview_texture.size = Vector2(30, 30)
+	
+	# Crear un nodo de Control para previsualizar el arrastre
+	var preview = Control.new()
+	preview.add_child(preview_texture)
+	 # Obtener la posición global del ratón y convertirla a coordenadas locales del preview
+	#var local_position = preview.global_to_local(mouse_position)
+	set_drag_preview(preview)
+	preview_texture.position = get_global_mouse_position()-preview.position
+	
+	return texture
 
-	if event is InputEventMouseMotion and dragging:
-		icon.position = event.position - drag_offset
+func _can_drop_data(position, data):
+	return data is Texture2D
 
-func _on_mouse_entered():
-	mouse_over = true
+func _drop_data(at_position, data):
+	texture = data
 
-func _on_mouse_exited():
-	mouse_over = false
+

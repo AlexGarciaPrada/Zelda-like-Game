@@ -1,11 +1,11 @@
 [gd_scene load_steps=43 format=3 uid="uid://btej75ff0gnky"]
 
 [ext_resource type="Script" path="res://Enemies/ShortEnemies/enemy_proof.gd" id="1_glkta"]
-[ext_resource type="Texture2D" uid="uid://dfyrgj87m436y" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Walk/Down/Slime walk abajo.png" id="2_h6nuv"]
-[ext_resource type="Texture2D" uid="uid://b5b86lktgbgvv" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Death/Slime abajo muerte.png" id="2_wsjvh"]
-[ext_resource type="Texture2D" uid="uid://hy68ftscip46" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Walk/Left/Slime walk izquierda.png" id="3_fcbfn"]
-[ext_resource type="Texture2D" uid="uid://cq7a105tdssnm" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Walk/Right/Slime walk derecha.png" id="4_kc18t"]
-[ext_resource type="Texture2D" uid="uid://bvsk5u18na5ku" path="res://Assets Videojuego/Sprites/Enemigos/Slime/Walk/Up/Slime walk arriba.png" id="5_imv6w"]
+[ext_resource type="Texture2D" uid="uid://dfyrgj87m436y" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Slime/Walk/Down/Slime walk abajo.png" id="2_h6nuv"]
+[ext_resource type="Texture2D" uid="uid://b5b86lktgbgvv" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Slime/Death/Slime abajo muerte.png" id="2_wsjvh"]
+[ext_resource type="Texture2D" uid="uid://hy68ftscip46" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Slime/Walk/Left/Slime walk izquierda.png" id="3_fcbfn"]
+[ext_resource type="Texture2D" uid="uid://cq7a105tdssnm" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Slime/Walk/Right/Slime walk derecha.png" id="4_kc18t"]
+[ext_resource type="Texture2D" uid="uid://bvsk5u18na5ku" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Slime/Walk/Up/Slime walk arriba.png" id="5_imv6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_420e7"]
 

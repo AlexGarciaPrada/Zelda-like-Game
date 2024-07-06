@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce6bwbo4htu22"]
+[gd_scene load_steps=8 format=3 uid="uid://ce6bwbo4htu22"]
 
 [ext_resource type="Script" path="res://HUD/HUD.gd" id="1_fhhq4"]
 [ext_resource type="PackedScene" uid="uid://hqa8in30kvgo" path="res://Dialogues/Dialogues.tscn" id="2_3y1ny"]
 [ext_resource type="FontFile" uid="uid://bgcjl3ucwhxgk" path="res://Assets Videojuego/Font/pixellari/Pixellari.ttf" id="2_ftl7u"]
 [ext_resource type="Texture2D" uid="uid://dsle5dy1ns6ts" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Vida/Corazón.png" id="3_kosq6"]
-[ext_resource type="PackedScene" uid="uid://ds6ch8x7ykk8f" path="res://HUD/IconContainer/IconContainer.tscn" id="5_pgnq1"]
 [ext_resource type="PackedScene" uid="uid://dfo17tgk3shw0" path="res://HUD/Inventory/Inventory.tscn" id="6_jqvny"]
 [ext_resource type="PackedScene" uid="uid://d0ie82c4ckf8b" path="res://HUD/Icon/Icon.tscn" id="7_y2afp"]
 
@@ -13,7 +12,7 @@ font = ExtResource("2_ftl7u")
 font_size = 30
 
 [node name="Hud" type="Control"]
-z_index = 3
+z_as_relative = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +22,6 @@ grow_vertical = 2
 script = ExtResource("1_fhhq4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-z_index = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -58,56 +56,58 @@ offset_bottom = 152.0
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 168.0
+offset_left = 144.0
 offset_top = 24.0
-offset_right = 208.0
+offset_right = 1174.0
 offset_bottom = 64.0
 rotation = -0.00305226
 scale = Vector2(0.640002, 0.600124)
-theme_override_constants/h_separation = 100
+theme_override_constants/h_separation = 70
 theme_override_constants/v_separation = 100
 columns = 10
 
-[node name="IconContainer" parent="GridContainer" instance=ExtResource("5_pgnq1")]
+[node name="TextureRect" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
 
-[node name="IconContainer2" parent="GridContainer" instance=ExtResource("5_pgnq1")]
+[node name="TextureRect2" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
-label_text = "2"
+texture = null
+number = "2"
 
-[node name="IconContainer3" parent="GridContainer" instance=ExtResource("5_pgnq1")]
+[node name="TextureRect3" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
-label_text = "3"
+number = "3"
 
-[node name="IconContainer4" parent="GridContainer" instance=ExtResource("5_pgnq1")]
+[node name="TextureRect4" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
-label_text = "4"
+number = "4"
 
-[node name="IconContainer5" parent="GridContainer" instance=ExtResource("5_pgnq1")]
+[node name="TextureRect5" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
-label_text = "5"
+number = "5"
 
-[node name="IconContainer6" parent="GridContainer" instance=ExtResource("5_pgnq1")]
+[node name="TextureRect6" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
-label_text = "6"
+number = "6"
 
-[node name="IconContainer7" parent="GridContainer" instance=ExtResource("5_pgnq1")]
+[node name="TextureRect7" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
-label_text = "7"
+number = "7"
 
-[node name="IconContainer8" parent="GridContainer" instance=ExtResource("5_pgnq1")]
+[node name="TextureRect8" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
-label_text = "8"
+number = "8"
 
-[node name="IconContainer9" parent="GridContainer" instance=ExtResource("5_pgnq1")]
+[node name="TextureRect9" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
-label_text = "9"
+number = "9"
 
-[node name="IconContainer10" parent="GridContainer" instance=ExtResource("5_pgnq1")]
+[node name="TextureRect10" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
-label_text = "0"
+number = "0"
 
 [node name="Inventory" parent="." instance=ExtResource("6_jqvny")]
+visible = false
 offset_left = 248.0
 offset_top = 120.0
 offset_right = 248.0
@@ -115,3 +115,7 @@ offset_bottom = 120.0
 
 [node name="Icon" parent="." instance=ExtResource("7_y2afp")]
 layout_mode = 1
+offset_left = 88.0
+offset_top = 200.0
+offset_right = 88.0
+offset_bottom = 200.0
