@@ -5,8 +5,10 @@
 [node name="Test" type="Node2D"]
 
 [node name="TextureRect" parent="." instance=ExtResource("1_lnjhs")]
+number = null
 
 [node name="TextureRect2" parent="." instance=ExtResource("1_lnjhs")]
 offset_left = 240.0
 offset_right = 280.0
 texture = null
+number = null

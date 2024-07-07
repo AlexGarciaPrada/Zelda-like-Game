@@ -761,7 +761,7 @@ layer_1/tile_data = PackedInt32Array(-18, 262145, 0, -17, 1, 0, -16, 196609, 0, 
 
 [node name="Sign" parent="." instance=ExtResource("6_8oyiv")]
 position = Vector2(-49, -156)
-dialogues = ["¡Bienvenido a la casa del herrero!", "Entra para comprar armas y mejorar tu inventario."]
+dialogues = ["¡Bienvenido a la casa del herrero!", "Entra para comprar armas y mejorar tu inventario.", "Hola que tal"]
 
 [node name="Sign2" parent="." instance=ExtResource("6_8oyiv")]
 position = Vector2(-549, 132)

@@ -12,7 +12,7 @@ font = ExtResource("2_ftl7u")
 font_size = 30
 
 [node name="Hud" type="Control"]
-z_as_relative = false
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,6 +68,7 @@ columns = 10
 
 [node name="TextureRect" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
+number = null
 
 [node name="TextureRect2" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
@@ -112,10 +113,3 @@ offset_left = 248.0
 offset_top = 120.0
 offset_right = 248.0
 offset_bottom = 120.0
-
-[node name="Icon" parent="." instance=ExtResource("7_y2afp")]
-layout_mode = 1
-offset_left = 88.0
-offset_top = 200.0
-offset_right = 88.0
-offset_bottom = 200.0
