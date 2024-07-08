@@ -204,6 +204,7 @@ func _fireball_1():
 			fireball_instance.position = weapond.global_position
 			fireball_instance.rotate(PI)
 			fireball_instance.velocity = Vector2(0,fireball_instance.SPEED)
+			
 func _invisiblity_1():
 	if Input.is_action_just_pressed("Invisiblity") && !is_invisible:
 		is_invisible = true
@@ -300,10 +301,12 @@ func _sorcery(element,spell,level):
 	animation.play("spell attack "+clue+ " wizard")
 	velocity = Vector2(0,0)
 	match element:
+		"":
+			hud._show_not_equipped_spell()
 		"fire":
 			match spell:
 				"fireball":
 					_fireball_1()
 				"rotatingfireball":
 					_rotatefireball_1()
-	
+		

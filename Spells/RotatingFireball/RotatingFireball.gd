@@ -21,7 +21,6 @@ func _process(delta):
 		update_rotation()
 		
 func update_position():
-	print(center)
 	var x = center.position.x + orbit_radius * cos(angle)
 	var y = center.position.y + orbit_radius * sin(angle)
 	position = Vector2(x, y)

@@ -2,7 +2,7 @@ extends TextureRect
 
 @onready var label = $Label
 @export var number = "1"
-var element =""
+@onready var element =""
 var spell = ""
 var level = 0
 
@@ -10,14 +10,15 @@ func _ready():
 	label.text = number
 	if self.texture != null:
 		_make_texture()
-	_get_element()
+		_get_element()
+		_get_spell()
+		_get_level()
+	
 func _make_texture():
 	var texture_name = self.texture.resource_path.get_file().get_basename()
 	var parts = texture_name.split("_")
 	element = parts[0]
-	print(element)
 	spell = parts[1]
-	print(spell)
 	level = parts[2]
 	
 func _get_drag_data(position):
@@ -44,17 +45,13 @@ func _can_drop_data(position, data):
 func _drop_data(at_position, data):
 	texture = data
 	_make_texture()
+	
 func _get_element():
-	print("Getting element:", element)
 	return element
 
 func _get_spell():
-	print("Getting spell:", spell)
 	return spell
 
 func _get_level():
-	print("Getting level:", level)
 	return level
 
-func create_new():
-	return self
