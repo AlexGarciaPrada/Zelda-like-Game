@@ -19,7 +19,7 @@ func _make_texture():
 	var parts = texture_name.split("_")
 	element = parts[0]
 	spell = parts[1]
-	level = parts[2]
+	level = parts[2].to_int()
 	
 func _get_drag_data(position):
 	var preview_texture = TextureRect.new()

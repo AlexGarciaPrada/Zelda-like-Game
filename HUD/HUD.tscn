@@ -1,13 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://ce6bwbo4htu22"]
+[gd_scene load_steps=16 format=3 uid="uid://ce6bwbo4htu22"]
 
 [ext_resource type="Script" path="res://HUD/HUD.gd" id="1_fhhq4"]
 [ext_resource type="PackedScene" uid="uid://hqa8in30kvgo" path="res://Dialogues/Dialogues.tscn" id="2_3y1ny"]
 [ext_resource type="FontFile" uid="uid://bgcjl3ucwhxgk" path="res://Assets Videojuego/Font/pixellari/Pixellari.ttf" id="2_ftl7u"]
 [ext_resource type="Texture2D" uid="uid://dsle5dy1ns6ts" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Vida/Corazón.png" id="3_kosq6"]
-[ext_resource type="Texture2D" uid="uid://c84ergdy1nemd" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fire_rotatingfireball_1.png" id="6_2mtkq"]
 [ext_resource type="PackedScene" uid="uid://dfo17tgk3shw0" path="res://HUD/Inventory/Inventory.tscn" id="6_jqvny"]
-[ext_resource type="Texture2D" uid="uid://bm1tc4h8pe3r8" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fire_fireball_1.png" id="7_s6457"]
+[ext_resource type="Texture2D" uid="uid://jmn7fe58xol0" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fireball/fire_fireball_1.png" id="6_s1cra"]
+[ext_resource type="Texture2D" uid="uid://bmj6ela2s3xll" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_1.png" id="7_uo3lf"]
 [ext_resource type="PackedScene" uid="uid://d0ie82c4ckf8b" path="res://HUD/Icon/Icon.tscn" id="7_y2afp"]
+[ext_resource type="Texture2D" uid="uid://fhy35j08bkyd" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_2.png" id="8_bqfob"]
+[ext_resource type="Texture2D" uid="uid://drqfc3qkdk2qg" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_3.png" id="9_s43ml"]
+[ext_resource type="Texture2D" uid="uid://5oo55cnjoq88" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_1.png" id="10_f1yot"]
+[ext_resource type="Texture2D" uid="uid://c0lhobfiumgrq" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_2.png" id="11_5djvm"]
+[ext_resource type="Texture2D" uid="uid://bmq3fixupmseh" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_3.png" id="11_hpa5c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i2n0l"]
 font = ExtResource("2_ftl7u")
@@ -75,31 +80,36 @@ columns = 10
 
 [node name="TextureRect" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
-texture = ExtResource("6_2mtkq")
+texture = ExtResource("6_s1cra")
 
 [node name="TextureRect2" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
-texture = ExtResource("7_s6457")
+texture = ExtResource("7_uo3lf")
 number = "2"
 
 [node name="TextureRect3" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
+texture = ExtResource("8_bqfob")
 number = "3"
 
 [node name="TextureRect4" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
+texture = ExtResource("9_s43ml")
 number = "4"
 
 [node name="TextureRect5" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
+texture = ExtResource("10_f1yot")
 number = "5"
 
 [node name="TextureRect6" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
+texture = ExtResource("11_5djvm")
 number = "6"
 
 [node name="TextureRect7" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
+texture = ExtResource("11_hpa5c")
 number = "7"
 
 [node name="TextureRect8" parent="GridContainer" instance=ExtResource("7_y2afp")]
