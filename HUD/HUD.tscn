@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ce6bwbo4htu22"]
+[gd_scene load_steps=9 format=3 uid="uid://ce6bwbo4htu22"]
 
 [ext_resource type="Script" path="res://HUD/HUD.gd" id="1_fhhq4"]
 [ext_resource type="PackedScene" uid="uid://hqa8in30kvgo" path="res://Dialogues/Dialogues.tscn" id="2_3y1ny"]
 [ext_resource type="FontFile" uid="uid://bgcjl3ucwhxgk" path="res://Assets Videojuego/Font/pixellari/Pixellari.ttf" id="2_ftl7u"]
 [ext_resource type="Texture2D" uid="uid://dsle5dy1ns6ts" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Vida/Corazón.png" id="3_kosq6"]
 [ext_resource type="PackedScene" uid="uid://dfo17tgk3shw0" path="res://HUD/Inventory/Inventory.tscn" id="6_jqvny"]
+[ext_resource type="Texture2D" uid="uid://c84ergdy1nemd" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire_rotatingfireball_1.png" id="6_vslh3"]
 [ext_resource type="PackedScene" uid="uid://d0ie82c4ckf8b" path="res://HUD/Icon/Icon.tscn" id="7_y2afp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i2n0l"]
@@ -68,11 +69,10 @@ columns = 10
 
 [node name="TextureRect" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
-number = null
+texture = ExtResource("6_vslh3")
 
 [node name="TextureRect2" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
-texture = null
 number = "2"
 
 [node name="TextureRect3" parent="GridContainer" instance=ExtResource("7_y2afp")]

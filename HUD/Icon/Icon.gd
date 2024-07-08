@@ -4,16 +4,22 @@ extends TextureRect
 @export var number = "1"
 var element =""
 var spell = ""
+var level = 0
 
 func _ready():
-	
 	label.text = number
 	if self.texture != null:
-		var texture_name = self.texture.resource_path.get_file().get_basename()
-		var parts = texture_name.split("_")
-		element = parts[0]
-		spell = parts[1]
-
+		_make_texture()
+	_get_element()
+func _make_texture():
+	var texture_name = self.texture.resource_path.get_file().get_basename()
+	var parts = texture_name.split("_")
+	element = parts[0]
+	print(element)
+	spell = parts[1]
+	print(spell)
+	level = parts[2]
+	
 func _get_drag_data(position):
 	var preview_texture = TextureRect.new()
 	preview_texture.texture = texture
@@ -31,17 +37,24 @@ func _get_drag_data(position):
 	
 	return texture
 
-func _input(event):
-	if event is InputEventMouseMotion:
-		var preview = get_drag_preview()
-		if preview:
-			preview.set_position(event.position + Vector2(-15, -15))
-
 
 func _can_drop_data(position, data):
 	return data is Texture2D
 
 func _drop_data(at_position, data):
 	texture = data
+	_make_texture()
+func _get_element():
+	print("Getting element:", element)
+	return element
 
+func _get_spell():
+	print("Getting spell:", spell)
+	return spell
 
+func _get_level():
+	print("Getting level:", level)
+	return level
+
+func create_new():
+	return self

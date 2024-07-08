@@ -12,6 +12,10 @@ var SPEED= 300
 @onready var spine_scene = preload("res://Spells/Spines/Spines.tscn")
 @onready var rotatefireball_scene = preload("res://Spells/RotatingFireball/RotatingFireball.tscn")
 @onready var dialogue_scene = preload("res://Dialogues/Dialogues.tscn")
+@onready var icon_spell = preload("res://HUD/Icon/Icon.tscn")
+@onready var hud = $Camera2D/Hud
+
+
 var life = 5
 #await get_tree().create_timer(5).timeout Para acordarme
 var enemies_in_area = []
@@ -32,23 +36,33 @@ func _physics_process(delta):
 			_knockback()
 			if is_not_acting():
 				_movement()
-				_fireball()
-				_invisiblity()
-				_lure()
+				_spell_10()
+				_spell_1()
+				_spell_2()
+				_spell_3()
+				_spell_4()
+				_spell_5()
+				_spell_6()
+				_spell_7()
+				_spell_8()
+				_spell_9()
 				_short_attack()
-				_spines()
-				_rotatefireball()
 		if inmunity_mode:
 			_inmunity()
 		if is_not_acting() && !knockback_mode:
 			_movement()
-			_fireball()
-			_invisiblity()
-			_lure()
+			_spell_10()
+			_spell_1()
+			_spell_2()
+			_spell_3()
+			_spell_4()
+			_spell_5()
+			_spell_6()
+			_spell_7()
+			_spell_8()
+			_spell_9()
 			_short_attack()
 			_speak()
-			_spines()
-			_rotatefireball()
 
 #-----------------------Acciones Básicas-----------------------
 
@@ -163,52 +177,43 @@ func _on_area_2d_area_exited(area):
 		enemies_in_area.erase(area.get_parent())
 
 #----------------------- Hechizos-----------------------
-func _sorcery():
-	is_spelling=true
-	animation.play("spell attack "+clue+ " wizard")
-	velocity = Vector2(0,0)
-	
-func _lure():
+
+func _lure_1():
 	if Input.is_action_just_pressed("Lure"):
-		_sorcery()
 		var lure_instance = lure_scene.instantiate()
 		get_tree().get_current_scene().add_child(lure_instance)
 		lure_instance.global_position = global_position
 	#	lure_instance.get_animation().play("idle")
 		
-func _fireball():
-	if Input.is_action_just_pressed("FireBall"):
-		_sorcery()
-		var fireball_instance = fireball_scene.instantiate()
-		get_parent().add_child(fireball_instance)
-		match clue:
-			"right":
-				fireball_instance.position = weaponr.global_position
-				fireball_instance.rotate(PI/2)
-				fireball_instance.velocity = Vector2(fireball_instance.SPEED, 0)
-			"left":
-				fireball_instance.position = weaponl.global_position
-				fireball_instance.rotate(-PI/2)
-				fireball_instance.velocity = Vector2(-fireball_instance.SPEED, 0)
-			"up":
-				fireball_instance.position = weaponu.global_position
-				fireball_instance.velocity = Vector2(0, -fireball_instance.SPEED)
-			"down":
-				fireball_instance.position = weapond.global_position
-				fireball_instance.rotate(PI)
-				fireball_instance.velocity = Vector2(0,fireball_instance.SPEED)
-func _invisiblity():
+func _fireball_1():
+	var fireball_instance = fireball_scene.instantiate()
+	get_parent().add_child(fireball_instance)
+	match clue:
+		"right":
+			fireball_instance.position = weaponr.global_position
+			fireball_instance.rotate(PI/2)
+			fireball_instance.velocity = Vector2(fireball_instance.SPEED, 0)
+		"left":
+			fireball_instance.position = weaponl.global_position
+			fireball_instance.rotate(-PI/2)
+			fireball_instance.velocity = Vector2(-fireball_instance.SPEED, 0)
+		"up":
+			fireball_instance.position = weaponu.global_position
+			fireball_instance.velocity = Vector2(0, -fireball_instance.SPEED)
+		"down":
+			fireball_instance.position = weapond.global_position
+			fireball_instance.rotate(PI)
+			fireball_instance.velocity = Vector2(0,fireball_instance.SPEED)
+func _invisiblity_1():
 	if Input.is_action_just_pressed("Invisiblity") && !is_invisible:
-		_sorcery()
 		is_invisible = true
 		modulate.a8=100
 		await get_tree().create_timer(5).timeout
 		modulate.a8=255
 		is_invisible = false
 	
-func _spines():
+func _spines_1():
 	if Input.is_action_just_pressed("Spine"):
-		_sorcery()
 		var spine_up_instance = spine_scene.instantiate()
 		var spine_left_instance = spine_scene.instantiate()
 		var spine_down_instance = spine_scene.instantiate()
@@ -231,9 +236,74 @@ func _spines():
 		spine_down_instance.global_position = weapond.global_position
 		spine_right_instance.global_position = weaponr.global_position
 		
-func _rotatefireball():
-	if Input.is_action_just_pressed("RotateFireball"):
-		_sorcery()
-		var rotatefireball_instance = rotatefireball_scene.instantiate()
-		rotatefireball_instance.center = self
-		get_parent().add_child(rotatefireball_instance)
+func _rotatefireball_1():
+	var rotatefireball_instance = rotatefireball_scene.instantiate()
+	rotatefireball_instance.center = self
+	get_parent().add_child(rotatefireball_instance)
+
+
+func _spell_1():
+	if Input.is_action_just_pressed("1"):
+		var icon = hud._get_spell_square(1)
+		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
+		
+func _spell_2():
+	if Input.is_action_just_pressed("2"):
+		var icon = hud._get_spell_square(2)
+		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
+
+func _spell_3():
+	if Input.is_action_just_pressed("3"):
+		var icon = hud._get_spell_square(3)
+		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
+
+func _spell_4():
+	if Input.is_action_just_pressed("4"):
+		var icon = hud._get_spell_square(4)
+		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
+
+func _spell_5():
+	if Input.is_action_just_pressed("5"):
+		var icon = hud._get_spell_square(5)
+		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
+
+func _spell_6():
+	if Input.is_action_just_pressed("6"):
+		var icon = hud._get_spell_square(6)
+		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
+
+func _spell_7():
+	if Input.is_action_just_pressed("7"):
+		var icon = hud._get_spell_square(7)
+		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
+
+func _spell_8():
+	if Input.is_action_just_pressed("8"):
+		var icon = hud._get_spell_square(8)
+		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
+
+func _spell_9():
+	if Input.is_action_just_pressed("9"):
+		var icon = hud._get_spell_square(9)
+		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
+		
+func _spell_10():
+	if Input.is_action_just_pressed("0"):
+		var icon = hud._get_spell_square(10)
+		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
+		
+
+
+#----------------------- Inventario Hechizos -----------------------
+func _sorcery(element,spell,level):
+	is_spelling=true
+	animation.play("spell attack "+clue+ " wizard")
+	velocity = Vector2(0,0)
+	match element:
+		"fire":
+			match spell:
+				"fireball":
+					_fireball_1()
+				"rotatingfireball":
+					_rotatefireball_1()
+	

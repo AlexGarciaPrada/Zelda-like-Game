@@ -1,17 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0ie82c4ckf8b"]
+[gd_scene load_steps=2 format=3 uid="uid://d0ie82c4ckf8b"]
 
 [ext_resource type="Script" path="res://HUD/Icon/Icon.gd" id="1_hwph6"]
-[ext_resource type="Texture2D" uid="uid://c84ergdy1nemd" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire_rotatingfireball.png" id="1_ws7v2"]
 
 [node name="TextureRect" type="TextureRect"]
 texture_filter = 3
 custom_minimum_size = Vector2(40, 40)
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_ws7v2")
 expand_mode = 1
 script = ExtResource("1_hwph6")
-number = null
 
 [node name="Panel2" type="Panel" parent="."]
 show_behind_parent = true
