@@ -1,7 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://k22sg8y6b5jh"]
+[gd_scene load_steps=11 format=3 uid="uid://k22sg8y6b5jh"]
 
 [ext_resource type="Script" path="res://Spells/RotatingFireball/RotatingFireball.gd" id="1_bpx5a"]
+[ext_resource type="Texture2D" uid="uid://co0g3yt6xhf5j" path="res://Assets Videojuego/Sprites/Hechizos/Fireball/Explosión fireball.png" id="2_gs3g5"]
 [ext_resource type="Texture2D" uid="uid://djo6tk2crp8tm" path="res://Assets Videojuego/Sprites/Hechizos/Rotate Fireball/Bola de fuego orbitar.png" id="2_yrud5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryl11"]
+atlas = ExtResource("2_gs3g5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwjbw"]
+atlas = ExtResource("2_gs3g5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4ue0"]
+atlas = ExtResource("2_gs3g5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrt2w"]
+atlas = ExtResource("2_gs3g5")
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3jt8"]
 atlas = ExtResource("2_yrud5")
@@ -9,6 +26,23 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hgsnl"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryl11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwjbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4ue0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrt2w")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s3jt8")
@@ -34,8 +68,7 @@ texture_filter = 3
 position = Vector2(0, 7)
 rotation = 6.28319
 sprite_frames = SubResource("SpriteFrames_hgsnl")
-animation = &"orbit"
-frame_progress = 0.793127
+animation = &"explosion"
 
 [node name="Area2D" type="Area2D" parent="." groups=["Weapon"]]
 collision_layer = 2
@@ -45,4 +78,5 @@ collision_mask = 2
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_6rm85")
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

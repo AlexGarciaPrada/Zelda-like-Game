@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c84ergdy1nemd"
-path="res://.godot/imported/fire_rotatingfireball_1.png-faeb63097b00ccedc33f0ccb9d483844.ctex"
+uid="uid://bm1tc4h8pe3r8"
+path="res://.godot/imported/fire_fireball_1.png-7546843bc491c247bdc7809ee05ae0fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire_rotatingfireball_1.png"
-dest_files=["res://.godot/imported/fire_rotatingfireball_1.png-faeb63097b00ccedc33f0ccb9d483844.ctex"]
+source_file="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fire_fireball_1.png"
+dest_files=["res://.godot/imported/fire_fireball_1.png-7546843bc491c247bdc7809ee05ae0fc.ctex"]
 
 [params]
 
