@@ -4,7 +4,7 @@ extends CharacterBody2D
 var center = Node2D
 @export var orbit_radius: float = 50.0
 @export var orbit_speed: float = 3.0  # Radianes por segundo
-@onready var area = $Area2D
+@onready var selfarea = $Area2D
 var angle: float = 0.0
 var explosion = false
 
@@ -39,7 +39,7 @@ func _on_area_2d_area_entered(area):
 		velocity = Vector2(0,0)
 		animation.play("explosion")
 		explosion = true
-		area.queue_free()
+		selfarea.queue_free()
 
 
 func _on_animated_sprite_2d_animation_finished():
