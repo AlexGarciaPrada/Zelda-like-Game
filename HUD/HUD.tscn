@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ce6bwbo4htu22"]
+[gd_scene load_steps=15 format=3 uid="uid://ce6bwbo4htu22"]
 
 [ext_resource type="Script" path="res://HUD/HUD.gd" id="1_fhhq4"]
 [ext_resource type="PackedScene" uid="uid://hqa8in30kvgo" path="res://Dialogues/Dialogues.tscn" id="2_3y1ny"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://d0ie82c4ckf8b" path="res://HUD/Icon/Icon.tscn" id="7_y2afp"]
 [ext_resource type="Texture2D" uid="uid://fhy35j08bkyd" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_2.png" id="8_bqfob"]
 [ext_resource type="Texture2D" uid="uid://drqfc3qkdk2qg" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_3.png" id="9_s43ml"]
-[ext_resource type="Texture2D" uid="uid://5oo55cnjoq88" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_1.png" id="10_f1yot"]
 [ext_resource type="Texture2D" uid="uid://c0lhobfiumgrq" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_2.png" id="11_5djvm"]
 [ext_resource type="Texture2D" uid="uid://bmq3fixupmseh" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_3.png" id="11_hpa5c"]
 
@@ -81,55 +80,63 @@ columns = 10
 [node name="TextureRect" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
 texture = ExtResource("6_s1cra")
+is_Inventory = false
 
 [node name="TextureRect2" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
 texture = ExtResource("7_uo3lf")
 number = "2"
+is_Inventory = false
 
 [node name="TextureRect3" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
 texture = ExtResource("8_bqfob")
 number = "3"
+is_Inventory = false
 
 [node name="TextureRect4" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
 texture = ExtResource("9_s43ml")
 number = "4"
+is_Inventory = false
 
 [node name="TextureRect5" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
-texture = ExtResource("10_f1yot")
 number = "5"
+is_Inventory = false
 
 [node name="TextureRect6" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
 texture = ExtResource("11_5djvm")
 number = "6"
+is_Inventory = false
 
 [node name="TextureRect7" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
 texture = ExtResource("11_hpa5c")
 number = "7"
+is_Inventory = false
 
 [node name="TextureRect8" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
 number = "8"
+is_Inventory = false
 
 [node name="TextureRect9" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
 number = "9"
+is_Inventory = false
 
 [node name="TextureRect10" parent="GridContainer" instance=ExtResource("7_y2afp")]
 layout_mode = 2
 number = "0"
+is_Inventory = false
 
 [node name="Inventory" parent="." instance=ExtResource("6_jqvny")]
-visible = false
-offset_left = 248.0
-offset_top = 120.0
-offset_right = 248.0
-offset_bottom = 120.0
+offset_left = 72.0
+offset_top = 128.0
+offset_right = 72.0
+offset_bottom = 128.0
 
 [node name="Label" type="Label" parent="."]
 visible = false

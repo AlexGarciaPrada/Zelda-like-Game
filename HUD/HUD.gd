@@ -14,10 +14,20 @@ func _process(delta):
 	life_label.text = str(get_parent().get_parent().life)
 
 func _get_spell_square(num):
-	var icon = spellSet.get_child(num - 1)
+	var icon = $GridContainer.get_child(num - 1)
 	return icon
 	
 func _show_not_equipped_spell():
 	notEquippedLabel.visible=true
 	await get_tree().create_timer(0.75).timeout
 	notEquippedLabel.visible=false
+
+func _set_is_Equipped(icon):
+	if icon.texture != null:
+		for i in range (1,11):
+			var square = _get_spell_square(i)
+			if square.texture == icon.texture:
+				return true
+		return false
+	else:
+		return false

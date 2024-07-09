@@ -1,8 +1,11 @@
 extends TextureRect
 
 @onready var label = $Label
-@export var number = "1"
+@export var number = ""
 @onready var element =""
+@export var is_Inventory = true
+var is_Equipped = false
+
 var spell = ""
 var level = 0
 
@@ -13,6 +16,8 @@ func _ready():
 		_get_element()
 		_get_spell()
 		_get_level()
+		if is_Inventory:
+			_set_is_Equipped()
 	
 func _make_texture():
 	var texture_name = self.texture.resource_path.get_file().get_basename()
@@ -31,12 +36,10 @@ func _get_drag_data(position):
 	var preview = Control.new()
 	preview.add_child(preview_texture)
 	
-	# Ajustar la posición del preview para centrarlo en el ratón
-	preview.set_position(Vector2(-15, -15))  # Ajustar según sea necesario para centrar
-	
 	set_drag_preview(preview)
+	texture = null
 	
-	return texture
+	return preview_texture.texture
 
 
 func _can_drop_data(position, data):
@@ -45,7 +48,8 @@ func _can_drop_data(position, data):
 func _drop_data(at_position, data):
 	texture = data
 	_make_texture()
-	
+	if is_Inventory:
+		_set_is_Equipped()
 func _get_element():
 	return element
 
@@ -54,4 +58,6 @@ func _get_spell():
 
 func _get_level():
 	return level
-
+func _set_is_Equipped():
+	is_Equipped = get_parent().get_parent().get_parent()._set_is_Equipped(self)
+	print(is_Equipped)
