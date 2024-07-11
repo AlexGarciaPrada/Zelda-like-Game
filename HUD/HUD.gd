@@ -4,6 +4,7 @@ extends Control
 @export var spell = ""
 @onready var spellSet = $GridContainer
 @onready var notEquippedLabel = $Label
+@onready var inventory = $Inventory
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -31,3 +32,7 @@ func _set_is_Equipped(icon):
 		return false
 	else:
 		return false
+
+func _set_visual_equipped():
+	for i in range (1,25):
+		inventory._get_inventory_icons(i)._visual_is_Equipped()
