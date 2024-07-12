@@ -16,3 +16,18 @@ offset_left = -15.0
 offset_top = -15.0
 offset_right = 15.0
 offset_bottom = 15.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 3
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = -16.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 39.0
+text = "1"
+horizontal_alignment = 1

@@ -18,6 +18,8 @@ font_size = 30
 font_color = Color(0.768627, 0, 0, 1)
 
 [node name="Hud" type="Control"]
+z_index = 1
+z_as_relative = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,49 +61,6 @@ offset_top = 436.0
 offset_right = 1050.75
 offset_bottom = 152.0
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 0
-offset_left = 144.0
-offset_top = 40.0
-offset_right = 1174.0
-offset_bottom = 80.0
-rotation = -0.00305226
-scale = Vector2(0.640002, 0.600124)
-theme_override_constants/h_separation = 10
-columns = 10
-
-[node name="IconContainerV2" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(49.9996, 0.162753)
-
-[node name="IconContainerV3" parent="GridContainer" instance=ExtResource("5_7um0t")]
-
-[node name="IconContainerV4" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(99.9992, 0.325507)
-
-[node name="IconContainerV5" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(149.999, 0.48826)
-
-[node name="IconContainerV6" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(199.998, 0.651013)
-
-[node name="IconContainerV7" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(249.998, 0.813767)
-
-[node name="IconContainerV8" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(299.998, 0.97652)
-
-[node name="IconContainerV9" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(349.997, 1.13927)
-
-[node name="IconContainerV10" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(399.997, 1.30203)
-
-[node name="IconContainerV11" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(449.996, 1.46478)
-
-[node name="IconContainerV12" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(499.996, 1.62753)
-
 [node name="Inventory" parent="." instance=ExtResource("6_jqvny")]
 offset_left = 72.0
 offset_top = 128.0
@@ -121,3 +80,43 @@ label_settings = SubResource("LabelSettings_qg576")
 
 [node name="IconsV2" parent="." instance=ExtResource("7_rgthb")]
 position = Vector2(168, 80)
+
+[node name="IconContainerV2" parent="." instance=ExtResource("5_7um0t")]
+position = Vector2(152, 48)
+number_label = "1"
+
+[node name="IconContainerV3" parent="." instance=ExtResource("5_7um0t")]
+position = Vector2(200, 48)
+number_label = "2"
+
+[node name="IconContainerV4" parent="." instance=ExtResource("5_7um0t")]
+position = Vector2(248, 48)
+number_label = "3"
+
+[node name="IconContainerV5" parent="." instance=ExtResource("5_7um0t")]
+position = Vector2(296, 48)
+number_label = "4"
+
+[node name="IconContainerV6" parent="." instance=ExtResource("5_7um0t")]
+position = Vector2(344, 48)
+number_label = "5"
+
+[node name="IconContainerV7" parent="." instance=ExtResource("5_7um0t")]
+position = Vector2(392, 48)
+number_label = "6"
+
+[node name="IconContainerV8" parent="." instance=ExtResource("5_7um0t")]
+position = Vector2(440, 48)
+number_label = "7"
+
+[node name="IconContainerV9" parent="." instance=ExtResource("5_7um0t")]
+position = Vector2(488, 48)
+number_label = "8"
+
+[node name="IconContainerV10" parent="." instance=ExtResource("5_7um0t")]
+position = Vector2(536, 48)
+number_label = "9"
+
+[node name="IconContainerV11" parent="." instance=ExtResource("5_7um0t")]
+position = Vector2(584, 48)
+number_label = "0"
