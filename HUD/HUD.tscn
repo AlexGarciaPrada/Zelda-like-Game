@@ -1,17 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://ce6bwbo4htu22"]
+[gd_scene load_steps=10 format=3 uid="uid://ce6bwbo4htu22"]
 
 [ext_resource type="Script" path="res://HUD/HUD.gd" id="1_fhhq4"]
 [ext_resource type="PackedScene" uid="uid://hqa8in30kvgo" path="res://Dialogues/Dialogues.tscn" id="2_3y1ny"]
 [ext_resource type="FontFile" uid="uid://bgcjl3ucwhxgk" path="res://Assets Videojuego/Font/pixellari/Pixellari.ttf" id="2_ftl7u"]
 [ext_resource type="Texture2D" uid="uid://dsle5dy1ns6ts" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Vida/Corazón.png" id="3_kosq6"]
+[ext_resource type="PackedScene" uid="uid://cxse2jopondbj" path="res://HUD/IconsContainerV2/IconContainerV2.tscn" id="5_7um0t"]
 [ext_resource type="PackedScene" uid="uid://dfo17tgk3shw0" path="res://HUD/Inventory/Inventory.tscn" id="6_jqvny"]
-[ext_resource type="Texture2D" uid="uid://jmn7fe58xol0" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fireball/fire_fireball_1.png" id="6_s1cra"]
-[ext_resource type="Texture2D" uid="uid://bmj6ela2s3xll" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_1.png" id="7_uo3lf"]
-[ext_resource type="PackedScene" uid="uid://d0ie82c4ckf8b" path="res://HUD/Icon/Icon.tscn" id="7_y2afp"]
-[ext_resource type="Texture2D" uid="uid://fhy35j08bkyd" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_2.png" id="8_bqfob"]
-[ext_resource type="Texture2D" uid="uid://drqfc3qkdk2qg" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_3.png" id="9_s43ml"]
-[ext_resource type="Texture2D" uid="uid://c0lhobfiumgrq" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_2.png" id="11_5djvm"]
-[ext_resource type="Texture2D" uid="uid://bmq3fixupmseh" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_3.png" id="11_hpa5c"]
+[ext_resource type="PackedScene" uid="uid://t5cn6c6yxca0" path="res://HUD/IconsV2/IconsV2.tscn" id="7_rgthb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i2n0l"]
 font = ExtResource("2_ftl7u")
@@ -23,7 +18,6 @@ font_size = 30
 font_color = Color(0.768627, 0, 0, 1)
 
 [node name="Hud" type="Control"]
-z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,69 +62,45 @@ offset_bottom = 152.0
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
 offset_left = 144.0
-offset_top = 24.0
+offset_top = 40.0
 offset_right = 1174.0
-offset_bottom = 64.0
+offset_bottom = 80.0
 rotation = -0.00305226
 scale = Vector2(0.640002, 0.600124)
-theme_override_constants/h_separation = 70
-theme_override_constants/v_separation = 100
+theme_override_constants/h_separation = 10
 columns = 10
 
-[node name="TextureRect" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-texture = ExtResource("6_s1cra")
-is_Inventory = false
+[node name="IconContainerV2" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(49.9996, 0.162753)
 
-[node name="TextureRect2" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-texture = ExtResource("7_uo3lf")
-number = "2"
-is_Inventory = false
+[node name="IconContainerV3" parent="GridContainer" instance=ExtResource("5_7um0t")]
 
-[node name="TextureRect3" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-texture = ExtResource("8_bqfob")
-number = "3"
-is_Inventory = false
+[node name="IconContainerV4" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(99.9992, 0.325507)
 
-[node name="TextureRect4" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-texture = ExtResource("9_s43ml")
-number = "4"
-is_Inventory = false
+[node name="IconContainerV5" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(149.999, 0.48826)
 
-[node name="TextureRect5" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-number = "5"
-is_Inventory = false
+[node name="IconContainerV6" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(199.998, 0.651013)
 
-[node name="TextureRect6" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-texture = ExtResource("11_5djvm")
-number = "6"
-is_Inventory = false
+[node name="IconContainerV7" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(249.998, 0.813767)
 
-[node name="TextureRect7" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-texture = ExtResource("11_hpa5c")
-number = "7"
-is_Inventory = false
+[node name="IconContainerV8" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(299.998, 0.97652)
 
-[node name="TextureRect8" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-number = "8"
-is_Inventory = false
+[node name="IconContainerV9" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(349.997, 1.13927)
 
-[node name="TextureRect9" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-number = "9"
-is_Inventory = false
+[node name="IconContainerV10" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(399.997, 1.30203)
 
-[node name="TextureRect10" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-number = "0"
-is_Inventory = false
+[node name="IconContainerV11" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(449.996, 1.46478)
+
+[node name="IconContainerV12" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(499.996, 1.62753)
 
 [node name="Inventory" parent="." instance=ExtResource("6_jqvny")]
 offset_left = 72.0
@@ -148,3 +118,6 @@ offset_right = 777.0
 offset_bottom = 179.0
 text = "No tienes ningún hechizo equipado en esa casilla"
 label_settings = SubResource("LabelSettings_qg576")
+
+[node name="IconsV2" parent="." instance=ExtResource("7_rgthb")]
+position = Vector2(168, 80)

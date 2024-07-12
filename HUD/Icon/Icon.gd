@@ -19,8 +19,9 @@ func _ready():
 		_get_spell()
 		_get_level()
 		if is_Inventory:
-			_set_is_Equipped()
-			_visual_is_Equipped()
+			pass
+			#_set_is_Equipped()
+			#_visual_is_Equipped()
 	
 func _make_texture():
 	var texture_name = self.texture.resource_path.get_file().get_basename()

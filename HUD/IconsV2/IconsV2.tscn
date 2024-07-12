@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://t5cn6c6yxca0"]
+
+[ext_resource type="Script" path="res://HUD/IconsV2/IconsV2.gd" id="1_4v2d5"]
+[ext_resource type="Texture2D" uid="uid://jmn7fe58xol0" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fireball/fire_fireball_1.png" id="2_cvri2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phk8b"]
+size = Vector2(16, 16)
+
+[node name="IconsV2" type="Node2D"]
+script = ExtResource("1_4v2d5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("2_cvri2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_phk8b")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
