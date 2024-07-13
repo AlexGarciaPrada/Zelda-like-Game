@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://crllaailugvpu"]
+[gd_scene load_steps=23 format=3 uid="uid://crllaailugvpu"]
 
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="1_bqiox"]
 [ext_resource type="Texture2D" uid="uid://vl6sjjmopt4y" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset Bosque.png" id="2_r6g1l"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://btej75ff0gnky" path="res://Enemies/Slime/Slime.tscn" id="8_fcjhr"]
 [ext_resource type="PackedScene" uid="uid://g6oh3aoqo30t" path="res://Enemies/EvilTree/EvilTree2.tscn" id="9_18xes"]
 [ext_resource type="PackedScene" uid="uid://drll14udosm8m" path="res://Enemies/Mushroom/Mushroom.tscn" id="10_q1kkd"]
+[ext_resource type="PackedScene" uid="uid://cjq0un6jyd4x3" path="res://door.tscn" id="12_7s6wq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ao6mg"]
 texture = ExtResource("2_r6g1l")
@@ -782,3 +783,10 @@ position = Vector2(350, -192)
 
 [node name="Mushroom" parent="." instance=ExtResource("10_q1kkd")]
 position = Vector2(291, 117)
+
+[node name="Door" parent="." instance=ExtResource("12_7s6wq")]
+offset_left = -497.0
+offset_top = -9.0
+offset_right = -497.0
+offset_bottom = -9.0
+scene_path = "res://PruebasGuille.tscn"
