@@ -14,6 +14,7 @@ script = ExtResource("1_42bsa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_l1ked")
+disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -15.0

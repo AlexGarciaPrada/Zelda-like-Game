@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://ce6bwbo4htu22"]
+[gd_scene load_steps=9 format=3 uid="uid://ce6bwbo4htu22"]
 
 [ext_resource type="Script" path="res://HUD/HUD.gd" id="1_fhhq4"]
 [ext_resource type="PackedScene" uid="uid://hqa8in30kvgo" path="res://Dialogues/Dialogues.tscn" id="2_3y1ny"]
 [ext_resource type="FontFile" uid="uid://bgcjl3ucwhxgk" path="res://Assets Videojuego/Font/pixellari/Pixellari.ttf" id="2_ftl7u"]
 [ext_resource type="Texture2D" uid="uid://dsle5dy1ns6ts" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Vida/Corazón.png" id="3_kosq6"]
-[ext_resource type="PackedScene" uid="uid://cxse2jopondbj" path="res://HUD/IconsContainerV2/IconContainerV2.tscn" id="5_7um0t"]
 [ext_resource type="PackedScene" uid="uid://dfo17tgk3shw0" path="res://HUD/Inventory/Inventory.tscn" id="6_jqvny"]
-[ext_resource type="PackedScene" uid="uid://t5cn6c6yxca0" path="res://HUD/IconsV2/IconsV2.tscn" id="7_rgthb"]
+[ext_resource type="PackedScene" uid="uid://c5sncxqjc57e5" path="res://HUD/IconsContainerV2/IconsContainerControlV2.tscn" id="6_tkmat"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i2n0l"]
 font = ExtResource("2_ftl7u")
@@ -26,7 +25,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_fhhq4")
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -62,10 +63,11 @@ offset_right = 1050.75
 offset_bottom = 152.0
 
 [node name="Inventory" parent="." instance=ExtResource("6_jqvny")]
-offset_left = 72.0
-offset_top = 128.0
-offset_right = 72.0
-offset_bottom = 128.0
+offset_left = 136.0
+offset_top = 176.0
+offset_right = 136.0
+offset_bottom = 176.0
+mouse_filter = 1
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -78,51 +80,63 @@ offset_bottom = 179.0
 text = "No tienes ningún hechizo equipado en esa casilla"
 label_settings = SubResource("LabelSettings_qg576")
 
-[node name="IconsV2" parent="." instance=ExtResource("7_rgthb")]
-position = Vector2(168, 80)
-
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 152.0
+offset_top = 40.0
+offset_right = 872.0
+offset_bottom = 80.0
+mouse_filter = 2
+theme_override_constants/h_separation = 70
+columns = 10
 
-[node name="IconContainerV2" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(152, 48)
+[node name="IconsV2" parent="GridContainer" instance=ExtResource("6_tkmat")]
+layout_mode = 2
 number_label = "1"
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_1.png"
+is_inventory = false
+texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_1.png"
 
-[node name="IconContainerV3" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(200, 48)
+[node name="IconsV3" parent="GridContainer" instance=ExtResource("6_tkmat")]
+layout_mode = 2
 number_label = "2"
+is_inventory = false
 
-[node name="IconContainerV4" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(248, 48)
+[node name="IconsV4" parent="GridContainer" instance=ExtResource("6_tkmat")]
+layout_mode = 2
 number_label = "3"
+is_inventory = false
 
-[node name="IconContainerV5" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(296, 48)
+[node name="IconsV5" parent="GridContainer" instance=ExtResource("6_tkmat")]
+layout_mode = 2
 number_label = "4"
+is_inventory = false
 
-[node name="IconContainerV6" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(344, 48)
+[node name="IconsV6" parent="GridContainer" instance=ExtResource("6_tkmat")]
+layout_mode = 2
 number_label = "5"
+is_inventory = false
 
-[node name="IconContainerV7" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(392, 48)
+[node name="IconsV7" parent="GridContainer" instance=ExtResource("6_tkmat")]
+layout_mode = 2
 number_label = "6"
+is_inventory = false
 
-[node name="IconContainerV8" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(440, 48)
+[node name="IconsV8" parent="GridContainer" instance=ExtResource("6_tkmat")]
+layout_mode = 2
 number_label = "7"
+is_inventory = false
 
-[node name="IconContainerV9" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(488, 48)
+[node name="IconsV9" parent="GridContainer" instance=ExtResource("6_tkmat")]
+layout_mode = 2
 number_label = "8"
+is_inventory = false
 
-[node name="IconContainerV10" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(536, 48)
+[node name="IconsV10" parent="GridContainer" instance=ExtResource("6_tkmat")]
+layout_mode = 2
 number_label = "9"
+is_inventory = false
 
-[node name="IconContainerV11" parent="GridContainer" instance=ExtResource("5_7um0t")]
-position = Vector2(584, 48)
+[node name="IconsV11" parent="GridContainer" instance=ExtResource("6_tkmat")]
+layout_mode = 2
 number_label = "0"
+is_inventory = false

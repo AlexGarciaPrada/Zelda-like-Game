@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5sncxqjc57e5"]
+
+[ext_resource type="Script" path="res://HUD/IconsContainerV2/IconsContainerControlV2.gd" id="1_3bjwo"]
+[ext_resource type="PackedScene" uid="uid://cxse2jopondbj" path="res://HUD/IconsContainerV2/IconContainerV2.tscn" id="1_skq76"]
+
+[node name="IconsContainerControlV2" type="Control" groups=["droppable"]]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3bjwo")
+
+[node name="IconContainerV2" parent="." instance=ExtResource("1_skq76")]

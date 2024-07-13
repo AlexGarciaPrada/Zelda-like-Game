@@ -17,7 +17,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if draggable:
-		visible = true
 		if Input.is_action_just_pressed("click"):
 			initialPos = global_position
 			offset = get_global_mouse_position()-global_position
@@ -31,13 +30,15 @@ func _process(delta):
 			var tween = get_tree().create_tween()
 			if is_inside_droppable:
 				tween.tween_property(self,"position",body_ref.position,0.2).set_ease(Tween.EASE_OUT)
-				body_ref.get_child(2).texture = self.get_child(0).texture
-				if body_ref.get_child(2).texture == self.get_child(0).texture:
-					queue_free()
-	
-			else:
-				tween.tween_property(self,"global_position",initialPos,0.2).set_ease(Tween.EASE_OUT)
+				if !body_ref.get_parent().is_inventory:
+					body_ref.get_child(2).texture = self.get_child(0).texture
+					if !self.get_parent().get_parent().is_inventory:
+						self.get_parent().this_texture.texture = null
 				queue_free()
+			else:
+				queue_free()
+	if Input.is_action_just_released("click"):
+		queue_free()
 func _on_area_2d_mouse_entered():
 	if !Singleton.is_dragging:
 		draggable = true
@@ -48,16 +49,15 @@ func _on_area_2d_mouse_exited():
 		draggable = false
 
 
-
-func _on_area_2d_body_entered(body:StaticBody2D):
-	if body.is_in_group("droppable"):
-		is_inside_droppable = true
-		body_ref = body
-		body.modulate = Color(Color.RED)
-
-
-func _on_area_2d_body_exited(body):
-	if body.is_in_group("droppable"):
+func _on_area_2d_area_exited(area):
+	if area.get_parent().is_in_group("droppable"):
 		is_inside_droppable = false
-		body.modulate = Color(Color.WHITE)
+		area.get_parent().modulate = Color(Color.WHITE)
+		
 
+
+func _on_area_2d_area_entered(area):
+		if area.get_parent().is_in_group("droppable"):
+			is_inside_droppable = true
+			body_ref = area.get_parent()
+			area.get_parent().modulate = Color(Color.RED)
