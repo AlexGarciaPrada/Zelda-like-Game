@@ -81,43 +81,48 @@ label_settings = SubResource("LabelSettings_qg576")
 [node name="IconsV2" parent="." instance=ExtResource("7_rgthb")]
 position = Vector2(168, 80)
 
-[node name="IconContainerV2" parent="." instance=ExtResource("5_7um0t")]
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="IconContainerV2" parent="GridContainer" instance=ExtResource("5_7um0t")]
 position = Vector2(152, 48)
 number_label = "1"
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_1.png"
 
-[node name="IconContainerV3" parent="." instance=ExtResource("5_7um0t")]
+[node name="IconContainerV3" parent="GridContainer" instance=ExtResource("5_7um0t")]
 position = Vector2(200, 48)
 number_label = "2"
 
-[node name="IconContainerV4" parent="." instance=ExtResource("5_7um0t")]
+[node name="IconContainerV4" parent="GridContainer" instance=ExtResource("5_7um0t")]
 position = Vector2(248, 48)
 number_label = "3"
 
-[node name="IconContainerV5" parent="." instance=ExtResource("5_7um0t")]
+[node name="IconContainerV5" parent="GridContainer" instance=ExtResource("5_7um0t")]
 position = Vector2(296, 48)
 number_label = "4"
 
-[node name="IconContainerV6" parent="." instance=ExtResource("5_7um0t")]
+[node name="IconContainerV6" parent="GridContainer" instance=ExtResource("5_7um0t")]
 position = Vector2(344, 48)
 number_label = "5"
 
-[node name="IconContainerV7" parent="." instance=ExtResource("5_7um0t")]
+[node name="IconContainerV7" parent="GridContainer" instance=ExtResource("5_7um0t")]
 position = Vector2(392, 48)
 number_label = "6"
 
-[node name="IconContainerV8" parent="." instance=ExtResource("5_7um0t")]
+[node name="IconContainerV8" parent="GridContainer" instance=ExtResource("5_7um0t")]
 position = Vector2(440, 48)
 number_label = "7"
 
-[node name="IconContainerV9" parent="." instance=ExtResource("5_7um0t")]
+[node name="IconContainerV9" parent="GridContainer" instance=ExtResource("5_7um0t")]
 position = Vector2(488, 48)
 number_label = "8"
 
-[node name="IconContainerV10" parent="." instance=ExtResource("5_7um0t")]
+[node name="IconContainerV10" parent="GridContainer" instance=ExtResource("5_7um0t")]
 position = Vector2(536, 48)
 number_label = "9"
 
-[node name="IconContainerV11" parent="." instance=ExtResource("5_7um0t")]
+[node name="IconContainerV11" parent="GridContainer" instance=ExtResource("5_7um0t")]
 position = Vector2(584, 48)
 number_label = "0"

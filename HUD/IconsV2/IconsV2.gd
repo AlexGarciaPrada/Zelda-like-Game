@@ -7,6 +7,7 @@ var not_done = false
 var offset : Vector2
 var initialPos: Vector2
 var previous_texture : CompressedTexture2D
+
 @onready var sprite = $Sprite2D
 @export var this_texture :CompressedTexture2D
 func _ready():
@@ -31,7 +32,8 @@ func _process(delta):
 			if is_inside_droppable:
 				tween.tween_property(self,"position",body_ref.position,0.2).set_ease(Tween.EASE_OUT)
 				body_ref.get_child(2).texture = self.get_child(0).texture
-				queue_free()
+				if body_ref.get_child(2).texture == self.get_child(0).texture:
+					queue_free()
 	
 			else:
 				tween.tween_property(self,"global_position",initialPos,0.2).set_ease(Tween.EASE_OUT)
@@ -58,3 +60,4 @@ func _on_area_2d_body_exited(body):
 	if body.is_in_group("droppable"):
 		is_inside_droppable = false
 		body.modulate = Color(Color.WHITE)
+
