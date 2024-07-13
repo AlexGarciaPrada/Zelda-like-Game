@@ -17,6 +17,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if draggable:
+		visible = true
 		if Input.is_action_just_pressed("click"):
 			initialPos = global_position
 			offset = get_global_mouse_position()-global_position
@@ -32,13 +33,12 @@ func _process(delta):
 				tween.tween_property(self,"position",body_ref.position,0.2).set_ease(Tween.EASE_OUT)
 				if !body_ref.get_parent().is_inventory:
 					body_ref.get_child(2).texture = self.get_child(0).texture
-					if !self.get_parent().get_parent().is_inventory:
+					if !self.get_parent().get_parent().is_inventory && self.get_parent()!= body_ref:
 						self.get_parent().this_texture.texture = null
 				queue_free()
 			else:
 				queue_free()
-	if Input.is_action_just_released("click"):
-		queue_free()
+
 func _on_area_2d_mouse_entered():
 	if !Singleton.is_dragging:
 		draggable = true

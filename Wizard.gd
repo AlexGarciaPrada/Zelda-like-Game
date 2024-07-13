@@ -27,6 +27,7 @@ var is_invisible = false
 var is_spelling = false
 var knockback_mode = false
 var inmunity_mode=false
+var inventory_mode = false
 var knockback_speed = 300
 @onready var area = $Area2D
 
@@ -47,6 +48,7 @@ func _physics_process(delta):
 				_spell_8()
 				_spell_9()
 				_short_attack()
+				_show_inventory()
 		if inmunity_mode:
 			_inmunity()
 		if is_not_acting() && !knockback_mode:
@@ -63,9 +65,20 @@ func _physics_process(delta):
 			_spell_9()
 			_short_attack()
 			_speak()
-
+			_show_inventory()
+	else:
+		_hide_inventory()
 #-----------------------Acciones Básicas-----------------------
-
+func _show_inventory():
+	if Input.is_action_just_pressed("Inventory"):
+		Singleton.is_stopped = true
+		hud._show_inventory()
+		inventory_mode = true
+func _hide_inventory():
+	if Input.is_action_just_pressed("Inventory"):
+		Singleton.is_stopped = false
+		inventory_mode = false
+		hud._hide_inventory()
 func _movement():
 	var directionx = Input.get_axis("ui_left", "ui_right")
 	var directiony = Input.get_axis("ui_up", "ui_down")
