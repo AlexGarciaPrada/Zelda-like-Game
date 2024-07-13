@@ -213,8 +213,27 @@ func _invisiblity_1():
 		modulate.a8=255
 		is_invisible = false
 	
-func _spines_1():
-	if Input.is_action_just_pressed("Spine"):
+func _spikes_1():
+	var spine_up_instance = spine_scene.instantiate()
+	var spine_down_instance = spine_scene.instantiate()
+	spine_up_instance.rotate(-PI/2)
+	spine_down_instance.rotate(PI/2)
+	spine_up_instance.scale.y = -spine_up_instance.scale.y
+	spine_up_instance.velocity = Vector2(0, -spine_up_instance.SPEED)
+	spine_down_instance.velocity= Vector2(0, spine_down_instance.SPEED)
+	get_parent().add_child(spine_up_instance)
+	get_parent().add_child(spine_down_instance)
+	spine_up_instance.global_position = weaponu.global_position
+	spine_down_instance.global_position = weapond.global_position
+	
+func _spikes_2():
+	for i in range(1,3):
+		_spikes_1()
+		if i == 1:
+			await get_tree().create_timer(0.1).timeout
+			
+func _spikes_3():
+	for i in range(1,3):
 		var spine_up_instance = spine_scene.instantiate()
 		var spine_left_instance = spine_scene.instantiate()
 		var spine_down_instance = spine_scene.instantiate()
@@ -236,13 +255,38 @@ func _spines_1():
 		spine_left_instance.global_position = weaponl.global_position
 		spine_down_instance.global_position = weapond.global_position
 		spine_right_instance.global_position = weaponr.global_position
-		
+		if i == 1:
+			await get_tree().create_timer(0.1).timeout
+
 func _rotatefireball_1():
 	var rotatefireball_instance = rotatefireball_scene.instantiate()
 	rotatefireball_instance.center = self
-	get_parent().add_child(rotatefireball_instance)
+	get_parent().add_child(rotatefireball_instance) 
 
-
+func _rotatefireball_2():
+	var rotatefireball_instance = rotatefireball_scene.instantiate()
+	rotatefireball_instance.center = self
+	get_parent().add_child(rotatefireball_instance) 
+	var rotatefireball_instance2 = rotatefireball_scene.instantiate()
+	rotatefireball_instance2.center = self
+	rotatefireball_instance2.angle = PI 
+	get_parent().add_child(rotatefireball_instance2) 
+	
+func _rotatefireball_3():
+	var rotatefireball_instance = rotatefireball_scene.instantiate()
+	rotatefireball_instance.center = self
+	rotatefireball_instance.angle = PI/2
+	get_parent().add_child(rotatefireball_instance) 
+	var rotatefireball_instance2 = rotatefireball_scene.instantiate()
+	rotatefireball_instance2.center = self
+	rotatefireball_instance2.angle = 7*PI/6
+	get_parent().add_child(rotatefireball_instance2) 
+	var rotatefireball_instance3 = rotatefireball_scene.instantiate()
+	rotatefireball_instance3.center = self
+	rotatefireball_instance3.angle = 11*PI/6
+	get_parent().add_child(rotatefireball_instance3) 
+	
+	
 func _spell_1():
 	if Input.is_action_just_pressed("1"):
 		var icon = hud._get_spell_square(1)
@@ -306,7 +350,25 @@ func _sorcery(element,spell,level):
 		"fire":
 			match spell:
 				"fireball":
-					_fireball_1()
-				"rotatingfireball":
-					_rotatefireball_1()
-		
+					match level:
+						1:
+							_fireball_1()
+				"rotatefireball":
+					match level:
+						1:
+							_rotatefireball_1()
+						2:	
+							_rotatefireball_2()
+						3:
+							_rotatefireball_3()
+		"nature":
+			match spell:
+				"spikes":
+					print(level)
+					match level:
+						1:
+							_spikes_1()
+						2:
+							_spikes_2()
+						3:
+							_spikes_3()

@@ -727,6 +727,7 @@ sources/2 = SubResource("TileSetAtlasSource_tp4ep")
 [node name="Guille" type="Node2D"]
 
 [node name="Wizard" parent="." instance=ExtResource("1_bqiox")]
+input_pickable = true
 
 [node name="Suelo" type="TileMap" parent="."]
 show_behind_parent = true

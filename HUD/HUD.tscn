@@ -1,13 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://ce6bwbo4htu22"]
+[gd_scene load_steps=10 format=3 uid="uid://ce6bwbo4htu22"]
 
 [ext_resource type="Script" path="res://HUD/HUD.gd" id="1_fhhq4"]
 [ext_resource type="PackedScene" uid="uid://hqa8in30kvgo" path="res://Dialogues/Dialogues.tscn" id="2_3y1ny"]
 [ext_resource type="FontFile" uid="uid://bgcjl3ucwhxgk" path="res://Assets Videojuego/Font/pixellari/Pixellari.ttf" id="2_ftl7u"]
 [ext_resource type="Texture2D" uid="uid://dsle5dy1ns6ts" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Vida/Corazón.png" id="3_kosq6"]
-[ext_resource type="Texture2D" uid="uid://c84ergdy1nemd" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fire_rotatingfireball_1.png" id="6_2mtkq"]
+[ext_resource type="PackedScene" uid="uid://cxse2jopondbj" path="res://HUD/IconsContainerV2/IconContainerV2.tscn" id="5_7um0t"]
 [ext_resource type="PackedScene" uid="uid://dfo17tgk3shw0" path="res://HUD/Inventory/Inventory.tscn" id="6_jqvny"]
-[ext_resource type="Texture2D" uid="uid://bm1tc4h8pe3r8" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fire_fireball_1.png" id="7_s6457"]
-[ext_resource type="PackedScene" uid="uid://d0ie82c4ckf8b" path="res://HUD/Icon/Icon.tscn" id="7_y2afp"]
+[ext_resource type="PackedScene" uid="uid://t5cn6c6yxca0" path="res://HUD/IconsV2/IconsV2.tscn" id="7_rgthb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i2n0l"]
 font = ExtResource("2_ftl7u")
@@ -20,6 +19,7 @@ font_color = Color(0.768627, 0, 0, 1)
 
 [node name="Hud" type="Control"]
 z_index = 1
+z_as_relative = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,65 +61,11 @@ offset_top = 436.0
 offset_right = 1050.75
 offset_bottom = 152.0
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 0
-offset_left = 144.0
-offset_top = 24.0
-offset_right = 1174.0
-offset_bottom = 64.0
-rotation = -0.00305226
-scale = Vector2(0.640002, 0.600124)
-theme_override_constants/h_separation = 70
-theme_override_constants/v_separation = 100
-columns = 10
-
-[node name="TextureRect" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-texture = ExtResource("6_2mtkq")
-
-[node name="TextureRect2" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-texture = ExtResource("7_s6457")
-number = "2"
-
-[node name="TextureRect3" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-number = "3"
-
-[node name="TextureRect4" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-number = "4"
-
-[node name="TextureRect5" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-number = "5"
-
-[node name="TextureRect6" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-number = "6"
-
-[node name="TextureRect7" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-number = "7"
-
-[node name="TextureRect8" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-number = "8"
-
-[node name="TextureRect9" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-number = "9"
-
-[node name="TextureRect10" parent="GridContainer" instance=ExtResource("7_y2afp")]
-layout_mode = 2
-number = "0"
-
 [node name="Inventory" parent="." instance=ExtResource("6_jqvny")]
-visible = false
-offset_left = 248.0
-offset_top = 120.0
-offset_right = 248.0
-offset_bottom = 120.0
+offset_left = 72.0
+offset_top = 128.0
+offset_right = 72.0
+offset_bottom = 128.0
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -131,3 +77,52 @@ offset_right = 777.0
 offset_bottom = 179.0
 text = "No tienes ningún hechizo equipado en esa casilla"
 label_settings = SubResource("LabelSettings_qg576")
+
+[node name="IconsV2" parent="." instance=ExtResource("7_rgthb")]
+position = Vector2(168, 80)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="IconContainerV2" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(152, 48)
+number_label = "1"
+texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_1.png"
+
+[node name="IconContainerV3" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(200, 48)
+number_label = "2"
+
+[node name="IconContainerV4" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(248, 48)
+number_label = "3"
+
+[node name="IconContainerV5" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(296, 48)
+number_label = "4"
+
+[node name="IconContainerV6" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(344, 48)
+number_label = "5"
+
+[node name="IconContainerV7" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(392, 48)
+number_label = "6"
+
+[node name="IconContainerV8" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(440, 48)
+number_label = "7"
+
+[node name="IconContainerV9" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(488, 48)
+number_label = "8"
+
+[node name="IconContainerV10" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(536, 48)
+number_label = "9"
+
+[node name="IconContainerV11" parent="GridContainer" instance=ExtResource("5_7um0t")]
+position = Vector2(584, 48)
+number_label = "0"

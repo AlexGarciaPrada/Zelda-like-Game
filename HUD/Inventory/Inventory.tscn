@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfo17tgk3shw0"]
+[gd_scene load_steps=5 format=3 uid="uid://dfo17tgk3shw0"]
 
-[ext_resource type="PackedScene" uid="uid://d04ir3lntdrb1" path="res://HUD/InventoryContainer/InventoryContainer.tscn" id="1_8p7hw"]
+[ext_resource type="PackedScene" uid="uid://d0ie82c4ckf8b" path="res://HUD/Icon/Icon.tscn" id="1_dxikb"]
+[ext_resource type="Script" path="res://HUD/Inventory/Inventory.gd" id="1_y1lf0"]
+[ext_resource type="Texture2D" uid="uid://jmn7fe58xol0" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fireball/fire_fireball_1.png" id="2_cj3fs"]
+[ext_resource type="Texture2D" uid="uid://5oo55cnjoq88" path="res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_1.png" id="3_qou0r"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_y1lf0")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
@@ -14,74 +18,76 @@ theme_override_constants/h_separation = 70
 theme_override_constants/v_separation = 70
 columns = 8
 
-[node name="InventoryContainer" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect" parent="GridContainer" instance=ExtResource("1_dxikb")]
+layout_mode = 2
+texture = ExtResource("2_cj3fs")
+
+[node name="TextureRect2" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer2" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect3" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer3" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect4" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer4" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect5" parent="GridContainer" instance=ExtResource("1_dxikb")]
+layout_mode = 2
+texture = ExtResource("3_qou0r")
+
+[node name="TextureRect6" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer5" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect7" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer6" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect8" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer7" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect9" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer8" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect10" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer9" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect11" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer10" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect12" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer11" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect13" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer12" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect14" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer13" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect15" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer14" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect16" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer15" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect17" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer16" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect18" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer17" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect19" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer18" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect20" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer19" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect21" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer20" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect22" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer21" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect23" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2
 
-[node name="InventoryContainer22" parent="GridContainer" instance=ExtResource("1_8p7hw")]
-layout_mode = 2
-
-[node name="InventoryContainer23" parent="GridContainer" instance=ExtResource("1_8p7hw")]
-layout_mode = 2
-
-[node name="InventoryContainer24" parent="GridContainer" instance=ExtResource("1_8p7hw")]
+[node name="TextureRect24" parent="GridContainer" instance=ExtResource("1_dxikb")]
 layout_mode = 2

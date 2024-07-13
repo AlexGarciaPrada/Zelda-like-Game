@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqw82qo3drfry"]
+[gd_scene load_steps=3 format=3 uid="uid://dqw82qo3drfry"]
 
-[ext_resource type="PackedScene" uid="uid://d0ie82c4ckf8b" path="res://HUD/Icon/Icon.tscn" id="1_lnjhs"]
+[ext_resource type="PackedScene" uid="uid://cxse2jopondbj" path="res://HUD/IconsContainerV2/IconContainerV2.tscn" id="1_egjoh"]
+[ext_resource type="PackedScene" uid="uid://t5cn6c6yxca0" path="res://HUD/IconsV2/IconsV2.tscn" id="2_fx0g3"]
 
 [node name="Test" type="Node2D"]
 
-[node name="TextureRect" parent="." instance=ExtResource("1_lnjhs")]
+[node name="IconContainerV2" parent="." instance=ExtResource("1_egjoh")]
+position = Vector2(80, 56)
 
-[node name="TextureRect2" parent="." instance=ExtResource("1_lnjhs")]
-offset_left = 240.0
-offset_right = 280.0
+[node name="IconContainerV3" parent="." instance=ExtResource("1_egjoh")]
+position = Vector2(96, 8)
+
+[node name="IconsV2" parent="." instance=ExtResource("2_fx0g3")]
+position = Vector2(16, 32)

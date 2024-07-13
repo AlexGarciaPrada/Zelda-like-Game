@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nvpxeapru12v"
-path="res://.godot/imported/Tornado.png-f0c906382b9d712c303382876c21d0ea.ctex"
+uid="uid://drqfc3qkdk2qg"
+path="res://.godot/imported/fire_rotatefireball_3.png-1ceaa5be491fd057b7e5a34d995c7796.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Hechizos/Tornado/Tornado.png"
-dest_files=["res://.godot/imported/Tornado.png-f0c906382b9d712c303382876c21d0ea.ctex"]
+source_file="res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_3.png"
+dest_files=["res://.godot/imported/fire_rotatefireball_3.png-1ceaa5be491fd057b7e5a34d995c7796.ctex"]
 
 [params]
 
