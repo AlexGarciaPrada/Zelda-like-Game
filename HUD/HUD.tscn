@@ -84,6 +84,7 @@ position = Vector2(168, 80)
 [node name="IconContainerV2" parent="." instance=ExtResource("5_7um0t")]
 position = Vector2(152, 48)
 number_label = "1"
+texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_1.png"
 
 [node name="IconContainerV3" parent="." instance=ExtResource("5_7um0t")]
 position = Vector2(200, 48)

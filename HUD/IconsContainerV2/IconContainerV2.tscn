@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxse2jopondbj"]
+[gd_scene load_steps=4 format=3 uid="uid://cxse2jopondbj"]
 
 [ext_resource type="Script" path="res://HUD/IconsContainerV2/IconsContainerV2.gd" id="1_42bsa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1ked"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70d7w"]
+size = Vector2(32, 32)
+
 [node name="IconContainerV2" type="StaticBody2D" groups=["droppable"]]
+input_pickable = true
 script = ExtResource("1_42bsa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -31,3 +35,13 @@ offset_right = 16.0
 offset_bottom = 39.0
 text = "1"
 horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.4, 1.4)
+shape = SubResource("RectangleShape2D_70d7w")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
