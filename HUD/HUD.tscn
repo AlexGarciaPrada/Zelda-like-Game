@@ -63,6 +63,7 @@ offset_right = 1050.75
 offset_bottom = 152.0
 
 [node name="Inventory" parent="." instance=ExtResource("6_jqvny")]
+visible = false
 offset_left = 136.0
 offset_top = 176.0
 offset_right = 136.0

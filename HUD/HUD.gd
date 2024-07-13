@@ -22,17 +22,7 @@ func _show_not_equipped_spell():
 	notEquippedLabel.visible=true
 	await get_tree().create_timer(0.75).timeout
 	notEquippedLabel.visible=false
-
-func _set_is_Equipped(icon):
-	if icon.texture != null:
-		for i in range (1,11):
-			var square = _get_spell_square(i)
-			if square.texture == icon.texture:
-				return true
-		return false
-	else:
-		return false
-
-func _set_visual_equipped():
-	for i in range (1,25):
-		inventory._get_inventory_icons(i)._visual_is_Equipped()
+func _show_inventory():
+	inventory.visible = true
+func _hide_inventory():
+	inventory.visible = false
