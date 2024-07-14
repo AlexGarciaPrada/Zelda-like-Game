@@ -222,8 +222,8 @@ animations = [{
 }]
 
 [node name="EnemyProof" type="CharacterBody2D" groups=["Enemy"]]
-collision_layer = 6
-collision_mask = 6
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_a8p38")
 range = 200
 life = 3
@@ -234,8 +234,8 @@ visibility_layer = 6
 shape = SubResource("RectangleShape2D_420e7")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
-collision_layer = 6
-collision_mask = 6
+collision_layer = 2
+collision_mask = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Enemy"]]
 light_mask = 2

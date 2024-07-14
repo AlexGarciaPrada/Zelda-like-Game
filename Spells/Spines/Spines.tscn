@@ -23,16 +23,19 @@ animations = [{
 
 [node name="Spines" type="CharacterBody2D" groups=["Weapon"]]
 scale = Vector2(0.25, 0.25)
+collision_layer = 8
+collision_mask = 6
 script = ExtResource("1_d2n1i")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Weapon"]]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 8
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Weapon"]]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(0, -11.405)
+scale = Vector2(1.1, 1.1)
 shape = SubResource("CircleShape2D_jrl6q")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
@@ -44,6 +47,12 @@ texture_filter = 3
 scale = Vector2(4.205, 4.205)
 sprite_frames = SubResource("SpriteFrames_65f1h")
 animation = &"spine"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Weapon"]]
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_jrl6q")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

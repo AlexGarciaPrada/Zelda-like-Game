@@ -27,8 +27,8 @@ animations = [{
 
 [node name="TapJar" type="CharacterBody2D"]
 show_behind_parent = true
-collision_layer = 7
-collision_mask = 7
+collision_layer = 4
+collision_mask = 15
 script = ExtResource("1_i41oi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -43,8 +43,8 @@ visibility_layer = 7
 shape = SubResource("RectangleShape2D_j6pkw")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 4
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 7

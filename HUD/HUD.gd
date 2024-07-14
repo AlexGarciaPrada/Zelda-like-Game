@@ -19,9 +19,11 @@ func _get_spell_square(num):
 	return icon
 	
 func _show_not_equipped_spell():
-	notEquippedLabel.visible=true
+	if notEquippedLabel!= null:
+		notEquippedLabel.visible=true
 	await get_tree().create_timer(0.75).timeout
 	notEquippedLabel.visible=false
+	
 func _show_inventory():
 	inventory.visible = true
 func _hide_inventory():

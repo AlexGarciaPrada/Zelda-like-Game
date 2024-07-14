@@ -71,16 +71,19 @@ animations = [{
 
 [node name="FireBall" type="CharacterBody2D" groups=["Weapon"]]
 scale = Vector2(0.36, 0.36)
+collision_layer = 8
+collision_mask = 6
 script = ExtResource("1_tfcvn")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Weapon"]]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 8
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Weapon"]]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(0, -11.405)
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_jrl6q")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
@@ -94,6 +97,12 @@ sprite_frames = SubResource("SpriteFrames_65f1h")
 animation = &"explosion"
 frame = 2
 frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Weapon"]]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, -11.405)
+shape = SubResource("CircleShape2D_jrl6q")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
