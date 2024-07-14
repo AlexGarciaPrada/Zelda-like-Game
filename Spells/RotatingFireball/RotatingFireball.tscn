@@ -59,6 +59,8 @@ radius = 8.06226
 light_mask = 7
 visibility_layer = 7
 scale = Vector2(-1, -1)
+collision_layer = 8
+collision_mask = 6
 script = ExtResource("1_bpx5a")
 orbit_speed = 3.0
 metadata/_edit_pinned_properties_ = [&"orbit_speed"]
@@ -71,11 +73,16 @@ sprite_frames = SubResource("SpriteFrames_hgsnl")
 animation = &"explosion"
 
 [node name="Area2D" type="Area2D" parent="." groups=["Weapon"]]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 8
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Weapon"]]
 position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_6rm85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Weapon"]]
+position = Vector2(0, 8)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_6rm85")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

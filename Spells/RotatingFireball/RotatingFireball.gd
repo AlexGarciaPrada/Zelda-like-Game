@@ -7,6 +7,8 @@ var center = Node2D
 @onready var selfarea = $Area2D
 var angle: float = 0.0
 var explosion = false
+var has_collide = false
+var area_entered = false
 
 func _ready():
 	animation.play("orbit")
@@ -21,7 +23,16 @@ func _process(delta):
 		angle += orbit_speed * delta
 		update_position()
 		update_rotation()
-		
+		var collision = move_and_collide(velocity * delta)
+		if collision && !area_entered:
+			animation.scale = animation.scale * 0.7
+			animation.play("explosion")
+			if $CollisionShape2D != null:
+				$CollisionShape2D.queue_free()
+			velocity = Vector2(0,0)
+			has_collide = true
+			explosion = true
+			
 func update_position():
 	var x = center.position.x + orbit_radius * cos(angle)
 	var y = center.position.y + orbit_radius * sin(angle)
@@ -29,17 +40,17 @@ func update_position():
 
 func update_rotation():
 	var direction = Vector2(sin(angle),cos(angle))
-	rotation = -direction.angle() +90
+	rotation = -direction.angle() -90
 
 
 
 func _on_area_2d_area_entered(area):
-	if area.is_in_group("Enemy"):
-		animation.scale = Vector2(0.7,0.7)
-		velocity = Vector2(0,0)
-		animation.play("explosion")
-		explosion = true
-		selfarea.queue_free()
+	area_entered = true
+	animation.scale = Vector2(0.7,0.7)
+	velocity = Vector2(0,0)
+	animation.play("explosion")
+	explosion = true
+	selfarea.queue_free()
 
 
 func _on_animated_sprite_2d_animation_finished():
