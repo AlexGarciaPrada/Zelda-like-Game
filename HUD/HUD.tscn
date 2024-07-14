@@ -56,6 +56,7 @@ scale = Vector2(3.36, 3.36)
 texture = ExtResource("3_kosq6")
 
 [node name="Dialogues" parent="." instance=ExtResource("2_3y1ny")]
+visible = false
 layout_mode = 1
 offset_left = 1106.75
 offset_top = 436.0
