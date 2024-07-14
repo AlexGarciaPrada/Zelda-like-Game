@@ -49,6 +49,7 @@ func _on_area_2d_mouse_exited():
 		draggable = false
 
 
+
 func _on_area_2d_area_exited(area):
 	if area.get_parent().is_in_group("droppable"):
 		is_inside_droppable = false
