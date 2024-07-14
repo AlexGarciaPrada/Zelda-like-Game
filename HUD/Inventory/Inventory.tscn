@@ -38,12 +38,15 @@ texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/na
 
 [node name="IconsV6" parent="GridContainer" instance=ExtResource("2_iexv7")]
 layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fireball/fire_fireball_1.png"
 
 [node name="IconsV7" parent="GridContainer" instance=ExtResource("2_iexv7")]
 layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_2.png"
 
 [node name="IconsV8" parent="GridContainer" instance=ExtResource("2_iexv7")]
 layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_3.png"
 
 [node name="IconsV9" parent="GridContainer" instance=ExtResource("2_iexv7")]
 layout_mode = 2

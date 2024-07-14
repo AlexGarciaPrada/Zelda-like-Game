@@ -68,6 +68,11 @@ func _physics_process(delta):
 			_show_inventory()
 	else:
 		_hide_inventory()
+func _ready():
+	print(Singleton.hud == null)
+	if Singleton.hud != null:
+		hud = Singleton.hud.duplicate()
+		print(hud)
 #-----------------------Acciones Básicas-----------------------
 func _show_inventory():
 	if Input.is_action_just_pressed("Inventory"):
@@ -377,7 +382,6 @@ func _sorcery(element,spell,level):
 		"nature":
 			match spell:
 				"spikes":
-					print(level)
 					match level:
 						1:
 							_spikes_1()
@@ -385,3 +389,4 @@ func _sorcery(element,spell,level):
 							_spikes_2()
 						3:
 							_spikes_3()
+

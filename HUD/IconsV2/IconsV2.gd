@@ -53,7 +53,6 @@ func _on_area_2d_mouse_exited():
 func _on_area_2d_area_exited(area):
 	if area.get_parent().is_in_group("droppable"):
 		is_inside_droppable = false
-		area.get_parent().modulate = Color(Color.WHITE)
 		
 
 
@@ -61,4 +60,3 @@ func _on_area_2d_area_entered(area):
 		if area.get_parent().is_in_group("droppable"):
 			is_inside_droppable = true
 			body_ref = area.get_parent()
-			area.get_parent().modulate = Color(Color.RED)
