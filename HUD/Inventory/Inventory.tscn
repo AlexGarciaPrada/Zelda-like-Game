@@ -62,9 +62,11 @@ texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/dark/invisible/d
 
 [node name="IconsV12" parent="GridContainer" instance=ExtResource("2_iexv7")]
 layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/dark/lure/dark_lure_1.png"
 
 [node name="IconsV13" parent="GridContainer" instance=ExtResource("2_iexv7")]
 layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/dark/lure/dark_lure_2.png"
 
 [node name="IconsV14" parent="GridContainer" instance=ExtResource("2_iexv7")]
 layout_mode = 2

@@ -115,7 +115,7 @@ func get_min_distance_obj(ObjectList):
 	for target in ObjectList:
 		if result >= position.distance_to(target.global_position) && !is_dying:
 			if target == player:
-				if !player.is_invisible:
+				if !player.is_invisible && !player.is_invisible_max:
 					result= position.distance_to(target.global_position)
 					object= player
 			else:

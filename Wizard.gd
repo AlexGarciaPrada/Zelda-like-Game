@@ -25,6 +25,7 @@ var current_frame=0
 var newdirection = Vector2(0,0)
 var is_attacking = false
 var is_invisible = false
+var is_invisible_max = false
 var is_spelling = false
 var knockback_mode = false
 var inmunity_mode=false
@@ -38,6 +39,7 @@ func _physics_process(delta):
 			_knockback()
 			if is_not_acting():
 				_movement()
+				_speak()
 				_spell_10()
 				_spell_1()
 				_spell_2()
@@ -54,6 +56,7 @@ func _physics_process(delta):
 			_inmunity()
 		if is_not_acting() && !knockback_mode:
 			_movement()
+			_speak()
 			_spell_10()
 			_spell_1()
 			_spell_2()
@@ -65,7 +68,6 @@ func _physics_process(delta):
 			_spell_8()
 			_spell_9()
 			_short_attack()
-			_speak()
 			_show_inventory()
 	else:
 		_hide_inventory()
@@ -118,6 +120,9 @@ func _movement():
 func _short_attack():
 	if Input.is_action_just_pressed("Attack") and is_not_previously_attacking() and is_not_acting:
 		is_attacking = true
+		if is_invisible:
+			modulate.a8=255
+			is_invisible = false
 		animation.play("attack " + clue + " wizard")
 		velocity = Vector2(0,0)
 		match clue:
@@ -203,7 +208,7 @@ func _lure_1():
 	var lure_instance = lure_scene.instantiate()
 	get_tree().get_current_scene().add_child(lure_instance)
 	lure_instance.global_position = global_position
-		
+
 func _fireball_1():
 	var fireball_instance = fireball_scene.instantiate()
 	get_parent().add_child(fireball_instance)
@@ -239,10 +244,11 @@ func _invisiblity_2():
 	is_invisible = false
 	
 func _invisiblity_3():
+	is_invisible_max = true
 	modulate.a8=100
 	await get_tree().create_timer(10).timeout
 	modulate.a8=255
-
+	is_invisible_max = false
 func _spikes_1():
 	var spine_up_instance = spine_scene.instantiate()
 	var spine_down_instance = spine_scene.instantiate()
@@ -372,6 +378,9 @@ func _spell_10():
 #----------------------- Inventario Hechizos -----------------------
 func _sorcery(element,spell,level):
 	is_spelling=true
+	if is_invisible:
+		modulate.a8=255
+		is_invisible = false
 	animation.play("spell attack "+clue+ " wizard")
 	velocity = Vector2(0,0)
 	match element:

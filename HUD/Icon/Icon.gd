@@ -31,7 +31,6 @@ func _make_texture():
 	level = parts[2].to_int()
 
 func _get_drag_data(position):
-	print(position)
 	var preview_texture = TextureRect.new()
 	preview_texture.texture = texture
 	preview_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -67,7 +66,6 @@ func _get_level():
 	return level
 func _set_is_Equipped():
 	is_Equipped = get_parent().get_parent().get_parent()._set_is_Equipped(self)
-	print(is_Equipped)
 
 func _visual_is_Equipped():
 	if is_Equipped && is_Inventory:
