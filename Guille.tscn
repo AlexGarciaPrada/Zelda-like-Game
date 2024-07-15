@@ -1,13 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://crllaailugvpu"]
+[gd_scene load_steps=25 format=3 uid="uid://crllaailugvpu"]
 
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="1_bqiox"]
 [ext_resource type="Texture2D" uid="uid://vl6sjjmopt4y" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset Bosque.png" id="2_r6g1l"]
 [ext_resource type="Texture2D" uid="uid://b27e866ewka1e" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Árbol/Arbol tileset.png" id="3_e47la"]
-[ext_resource type="Texture2D" uid="uid://ctcpdhqvdoavo" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa.png" id="4_m2y64"]
+[ext_resource type="Texture2D" uid="uid://k2iy3mmqlaru" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa.png" id="4_m2y64"]
 [ext_resource type="Texture2D" uid="uid://bnyoq05waaobp" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset altura.png" id="5_3c3y4"]
 [ext_resource type="PackedScene" uid="uid://kq508wjfnsd2" path="res://Dialogues/Sign/Sign.tscn" id="6_8oyiv"]
 [ext_resource type="Texture2D" uid="uid://dsapbma2bd8n7" path="res://Assets Videojuego/Sprites/Tileset/Bosque/puerta/puerta montaña cueva.png" id="6_qppfm"]
 [ext_resource type="PackedScene" uid="uid://burn3ir5takxb" path="res://Destructibles/Jar/Jar.tscn" id="7_iflao"]
+[ext_resource type="Texture2D" uid="uid://djs23hbaoxh20" path="res://Assets Videojuego/Sprites/Tileset/Cueva/Puerta/Puerta cueva.png" id="7_ra64u"]
 [ext_resource type="PackedScene" uid="uid://btej75ff0gnky" path="res://Enemies/Slime/Slime.tscn" id="8_fcjhr"]
 [ext_resource type="PackedScene" uid="uid://g6oh3aoqo30t" path="res://Enemies/EvilTree/EvilTree2.tscn" id="9_18xes"]
 [ext_resource type="PackedScene" uid="uid://drll14udosm8m" path="res://Enemies/Mushroom/Mushroom.tscn" id="10_q1kkd"]
@@ -719,6 +720,22 @@ texture_region_size = Vector2i(32, 32)
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ct02i"]
+texture = ExtResource("7_ra64u")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_3174x"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 4
@@ -726,6 +743,7 @@ physics_layer_0/collision_mask = 15
 sources/0 = SubResource("TileSetAtlasSource_5r7e0")
 sources/1 = SubResource("TileSetAtlasSource_gbm5b")
 sources/2 = SubResource("TileSetAtlasSource_tp4ep")
+sources/3 = SubResource("TileSetAtlasSource_ct02i")
 
 [node name="Guille" type="Node2D"]
 
@@ -762,7 +780,7 @@ show_behind_parent = true
 texture_filter = 3
 tile_set = SubResource("TileSet_3174x")
 format = 2
-layer_0/tile_data = PackedInt32Array(65518, 196608, 1, 131054, 262144, 0, 196590, 262144, 0, 262126, 327680, 0, 65519, 131072, 2, 131055, 262144, 1, 196591, 262144, 1, 262127, 327680, 1, 65520, 262144, 3, 131056, 262144, 3, 196592, 262144, 3, 262128, 262144, 3, 65521, 131072, 1, 131057, 262144, 0, 196593, 262144, 0, 262129, 327680, 0, 65522, 196608, 2, 131058, 262144, 1, 196594, 262144, 1, 262130, 327680, 1, 262125, 0, 4, 196589, 327680, 3, 131053, 327680, 3, 65517, 327680, 3, -19, 327680, 3, -65555, 327680, 3, -131091, 327680, 3, -14, 65536, 5, -65550, 65536, 5, -18, 131072, 5, -65554, 131072, 5, -131090, 327680, 4, -131086, 262144, 4, -131087, 196608, 4, -131088, 196608, 4, -131089, 196608, 4)
+layer_0/tile_data = PackedInt32Array(65518, 196608, 1, 131054, 262144, 0, 196590, 262144, 0, 262126, 327680, 0, 65519, 131072, 2, 131055, 262144, 1, 196591, 262144, 1, 262127, 327680, 1, 65520, 262144, 3, 131056, 262144, 3, 196592, 262144, 3, 262128, 262144, 3, 65521, 131072, 1, 131057, 262144, 0, 196593, 262144, 0, 262129, 327680, 0, 65522, 196608, 2, 131058, 262144, 1, 196594, 262144, 1, 262130, 3, 1, 262125, 0, 4, 196589, 327680, 3, 131053, 327680, 3, 65517, 327680, 3, -19, 327680, 3, -65555, 327680, 3, -131091, 327680, 3, -14, 65536, 5, -65550, 65536, 5, -18, 131072, 5, -65554, 131072, 5, -131090, 327680, 4, -131086, 262144, 4, -131087, 196608, 4, -131088, 196608, 4, -131089, 196608, 4)
 layer_1/tile_data = PackedInt32Array(-18, 262145, 0, -17, 1, 0, -16, 196609, 0, -131086, 458753, 1)
 
 [node name="Sign" parent="." instance=ExtResource("6_8oyiv")]
