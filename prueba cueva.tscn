@@ -108,7 +108,7 @@ sources/0 = SubResource("TileSetAtlasSource_yxc8w")
 [node name="PruebaCueva" type="Node2D"]
 
 [node name="Wizard" parent="." instance=ExtResource("2_uujvf")]
-position = Vector2(624, -877)
+position = Vector2(621, -859)
 
 [node name="TileMap" type="TileMap" parent="."]
 show_behind_parent = true
@@ -118,7 +118,7 @@ format = 2
 layer_0/name = "Suelo"
 layer_0/tile_data = PackedInt32Array(-1900525, 196608, 4, -1834989, 196608, 4, -1900524, 196608, 4, -1834988, 196608, 4, -1900523, 196608, 4, -1834987, 262144, 4, -2031596, 196608, 4, -1966060, 196608, 4, -2031595, 196608, 4, -1966059, 196608, 4, -1900526, 196608, 4, -1834990, 65536, 5, -1966062, 196608, 3, -1966061, 327680, 2, -2097132, 196608, 3, -2097131, 131072, 3)
 layer_1/name = "Deco"
-layer_1/tile_data = PackedInt32Array(-1900525, 65536, 1, -2031595, 262144, 0, -1834987, 65536, 1, -1834990, 65536, 0, -1966059, 0, 0, -2031596, 65536, 4)
+layer_1/tile_data = PackedInt32Array(-1900525, 65536, 1, -2031595, 262144, 0, -1834987, 65536, 1, -1834990, 65536, 0, -1966059, 0, 0, -2031596, 65536, 4, -1966060, 196608, 0)
 layer_2/name = "Obsta"
 layer_2/tile_data = PackedInt32Array(-1900523, 327680, 3)
 layer_3/name = "Paredes"
