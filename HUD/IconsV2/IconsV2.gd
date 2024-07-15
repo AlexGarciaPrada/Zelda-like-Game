@@ -11,6 +11,7 @@ var previous_texture : CompressedTexture2D
 @onready var sprite = $Sprite2D
 @export var this_texture :CompressedTexture2D
 func _ready():
+	z_index=2
 	if this_texture != null:
 		sprite.texture = this_texture
 
