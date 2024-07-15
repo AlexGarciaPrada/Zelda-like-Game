@@ -74,15 +74,15 @@ collision_mask = 6
 script = ExtResource("1_ijwbo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Lure"]]
-light_mask = 7
-visibility_layer = 7
+light_mask = 8
+visibility_layer = 6
 shape = SubResource("RectangleShape2D_goi7b")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Lure", "Weapon"]]
 light_mask = 7
 visibility_layer = 7
-collision_layer = 2
-collision_mask = 2
+collision_layer = 8
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Lure", "Weapon"]]
 light_mask = 7
