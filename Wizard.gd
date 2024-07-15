@@ -200,11 +200,9 @@ func _on_area_2d_area_exited(area):
 #----------------------- Hechizos-----------------------
 
 func _lure_1():
-	if Input.is_action_just_pressed("Lure"):
-		var lure_instance = lure_scene.instantiate()
-		get_tree().get_current_scene().add_child(lure_instance)
-		lure_instance.global_position = global_position
-	#	lure_instance.get_animation().play("idle")
+	var lure_instance = lure_scene.instantiate()
+	get_tree().get_current_scene().add_child(lure_instance)
+	lure_instance.global_position = global_position
 		
 func _fireball_1():
 	var fireball_instance = fireball_scene.instantiate()
@@ -413,4 +411,7 @@ func _sorcery(element,spell,level):
 							_invisiblity_2()
 						3: 
 							_invisiblity_3()
-
+				"lure":
+					match level:
+						1:
+							_lure_1()

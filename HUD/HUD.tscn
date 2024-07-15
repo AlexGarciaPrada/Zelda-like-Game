@@ -137,6 +137,7 @@ is_inventory = false
 layout_mode = 2
 number_label = "9"
 is_inventory = false
+texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/dark/lure/dark_lure_1.png"
 
 [node name="IconsV11" parent="GridContainer" instance=ExtResource("6_tkmat")]
 layout_mode = 2
