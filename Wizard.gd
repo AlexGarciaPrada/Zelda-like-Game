@@ -34,28 +34,9 @@ var knockback_speed = 300
 
 func _physics_process(delta):
 	if !Singleton.is_stopped:
-		if is_invisible:
-			_movement()
-		else:
-			if knockback_mode:
-				_knockback()
-				if is_not_acting():
-					_movement()
-					_spell_10()
-					_spell_1()
-					_spell_2()
-					_spell_3()
-					_spell_4()
-					_spell_5()
-					_spell_6()
-					_spell_7()
-					_spell_8()
-					_spell_9()
-					_short_attack()
-					_show_inventory()
-			if inmunity_mode:
-				_inmunity()
-			if is_not_acting() && !knockback_mode:
+		if knockback_mode:
+			_knockback()
+			if is_not_acting():
 				_movement()
 				_spell_10()
 				_spell_1()
@@ -68,8 +49,24 @@ func _physics_process(delta):
 				_spell_8()
 				_spell_9()
 				_short_attack()
-				_speak()
 				_show_inventory()
+		if inmunity_mode:
+			_inmunity()
+		if is_not_acting() && !knockback_mode:
+			_movement()
+			_spell_10()
+			_spell_1()
+			_spell_2()
+			_spell_3()
+			_spell_4()
+			_spell_5()
+			_spell_6()
+			_spell_7()
+			_spell_8()
+			_spell_9()
+			_short_attack()
+			_speak()
+			_show_inventory()
 	else:
 		_hide_inventory()
 func _ready():
