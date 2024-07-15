@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://r5ms4d18f6hc"]
 
-[ext_resource type="Texture2D" uid="uid://cf5qhiax6jflf" path="res://Assets Videojuego/Sprites/Tileset/Cueva/Tileset cueva.png" id="1_nidnn"]
+[ext_resource type="Texture2D" uid="uid://ci3w1rg1sl800" path="res://Assets Videojuego/Sprites/Tileset/Cueva/Tileset cueva.png" id="1_nidnn"]
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="2_uujvf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yxc8w"]
@@ -36,18 +36,23 @@ texture_region_size = Vector2i(32, 32)
 3:1/0 = 0
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -9.36917, -16, -9.01561, 16, -16, 16)
 4:1/0 = 0
 4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(9.01561, -16, 16, -16, 16, 16, 8.66206, 16)
 5:1/0 = 0
 5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:1/0/physics_layer_0/angular_velocity = 0.0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -8.66206, -16, -8.66206)
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 9.36916, 16, 9.36916, 16, 16, -16, 16)
 1:2/0 = 0
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, -5.83363, -6.18719, -16, 16)
 2:2/0 = 0
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
@@ -66,6 +71,7 @@ texture_region_size = Vector2i(32, 32)
 1:3/0 = 0
 1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:3/0 = 0
 2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:3/0/physics_layer_0/angular_velocity = 0.0
@@ -99,6 +105,9 @@ texture_region_size = Vector2i(32, 32)
 1:5/0 = 0
 1:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:5/0/physics_layer_0/angular_velocity = 0.0
+2:4/0 = 0
+2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:4/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_xrbsu"]
 tile_size = Vector2i(32, 32)
@@ -116,10 +125,9 @@ texture_filter = 3
 tile_set = SubResource("TileSet_xrbsu")
 format = 2
 layer_0/name = "Suelo"
-layer_0/tile_data = PackedInt32Array(-1900525, 196608, 4, -1834989, 196608, 4, -1900524, 196608, 4, -1834988, 196608, 4, -1900523, 196608, 4, -1834987, 262144, 4, -2031596, 196608, 4, -1966060, 196608, 4, -2031595, 196608, 4, -1966059, 196608, 4, -1900526, 196608, 4, -1834990, 65536, 5, -1966062, 196608, 3, -1966061, 327680, 2, -2097132, 196608, 3, -2097131, 131072, 3)
 layer_1/name = "Deco"
-layer_1/tile_data = PackedInt32Array(-1900525, 65536, 1, -2031595, 262144, 0, -1834987, 65536, 1, -1834990, 65536, 0, -1966059, 0, 0, -2031596, 65536, 4, -1966060, 196608, 0)
+layer_1/tile_data = PackedInt32Array()
 layer_2/name = "Obsta"
-layer_2/tile_data = PackedInt32Array(-1900523, 327680, 3)
+layer_2/tile_data = PackedInt32Array()
 layer_3/name = "Paredes"
-layer_3/tile_data = PackedInt32Array(-1834990, 262144, 2, -1966062, 196608, 2, -2097131, 131072, 2, -2097132, 196608, 2, -2031596, 196608, 1, -1966061, 327680, 1, -2031595, 262144, 1, -1966059, 262144, 1, -1900523, 262144, 1, -1834987, 65536, 2, -1834989, 262144, 3, -1834988, 0, 2, -1900526, 196608, 1)
+layer_3/tile_data = PackedInt32Array(-1834986, 327680, 2, -1900521, 327680, 2, -1900523, 0, 3, -1769450, 196608, 3, -1834985, 327680, 3, -1834984, 327680, 3, -1834983, 327680, 3, -1703914, 65536, 5, -1638378, 65536, 5, -1638377, 65536, 5, -1703913, 65536, 5, -1769449, 65536, 5, -1769448, 65536, 5, -1703912, 65536, 5, -1703911, 65536, 5, -1769447, 65536, 5, -1638375, 65536, 5, -1638376, 65536, 5, -1703915, 327680, 3, -1703916, 262144, 1, -1638380, 262144, 1, -1769452, 262144, 1, -1769451, 327680, 1)
