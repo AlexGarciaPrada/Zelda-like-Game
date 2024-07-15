@@ -14,6 +14,7 @@ var SPEED= 300
 @onready var dialogue_scene = preload("res://Dialogues/Dialogues.tscn")
 @onready var icon_spell = preload("res://HUD/Icon/Icon.tscn")
 @onready var hud = $Camera2D/Hud
+@onready var camera = $Camera2D
 
 
 var life = 5
@@ -71,7 +72,9 @@ func _physics_process(delta):
 func _ready():
 	print(Singleton.hud == null)
 	if Singleton.hud != null:
-		hud = Singleton.hud.duplicate()
+		camera.remove_child(hud)
+		camera.add_child(Singleton.hud.duplicate())
+		hud = camera.get_child(0)
 		print(hud)
 #-----------------------Acciones Básicas-----------------------
 func _show_inventory():
