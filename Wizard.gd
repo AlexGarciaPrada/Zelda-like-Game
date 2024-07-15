@@ -206,14 +206,14 @@ func _on_area_2d_area_exited(area):
 
 func _lure_1():
 	var lure_instance = lure_scene.instantiate()
-	get_tree().get_current_scene().add_child(lure_instance)
+	self.add_child(lure_instance)
 	lure_instance.global_position = global_position
 	lure_instance.can_explode = false
 	
 func _lure_2():
 	var lure_instance = lure_scene.instantiate()
 	lure_instance.can_explode = true
-	get_tree().get_current_scene().add_child(lure_instance)
+	self.add_child(lure_instance)
 	lure_instance.global_position = global_position
 	
 func _fireball_1():
