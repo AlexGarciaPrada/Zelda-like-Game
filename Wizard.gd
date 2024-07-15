@@ -34,9 +34,28 @@ var knockback_speed = 300
 
 func _physics_process(delta):
 	if !Singleton.is_stopped:
-		if knockback_mode:
-			_knockback()
-			if is_not_acting():
+		if is_invisible:
+			_movement()
+		else:
+			if knockback_mode:
+				_knockback()
+				if is_not_acting():
+					_movement()
+					_spell_10()
+					_spell_1()
+					_spell_2()
+					_spell_3()
+					_spell_4()
+					_spell_5()
+					_spell_6()
+					_spell_7()
+					_spell_8()
+					_spell_9()
+					_short_attack()
+					_show_inventory()
+			if inmunity_mode:
+				_inmunity()
+			if is_not_acting() && !knockback_mode:
 				_movement()
 				_spell_10()
 				_spell_1()
@@ -49,24 +68,8 @@ func _physics_process(delta):
 				_spell_8()
 				_spell_9()
 				_short_attack()
+				_speak()
 				_show_inventory()
-		if inmunity_mode:
-			_inmunity()
-		if is_not_acting() && !knockback_mode:
-			_movement()
-			_spell_10()
-			_spell_1()
-			_spell_2()
-			_spell_3()
-			_spell_4()
-			_spell_5()
-			_spell_6()
-			_spell_7()
-			_spell_8()
-			_spell_9()
-			_short_attack()
-			_speak()
-			_show_inventory()
 	else:
 		_hide_inventory()
 func _ready():
@@ -227,13 +230,24 @@ func _fireball_1():
 			fireball_instance.velocity = Vector2(0,fireball_instance.SPEED)
 			
 func _invisiblity_1():
-	if Input.is_action_just_pressed("Invisiblity") && !is_invisible:
-		is_invisible = true
-		modulate.a8=100
-		await get_tree().create_timer(5).timeout
-		modulate.a8=255
-		is_invisible = false
+	is_invisible = true
+	modulate.a8=100
+	await get_tree().create_timer(5).timeout
+	modulate.a8=255
+	is_invisible = false
 	
+func _invisiblity_2():
+	is_invisible = true
+	modulate.a8=100
+	await get_tree().create_timer(10).timeout
+	modulate.a8=255
+	is_invisible = false
+	
+func _invisiblity_3():
+	modulate.a8=100
+	await get_tree().create_timer(10).timeout
+	modulate.a8=255
+
 func _spikes_1():
 	var spine_up_instance = spine_scene.instantiate()
 	var spine_down_instance = spine_scene.instantiate()
@@ -392,4 +406,14 @@ func _sorcery(element,spell,level):
 							_spikes_2()
 						3:
 							_spikes_3()
+		"dark":
+			match spell:
+				"invisible":
+					match level:
+						1:
+							_invisiblity_1()
+						2: 
+							_invisiblity_2()
+						3: 
+							_invisiblity_3()
 
