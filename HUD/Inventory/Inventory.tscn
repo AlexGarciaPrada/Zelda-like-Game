@@ -50,12 +50,15 @@ texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/na
 
 [node name="IconsV9" parent="GridContainer" instance=ExtResource("2_iexv7")]
 layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/dark/invisible/dark_invisible_1.png"
 
 [node name="IconsV10" parent="GridContainer" instance=ExtResource("2_iexv7")]
 layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/dark/invisible/dark_invisible_2.png"
 
 [node name="IconsV11" parent="GridContainer" instance=ExtResource("2_iexv7")]
 layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/dark/invisible/dark_invisible_3.png"
 
 [node name="IconsV12" parent="GridContainer" instance=ExtResource("2_iexv7")]
 layout_mode = 2
