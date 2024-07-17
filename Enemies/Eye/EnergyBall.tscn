@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://cthho8n0ncuno"]
+
+[ext_resource type="Script" path="res://Enemies/Eye/EnergyBall.gd" id="1_8ukkh"]
+[ext_resource type="Texture2D" uid="uid://4qdsag6uh5x7" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Uniojo/Attack/Bola de energia.png" id="2_cprbt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq41f"]
+atlas = ExtResource("2_cprbt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtmg1"]
+atlas = ExtResource("2_cprbt")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4c3j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq41f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtmg1")
+}],
+"loop": true,
+"name": &"movement",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obnhk"]
+radius = 7.07107
+
+[node name="EnergyBall" type="CharacterBody2D" groups=["Enemy"]]
+z_index = -1
+scale = Vector2(1.8, 1.8)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_8ukkh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_v4c3j")
+animation = &"movement"
+frame_progress = 0.746256
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_obnhk")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_obnhk")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

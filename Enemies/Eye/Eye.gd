@@ -3,22 +3,21 @@ extends CharacterBody2D
 @onready var player = $"../Wizard"
 @export var speed = 150
 @export var range = 250
-@export var cloud_range = 75
 @export var life = 2
 var weapons_in_area = []
 var clue ="down"
 var is_dying = false
 var knockback_mode = false
-@onready var venom_cloud_scene = preload("res://Enemies/Mushroom/VenomCloud.tscn")
 @onready var animation= $AnimatedSprite2D
 @onready var enemyarea=$Area2D
 @onready var enemycollision= $CollisionShape2D
 var knockback_speed = 450
 var current_frame = 0
 var newdirection = Vector2(0,0)
-@export var cooldown = 5
+@export var cooldown = 3
 var time = cooldown
-
+var is_attacking = false
+@onready var energyball_scene = preload("res://Enemies/Eye/EnergyBall.tscn")
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Weapon"):
 		weapons_in_area.append(area)
@@ -60,8 +59,8 @@ func _physics_process(delta):
 					enemyarea.queue_free()
 				is_dying=true
 				animation.play("death")
+				
 		time += delta
-		
 	
 	
 
@@ -74,11 +73,13 @@ func _movement():
 	var targets = get_objects_within_distance("Player",range)
 	if !targets.is_empty():
 		var objective = get_min_distance_obj(targets)
-		if time >= cooldown && position.distance_to(objective.position) < cloud_range:
-			_create_venom_cloud()
-			time = 0
 		if objective != null:
 			var direction= position.direction_to(objective.position)	
+			if time >= cooldown:
+				animation.play("attack "+ clue)
+				is_attacking = true
+				_energyball(direction)
+				time = 0
 			velocity = direction * speed
 			move_and_slide()
 			if abs(direction.y) > abs(direction.x):
@@ -96,7 +97,7 @@ func _movement():
 					animation.play("walk left")
 					clue = "left"
 	else:
-		animation.play("idle "+ clue)	
+		animation.play("walk "+ clue)	
 func _short_attack_area():
 	if enemyarea != null && enemyarea.has_overlapping_areas && !is_dying: 
 		for weapon in enemyarea.get_overlapping_areas():
@@ -107,7 +108,7 @@ func _on_animated_sprite_2d_animation_finished():
 	if is_dying:
 		animation.visible=false
 		queue_free()
-		
+	
 func get_objects_within_distance(group_name, distance):
 	var nodes_in_group = get_tree().get_nodes_in_group(group_name)
 	var objects_within_distance = []
@@ -131,8 +132,8 @@ func get_min_distance_obj(ObjectList):
 				object= target
 	return object
 
-func _create_venom_cloud():
-	var venom_cloud = venom_cloud_scene.instantiate()
-	venom_cloud.global_position = self.global_position
-	
-	get_parent().add_child(venom_cloud)
+func _energyball(direction: Vector2):
+	var energyball = energyball_scene.instantiate()
+	energyball.position = position
+	energyball.velocity = energyball.SPEED * direction
+	get_parent().add_child(energyball)
