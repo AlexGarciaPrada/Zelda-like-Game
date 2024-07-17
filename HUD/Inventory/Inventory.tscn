@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfo17tgk3shw0"]
+[gd_scene load_steps=8 format=3 uid="uid://dfo17tgk3shw0"]
 
 [ext_resource type="Script" path="res://HUD/Inventory/Inventory.gd" id="1_y1lf0"]
 [ext_resource type="PackedScene" uid="uid://c5sncxqjc57e5" path="res://HUD/IconsContainerV2/IconsContainerControlV2.tscn" id="2_iexv7"]
+[ext_resource type="Texture2D" uid="uid://b7nypljqsypkf" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos dark.png" id="3_x3wyj"]
+[ext_resource type="Texture2D" uid="uid://srjamhonku6h" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos fuego.png" id="4_wnh2k"]
+[ext_resource type="Texture2D" uid="uid://bs52fkv5hu3hh" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos naturaleza.png" id="5_py1vt"]
+[ext_resource type="Texture2D" uid="uid://crd7qilahulvs" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos agua.png" id="6_cpuk3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pwt70"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -9,7 +15,7 @@ anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("1_y1lf0")
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="Fuego" type="GridContainer" parent="."]
 layout_mode = 0
 offset_left = 58.0
 offset_top = 223.0
@@ -20,31 +26,31 @@ theme_override_constants/h_separation = 75
 theme_override_constants/v_separation = 70
 columns = 2
 
-[node name="IconsV2" parent="GridContainer" instance=ExtResource("2_iexv7")]
+[node name="IconsV2" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_1.png"
 
-[node name="IconsV3" parent="GridContainer" instance=ExtResource("2_iexv7")]
+[node name="IconsV3" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_2.png"
 
-[node name="IconsV4" parent="GridContainer" instance=ExtResource("2_iexv7")]
+[node name="IconsV4" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_3.png"
 
-[node name="IconsV5" parent="GridContainer" instance=ExtResource("2_iexv7")]
+[node name="IconsV5" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_1.png"
 
-[node name="IconsV6" parent="GridContainer" instance=ExtResource("2_iexv7")]
+[node name="IconsV6" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fireball/fire_fireball_1.png"
 
-[node name="IconsV7" parent="GridContainer" instance=ExtResource("2_iexv7")]
+[node name="IconsV7" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_2.png"
 
-[node name="GridContainer2" type="GridContainer" parent="."]
+[node name="Naturaleza" type="GridContainer" parent="."]
 layout_mode = 0
 offset_left = 251.0
 offset_top = 223.0
@@ -55,31 +61,31 @@ theme_override_constants/h_separation = 75
 theme_override_constants/v_separation = 70
 columns = 2
 
-[node name="IconsV2" parent="GridContainer2" instance=ExtResource("2_iexv7")]
+[node name="IconsV2" parent="Naturaleza" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_1.png"
 
-[node name="IconsV3" parent="GridContainer2" instance=ExtResource("2_iexv7")]
+[node name="IconsV3" parent="Naturaleza" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_2.png"
 
-[node name="IconsV4" parent="GridContainer2" instance=ExtResource("2_iexv7")]
+[node name="IconsV4" parent="Naturaleza" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_3.png"
 
-[node name="IconsV5" parent="GridContainer2" instance=ExtResource("2_iexv7")]
+[node name="IconsV5" parent="Naturaleza" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_1.png"
 
-[node name="IconsV6" parent="GridContainer2" instance=ExtResource("2_iexv7")]
+[node name="IconsV6" parent="Naturaleza" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fireball/fire_fireball_1.png"
 
-[node name="IconsV7" parent="GridContainer2" instance=ExtResource("2_iexv7")]
+[node name="IconsV7" parent="Naturaleza" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_2.png"
 
-[node name="GridContainer3" type="GridContainer" parent="."]
+[node name="Agua" type="GridContainer" parent="."]
 layout_mode = 0
 offset_left = 442.0
 offset_top = 223.0
@@ -90,31 +96,31 @@ theme_override_constants/h_separation = 75
 theme_override_constants/v_separation = 70
 columns = 2
 
-[node name="IconsV2" parent="GridContainer3" instance=ExtResource("2_iexv7")]
+[node name="IconsV2" parent="Agua" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_1.png"
 
-[node name="IconsV3" parent="GridContainer3" instance=ExtResource("2_iexv7")]
+[node name="IconsV3" parent="Agua" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_2.png"
 
-[node name="IconsV4" parent="GridContainer3" instance=ExtResource("2_iexv7")]
+[node name="IconsV4" parent="Agua" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_3.png"
 
-[node name="IconsV5" parent="GridContainer3" instance=ExtResource("2_iexv7")]
+[node name="IconsV5" parent="Agua" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_1.png"
 
-[node name="IconsV6" parent="GridContainer3" instance=ExtResource("2_iexv7")]
+[node name="IconsV6" parent="Agua" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fireball/fire_fireball_1.png"
 
-[node name="IconsV7" parent="GridContainer3" instance=ExtResource("2_iexv7")]
+[node name="IconsV7" parent="Agua" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_2.png"
 
-[node name="GridContainer4" type="GridContainer" parent="."]
+[node name="Dark" type="GridContainer" parent="."]
 layout_mode = 0
 offset_left = 635.0
 offset_top = 223.0
@@ -125,26 +131,59 @@ theme_override_constants/h_separation = 75
 theme_override_constants/v_separation = 70
 columns = 2
 
-[node name="IconsV2" parent="GridContainer4" instance=ExtResource("2_iexv7")]
+[node name="IconsV2" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_1.png"
 
-[node name="IconsV3" parent="GridContainer4" instance=ExtResource("2_iexv7")]
+[node name="IconsV3" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_2.png"
 
-[node name="IconsV4" parent="GridContainer4" instance=ExtResource("2_iexv7")]
+[node name="IconsV4" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_3.png"
 
-[node name="IconsV5" parent="GridContainer4" instance=ExtResource("2_iexv7")]
+[node name="IconsV5" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_1.png"
 
-[node name="IconsV6" parent="GridContainer4" instance=ExtResource("2_iexv7")]
+[node name="IconsV6" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fireball/fire_fireball_1.png"
 
-[node name="IconsV7" parent="GridContainer4" instance=ExtResource("2_iexv7")]
+[node name="IconsV7" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_2.png"
+
+[node name="IconDark" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(672, 156)
+scale = Vector2(1.855, 1.855)
+texture = ExtResource("3_x3wyj")
+
+[node name="IconFuego" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(94.9999, 156)
+scale = Vector2(1.855, 1.855)
+texture = ExtResource("4_wnh2k")
+
+[node name="IconNaturaleza" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(289, 156)
+scale = Vector2(1.855, 1.855)
+texture = ExtResource("5_py1vt")
+
+[node name="IconAgua" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(479, 151)
+scale = Vector2(1.855, 1.855)
+texture = ExtResource("6_cpuk3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.0475577, 0.0475576, 0.0475576, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_left = -67.0
+offset_top = -46.0
+offset_right = 895.0
+offset_bottom = 575.0
+texture = SubResource("CanvasTexture_pwt70")

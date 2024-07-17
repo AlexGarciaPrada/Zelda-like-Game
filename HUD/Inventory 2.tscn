@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=3 uid="uid://cy37pprpi7xrb"]
+
+[ext_resource type="PackedScene" uid="uid://c5sncxqjc57e5" path="res://HUD/IconsContainerV2/IconsContainerControlV2.tscn" id="1_2uvfj"]
+[ext_resource type="Texture2D" uid="uid://4pb1ur0eq4s7" path="res://Assets Videojuego/Sprites/Iconos/Menú/1.png" id="2_fmmss"]
+[ext_resource type="Texture2D" uid="uid://bnkv73changlj" path="res://Assets Videojuego/Sprites/Iconos/Menú/2.png" id="3_0ntuo"]
+[ext_resource type="Texture2D" uid="uid://cl55h8jfoq3yg" path="res://Assets Videojuego/Sprites/Iconos/Menú/3.png" id="4_e3nt0"]
+[ext_resource type="Texture2D" uid="uid://b7nypljqsypkf" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos dark.png" id="5_6ere3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tx0yp"]
+
+[node name="Inventory2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 119.0
+offset_top = 3.0
+offset_right = 119.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+texture_filter = 3
+offset_left = 261.0
+offset_top = 216.0
+offset_right = 636.0
+offset_bottom = 410.0
+mouse_filter = 2
+theme_override_constants/h_separation = 75
+theme_override_constants/v_separation = 70
+columns = 6
+
+[node name="IconsV2" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/Iconos/dark/invisible/dark_invisible_1.png"
+
+[node name="IconsV8" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/Iconos/dark/lure/dark_lure_1.png"
+
+[node name="IconsV9" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+
+[node name="IconsV10" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+
+[node name="IconsV11" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+
+[node name="IconsV12" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+
+[node name="IconsV13" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/Iconos/dark/invisible/dark_invisible_2.png"
+
+[node name="IconsV3" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/Iconos/dark/lure/dark_lure_2.png"
+
+[node name="IconsV4" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+
+[node name="IconsV5" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+
+[node name="IconsV6" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+
+[node name="IconsV7" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+
+[node name="IconsV14" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/Iconos/dark/invisible/dark_invisible_3.png"
+
+[node name="IconsV15" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/Iconos/dark/lure/dark_lure_3.png"
+
+[node name="IconsV16" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+
+[node name="IconsV17" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+
+[node name="IconsV18" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+
+[node name="IconsV19" parent="GridContainer" instance=ExtResource("1_2uvfj")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.785105, 0.654032, 1, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = 22.0
+offset_right = 749.0
+offset_bottom = 500.0
+texture = SubResource("CanvasTexture_tx0yp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(194, 216)
+scale = Vector2(1.66, 1.66)
+texture = ExtResource("2_fmmss")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(194, 287)
+scale = Vector2(1.66, 1.66)
+texture = ExtResource("3_0ntuo")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(193, 357)
+scale = Vector2(1.66, 1.66)
+texture = ExtResource("4_e3nt0")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(99, 108)
+scale = Vector2(4.08, 4.08)
+texture = ExtResource("5_6ere3")
