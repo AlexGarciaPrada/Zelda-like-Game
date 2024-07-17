@@ -1,3 +1,61 @@
-[gd_scene format=3 uid="uid://cx3x4kof7bnq5"]
+[gd_scene load_steps=9 format=3 uid="uid://cx3x4kof7bnq5"]
 
-[node name="AstralBall" type="Node2D"]
+[ext_resource type="Script" path="res://Spells/AstralBall/AstralBall.gd" id="1_2qqui"]
+[ext_resource type="Texture2D" uid="uid://dmmewff3tsopv" path="res://Assets Videojuego/Sprites/Hechizos/Astralball/Bola energia negra.png" id="2_nwksh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oumll"]
+atlas = ExtResource("2_nwksh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_webse"]
+atlas = ExtResource("2_nwksh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggydi"]
+atlas = ExtResource("2_nwksh")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igi0f"]
+atlas = ExtResource("2_nwksh")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_omdbj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oumll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_webse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggydi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igi0f")
+}],
+"loop": true,
+"name": &"movement",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4o7qn"]
+
+[node name="AstralBall" type="CharacterBody2D"]
+script = ExtResource("1_2qqui")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_omdbj")
+animation = &"movement"
+frame_progress = 0.42526
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4o7qn")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
