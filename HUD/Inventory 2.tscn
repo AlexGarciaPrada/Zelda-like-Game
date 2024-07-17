@@ -1,31 +1,58 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy37pprpi7xrb"]
+[gd_scene load_steps=13 format=3 uid="uid://cy37pprpi7xrb"]
 
 [ext_resource type="PackedScene" uid="uid://c5sncxqjc57e5" path="res://HUD/IconsContainerV2/IconsContainerControlV2.tscn" id="1_2uvfj"]
 [ext_resource type="Texture2D" uid="uid://4pb1ur0eq4s7" path="res://Assets Videojuego/Sprites/Iconos/Menú/1.png" id="2_fmmss"]
 [ext_resource type="Texture2D" uid="uid://bnkv73changlj" path="res://Assets Videojuego/Sprites/Iconos/Menú/2.png" id="3_0ntuo"]
 [ext_resource type="Texture2D" uid="uid://cl55h8jfoq3yg" path="res://Assets Videojuego/Sprites/Iconos/Menú/3.png" id="4_e3nt0"]
 [ext_resource type="Texture2D" uid="uid://b7nypljqsypkf" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos dark.png" id="5_6ere3"]
+[ext_resource type="Texture2D" uid="uid://d02ovmy6jk60p" path="res://Assets Videojuego/Sprites/Iconos/Menú/Baton adorno dark.png" id="6_o44nl"]
+[ext_resource type="Texture2D" uid="uid://cm4j06ttoemjy" path="res://Assets Videojuego/Sprites/Iconos/Menú/Abrir menú hechizos.png" id="6_ypws0"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_tx0yp"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_uyh1a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha0wk"]
+atlas = ExtResource("6_ypws0")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guyle"]
+atlas = ExtResource("6_ypws0")
+region = Rect2(0, 648, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2g2kb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ha0wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guyle")
+}],
+"loop": false,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ww3px"]
 
 [node name="Inventory2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 119.0
-offset_top = 3.0
-offset_right = 119.0
-offset_bottom = 3.0
+offset_left = 101.0
+offset_top = 10.0
+offset_right = 101.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="."]
 texture_filter = 3
-offset_left = 261.0
-offset_top = 216.0
-offset_right = 636.0
-offset_bottom = 410.0
+layout_mode = 0
+offset_left = 353.0
+offset_top = 213.0
+offset_right = 728.0
+offset_bottom = 407.0
 mouse_filter = 2
 theme_override_constants/h_separation = 75
 theme_override_constants/v_separation = 70
@@ -34,6 +61,16 @@ columns = 6
 [node name="IconsV2" parent="GridContainer" instance=ExtResource("1_2uvfj")]
 layout_mode = 2
 texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/Iconos/dark/invisible/dark_invisible_1.png"
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/IconsV2"]
+modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("CanvasTexture_uyh1a")
 
 [node name="IconsV8" parent="GridContainer" instance=ExtResource("1_2uvfj")]
 layout_mode = 2
@@ -91,36 +128,49 @@ layout_mode = 2
 [node name="IconsV19" parent="GridContainer" instance=ExtResource("1_2uvfj")]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.785105, 0.654032, 1, 1)
-show_behind_parent = true
-layout_mode = 0
-offset_left = -5.0
-offset_top = 22.0
-offset_right = 749.0
-offset_bottom = 500.0
-texture = SubResource("CanvasTexture_tx0yp")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
-position = Vector2(194, 216)
-scale = Vector2(1.66, 1.66)
+position = Vector2(242.96, 221.96)
+scale = Vector2(2.06, 2.06)
 texture = ExtResource("2_fmmss")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture_filter = 3
-position = Vector2(194, 287)
-scale = Vector2(1.66, 1.66)
+position = Vector2(242.96, 292.96)
+scale = Vector2(2.06, 2.06)
 texture = ExtResource("3_0ntuo")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 texture_filter = 3
-position = Vector2(193, 357)
-scale = Vector2(1.66, 1.66)
+position = Vector2(241.96, 362.96)
+scale = Vector2(2.06, 2.06)
 texture = ExtResource("4_e3nt0")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
 texture_filter = 3
-position = Vector2(99, 108)
+position = Vector2(176, 106)
 scale = Vector2(4.08, 4.08)
 texture = ExtResource("5_6ere3")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(905, 453)
+scale = Vector2(4.08, 4.08)
+texture = ExtResource("6_o44nl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(475, 314)
+sprite_frames = SubResource("SpriteFrames_2g2kb")
+frame = 1
+frame_progress = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.369107, 0.369107, 0.369107, 0.392157)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 289.0
+offset_top = 149.0
+offset_right = 793.0
+offset_bottom = 429.0
+texture = SubResource("CanvasTexture_ww3px")

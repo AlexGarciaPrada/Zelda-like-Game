@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmptv4fvmdaoa"
-path="res://.godot/imported/Bola de fuego idle left.png-b4cb33cc8a1bd24dea4404e812af013f.ctex"
+uid="uid://d02ovmy6jk60p"
+path="res://.godot/imported/Baton adorno dark.png-be56837acd5a2c25587f216a5c889fd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/Fireball/Bola de fuego idle left.png"
-dest_files=["res://.godot/imported/Bola de fuego idle left.png-b4cb33cc8a1bd24dea4404e812af013f.ctex"]
+source_file="res://Assets Videojuego/Sprites/Iconos/Menú/Baton adorno dark.png"
+dest_files=["res://.godot/imported/Baton adorno dark.png-be56837acd5a2c25587f216a5c889fd0.ctex"]
 
 [params]
 

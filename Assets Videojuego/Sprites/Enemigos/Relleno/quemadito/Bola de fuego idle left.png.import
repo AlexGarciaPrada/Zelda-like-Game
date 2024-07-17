@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d060wagrmtmqb"
-path="res://.godot/imported/Bola de fuego idle up.png-75c175a59ffcc89f61290a5b0daf1e31.ctex"
+uid="uid://dmptv4fvmdaoa"
+path="res://.godot/imported/Bola de fuego idle left.png-14abb5bca1f3e610f7b87a43412d3875.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/Fireball/Bola de fuego idle up.png"
-dest_files=["res://.godot/imported/Bola de fuego idle up.png-75c175a59ffcc89f61290a5b0daf1e31.ctex"]
+source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/quemadito/Bola de fuego idle left.png"
+dest_files=["res://.godot/imported/Bola de fuego idle left.png-14abb5bca1f3e610f7b87a43412d3875.ctex"]
 
 [params]
 

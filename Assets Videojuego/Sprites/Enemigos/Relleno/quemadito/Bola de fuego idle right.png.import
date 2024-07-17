@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dt0ga7f6f0dq0"
-path="res://.godot/imported/Bola de fuego idle right.png-f9810df5c5f9834a065723bb4e415b9e.ctex"
+path="res://.godot/imported/Bola de fuego idle right.png-dd9c2e3def575d2175ef0455f97a0251.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/Fireball/Bola de fuego idle right.png"
-dest_files=["res://.godot/imported/Bola de fuego idle right.png-f9810df5c5f9834a065723bb4e415b9e.ctex"]
+source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/quemadito/Bola de fuego idle right.png"
+dest_files=["res://.godot/imported/Bola de fuego idle right.png-dd9c2e3def575d2175ef0455f97a0251.ctex"]
 
 [params]
 
