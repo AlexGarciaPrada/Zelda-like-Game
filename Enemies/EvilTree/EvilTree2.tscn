@@ -223,7 +223,7 @@ animations = [{
 
 [node name="EnemyProof" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 2
-collision_mask = 7
+collision_mask = 15
 script = ExtResource("1_a8p38")
 range = 200
 life = 3
