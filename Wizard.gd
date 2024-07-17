@@ -72,12 +72,10 @@ func _physics_process(delta):
 	else:
 		_hide_inventory()
 func _ready():
-	print(Singleton.hud == null)
 	if Singleton.hud != null:
 		camera.remove_child(hud)
 		camera.add_child(Singleton.hud.duplicate())
 		hud = camera.get_child(0)
-		print(hud)
 #-----------------------Acciones Básicas-----------------------
 func _show_inventory():
 	if Input.is_action_just_pressed("Inventory"):

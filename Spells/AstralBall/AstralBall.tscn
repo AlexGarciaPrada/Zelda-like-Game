@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cx3x4kof7bnq5"]
 
 [ext_resource type="Script" path="res://Spells/AstralBall/AstralBall.gd" id="1_2qqui"]
-[ext_resource type="Texture2D" uid="uid://dmmewff3tsopv" path="res://Assets Videojuego/Sprites/Hechizos/Astralball/Bola energia negra.png" id="2_nwksh"]
+[ext_resource type="Texture2D" uid="uid://dmmewff3tsopv" path="res://Assets Videojuego/Sprites/Spells/Astralball/Bola energia negra.png" id="2_nwksh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oumll"]
 atlas = ExtResource("2_nwksh")

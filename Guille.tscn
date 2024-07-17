@@ -805,6 +805,7 @@ position = Vector2(350, -192)
 
 [node name="Mushroom" parent="." instance=ExtResource("10_q1kkd")]
 position = Vector2(291, 117)
+range = 250
 
 [node name="Door" parent="." instance=ExtResource("12_7s6wq")]
 offset_left = -497.0

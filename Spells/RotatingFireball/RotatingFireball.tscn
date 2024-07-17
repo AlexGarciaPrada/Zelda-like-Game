@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://k22sg8y6b5jh"]
 
 [ext_resource type="Script" path="res://Spells/RotatingFireball/RotatingFireball.gd" id="1_bpx5a"]
-[ext_resource type="Texture2D" uid="uid://co0g3yt6xhf5j" path="res://Assets Videojuego/Sprites/Hechizos/Fireball/Explosión fireball.png" id="2_gs3g5"]
-[ext_resource type="Texture2D" uid="uid://djo6tk2crp8tm" path="res://Assets Videojuego/Sprites/Hechizos/Rotate Fireball/Bola de fuego orbitar.png" id="2_yrud5"]
+[ext_resource type="Texture2D" uid="uid://co0g3yt6xhf5j" path="res://Assets Videojuego/Sprites/Spells/Fireball/Explosión fireball.png" id="2_gs3g5"]
+[ext_resource type="Texture2D" uid="uid://djo6tk2crp8tm" path="res://Assets Videojuego/Sprites/Spells/Rotate Fireball/Bola de fuego orbitar.png" id="2_yrud5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryl11"]
 atlas = ExtResource("2_gs3g5")

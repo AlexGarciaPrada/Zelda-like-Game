@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cwd7ue680srnv"]
 
 [ext_resource type="Script" path="res://Spells/Spines/Spines.gd" id="1_d2n1i"]
-[ext_resource type="Texture2D" uid="uid://b2ngctql08klm" path="res://Assets Videojuego/Sprites/Hechizos/Espina/Pincho.png" id="2_j04ub"]
+[ext_resource type="Texture2D" uid="uid://b2ngctql08klm" path="res://Assets Videojuego/Sprites/Spells/Espina/Pincho.png" id="2_j04ub"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jrl6q"]
 radius = 46.0977
