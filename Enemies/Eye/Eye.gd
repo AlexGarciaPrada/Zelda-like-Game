@@ -16,6 +16,7 @@ var current_frame = 0
 var newdirection = Vector2(0,0)
 @export var cooldown = 3
 var time = cooldown
+var direction : Vector2
 var is_attacking = false
 @onready var energyball_scene = preload("res://Enemies/Eye/EnergyBall.tscn")
 func _on_area_2d_area_entered(area):
@@ -74,28 +75,29 @@ func _movement():
 	if !targets.is_empty():
 		var objective = get_min_distance_obj(targets)
 		if objective != null:
-			var direction= position.direction_to(objective.position)	
+			direction= position.direction_to(objective.position)	
 			if time >= cooldown:
 				animation.play("attack "+ clue)
 				is_attacking = true
-				_energyball(direction)
+				
 				time = 0
 			velocity = direction * speed
 			move_and_slide()
-			if abs(direction.y) > abs(direction.x):
-				if direction.y > 0:
-					animation.play("walk down")
-					clue = "down"
-				elif direction.y < 0 :
-					animation.play("walk up")
-					clue = "up"
-			else:
-				if direction.x > 0 :
-					animation.play("walk right")
-					clue = "right"
-				elif direction.x < 0:
-					animation.play("walk left")
-					clue = "left"
+			if !is_attacking:
+				if abs(direction.y) > abs(direction.x):
+					if direction.y > 0:
+						animation.play("walk down")
+						clue = "down"
+					elif direction.y < 0 :
+						animation.play("walk up")
+						clue = "up"
+				else:
+					if direction.x > 0 :
+						animation.play("walk right")
+						clue = "right"
+					elif direction.x < 0:
+						animation.play("walk left")
+						clue = "left"
 	else:
 		animation.play("walk "+ clue)	
 func _short_attack_area():
@@ -108,7 +110,10 @@ func _on_animated_sprite_2d_animation_finished():
 	if is_dying:
 		animation.visible=false
 		queue_free()
-	
+	elif is_attacking:
+		_energyball(direction)
+		is_attacking= false
+		
 func get_objects_within_distance(group_name, distance):
 	var nodes_in_group = get_tree().get_nodes_in_group(group_name)
 	var objects_within_distance = []

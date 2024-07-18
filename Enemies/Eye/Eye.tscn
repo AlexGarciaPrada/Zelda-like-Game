@@ -240,7 +240,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack down",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -261,9 +261,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e3clc")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack left",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -284,9 +284,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7sn8y")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack right",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -307,9 +307,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k3tce")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack up",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -328,7 +328,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_yd348")
 }],
 "loop": false,
-"name": &"death ",
+"name": &"death",
 "speed": 5.0
 }, {
 "frames": [{
@@ -350,7 +350,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w2t6a")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk down",
 "speed": 5.0
 }, {
@@ -373,7 +373,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pr6x1")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk left",
 "speed": 5.0
 }, {
@@ -396,7 +396,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_43ggs")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk right",
 "speed": 5.0
 }, {
@@ -413,7 +413,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mpi3i")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk up",
 "speed": 5.0
 }]
@@ -435,7 +435,7 @@ shape = SubResource("RectangleShape2D_420e7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
 texture_filter = 3
 sprite_frames = SubResource("SpriteFrames_k62fx")
-animation = &"attack right"
+animation = &"attack up"
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 collision_layer = 2
