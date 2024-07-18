@@ -143,7 +143,7 @@ func is_not_previously_attacking() -> bool:
 	return !weaponr.visible and !weaponl.visible and !weaponu.visible and !weapond.visible
 
 func _speak():
-	if Input.is_action_just_pressed("Speak") && clue=="up":
+	if Input.is_action_just_pressed("Speak") && clue =="up":
 		for npc in area.get_overlapping_areas():
 			if npc.is_in_group("NPC"):
 				var dialogue_instance = dialogue_scene.instantiate()

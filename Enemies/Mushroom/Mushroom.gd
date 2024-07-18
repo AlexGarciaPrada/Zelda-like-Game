@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var player = $"../Wizard"
 @export var speed = 150
 @export var range = 250
-@export var cloud_range = 75
+@export var cloud_range = 100
 @export var life = 2
 var weapons_in_area = []
 var clue ="down"
