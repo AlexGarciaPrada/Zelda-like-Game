@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfo17tgk3shw0"]
+[gd_scene load_steps=11 format=3 uid="uid://dfo17tgk3shw0"]
 
 [ext_resource type="Script" path="res://HUD/Inventory/Inventory.gd" id="1_y1lf0"]
 [ext_resource type="PackedScene" uid="uid://c5sncxqjc57e5" path="res://HUD/IconsContainerV2/IconsContainerControlV2.tscn" id="2_iexv7"]
@@ -6,8 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://srjamhonku6h" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos fuego.png" id="4_wnh2k"]
 [ext_resource type="Texture2D" uid="uid://bs52fkv5hu3hh" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos naturaleza.png" id="5_py1vt"]
 [ext_resource type="Texture2D" uid="uid://crd7qilahulvs" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos agua.png" id="6_cpuk3"]
+[ext_resource type="FontFile" uid="uid://bgcjl3ucwhxgk" path="res://Assets Videojuego/Font/pixellari/Pixellari.ttf" id="7_rr4n4"]
+[ext_resource type="Texture2D" uid="uid://hsp1eysuowgb" path="res://Assets Videojuego/Sprites/Iconos/Menú/Selector de iconos.png" id="8_a1t3c"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_pwt70"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vmqxq"]
+font = ExtResource("7_rr4n4")
+font_size = 51
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -28,7 +34,7 @@ columns = 2
 
 [node name="IconsV2" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_1.png"
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/fire_fireball_1.png"
 
 [node name="IconsV3" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2
@@ -187,3 +193,29 @@ offset_top = -46.0
 offset_right = 895.0
 offset_bottom = 575.0
 texture = SubResource("CanvasTexture_pwt70")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 3
+layout_mode = 0
+offset_left = 257.0
+offset_top = 47.0
+offset_right = 500.0
+offset_bottom = 109.0
+text = "Hechizos"
+label_settings = SubResource("LabelSettings_vmqxq")
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 3
+layout_mode = 0
+offset_left = 573.0
+offset_top = 37.0
+offset_right = 816.0
+offset_bottom = 99.0
+text = "Inventario"
+label_settings = SubResource("LabelSettings_vmqxq")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(58, 223)
+scale = Vector2(1.895, 1.895)
+texture = ExtResource("8_a1t3c")

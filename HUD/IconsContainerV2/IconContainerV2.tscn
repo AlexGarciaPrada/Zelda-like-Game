@@ -8,6 +8,7 @@
 size = Vector2(32, 32)
 
 [node name="IconContainerV2" type="StaticBody2D" groups=["droppable"]]
+scale = Vector2(1.67, 1.67)
 input_pickable = true
 script = ExtResource("1_42bsa")
 
