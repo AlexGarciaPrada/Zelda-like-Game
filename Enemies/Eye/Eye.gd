@@ -139,6 +139,15 @@ func get_min_distance_obj(ObjectList):
 
 func _energyball(direction: Vector2):
 	var energyball = energyball_scene.instantiate()
-	energyball.position = position
+	match clue:
+		"up":
+			energyball.position = self.position + Vector2(0,-28)
+		"down":
+			energyball.position = self.position + Vector2(0,28)
+		"left":
+			energyball.position = self.position + Vector2(-28,0)
+		"right":
+			energyball.position = self.position + Vector2(28,0)
+			
 	energyball.velocity = energyball.SPEED * direction
 	get_parent().add_child(energyball)
