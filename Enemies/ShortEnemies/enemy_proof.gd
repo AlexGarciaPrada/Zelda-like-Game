@@ -70,7 +70,7 @@ func _movement():
 	var targets = get_objects_within_distance("Player",range)
 	if !targets.is_empty():
 		var objective = get_min_distance_obj(targets)
-		if objective != null:
+		if objective != null && !is_player_in_area():
 			var direction= position.direction_to(objective.position)	
 			velocity = direction * speed
 			move_and_slide()
@@ -122,3 +122,9 @@ func get_min_distance_obj(ObjectList):
 				result= position.distance_to(target.global_position)
 				object= target
 	return object
+
+func is_player_in_area():
+	for area in enemyarea.get_overlapping_areas():
+		if area.get_parent().is_in_group("Player"):
+			return true
+	return false

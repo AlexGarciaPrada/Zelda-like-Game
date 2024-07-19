@@ -419,12 +419,12 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_18ce5"]
-radius = 13.1529
+radius = 15.3478
 
 [node name="Eye" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(1.5, 1.5)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 4
 script = ExtResource("1_vn5vt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
@@ -439,7 +439,7 @@ animation = &"attack down"
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 collision_layer = 2
-collision_mask = 12
+collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Enemy"]]
 light_mask = 2

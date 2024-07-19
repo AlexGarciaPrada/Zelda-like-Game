@@ -295,11 +295,11 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_18ce5"]
-radius = 13.1529
+radius = 16.0312
 
 [node name="EnemyProof" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 2
-collision_mask = 15
+collision_mask = 6
 script = ExtResource("1_glkta")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
@@ -314,7 +314,7 @@ animation = &"death"
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 collision_layer = 2
-collision_mask = 14
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Enemy"]]
 light_mask = 2

@@ -15,13 +15,16 @@ var SPEED= 300
 @onready var icon_spell = preload("res://HUD/Icon/Icon.tscn")
 @onready var hud = $Camera2D/Hud
 @onready var camera = $Camera2D
+@export var knockback_time = 0.5
+var knockback_timer = 0
+@export var inmunity_time = 1
+var inmunity_timer = 0
 
 
 var life = 5
 #await get_tree().create_timer(5).timeout Para acordarme
 var enemies_in_area = []
 var clue = "down"
-var current_frame=0
 var newdirection = Vector2(0,0)
 var is_attacking = false
 var is_invisible = false
@@ -36,7 +39,9 @@ var knockback_speed = 300
 func _physics_process(delta):
 	if !Singleton.is_stopped:
 		if knockback_mode:
+			knockback_timer += delta
 			_knockback()
+			
 			if is_not_acting():
 				_movement()
 				_speak()
@@ -54,6 +59,7 @@ func _physics_process(delta):
 				_show_inventory()
 		if inmunity_mode:
 			_inmunity()
+			inmunity_timer += delta
 		if is_not_acting() && !knockback_mode:
 			_movement()
 			_speak()
@@ -69,6 +75,7 @@ func _physics_process(delta):
 			_spell_9()
 			_short_attack()
 			_show_inventory()
+		
 	else:
 		_hide_inventory()
 func _ready():
@@ -168,19 +175,19 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("Enemy") :
 		var enemy = area.get_parent()
 		enemies_in_area.append(enemy)
-		if !knockback_mode && !inmunity_mode:
+		if !knockback_mode && !inmunity_mode && knockback_timer== 0:
 			knockback_mode=true
 			newdirection = (position - enemy.position).normalized()
 			life-=1
 
 func _inmunity():
-	collision_layer=6
-	current_frame +=1
-	if current_frame >= 60:
-		collision_layer=1
-		selfarea.disable_mode=false
-		inmunity_mode=false
-		current_frame=0
+	print(animation.modulate.r8)
+	animation.modulate.r8=0
+	if inmunity_timer>= inmunity_time:
+		
+		inmunity_mode = false
+		inmunity_timer = 0
+		animation.modulate.r8=255
 		if !enemies_in_area.is_empty():
 			knockback_mode=true
 			life-=1
@@ -191,10 +198,10 @@ func _knockback():
 	velocity = newdirection * knockback_speed
 	move_and_slide()
 	selfarea.disable_mode=true
-	current_frame +=1
-	if current_frame > 20:
+	if knockback_timer >= knockback_time:
 		inmunity_mode = true
-		knockback_mode=false
+		knockback_timer = 0	
+		knockback_mode = false
 		
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("Enemy"):

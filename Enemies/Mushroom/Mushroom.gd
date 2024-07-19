@@ -77,7 +77,7 @@ func _movement():
 		if time >= cooldown && position.distance_to(objective.position) < cloud_range:
 			_create_venom_cloud()
 			time = 0
-		if objective != null:
+		if objective != null && !is_player_in_area():
 			var direction= position.direction_to(objective.position)	
 			velocity = direction * speed
 			move_and_slide()
@@ -136,3 +136,8 @@ func _create_venom_cloud():
 	venom_cloud.global_position = self.global_position
 	
 	get_parent().add_child(venom_cloud)
+func is_player_in_area():
+	for area in enemyarea.get_overlapping_areas():
+		if area.get_parent().is_in_group("Player"):
+			return true
+	return false

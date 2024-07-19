@@ -74,7 +74,7 @@ func _movement():
 	var targets = get_objects_within_distance("Player",range)
 	if !targets.is_empty():
 		var objective = get_min_distance_obj(targets)
-		if objective != null:
+		if objective != null && !is_player_in_area():
 			direction= position.direction_to(objective.position)	
 			if time >= cooldown:
 				animation.play("attack "+ clue)
@@ -151,3 +151,8 @@ func _energyball(direction: Vector2):
 			
 	energyball.velocity = energyball.SPEED * direction
 	get_parent().add_child(energyball)
+func is_player_in_area():
+	for area in enemyarea.get_overlapping_areas():
+		if area.get_parent().is_in_group("Player"):
+			return true
+	return false
