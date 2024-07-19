@@ -1,14 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://cy37pprpi7xrb"]
+[gd_scene load_steps=15 format=3 uid="uid://cy37pprpi7xrb"]
 
-[ext_resource type="PackedScene" uid="uid://c5sncxqjc57e5" path="res://HUD/IconsContainerV2/IconsContainerControlV2.tscn" id="1_2uvfj"]
-[ext_resource type="Texture2D" uid="uid://4pb1ur0eq4s7" path="res://Assets Videojuego/Sprites/Iconos/Menú/1.png" id="2_fmmss"]
-[ext_resource type="Texture2D" uid="uid://bnkv73changlj" path="res://Assets Videojuego/Sprites/Iconos/Menú/2.png" id="3_0ntuo"]
-[ext_resource type="Texture2D" uid="uid://cl55h8jfoq3yg" path="res://Assets Videojuego/Sprites/Iconos/Menú/3.png" id="4_e3nt0"]
+[ext_resource type="Texture2D" uid="uid://crd7qilahulvs" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos agua.png" id="2_j83ug"]
+[ext_resource type="Texture2D" uid="uid://bs52fkv5hu3hh" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos naturaleza.png" id="3_2abyp"]
+[ext_resource type="Texture2D" uid="uid://srjamhonku6h" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos fuego.png" id="4_xmwyf"]
 [ext_resource type="Texture2D" uid="uid://b7nypljqsypkf" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos dark.png" id="5_6ere3"]
-[ext_resource type="Texture2D" uid="uid://d02ovmy6jk60p" path="res://Assets Videojuego/Sprites/Iconos/Menú/Baton adorno dark.png" id="6_o44nl"]
 [ext_resource type="Texture2D" uid="uid://cm4j06ttoemjy" path="res://Assets Videojuego/Sprites/Iconos/Menú/Abrir menú hechizos.png" id="6_ypws0"]
 [ext_resource type="Texture2D" uid="uid://ch150tcynp6kq" path="res://Assets Videojuego/Sprites/Iconos/Menú/Pergamino.png" id="8_kiws2"]
-[ext_resource type="Texture2D" uid="uid://hsp1eysuowgb" path="res://Assets Videojuego/Sprites/Iconos/Menú/Selector de iconos.png" id="9_g5pu2"]
+[ext_resource type="FontFile" uid="uid://e7fhnvqovtac" path="res://Assets Videojuego/Font/easvhs/easvhs.ttf" id="10_nl0r2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ha0wk"]
 atlas = ExtResource("6_ypws0")
@@ -21,10 +19,6 @@ region = Rect2(0, 648, 1152, 648)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2guk6"]
 atlas = ExtResource("8_kiws2")
 region = Rect2(0, 0, 128, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y0xwn"]
-atlas = ExtResource("8_kiws2")
-region = Rect2(0, 64, 128, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2g2kb"]
 animations = [{
@@ -42,16 +36,20 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2guk6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y0xwn")
 }],
 "loop": false,
 "name": &"new_animation",
-"speed": 3.0
+"speed": 2.0
 }]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_ww3px"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_c3q1v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0dddg"]
+font = ExtResource("10_nl0r2")
+font_size = 61
+font_color = Color(0.0100903, 0.0100903, 0.0100903, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ry5gh"]
 
 [node name="Inventory2" type="Control"]
 layout_mode = 3
@@ -65,130 +63,117 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+top_level = true
 texture_filter = 3
-layout_mode = 0
-offset_left = 353.0
-offset_top = 213.0
-offset_right = 728.0
-offset_bottom = 407.0
-mouse_filter = 2
-theme_override_constants/h_separation = 75
-theme_override_constants/v_separation = 70
-columns = 6
-
-[node name="IconsV2" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/fire_fireball_1.png"
-
-[node name="IconsV8" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/Iconos/dark/lure/dark_lure_1.png"
-
-[node name="IconsV9" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-
-[node name="IconsV10" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-
-[node name="IconsV11" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-
-[node name="IconsV12" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-
-[node name="IconsV13" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/fire_fireball_2.png"
-
-[node name="IconsV3" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/Iconos/dark/lure/dark_lure_2.png"
-
-[node name="IconsV4" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-
-[node name="IconsV5" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-
-[node name="IconsV6" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-
-[node name="IconsV7" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-
-[node name="IconsV14" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/fire_fireball_3.png"
-
-[node name="IconsV15" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/Iconos/dark/lure/dark_lure_3.png"
-
-[node name="IconsV16" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-
-[node name="IconsV17" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-
-[node name="IconsV18" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-
-[node name="IconsV19" parent="GridContainer" instance=ExtResource("1_2uvfj")]
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(242.96, 221.96)
-scale = Vector2(2.06, 2.06)
-texture = ExtResource("2_fmmss")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(242.96, 292.96)
-scale = Vector2(2.06, 2.06)
-texture = ExtResource("3_0ntuo")
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(241.96, 362.96)
-scale = Vector2(2.06, 2.06)
-texture = ExtResource("4_e3nt0")
-
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(176, 106)
-scale = Vector2(4.08, 4.08)
+position = Vector2(82.72, 546.72)
+scale = Vector2(2.67, 2.67)
 texture = ExtResource("5_6ere3")
 
-[node name="Sprite2D5" type="Sprite2D" parent="."]
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+top_level = true
 texture_filter = 3
-position = Vector2(905, 453)
-scale = Vector2(4.08, 4.08)
-texture = ExtResource("6_o44nl")
+position = Vector2(82.72, 442.72)
+scale = Vector2(2.67, 2.67)
+texture = ExtResource("2_j83ug")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+top_level = true
+texture_filter = 3
+position = Vector2(82.72, 354.72)
+scale = Vector2(2.67, 2.67)
+texture = ExtResource("3_2abyp")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+top_level = true
+texture_filter = 3
+position = Vector2(82.72, 250.72)
+scale = Vector2(2.67, 2.67)
+texture = ExtResource("4_xmwyf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-show_behind_parent = true
 texture_filter = 3
-position = Vector2(403, 310)
-scale = Vector2(11.04, 11.04)
+position = Vector2(475, 394)
+scale = Vector2(8.75, 7.125)
 sprite_frames = SubResource("SpriteFrames_2g2kb")
 animation = &"new_animation"
-frame = 1
 frame_progress = 1.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
-self_modulate = Color(0.369107, 0.369107, 0.369107, 0.392157)
+[node name="TextureRect3" type="TextureRect" parent="."]
+modulate = Color(0.0385912, 0, 0.897046, 1)
+top_level = true
+layout_mode = 0
+offset_left = 860.0
+offset_top = 104.0
+offset_right = 1116.0
+offset_bottom = 120.0
+texture = SubResource("CanvasTexture_c3q1v")
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+modulate = Color(0.515134, 0.666266, 1, 1)
+show_behind_parent = true
+top_level = true
+layout_mode = 0
+offset_left = 144.0
+offset_top = 208.0
+offset_right = 160.0
+offset_bottom = 600.0
+texture = SubResource("CanvasTexture_c3q1v")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(0.340946, 0.476511, 0.559528, 1)
+layout_mode = 0
+offset_left = -213.0
+offset_top = -75.0
+offset_right = 1241.0
+offset_bottom = 147.0
+texture = SubResource("CanvasTexture_c3q1v")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+modulate = Color(0.551473, 0.692298, 0.780234, 1)
+layout_mode = 0
+offset_left = -84.0
+offset_top = 4.0
+offset_right = 1036.0
+offset_bottom = 132.0
+texture = SubResource("CanvasTexture_c3q1v")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 3
+layout_mode = 0
+offset_left = 420.0
+offset_top = 28.0
+offset_right = 604.0
+offset_bottom = 105.0
+text = "Mapa"
+label_settings = SubResource("LabelSettings_0dddg")
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 3
+layout_mode = 0
+offset_left = 759.0
+offset_top = 28.0
+offset_right = 1081.0
+offset_bottom = 105.0
+text = "Hechizos"
+label_settings = SubResource("LabelSettings_0dddg")
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 3
+layout_mode = 0
+offset_left = -60.0
+offset_top = 28.0
+offset_right = 262.0
+offset_bottom = 105.0
+text = "Inventario"
+label_settings = SubResource("LabelSettings_0dddg")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+modulate = Color(0.748807, 0.835845, 0.89141, 1)
 show_behind_parent = true
 layout_mode = 0
-offset_left = 289.0
-offset_top = 149.0
-offset_right = 793.0
-offset_bottom = 429.0
-texture = SubResource("CanvasTexture_ww3px")
-
-[node name="Sprite2D6" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(353, 213)
-scale = Vector2(1.895, 1.895)
-texture = ExtResource("9_g5pu2")
+offset_left = -253.0
+offset_top = -106.0
+offset_right = 1201.0
+offset_bottom = 686.0
+texture = SubResource("CanvasTexture_ry5gh")

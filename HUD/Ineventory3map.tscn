@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://pjcj5hmrofbx"]
+
+[ext_resource type="Texture2D" uid="uid://k4jlglv22oky" path="res://Assets Videojuego/Sprites/Iconos/Menú/mapa prueba.png" id="1_punln"]
+[ext_resource type="FontFile" uid="uid://e7fhnvqovtac" path="res://Assets Videojuego/Font/easvhs/easvhs.ttf" id="2_we3ky"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4skln"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oeuiy"]
+font = ExtResource("2_we3ky")
+font_size = 61
+font_color = Color(0.0100903, 0.0100903, 0.0100903, 1)
+
+[node name="Ineventory3Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(569, 401)
+scale = Vector2(14.025, 14.025)
+texture = ExtResource("1_punln")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.748807, 0.835845, 0.89141, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_left = -113.0
+offset_top = -63.0
+offset_right = 1341.0
+offset_bottom = 729.0
+texture = SubResource("CanvasTexture_4skln")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+modulate = Color(0.0385912, 0, 0.897046, 1)
+layout_mode = 0
+offset_left = 512.0
+offset_top = 112.0
+offset_right = 672.0
+offset_bottom = 128.0
+texture = SubResource("CanvasTexture_4skln")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(0.340946, 0.476511, 0.559528, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_left = -113.0
+offset_top = -63.0
+offset_right = 1341.0
+offset_bottom = 159.0
+texture = SubResource("CanvasTexture_4skln")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+modulate = Color(0.551473, 0.692298, 0.780234, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1136.0
+offset_bottom = 144.0
+texture = SubResource("CanvasTexture_4skln")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 3
+layout_mode = 0
+offset_left = 520.0
+offset_top = 40.0
+offset_right = 704.0
+offset_bottom = 117.0
+text = "Mapa"
+label_settings = SubResource("LabelSettings_oeuiy")
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 3
+layout_mode = 0
+offset_left = 859.0
+offset_top = 40.0
+offset_right = 1181.0
+offset_bottom = 117.0
+text = "Hechizos"
+label_settings = SubResource("LabelSettings_oeuiy")
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 3
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 362.0
+offset_bottom = 117.0
+text = "Inventario"
+label_settings = SubResource("LabelSettings_oeuiy")
