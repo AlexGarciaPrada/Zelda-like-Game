@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bj0aagux3srdl"]
+[gd_scene load_steps=19 format=3 uid="uid://bj0aagux3srdl"]
 
 [ext_resource type="PackedScene" uid="uid://c5sncxqjc57e5" path="res://HUD/IconsContainerV2/IconsContainerControlV2.tscn" id="1_hsg1v"]
 [ext_resource type="Texture2D" uid="uid://4pb1ur0eq4s7" path="res://Assets Videojuego/Sprites/Iconos/Menú/1.png" id="2_sn72f"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://d02ovmy6jk60p" path="res://Assets Videojuego/Sprites/Iconos/Menú/Baton adorno dark.png" id="6_4fj2g"]
 [ext_resource type="Texture2D" uid="uid://cm4j06ttoemjy" path="res://Assets Videojuego/Sprites/Iconos/Menú/Abrir menú hechizos.png" id="7_eomi6"]
 [ext_resource type="Texture2D" uid="uid://ch150tcynp6kq" path="res://Assets Videojuego/Sprites/Iconos/Menú/Pergamino.png" id="8_8dxx0"]
-[ext_resource type="Texture2D" uid="uid://hsp1eysuowgb" path="res://Assets Videojuego/Sprites/Iconos/Menú/Selector de iconos.png" id="9_mya52"]
 [ext_resource type="FontFile" uid="uid://e7fhnvqovtac" path="res://Assets Videojuego/Font/easvhs/easvhs.ttf" id="10_0rmxj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ha0wk"]
@@ -200,12 +199,6 @@ offset_top = 270.0
 offset_right = 803.0
 offset_bottom = 550.0
 texture = SubResource("CanvasTexture_ww3px")
-
-[node name="Sprite2D6" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(353, 213)
-scale = Vector2(1.895, 1.895)
-texture = ExtResource("9_mya52")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 modulate = Color(0.0385912, 0, 0.897046, 1)
