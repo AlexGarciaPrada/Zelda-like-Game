@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://balix8ln16bpl"
-path="res://.godot/imported/fire_fireball_1.png-f47f13ffb44fe66b5fb5dfcb30126591.ctex"
+uid="uid://jgh30r4w0528"
+path="res://.godot/imported/dark_astraball_2.png-6793f9e5c54cb13d9a1a39aa673f0c5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/fire_fireball_1.png"
-dest_files=["res://.godot/imported/fire_fireball_1.png-f47f13ffb44fe66b5fb5dfcb30126591.ctex"]
+source_file="res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/astralball/dark_astraball_2.png"
+dest_files=["res://.godot/imported/dark_astraball_2.png-6793f9e5c54cb13d9a1a39aa673f0c5f.ctex"]
 
 [params]
 

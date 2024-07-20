@@ -80,7 +80,7 @@ texture = ExtResource("2_j83ug")
 [node name="Sprite2D8" type="Sprite2D" parent="."]
 top_level = true
 texture_filter = 3
-position = Vector2(82.72, 354.72)
+position = Vector2(82.72, 347.72)
 scale = Vector2(2.67, 2.67)
 texture = ExtResource("3_2abyp")
 
