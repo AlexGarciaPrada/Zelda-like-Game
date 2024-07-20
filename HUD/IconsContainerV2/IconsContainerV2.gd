@@ -42,3 +42,8 @@ func _make_texture():
 	get_parent().spell = parts[1]
 	get_parent().level = parts[2].to_int()
 	
+func _show_cursor():
+	$Sprite2D.visible = true
+	
+func _hide_cursor():
+	$Sprite2D.visible = false

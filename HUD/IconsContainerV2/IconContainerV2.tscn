@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxse2jopondbj"]
+[gd_scene load_steps=5 format=3 uid="uid://cxse2jopondbj"]
 
 [ext_resource type="Script" path="res://HUD/IconsContainerV2/IconsContainerV2.gd" id="1_42bsa"]
+[ext_resource type="Texture2D" uid="uid://hsp1eysuowgb" path="res://Assets Videojuego/Sprites/Iconos/Menú/Selector de iconos.png" id="2_f7lt3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1ked"]
 
@@ -43,6 +44,13 @@ horizontal_alignment = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(1.4, 1.4)
 shape = SubResource("RectangleShape2D_70d7w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 3
+position = Vector2(7.15256e-07, -4.76837e-07)
+scale = Vector2(1.49701, 1.49701)
+texture = ExtResource("2_f7lt3")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
