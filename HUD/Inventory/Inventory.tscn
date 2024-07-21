@@ -152,7 +152,7 @@ texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/astralba
 
 [node name="IconsV5" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_1.png"
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/astralball/dark_astralball_1.png"
 
 [node name="IconsV6" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2

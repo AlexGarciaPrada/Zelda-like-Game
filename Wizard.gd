@@ -13,6 +13,7 @@ var SPEED= 300
 @onready var rotatefireball_scene = preload("res://Spells/RotatingFireball/RotatingFireball.tscn")
 @onready var dialogue_scene = preload("res://Dialogues/Dialogues.tscn")
 @onready var icon_spell = preload("res://HUD/Icon/Icon.tscn")
+@onready var astralball_scene = preload("res://Spells/AstralBall/AstralBall.tscn")
 @onready var hud = $Camera2D/Hud
 @onready var camera = $Camera2D
 @export var knockback_time = 0.5
@@ -332,8 +333,26 @@ func _rotatefireball_3():
 	rotatefireball_instance3.center = self
 	rotatefireball_instance3.angle = 11*PI/6
 	get_parent().add_child(rotatefireball_instance3) 
-	
-	
+
+func _astralball_1():
+	var astralball = astralball_scene.instantiate()
+	get_parent().add_child(astralball)
+	match clue:
+		"right":
+			astralball.position = weaponr.global_position
+			astralball.rotate(PI/2)
+			astralball.velocity = Vector2(astralball.SPEED, 0)
+		"left":
+			astralball.position = weaponl.global_position
+			astralball.rotate(-PI/2)
+			astralball.velocity = Vector2(-astralball.SPEED, 0)
+		"up":
+			astralball.position = weaponu.global_position
+			astralball.velocity = Vector2(0, -astralball.SPEED)
+		"down":
+			astralball.position = weapond.global_position
+			astralball.rotate(PI)
+			astralball.velocity = Vector2(0,astralball.SPEED)
 func _spell_1():
 	if Input.is_action_just_pressed("1"):
 		var icon = hud._get_spell_square(1)
@@ -438,3 +457,7 @@ func _sorcery(element,spell,level):
 							_lure_1()
 						2:
 							_lure_2()
+				"astralball":
+					match level:
+						1:
+							_astralball_1()
