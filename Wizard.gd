@@ -181,7 +181,6 @@ func _on_area_2d_area_entered(area):
 			life-=1
 
 func _inmunity():
-	print(animation.modulate.r8)
 	animation.modulate.r8=0
 	if inmunity_timer>= inmunity_time:
 		
@@ -353,6 +352,7 @@ func _spell_3():
 func _spell_4():
 	if Input.is_action_just_pressed("4"):
 		var icon = hud._get_spell_square(4)
+		print(icon)
 		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
 
 func _spell_5():

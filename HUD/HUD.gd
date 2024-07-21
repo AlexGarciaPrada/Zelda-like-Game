@@ -5,6 +5,7 @@ extends Control
 @onready var spellSet = $GridContainer
 @onready var notEquippedLabel = $Label
 @onready var inventory = $Inventory
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -28,3 +29,11 @@ func _show_inventory():
 	inventory.visible = true
 func _hide_inventory():
 	inventory.visible = false
+
+func _correct_equipment(texture_path:String):
+	for i in range(1,11):
+		if spellSet.get_child(i - 1).texture_path == texture_path:
+			spellSet.get_child(i-1)._remove_texture()
+
+	
+	
