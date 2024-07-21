@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxse2jopondbj"]
+[gd_scene load_steps=8 format=3 uid="uid://cxse2jopondbj"]
 
 [ext_resource type="Script" path="res://HUD/IconsContainerV2/IconsContainerV2.gd" id="1_42bsa"]
+[ext_resource type="FontFile" uid="uid://bgcjl3ucwhxgk" path="res://Assets Videojuego/Font/pixellari/Pixellari.ttf" id="2_2p4g0"]
 [ext_resource type="Texture2D" uid="uid://hsp1eysuowgb" path="res://Assets Videojuego/Sprites/Iconos/Menú/Selector de iconos.png" id="2_f7lt3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1ked"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5ae8c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7wdmu"]
+font = ExtResource("2_2p4g0")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_color = Color(0.160784, 0.160784, 0.160784, 0.886275)
+shadow_offset = Vector2(1.62, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70d7w"]
 size = Vector2(32, 32)
@@ -31,12 +42,24 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect3" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
+texture_filter = 3
 offset_left = -16.0
-offset_top = 16.0
+offset_top = -16.0
 offset_right = 16.0
-offset_bottom = 39.0
+offset_bottom = 16.0
+texture = SubResource("CanvasTexture_5ae8c")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 3
+offset_left = -15.5689
+offset_top = -7.18563
+offset_right = 16.4311
+offset_bottom = 15.8144
 text = "1"
+label_settings = SubResource("LabelSettings_7wdmu")
 horizontal_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -51,6 +74,12 @@ texture_filter = 3
 position = Vector2(7.15256e-07, -4.76837e-07)
 scale = Vector2(1.49701, 1.49701)
 texture = ExtResource("2_f7lt3")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -17.1976
+offset_top = -17.0
+offset_right = 17.8024
+offset_bottom = 17.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dck20i7hxvtp2"]
+
+[ext_resource type="Texture2D" uid="uid://edv3nrooo3iv" path="res://Assets Videojuego/Sprites/Iconos/Menú/particula curacion.png" id="1_uvy16"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 3
+position = Vector2(1, 0)
+amount = 16
+lifetime = 2.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("1_uvy16")
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_min = 20.0
+initial_velocity_max = 60.35
+scale_amount_max = 2.0

@@ -303,6 +303,7 @@ texture = ExtResource("13_milhl")
 modulate = Color(0.515134, 0.666266, 1, 1)
 show_behind_parent = true
 top_level = true
+layout_mode = 0
 offset_left = 144.0
 offset_top = 208.0
 offset_right = 160.0

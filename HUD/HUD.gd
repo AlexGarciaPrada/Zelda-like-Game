@@ -15,7 +15,7 @@ func _process(delta):
 	life_label.text = str(get_parent().get_parent().life)
 
 func _get_spell_square(num):
-	var icon = spellSet.get_child(num - 1).get_child(0)
+	var icon = spellSet.get_child(num - 1)
 	return icon
 	
 func _show_not_equipped_spell():

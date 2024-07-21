@@ -64,7 +64,6 @@ offset_right = 1050.75
 offset_bottom = 152.0
 
 [node name="Inventory" parent="." instance=ExtResource("6_jqvny")]
-visible = false
 offset_left = 33.0
 offset_top = 16.0
 offset_right = 161.0
@@ -84,10 +83,10 @@ label_settings = SubResource("LabelSettings_qg576")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 152.0
-offset_top = 40.0
-offset_right = 872.0
-offset_bottom = 80.0
+offset_left = 104.0
+offset_top = 424.0
+offset_right = 824.0
+offset_bottom = 464.0
 mouse_filter = 2
 theme_override_constants/h_separation = 70
 columns = 10

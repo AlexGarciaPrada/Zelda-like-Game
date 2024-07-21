@@ -5,7 +5,7 @@ var icon_scene = preload("res://HUD/IconsV2/IconsV2.tscn")
 @export var texture_path : String
 @onready var this_texture = $TextureRect
 var mouse_in = false
-
+@onready var border = $TextureRect3
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if get_parent().texture_path != "":
@@ -23,7 +23,8 @@ func _process(delta):
 			if this_texture.texture != null:
 				_make_texture()
 			mouse_in = false
-
+	if  this_texture.texture != null:
+		border.visible = false
 		
 func _on_area_2d_mouse_entered():
 	mouse_in = true
