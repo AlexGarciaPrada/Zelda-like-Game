@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://e87yr1hgtjuu"]
+
+[ext_resource type="Script" path="res://Enemies/Boss/LifeBar.gd" id="1_2we0l"]
+
+[node name="LifeBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2we0l")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ProgressBar"]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 40.0
+fill_mode = 1
+tint_over = Color(0.894835, 0, 0.480442, 1)
+tint_progress = Color(0.592577, 0, 0.11611, 1)

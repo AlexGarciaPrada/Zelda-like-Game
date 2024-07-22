@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c45dbqys1jgv"]
+
+[ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="1_e8cua"]
+[ext_resource type="PackedScene" uid="uid://cfo3uaw00bnr6" path="res://Enemies/Boss/BigMushroom/BigMushroom.tscn" id="2_feqfd"]
+[ext_resource type="PackedScene" uid="uid://e87yr1hgtjuu" path="res://Enemies/Boss/LifeBar.tscn" id="3_0evju"]
+
+[node name="BossFightTest" type="Node2D"]
+
+[node name="Wizard" parent="." instance=ExtResource("1_e8cua")]
+position = Vector2(288, 160)
+
+[node name="BigMushroom" parent="." instance=ExtResource("2_feqfd")]
+position = Vector2(280, 40)
+
+[node name="LifeBar" parent="BigMushroom" instance=ExtResource("3_0evju")]
+offset_top = -40.0
+offset_bottom = -40.0
