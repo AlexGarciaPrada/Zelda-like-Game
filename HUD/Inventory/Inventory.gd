@@ -16,16 +16,15 @@ func _ready():
 func _process(delta):
 	if Singleton.is_stopped:
 		_cursor_movement()
-		if _get_element_square(show_element,show_num).this_texture.texture != null:
+		if _get_element_square_texture_path(show_element,show_num) != "":
 			_create_num_input()
 			if num_pressed != "":
-				print(num_pressed)
 				num_pressed = _equip_spell(num_pressed)
-				print(num_pressed)
 	
 func _get_element_square (element: GridContainer, num:int):
 	return element.get_child(num).get_child(0)
-
+func _get_element_square_texture_path (element: GridContainer, num:int):
+	return element.get_child(num).texture_path
 func _show_square_cursor(element: GridContainer, num:int):
 	var icon = _get_element_square(element,num)
 	show_element = element
@@ -108,8 +107,6 @@ func _create_num_input():
 
 func _equip_spell(input:String):
 	var square = get_parent()._get_spell_square(int(input))
-	print(int(input)+1)
-	print(square)
-	square.this_texture.texture = _get_element_square(show_element,show_num).this_texture.texture
-	square._make_texture()
+	get_parent()._correct_equipment(_get_element_square_texture_path(show_element,show_num))
+	square._assign_texture(_get_element_square_texture_path(show_element,show_num))
 	return ""
