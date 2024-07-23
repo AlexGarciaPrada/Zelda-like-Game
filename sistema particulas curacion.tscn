@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dck20i7hxvtp2"]
 
-[ext_resource type="Texture2D" uid="uid://edv3nrooo3iv" path="res://Assets Videojuego/Sprites/Iconos/Menú/particula curacion.png" id="1_uvy16"]
+[ext_resource type="Texture2D" uid="uid://fgl27b4ugyug" path="res://Assets Videojuego/Sprites/Iconos/Menú/particulas.png" id="1_q0hp2"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,7 +11,7 @@ amount = 16
 lifetime = 2.0
 fixed_fps = 30
 draw_order = 1
-texture = ExtResource("1_uvy16")
+texture = ExtResource("1_q0hp2")
 spread = 180.0
 gravity = Vector2(0, -100)
 initial_velocity_min = 20.0
