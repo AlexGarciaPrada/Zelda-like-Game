@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi4ykesob36xi"]
+
+[sub_resource type="Curve" id="Curve_wvhns"]
+min_value = 1.0
+max_value = 5.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ighoo"]
+curve = SubResource("Curve_wvhns")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uu7gr"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 2.0
+spread = 180.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+scale_min = 4.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_ighoo")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_uu7gr")
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.5
