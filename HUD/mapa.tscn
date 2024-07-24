@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx7e86hy7inki"]
+
+[ext_resource type="FontFile" uid="uid://dep6g8xgcfa6y" path="res://Assets Videojuego/Font/crang/Crang.ttf" id="1_46i57"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ph4gs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5dtk"]
+font = ExtResource("1_46i57")
+font_size = 30
+font_color = Color(0.972788, 0.915745, 0.604217, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0qoa8"]
+font = ExtResource("1_46i57")
+font_size = 22
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ya8ts"]
+font = ExtResource("1_46i57")
+font_size = 22
+font_color = Color(0, 0, 0, 1)
+
+[node name="Mapa" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.759923, 1, 0.965922, 1)
+show_behind_parent = true
+offset_left = -113.0
+offset_top = -63.0
+offset_right = 862.0
+offset_bottom = 541.0
+scale = Vector2(0.998534, 1)
+texture = SubResource("CanvasTexture_ph4gs")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(0.447059, 0.0627451, 0.411765, 1)
+show_behind_parent = true
+offset_left = -113.0
+offset_top = -63.0
+offset_right = 862.0
+offset_bottom = 75.0
+texture = SubResource("CanvasTexture_ph4gs")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+modulate = Color(0.259027, 0.753968, 0.74576, 1)
+show_behind_parent = true
+offset_left = -22.0
+offset_top = -3.0
+offset_right = 784.0
+offset_bottom = 62.0
+texture = SubResource("CanvasTexture_ph4gs")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 347.0
+offset_top = 16.0
+offset_right = 552.0
+offset_bottom = 116.0
+text = "Mapa"
+label_settings = SubResource("LabelSettings_u5dtk")
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 3
+offset_left = 632.0
+offset_top = 20.0
+offset_right = 954.0
+offset_bottom = 97.0
+text = "Hechizos"
+label_settings = SubResource("LabelSettings_0qoa8")
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 3
+offset_left = 44.0
+offset_top = 18.0
+offset_right = 366.0
+offset_bottom = 95.0
+text = "Inventario"
+label_settings = SubResource("LabelSettings_ya8ts")

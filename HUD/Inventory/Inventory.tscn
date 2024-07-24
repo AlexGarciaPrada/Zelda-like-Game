@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfo17tgk3shw0"]
+[gd_scene load_steps=12 format=3 uid="uid://dfo17tgk3shw0"]
 
 [ext_resource type="Script" path="res://HUD/Inventory/Inventory.gd" id="1_y1lf0"]
 [ext_resource type="PackedScene" uid="uid://c5sncxqjc57e5" path="res://HUD/IconsContainerV2/IconsContainerControlV2.tscn" id="2_iexv7"]
@@ -6,15 +6,26 @@
 [ext_resource type="Texture2D" uid="uid://srjamhonku6h" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos fuego.png" id="4_wnh2k"]
 [ext_resource type="Texture2D" uid="uid://bs52fkv5hu3hh" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos naturaleza.png" id="5_py1vt"]
 [ext_resource type="Texture2D" uid="uid://crd7qilahulvs" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos agua.png" id="6_cpuk3"]
-[ext_resource type="FontFile" uid="uid://e7fhnvqovtac" path="res://Assets Videojuego/Font/easvhs/easvhs.ttf" id="7_lge7r"]
+[ext_resource type="FontFile" uid="uid://dep6g8xgcfa6y" path="res://Assets Videojuego/Font/crang/Crang.ttf" id="7_5xe16"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_pdyw7"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_gt58j"]
-font = ExtResource("7_lge7r")
+[sub_resource type="LabelSettings" id="LabelSettings_bfwh2"]
+font = ExtResource("7_5xe16")
 font_size = 22
-font_color = Color(0.0100903, 0.0100903, 0.0100903, 1)
-outline_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fw0ru"]
+font = ExtResource("7_5xe16")
+font_size = 22
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j7wpe"]
+font = ExtResource("7_5xe16")
+font_size = 30
+font_color = Color(0.972788, 0.915745, 0.604217, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -43,19 +54,16 @@ texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/rotatefi
 
 [node name="IconsV4" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_3.png"
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/llamarada/fire_llamarada_1.png"
 
 [node name="IconsV5" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_1.png"
 
 [node name="IconsV6" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fireball/fire_fireball_1.png"
 
 [node name="IconsV7" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_2.png"
 
 [node name="Naturaleza" type="GridContainer" parent="."]
 layout_mode = 0
@@ -70,27 +78,23 @@ columns = 2
 
 [node name="IconsV2" parent="Naturaleza" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_1.png"
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/health/nature_health_1.png"
 
 [node name="IconsV3" parent="Naturaleza" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_2.png"
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/spikes/nature_spikes_1.png"
 
 [node name="IconsV4" parent="Naturaleza" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_3.png"
 
 [node name="IconsV5" parent="Naturaleza" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_1.png"
 
 [node name="IconsV6" parent="Naturaleza" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fireball/fire_fireball_1.png"
 
 [node name="IconsV7" parent="Naturaleza" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_2.png"
 
 [node name="Agua" type="GridContainer" parent="."]
 layout_mode = 0
@@ -105,27 +109,21 @@ columns = 2
 
 [node name="IconsV2" parent="Agua" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_1.png"
 
 [node name="IconsV3" parent="Agua" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_2.png"
 
 [node name="IconsV4" parent="Agua" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/rotate fireball/fire_rotatefireball_3.png"
 
 [node name="IconsV5" parent="Agua" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_1.png"
 
 [node name="IconsV6" parent="Agua" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fireball/fire_fireball_1.png"
 
 [node name="IconsV7" parent="Agua" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_2.png"
 
 [node name="Dark" type="GridContainer" parent="."]
 layout_mode = 0
@@ -148,7 +146,6 @@ texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/invisibl
 
 [node name="IconsV4" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/astralball/dark_astraball_2.png"
 
 [node name="IconsV5" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
@@ -156,11 +153,9 @@ texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/astralba
 
 [node name="IconsV6" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/fire/fireball/fire_fireball_1.png"
 
 [node name="IconsV7" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Hechizos/Iconos/nature/spikes/nature_spikes_2.png"
 
 [node name="IconDark" type="Sprite2D" parent="."]
 texture_filter = 3
@@ -187,7 +182,7 @@ scale = Vector2(1.23, 1.23)
 texture = ExtResource("6_cpuk3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.748807, 0.835845, 0.89141, 1)
+modulate = Color(0.760784, 1, 0.964706, 1)
 show_behind_parent = true
 layout_mode = 0
 offset_left = -113.0
@@ -198,7 +193,7 @@ scale = Vector2(0.998534, 1)
 texture = SubResource("CanvasTexture_pdyw7")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-modulate = Color(0.340946, 0.476511, 0.559528, 1)
+modulate = Color(0.447059, 0.0627451, 0.411765, 1)
 show_behind_parent = true
 layout_mode = 0
 offset_left = -113.0
@@ -208,7 +203,7 @@ offset_bottom = 75.0
 texture = SubResource("CanvasTexture_pdyw7")
 
 [node name="TextureRect4" type="TextureRect" parent="."]
-modulate = Color(0.551473, 0.692298, 0.780234, 1)
+modulate = Color(0.258824, 0.752941, 0.745098, 1)
 show_behind_parent = true
 layout_mode = 0
 offset_left = -22.0
@@ -225,7 +220,7 @@ offset_top = 20.0
 offset_right = 531.0
 offset_bottom = 97.0
 text = "Mapa"
-label_settings = SubResource("LabelSettings_gt58j")
+label_settings = SubResource("LabelSettings_bfwh2")
 
 [node name="Label2" type="Label" parent="."]
 texture_filter = 3
@@ -235,15 +230,14 @@ offset_top = 20.0
 offset_right = 954.0
 offset_bottom = 97.0
 text = "Hechizos"
-label_settings = SubResource("LabelSettings_gt58j")
+label_settings = SubResource("LabelSettings_fw0ru")
 
 [node name="Label3" type="Label" parent="."]
-modulate = Color(0, 0.855092, 0.185508, 1)
 texture_filter = 3
 layout_mode = 0
-offset_left = 44.0
-offset_top = 18.0
-offset_right = 366.0
-offset_bottom = 95.0
+offset_left = 45.0
+offset_top = 15.0
+offset_right = 367.0
+offset_bottom = 92.0
 text = "Inventario"
-label_settings = SubResource("LabelSettings_gt58j")
+label_settings = SubResource("LabelSettings_j7wpe")

@@ -72,7 +72,7 @@ shape = SubResource("RectangleShape2D_70d7w")
 visible = false
 texture_filter = 3
 position = Vector2(7.15256e-07, -4.76837e-07)
-scale = Vector2(1.49701, 1.49701)
+scale = Vector2(1.212, 1.212)
 texture = ExtResource("2_f7lt3")
 
 [node name="TextureRect2" type="TextureRect" parent="."]

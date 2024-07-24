@@ -12,7 +12,6 @@ func _ready():
 	if texture_path != "":
 		_assign_texture(texture_path)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -45,3 +44,7 @@ func _make_texture():
 	level = int(parts[2])	
 	get_child(0).this_texture.texture = load(texture_path)
 	get_child(0).border.visible = false
+func _gameplay_mode():
+	get_child(0)._gameplay_mode()
+func _inventory_mode():
+	get_child(0)._inventory_mode()

@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmlwc6xc6kqj5"]
+
+[ext_resource type="FontFile" uid="uid://dep6g8xgcfa6y" path="res://Assets Videojuego/Font/crang/Crang.ttf" id="1_h8w7t"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ph4gs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0qoa8"]
+font = ExtResource("1_h8w7t")
+font_size = 22
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ns03l"]
+font = ExtResource("1_h8w7t")
+font_size = 30
+font_color = Color(0.972788, 0.915745, 0.604217, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="INVHechizos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.760784, 1, 0.964706, 1)
+show_behind_parent = true
+offset_left = -112.0
+offset_top = -64.0
+offset_right = 863.0
+offset_bottom = 540.0
+scale = Vector2(0.998534, 1)
+texture = SubResource("CanvasTexture_ph4gs")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(0.447059, 0.0627451, 0.411765, 1)
+show_behind_parent = true
+offset_left = -113.0
+offset_top = -63.0
+offset_right = 862.0
+offset_bottom = 75.0
+texture = SubResource("CanvasTexture_ph4gs")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+modulate = Color(0.258824, 0.752941, 0.745098, 1)
+show_behind_parent = true
+offset_left = -22.0
+offset_top = -3.0
+offset_right = 784.0
+offset_bottom = 62.0
+texture = SubResource("CanvasTexture_ph4gs")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 3
+offset_left = 347.0
+offset_top = 20.0
+offset_right = 531.0
+offset_bottom = 97.0
+text = "Mapa"
+label_settings = SubResource("LabelSettings_0qoa8")
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 3
+offset_left = 593.0
+offset_top = 17.0
+offset_right = 915.0
+offset_bottom = 94.0
+text = "Hechizos"
+label_settings = SubResource("LabelSettings_ns03l")
+
+[node name="Label3" type="Label" parent="."]
+modulate = Color(0, 0.855092, 0.185508, 1)
+texture_filter = 3
+offset_left = 44.0
+offset_top = 18.0
+offset_right = 366.0
+offset_bottom = 95.0
+text = "Inventario"
+label_settings = SubResource("LabelSettings_0qoa8")
