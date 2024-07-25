@@ -7,6 +7,9 @@ var SPEED= 300
 @onready var weaponr = $Weapon2
 @onready var weaponl = $Weapon3
 @onready var weaponu = $Weapon4
+@onready var hud = $Camera2D/Hud
+@onready var camera = $Camera2D
+
 @onready var fireball_scene = preload("res://Spells/FireBall/FireBall.tscn")
 @onready var lure_scene = preload("res://Spells/Lure/Lure.tscn")
 @onready var spine_scene = preload("res://Spells/Spines/Spines.tscn")
@@ -14,8 +17,8 @@ var SPEED= 300
 @onready var dialogue_scene = preload("res://Dialogues/Dialogues.tscn")
 @onready var icon_spell = preload("res://HUD/Icon/Icon.tscn")
 @onready var astralball_scene = preload("res://Spells/AstralBall/AstralBall.tscn")
-@onready var hud = $Camera2D/Hud
-@onready var camera = $Camera2D
+@onready var health_scene = preload("res://Spells/Health/Health.tscn")
+
 @export var knockback_time = 0.5
 var knockback_timer = 0
 @export var inmunity_time = 1
@@ -308,7 +311,9 @@ func _spikes_3():
 		spine_right_instance.global_position = weaponr.global_position
 		if i == 1:
 			await get_tree().create_timer(0.1).timeout
-
+func _health_1():
+	var health = health_scene.instantiate()
+	self.add_child(health)
 func _rotatefireball_1():
 	var rotatefireball_instance = rotatefireball_scene.instantiate()
 	rotatefireball_instance.center = self
@@ -444,6 +449,11 @@ func _sorcery(element,spell,level):
 							_spikes_2()
 						3:
 							_spikes_3()
+				"health":
+					match level:
+						1:
+							_health_1()
+		
 		"dark":
 			match spell:
 				"invisible":
