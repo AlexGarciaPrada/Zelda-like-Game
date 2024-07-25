@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgt2haunesnrk"]
 
-[ext_resource type="Texture2D" uid="uid://edv3nrooo3iv" path="res://Assets Videojuego/Sprites/Iconos/Menú/particula curacion.png" id="1_5tpvx"]
 [ext_resource type="Script" path="res://particulas nube veneno.gd" id="1_sqa2v"]
+[ext_resource type="Texture2D" uid="uid://dilsfvot3b07o" path="res://Assets Videojuego/Sprites/Iconos/Menú/particula.png" id="2_bodwt"]
 
 [sub_resource type="Gradient" id="Gradient_aumbs"]
 colors = PackedColorArray(1, 1, 1, 0.0941176, 1, 1, 1, 0)
@@ -25,11 +25,10 @@ color_ramp = SubResource("GradientTexture1D_cchp2")
 script = ExtResource("1_sqa2v")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-emitting = false
+modulate = Color(0.710057, 0.996901, 1.54018e-06, 1)
 amount = 150
 process_material = SubResource("ParticleProcessMaterial_qgb3e")
-texture = ExtResource("1_5tpvx")
-one_shot = true
+texture = ExtResource("2_bodwt")
 speed_scale = 2.0
 explosiveness = 1.0
 
