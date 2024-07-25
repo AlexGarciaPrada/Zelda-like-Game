@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://r5ms4d18f6hc"]
+[gd_scene load_steps=6 format=3 uid="uid://r5ms4d18f6hc"]
 
 [ext_resource type="Texture2D" uid="uid://dct4y8uv1cqpd" path="res://Assets Videojuego/Sprites/Tileset/Cueva/Tileset cueva.png" id="1_nidnn"]
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="2_uujvf"]
+[ext_resource type="PackedScene" uid="uid://3hv2y6mde3ok" path="res://l&s.tscn" id="3_r81kn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yxc8w"]
 texture = ExtResource("1_nidnn")
@@ -228,3 +229,6 @@ layer_2/name = "Obsta"
 layer_2/tile_data = PackedInt32Array(-524273, 0, 6)
 layer_3/name = "Paredes"
 layer_3/tile_data = PackedInt32Array(-1834986, 327680, 2, -1900521, 327680, 2, -1900523, 0, 3, -1769450, 196608, 3, -1834985, 327680, 3, -1834984, 327680, 3, -1834983, 327680, 3, -1703914, 65536, 5, -1638378, 65536, 5, -1638377, 65536, 5, -1703913, 65536, 5, -1769449, 65536, 5, -1769448, 65536, 5, -1703912, 65536, 5, -1703911, 65536, 5, -1769447, 65536, 5, -1638375, 65536, 5, -1638376, 65536, 5, -1703915, 327680, 3, -1703916, 262144, 1, -1638380, 262144, 1, -1769452, 262144, 1, -1769451, 327680, 1, -524273, 327680, 3, -589809, 65536, 1, -655345, 131072, 1, -655350, 458752, 3, -655346, 458752, 1, -655347, 458752, 1, -655348, 458752, 1, -655349, 458752, 1, -589814, 196608, 1, -589815, 131072, 2, -524278, 393216, 5, -589816, 327680, 2, -524280, 65536, 1, -458744, 65536, 1, -458737, 262144, 1, -393201, 262144, 1, -327665, 262144, 3, -393208, 327680, 3, -327672, 393216, 1, -327671, 131072, 2, -327670, 131072, 2, -327669, 131072, 2, -327668, 131072, 2, -327667, 262144, 2)
+
+[node name="L&S" parent="." instance=ExtResource("3_r81kn")]
+visible = false
