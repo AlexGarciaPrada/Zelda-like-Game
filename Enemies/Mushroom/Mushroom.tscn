@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://drll14udosm8m"]
+[gd_scene load_steps=42 format=3 uid="uid://drll14udosm8m"]
 
 [ext_resource type="Script" path="res://Enemies/Mushroom/Mushroom.gd" id="1_wglv6"]
 [ext_resource type="Texture2D" uid="uid://6aoqgh60lc5v" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/walk/Mushroom walk down.png" id="2_2i7o1"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://80v516tq7v4i" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/walk/Mushroom walk up.png" id="5_d084q"]
 [ext_resource type="Texture2D" uid="uid://w56848p756y7" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/idle/Mushroom idle right (1).png" id="5_maa50"]
 [ext_resource type="Texture2D" uid="uid://bgogquqhhemgl" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/idle/Mushroom idle up.png" id="6_gqu1e"]
+[ext_resource type="PackedScene" uid="uid://e87yr1hgtjuu" path="res://Enemies/Boss/LifeBar.tscn" id="11_5cub3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_420e7"]
 
@@ -283,6 +284,12 @@ collision_mask = 15
 light_mask = 2
 visibility_layer = 2
 shape = SubResource("CircleShape2D_18ce5")
+
+[node name="LifeBar" parent="." instance=ExtResource("11_5cub3")]
+offset_left = -23.166
+offset_top = -23.9382
+offset_right = -23.166
+offset_bottom = -23.9382
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
