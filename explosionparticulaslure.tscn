@@ -80,11 +80,9 @@ color_ramp = SubResource("GradientTexture1D_4kgjw")
 
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_wc7jy")
-emitting = false
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_ki67q")
 lifetime = 0.6
-one_shot = true
 speed_scale = 2.0
 explosiveness = 0.5
 
@@ -92,10 +90,8 @@ explosiveness = 0.5
 self_modulate = Color(1, 1, 1, 0.588235)
 show_behind_parent = true
 z_index = 1
-emitting = false
 amount = 500
 process_material = SubResource("ParticleProcessMaterial_bljod")
 lifetime = 0.8
-one_shot = true
 speed_scale = 3.0
 explosiveness = 0.8
