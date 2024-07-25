@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://3hv2y6mde3ok"]
+
+[ext_resource type="Texture2D" uid="uid://dlxaum2pw16k" path="res://Assets Videojuego/Sprites/Tileset/Cueva/luz.png" id="1_i2xu1"]
+
+[node name="L&S" type="Node2D"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="Light" type="Node2D" parent="."]
+position = Vector2(416, 232)
+
+[node name="TextureLight" type="PointLight2D" parent="Light"]
+texture_filter = 1
+energy = 0.5
+shadow_filter = 1
+texture = ExtResource("1_i2xu1")
+
+[node name="Shadows" type="PointLight2D" parent="Light"]
+energy = 0.4
+shadow_filter = 1
+shadow_filter_smooth = 2.0
+texture = ExtResource("1_i2xu1")
+texture_scale = 0.7
