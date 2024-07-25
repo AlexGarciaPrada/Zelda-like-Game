@@ -1,57 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://cksfwxthkae05"]
+[gd_scene load_steps=4 format=3 uid="uid://cksfwxthkae05"]
 
 [ext_resource type="Script" path="res://Enemies/Mushroom/VenomCloud.gd" id="1_odb7b"]
-[ext_resource type="Texture2D" uid="uid://bv1s5v4fgm1sj" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Mushroom/nube/Nube toxica.png" id="2_eptd0"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7rb0x"]
-atlas = ExtResource("2_eptd0")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g7hap"]
-atlas = ExtResource("2_eptd0")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_652bq"]
-atlas = ExtResource("2_eptd0")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gn4k8"]
-atlas = ExtResource("2_eptd0")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_chsdn"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7rb0x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g7hap")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_652bq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gn4k8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
+[ext_resource type="PackedScene" uid="uid://bgt2haunesnrk" path="res://particulas nube veneno.tscn" id="2_dtau3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cgvjb"]
+radius = 15.7362
 
 [node name="VenomCloud" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(8.15, 8.15)
 script = ExtResource("1_odb7b")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 3
-sprite_frames = SubResource("SpriteFrames_chsdn")
-frame_progress = 0.15993
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_cgvjb")
+
+[node name="Node2D" parent="." instance=ExtResource("2_dtau3")]
+scale = Vector2(0.3, 0.3)

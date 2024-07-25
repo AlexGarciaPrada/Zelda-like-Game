@@ -27,6 +27,7 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.760784, 1, 0.964706, 1)
 show_behind_parent = true
+layout_mode = 0
 offset_left = -112.0
 offset_top = -64.0
 offset_right = 863.0
@@ -37,6 +38,7 @@ texture = SubResource("CanvasTexture_ph4gs")
 [node name="TextureRect2" type="TextureRect" parent="."]
 modulate = Color(0.447059, 0.0627451, 0.411765, 1)
 show_behind_parent = true
+layout_mode = 0
 offset_left = -113.0
 offset_top = -63.0
 offset_right = 862.0
@@ -46,6 +48,7 @@ texture = SubResource("CanvasTexture_ph4gs")
 [node name="TextureRect4" type="TextureRect" parent="."]
 modulate = Color(0.258824, 0.752941, 0.745098, 1)
 show_behind_parent = true
+layout_mode = 0
 offset_left = -22.0
 offset_top = -3.0
 offset_right = 784.0
@@ -54,6 +57,7 @@ texture = SubResource("CanvasTexture_ph4gs")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 3
+layout_mode = 0
 offset_left = 347.0
 offset_top = 20.0
 offset_right = 531.0
@@ -63,6 +67,7 @@ label_settings = SubResource("LabelSettings_0qoa8")
 
 [node name="Label2" type="Label" parent="."]
 texture_filter = 3
+layout_mode = 0
 offset_left = 593.0
 offset_top = 17.0
 offset_right = 915.0
@@ -73,6 +78,7 @@ label_settings = SubResource("LabelSettings_ns03l")
 [node name="Label3" type="Label" parent="."]
 modulate = Color(0, 0.855092, 0.185508, 1)
 texture_filter = 3
+layout_mode = 0
 offset_left = 44.0
 offset_top = 18.0
 offset_right = 366.0

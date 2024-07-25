@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgt2haunesnrk"]
+[gd_scene load_steps=6 format=3 uid="uid://bgt2haunesnrk"]
 
 [ext_resource type="Texture2D" uid="uid://edv3nrooo3iv" path="res://Assets Videojuego/Sprites/Iconos/Menú/particula curacion.png" id="1_5tpvx"]
+[ext_resource type="Script" path="res://particulas nube veneno.gd" id="1_sqa2v"]
 
 [sub_resource type="Gradient" id="Gradient_aumbs"]
 colors = PackedColorArray(1, 1, 1, 0.0941176, 1, 1, 1, 0)
@@ -20,12 +21,16 @@ scale_min = 10.0
 scale_max = 10.0
 color_ramp = SubResource("GradientTexture1D_cchp2")
 
-[node name="Node2D" type="Node2D"]
+[node name="VenomCloudParticles" type="Node2D"]
+script = ExtResource("1_sqa2v")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-amount = 1000
+emitting = false
+amount = 150
 process_material = SubResource("ParticleProcessMaterial_qgb3e")
 texture = ExtResource("1_5tpvx")
-lifetime = 3.0
+one_shot = true
 speed_scale = 2.0
 explosiveness = 1.0
+
+[connection signal="finished" from="GPUParticles2D" to="." method="_on_gpu_particles_2d_finished"]

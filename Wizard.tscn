@@ -553,7 +553,8 @@ shape = SubResource("RectangleShape2D_glctq")
 texture_filter = 1
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_p3m2i")
-animation = &"attack down wizard"
+animation = &"walk left wizard"
+frame_progress = 0.0882073
 
 [node name="Weapon" parent="." instance=ExtResource("18_i03lr")]
 visible = false

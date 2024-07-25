@@ -78,7 +78,9 @@ func _physics_process(delta):
 			_show_inventory()
 		
 	else:
+		hud._change_page()
 		_hide_inventory()
+		
 func _ready():
 	if Singleton.hud != null:
 		camera.remove_child(hud)
@@ -94,6 +96,7 @@ func _hide_inventory():
 	if Input.is_action_just_pressed("Inventory"):
 		Singleton.is_stopped = false
 		inventory_mode = false
+		hud._change_to_inventory()
 		hud._hide_inventory()
 func _movement():
 	var directionx = Input.get_axis("ui_left", "ui_right")

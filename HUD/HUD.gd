@@ -5,15 +5,17 @@ extends Control
 @onready var spellSet = $GridContainer
 @onready var notEquippedLabel = $Label
 @onready var inventory = $Inventory
-
+@onready var map = $Mapa
+@onready var spells = $INVHechizos
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_spellset_mode_gameplay()
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	life_label.text = str(get_parent().get_parent().life)
+	
 
 func _get_spell_square(num):
 	var icon = spellSet.get_child(num - 1)
@@ -28,6 +30,7 @@ func _show_not_equipped_spell():
 func _show_inventory():
 	inventory.visible = true
 	_spellset_mode_inventory()
+	
 func _hide_inventory():
 	inventory.visible = false
 	_spellset_mode_gameplay()
@@ -47,3 +50,32 @@ func _spellset_mode_inventory():
 	spellSet.scale = Vector2 (1,1)
 	for square in spellSet.get_children():
 		square._inventory_mode()
+func _change_to_map():
+	map.visible = true
+	spells.visible = false
+	inventory.visible = false
+func _change_to_inventory():
+	map.visible = false
+	inventory.visible = true
+	spells.visible = false
+
+func _change_to_spells():
+	map.visible = false
+	inventory.visible = false
+	spells.visible = true
+
+func _change_page():
+	if Input.is_action_just_pressed("A"):
+		if inventory.visible:
+			_change_to_spells()
+		elif map.visible:
+			_change_to_inventory()
+		elif spells.visible:
+			_change_to_map()
+	if Input.is_action_just_pressed("D"):
+		if inventory.visible:
+			_change_to_map()
+		elif map.visible:
+			_change_to_spells()
+		elif spells.visible:
+			_change_to_inventory()
