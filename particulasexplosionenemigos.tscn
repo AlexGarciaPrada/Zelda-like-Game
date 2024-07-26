@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi4ykesob36xi"]
+[gd_scene load_steps=5 format=3 uid="uid://bi4ykesob36xi"]
+
+[ext_resource type="Texture2D" uid="uid://dilsfvot3b07o" path="res://Assets Videojuego/Sprites/Iconos/Menú/particula.png" id="1_ei3b5"]
 
 [sub_resource type="Curve" id="Curve_wvhns"]
 min_value = 1.0
@@ -13,20 +15,22 @@ curve = SubResource("Curve_wvhns")
 particle_flag_disable_z = true
 emission_shape = 1
 emission_sphere_radius = 2.0
-spread = 180.0
-initial_velocity_min = 50.0
-initial_velocity_max = 50.0
-gravity = Vector3(0, 0, 0)
-scale_min = 4.0
-scale_max = 5.0
+direction = Vector3(0, -2, 0)
+spread = 90.0
+initial_velocity_min = 100.0
+initial_velocity_max = 120.0
+gravity = Vector3(0, 75, 0)
+scale_min = 3.0
+scale_max = 3.0
 scale_curve = SubResource("CurveTexture_ighoo")
 
 [node name="Node2D" type="Node2D"]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-emitting = false
-amount = 100
+texture_filter = 1
+amount = 10
 process_material = SubResource("ParticleProcessMaterial_uu7gr")
-one_shot = true
+texture = ExtResource("1_ei3b5")
+lifetime = 1.5
 speed_scale = 2.0
-explosiveness = 0.5
+explosiveness = 1.0

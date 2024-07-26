@@ -1,23 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://dck20i7hxvtp2"]
+[gd_scene load_steps=6 format=3 uid="uid://dck20i7hxvtp2"]
 
-[ext_resource type="Texture2D" uid="uid://fgl27b4ugyug" path="res://Assets Videojuego/Sprites/Iconos/Menú/particulas.png" id="1_q0hp2"]
 [ext_resource type="Script" path="res://Spells/Health/Health.gd" id="1_xrcds"]
+[ext_resource type="Texture2D" uid="uid://dilsfvot3b07o" path="res://Assets Videojuego/Sprites/Iconos/Menú/particula.png" id="2_4mjoj"]
+
+[sub_resource type="Gradient" id="Gradient_e62da"]
+offsets = PackedFloat32Array(0, 0.367647, 1)
+colors = PackedColorArray(0.747166, 0.934005, 0.618209, 0.956863, 0.0863886, 0.696411, 0.168498, 0.956863, 2.52686e-07, 0.366225, 0.220913, 0.219608)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_og6ji"]
+gradient = SubResource("Gradient_e62da")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6eg0g"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 3.0
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 120.0
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_og6ji")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_xrcds")
 
-[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
-texture_filter = 3
-position = Vector2(1, 0)
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+show_behind_parent = true
 emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_6eg0g")
+texture = ExtResource("2_4mjoj")
+lifetime = 1.5
 one_shot = true
-fixed_fps = 30
-draw_order = 1
-texture = ExtResource("1_q0hp2")
-spread = 180.0
-gravity = Vector2(0, -100)
-initial_velocity_min = 20.0
-initial_velocity_max = 60.35
-scale_amount_max = 2.0
-
-[connection signal="finished" from="GPUParticles2D" to="." method="_on_gpu_particles_2d_finished"]
+explosiveness = 1.0

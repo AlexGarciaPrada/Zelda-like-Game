@@ -4,11 +4,25 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nimhv"]
 bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v72pn"]
 bg_color = Color(1, 0.0392157, 0.0392157, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.834819, 0.811583, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="LifeBar" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(0.3, 0.3)
@@ -20,5 +34,5 @@ offset_right = 152.0
 offset_bottom = 27.0
 theme_override_styles/background = SubResource("StyleBoxFlat_nimhv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_v72pn")
-value = 50.0
+value = 100.0
 show_percentage = false
