@@ -6,11 +6,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_cgvjb"]
 radius = 15.7362
 
-[node name="VenomCloud" type="CharacterBody2D" groups=["Enemy"]]
+[node name="VenomCloud" type="CharacterBody2D" groups=["Cloud", "Enemy"]]
 scale = Vector2(8.15, 8.15)
 script = ExtResource("1_odb7b")
 
-[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+[node name="Area2D" type="Area2D" parent="." groups=["Cloud", "Enemy"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
