@@ -182,13 +182,16 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("Enemy") :
 		var enemy = area.get_parent()
 		enemies_in_area.append(enemy)
-		if !area.is_in_group("Cloud"):
-			if !knockback_mode && !inmunity_mode && knockback_timer== 0:
+		if !knockback_mode && !inmunity_mode && knockback_timer== 0:
+			if !area.is_in_group("Cloud"):
 				knockback_mode=true
 				newdirection = (position - enemy.position).normalized()
-		else:
-			inmunity_mode = true
-		life-=1	
+			else:
+				inmunity_mode = true
+			
+			life-=1	
+				
+		
 func _inmunity():
 	animation.modulate.r8=0
 	if inmunity_timer>= inmunity_time:
