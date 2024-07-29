@@ -26,9 +26,11 @@ script = ExtResource("1_sqa2v")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 modulate = Color(0.710057, 0.996901, 1.54018e-06, 1)
+emitting = false
 amount = 150
 process_material = SubResource("ParticleProcessMaterial_qgb3e")
 texture = ExtResource("2_bodwt")
+one_shot = true
 speed_scale = 2.0
 explosiveness = 1.0
 

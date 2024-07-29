@@ -24,9 +24,11 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 
 func _on_area_2d_area_entered(area):
+	
 	area_entered = true
 	animation.scale = animation.scale * 0.6
 	animation.play("explosion")
+	has_collide = true
 	selfarea.queue_free()
 	velocity = Vector2(0,0)
 

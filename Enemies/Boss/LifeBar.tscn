@@ -22,11 +22,12 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="LifeBar" type="Control"]
-texture_filter = 1
+texture_filter = 3
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_2we0l")
+metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 0
