@@ -18,6 +18,7 @@ var SPEED= 300
 @onready var icon_spell = preload("res://HUD/Icon/Icon.tscn")
 @onready var astralball_scene = preload("res://Spells/AstralBall/AstralBall.tscn")
 @onready var health_scene = preload("res://Spells/Health/Health.tscn")
+@onready var flare_scene = preload("res://Spells/Flare/Flare.tscn")
 
 @export var knockback_time = 0.5
 var knockback_timer = 0
@@ -349,7 +350,22 @@ func _rotatefireball_3():
 	rotatefireball_instance3.center = self
 	rotatefireball_instance3.angle = 11*PI/6
 	get_parent().add_child(rotatefireball_instance3) 
-
+func _flare_1():
+	var flare_instance = flare_scene.instantiate()
+	match clue:
+		"up":
+			flare_instance.position = weaponu.position+ Vector2(0,-30)
+		"down":
+			flare_instance.position= weapond.position + Vector2(0,30)
+			flare_instance.rotate(PI)
+		"right":
+			flare_instance.position = weaponr.position + Vector2(30,0)
+			flare_instance.rotate(PI/2)
+		"left":
+			flare_instance.position = weaponl.position+ Vector2(-30,0)
+			flare_instance.rotate(-PI/2)
+	add_child(flare_instance)
+	
 func _astralball_1():
 	var astralball = astralball_scene.instantiate()
 	get_parent().add_child(astralball)
@@ -447,6 +463,10 @@ func _sorcery(element,spell,level):
 							_rotatefireball_2()
 						3:
 							_rotatefireball_3()
+				"flare":
+					match  level:
+						1:
+							_flare_1()
 		"nature":
 			match spell:
 				"spikes":

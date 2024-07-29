@@ -54,7 +54,7 @@ texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/rotatefi
 
 [node name="IconsV4" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/llamarada/fire_llamarada_1.png"
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/flare/fire_flare_1.png"
 
 [node name="IconsV5" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2

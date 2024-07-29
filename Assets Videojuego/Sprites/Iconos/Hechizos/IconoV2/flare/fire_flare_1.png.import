@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q3bjep7xmd4k"
-path="res://.godot/imported/fire_llamarada_2.png-3f53b2381c7fdceb72b961419dfc7ee1.ctex"
+uid="uid://dgv5uhfpdl232"
+path="res://.godot/imported/fire_flare_1.png-168dcb568d8028b8350d78a426302557.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/llamarada/fire_llamarada_2.png"
-dest_files=["res://.godot/imported/fire_llamarada_2.png-3f53b2381c7fdceb72b961419dfc7ee1.ctex"]
+source_file="res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/flare/fire_flare_1.png"
+dest_files=["res://.godot/imported/fire_flare_1.png-168dcb568d8028b8350d78a426302557.ctex"]
 
 [params]
 
