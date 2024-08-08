@@ -1,15 +1,17 @@
-[gd_scene load_steps=18 format=3 uid="uid://cwplidr6mb6j3"]
+[gd_scene load_steps=21 format=3 uid="uid://cwplidr6mb6j3"]
 
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="1_4cap6"]
 [ext_resource type="PackedScene" uid="uid://btej75ff0gnky" path="res://Enemies/Slime/Slime.tscn" id="2_01vsq"]
 [ext_resource type="Texture2D" uid="uid://vl6sjjmopt4y" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset Bosque.png" id="3_qcrkx"]
-[ext_resource type="Texture2D" uid="uid://ctcpdhqvdoavo" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa.png" id="4_xa4d5"]
+[ext_resource type="Texture2D" uid="uid://k2iy3mmqlaru" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa.png" id="4_xa4d5"]
 [ext_resource type="Texture2D" uid="uid://b27e866ewka1e" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Árbol/Arbol tileset.png" id="5_5avbc"]
 [ext_resource type="Texture2D" uid="uid://vht43vaoyo5t" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Cartel/Cartel.png" id="6_ri4ia"]
 [ext_resource type="PackedScene" uid="uid://kq508wjfnsd2" path="res://Dialogues/Sign/Sign.tscn" id="7_ccjuv"]
+[ext_resource type="Texture2D" uid="uid://cyiw740vd3fnd" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa2.png" id="7_oyg8g"]
 [ext_resource type="PackedScene" uid="uid://burn3ir5takxb" path="res://Destructibles/Jar/Jar.tscn" id="8_d5h05"]
 [ext_resource type="PackedScene" uid="uid://drll14udosm8m" path="res://Enemies/Mushroom/Mushroom.tscn" id="9_snssf"]
 [ext_resource type="PackedScene" uid="uid://g6oh3aoqo30t" path="res://Enemies/EvilTree/EvilTree2.tscn" id="10_mq8f0"]
+[ext_resource type="PackedScene" uid="uid://b8w6nn5eqomc2" path="res://fog.tscn" id="11_buqm5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rnmj"]
 texture = ExtResource("3_qcrkx")
@@ -574,6 +576,67 @@ texture_region_size = Vector2i(32, 32)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b32s1"]
+texture = ExtResource("7_oyg8g")
+texture_region_size = Vector2i(32, 32)
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:4/0 = 0
+0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:4/0/physics_layer_0/angular_velocity = 0.0
+1:4/0 = 0
+1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:4/0/physics_layer_0/angular_velocity = 0.0
+3:4/0 = 0
+3:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:4/0/physics_layer_0/angular_velocity = 0.0
+2:4/0 = 0
+2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:4/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_l88by"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 4
@@ -582,6 +645,7 @@ sources/0 = SubResource("TileSetAtlasSource_bh5t8")
 sources/1 = SubResource("TileSetAtlasSource_r0y5y")
 sources/2 = SubResource("TileSetAtlasSource_bapxk")
 sources/3 = SubResource("TileSetAtlasSource_lycl5")
+sources/5 = SubResource("TileSetAtlasSource_b32s1")
 
 [node name="PruebasGuille" type="Node2D"]
 
@@ -635,3 +699,12 @@ position = Vector2(358, 29)
 
 [node name="EnemyProof3" parent="." instance=ExtResource("10_mq8f0")]
 position = Vector2(254, -91)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+scale = Vector2(1.77, 1.77)
+color = Color(0.567099, 0.427491, 0.519564, 1)
+
+[node name="Fog" parent="." instance=ExtResource("11_buqm5")]
+scale = Vector2(1.82, 1.82)
+transform = Transform2D(1.82, 0, 0, 1.82, 0, 0)
+follow_viewport_scale = 1.29
