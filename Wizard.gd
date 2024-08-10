@@ -258,23 +258,23 @@ func _fireball_1():
 			
 func _invisiblity_1():
 	is_invisible = true
-	modulate.a8=100
+	animation.modulate.a8=100
 	await get_tree().create_timer(5).timeout
-	modulate.a8=255
+	animation.modulate.a8=255
 	is_invisible = false
 	
 func _invisiblity_2():
 	is_invisible = true
-	modulate.a8=100
+	animation.modulate.a8=100
 	await get_tree().create_timer(10).timeout
-	modulate.a8=255
+	animation.modulate.a8=255
 	is_invisible = false
 	
 func _invisiblity_3():
 	is_invisible_max = true
-	modulate.a8=100
+	animation.modulate.a8=100
 	await get_tree().create_timer(10).timeout
-	modulate.a8=255
+	animation.modulate.a8=255
 	is_invisible_max = false
 func _spikes_1():
 	var spine_up_instance = spine_scene.instantiate()
@@ -502,3 +502,16 @@ func _sorcery(element,spell,level):
 					match level:
 						1:
 							_astralball_1()
+
+#----------------------- Funciones atmosféricas -----------------------
+func _day_mode():
+	hud._get_canva_modulate().color.a8 =0 
+
+func _night_mode():
+	hud._get_canva_modulate().color.a8= 100
+
+func _activate_fog():
+	hud._activate_fog()
+
+func _desactivate_fog():
+	hud._desactivate_fog()

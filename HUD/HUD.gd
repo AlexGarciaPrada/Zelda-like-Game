@@ -79,3 +79,11 @@ func _change_page():
 			_change_to_spells()
 		elif spells.visible:
 			_change_to_inventory()
+func _get_canva_modulate():
+	return $Shader.get_child(0)
+
+func _activate_fog():
+	$Fog.visible = true
+	
+func _desactivate_fog():
+	$Fog.visible = false
