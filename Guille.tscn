@@ -1,9 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://crllaailugvpu"]
+[gd_scene load_steps=26 format=3 uid="uid://crllaailugvpu"]
 
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="1_bqiox"]
 [ext_resource type="Texture2D" uid="uid://vl6sjjmopt4y" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset Bosque.png" id="2_r6g1l"]
 [ext_resource type="Texture2D" uid="uid://b27e866ewka1e" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Árbol/Arbol tileset.png" id="3_e47la"]
-[ext_resource type="Texture2D" uid="uid://k2iy3mmqlaru" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa.png" id="4_m2y64"]
 [ext_resource type="Texture2D" uid="uid://bnyoq05waaobp" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset altura.png" id="5_3c3y4"]
 [ext_resource type="Texture2D" uid="uid://cyiw740vd3fnd" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa2.png" id="5_n8chn"]
 [ext_resource type="PackedScene" uid="uid://kq508wjfnsd2" path="res://Dialogues/Sign/Sign.tscn" id="6_8oyiv"]
@@ -13,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://btej75ff0gnky" path="res://Enemies/Slime/Slime.tscn" id="8_fcjhr"]
 [ext_resource type="PackedScene" uid="uid://g6oh3aoqo30t" path="res://Enemies/EvilTree/EvilTree2.tscn" id="9_18xes"]
 [ext_resource type="PackedScene" uid="uid://drll14udosm8m" path="res://Enemies/Mushroom/Mushroom.tscn" id="10_q1kkd"]
-[ext_resource type="PackedScene" uid="uid://cjq0un6jyd4x3" path="res://door.tscn" id="12_7s6wq"]
 [ext_resource type="PackedScene" uid="uid://bipb1ie2txlij" path="res://Enemies/Eye/Eye.tscn" id="14_pk42u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ao6mg"]
@@ -108,7 +106,6 @@ texture_region_size = Vector2i(32, 32)
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qatn1"]
-texture = ExtResource("4_m2y64")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -869,13 +866,6 @@ position = Vector2(350, -192)
 
 [node name="Mushroom" parent="." instance=ExtResource("10_q1kkd")]
 position = Vector2(291, 117)
-
-[node name="Door" parent="." instance=ExtResource("12_7s6wq")]
-offset_left = -497.0
-offset_top = -9.0
-offset_right = -497.0
-offset_bottom = -9.0
-scene_path = "res://PruebasGuille.tscn"
 
 [node name="EnemyProof3" parent="." instance=ExtResource("14_pk42u")]
 position = Vector2(-322, -39)

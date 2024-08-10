@@ -256,7 +256,6 @@ radius = 13.1529
 
 [node name="Mushroom" type="CharacterBody2D" groups=["Enemy"]]
 show_behind_parent = true
-scale = Vector2(1.295, 1.295)
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_wglv6")
