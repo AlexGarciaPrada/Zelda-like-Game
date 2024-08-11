@@ -44,6 +44,7 @@ shader_parameter/noise_texture = SubResource("NoiseTexture2D_pah02")
 
 [node name="Fog" type="ParallaxBackground"]
 layer = 2
+follow_viewport_enabled = true
 scroll_base_scale = Vector2(2, 2)
 scroll_limit_begin = Vector2(-300, -300)
 scroll_limit_end = Vector2(300, 300)
