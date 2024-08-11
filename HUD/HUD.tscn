@@ -15,6 +15,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_i2n0l"]
 font = ExtResource("2_ftl7u")
 font_size = 30
+font_color = Color(0.889147, 0.889147, 0.889147, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qg576"]
 font = ExtResource("2_ftl7u")
@@ -61,13 +62,6 @@ texture_filter = 3
 position = Vector2(9.00001, 14)
 scale = Vector2(3.36, 3.36)
 texture = ExtResource("3_84kot")
-
-[node name="Sprite2D2" type="Sprite2D" parent="VBoxContainer/Label"]
-show_behind_parent = true
-texture_filter = 3
-position = Vector2(-6.89655, 443.678)
-scale = Vector2(2.73, 2.73)
-texture = ExtResource("4_02kct")
 
 [node name="Dialogues" parent="." instance=ExtResource("2_3y1ny")]
 visible = false
@@ -193,3 +187,10 @@ scale = Vector2(28.439, 20)
 visible = false
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture_filter = 3
+position = Vector2(74, 418)
+scale = Vector2(2.3751, 2.3751)
+texture = ExtResource("4_02kct")
