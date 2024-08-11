@@ -1,12 +1,12 @@
 extends Control
 
-@onready var life_label = $VBoxContainer/Label
+@onready var life_label =$CanvasLayer/VBoxContainer/Label
 @export var spell = ""
-@onready var spellSet = $GridContainer
-@onready var notEquippedLabel = $Label
-@onready var inventory = $Inventory
-@onready var map = $Mapa
-@onready var spells = $INVHechizos
+@onready var spellSet =$CanvasLayer/GridContainer
+@onready var notEquippedLabel = $CanvasLayer/Label
+@onready var inventory = $CanvasLayer/Inventory
+@onready var map = $CanvasLayer/Mapa
+@onready var spells =$CanvasLayer/INVHechizos
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -14,8 +14,7 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	life_label.text = str(get_parent().get_parent().life)
-	
+	life_label.text = str(get_parent().get_parent()._get_life())
 
 func _get_spell_square(num):
 	var icon = spellSet.get_child(num - 1)
@@ -87,3 +86,6 @@ func _activate_fog():
 	
 func _desactivate_fog():
 	$Fog.visible = false
+
+func _cave_mode():
+	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ce6bwbo4htu22"]
+[gd_scene load_steps=14 format=3 uid="uid://ce6bwbo4htu22"]
 
 [ext_resource type="Script" path="res://HUD/HUD.gd" id="1_fhhq4"]
 [ext_resource type="PackedScene" uid="uid://hqa8in30kvgo" path="res://Dialogues/Dialogues.tscn" id="2_3y1ny"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bmlwc6xc6kqj5" path="res://HUD/inv_hechizos.tscn" id="8_ulw1u"]
 [ext_resource type="PackedScene" uid="uid://bfr4yer8yhh0c" path="res://HUD/Shader/Shader.tscn" id="9_xvreh"]
 [ext_resource type="PackedScene" uid="uid://b8w6nn5eqomc2" path="res://fog.tscn" id="10_3v15b"]
+[ext_resource type="Texture2D" uid="uid://dlxaum2pw16k" path="res://Assets Videojuego/Sprites/Tileset/Cueva/luz.png" id="11_wbhej"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i2n0l"]
 font = ExtResource("2_ftl7u")
@@ -33,10 +34,17 @@ mouse_filter = 2
 script = ExtResource("1_fhhq4")
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Shader" parent="." instance=ExtResource("9_xvreh")]
+z_index = 1
+z_as_relative = false
+scale = Vector2(4507.24, 38.4264)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 z_index = 2
 z_as_relative = false
-layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 80.0
@@ -47,31 +55,30 @@ grow_horizontal = 2
 scale = Vector2(0.87, 0.87)
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
 texture_filter = 3
 layout_mode = 2
 text = "5
 "
 label_settings = SubResource("LabelSettings_i2n0l")
 
-[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Label"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/VBoxContainer/Label"]
 show_behind_parent = true
 texture_filter = 3
 position = Vector2(9.00001, 14)
 scale = Vector2(3.36, 3.36)
 texture = ExtResource("3_kosq6")
 
-[node name="Dialogues" parent="." instance=ExtResource("2_3y1ny")]
+[node name="Dialogues" parent="CanvasLayer" instance=ExtResource("2_3y1ny")]
 visible = false
 z_index = 2
 z_as_relative = false
-layout_mode = 1
 offset_left = 1106.75
 offset_top = 436.0
 offset_right = 1050.75
 offset_bottom = 152.0
 
-[node name="Inventory" parent="." instance=ExtResource("6_jqvny")]
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("6_jqvny")]
 visible = false
 z_index = 2
 z_as_relative = false
@@ -81,12 +88,11 @@ offset_right = 161.0
 offset_bottom = 232.0
 mouse_filter = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="CanvasLayer"]
 visible = false
 z_index = 2
 z_as_relative = false
 texture_filter = 3
-layout_mode = 0
 offset_left = 95.0
 offset_top = 128.0
 offset_right = 752.0
@@ -94,9 +100,8 @@ offset_bottom = 179.0
 text = "¡No tienes ningún hechizo equipado en esa casilla!"
 label_settings = SubResource("LabelSettings_qg576")
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
 z_index = 2
-layout_mode = 0
 offset_left = 192.0
 offset_top = 40.0
 offset_right = 912.0
@@ -106,82 +111,94 @@ mouse_filter = 2
 theme_override_constants/h_separation = 70
 columns = 10
 
-[node name="IconsV2" parent="GridContainer" instance=ExtResource("6_tkmat")]
+[node name="IconsV2" parent="CanvasLayer/GridContainer" instance=ExtResource("6_tkmat")]
 layout_mode = 2
 number_label = "1"
 is_inventory = false
 
-[node name="IconsV3" parent="GridContainer" instance=ExtResource("6_tkmat")]
+[node name="IconsV3" parent="CanvasLayer/GridContainer" instance=ExtResource("6_tkmat")]
 layout_mode = 2
 number_label = "2"
 is_inventory = false
 
-[node name="IconsV4" parent="GridContainer" instance=ExtResource("6_tkmat")]
+[node name="IconsV4" parent="CanvasLayer/GridContainer" instance=ExtResource("6_tkmat")]
 layout_mode = 2
 number_label = "3"
 is_inventory = false
 
-[node name="IconsV5" parent="GridContainer" instance=ExtResource("6_tkmat")]
+[node name="IconsV5" parent="CanvasLayer/GridContainer" instance=ExtResource("6_tkmat")]
 layout_mode = 2
 number_label = "4"
 is_inventory = false
 
-[node name="IconsV6" parent="GridContainer" instance=ExtResource("6_tkmat")]
+[node name="IconsV6" parent="CanvasLayer/GridContainer" instance=ExtResource("6_tkmat")]
 layout_mode = 2
 number_label = "5"
 is_inventory = false
 
-[node name="IconsV7" parent="GridContainer" instance=ExtResource("6_tkmat")]
+[node name="IconsV7" parent="CanvasLayer/GridContainer" instance=ExtResource("6_tkmat")]
 layout_mode = 2
 number_label = "6"
 is_inventory = false
 
-[node name="IconsV8" parent="GridContainer" instance=ExtResource("6_tkmat")]
+[node name="IconsV8" parent="CanvasLayer/GridContainer" instance=ExtResource("6_tkmat")]
 layout_mode = 2
 number_label = "7"
 is_inventory = false
 
-[node name="IconsV9" parent="GridContainer" instance=ExtResource("6_tkmat")]
+[node name="IconsV9" parent="CanvasLayer/GridContainer" instance=ExtResource("6_tkmat")]
 layout_mode = 2
 number_label = "8"
 is_inventory = false
 
-[node name="IconsV10" parent="GridContainer" instance=ExtResource("6_tkmat")]
+[node name="IconsV10" parent="CanvasLayer/GridContainer" instance=ExtResource("6_tkmat")]
 layout_mode = 2
 number_label = "9"
 is_inventory = false
 
-[node name="IconsV11" parent="GridContainer" instance=ExtResource("6_tkmat")]
+[node name="IconsV11" parent="CanvasLayer/GridContainer" instance=ExtResource("6_tkmat")]
 layout_mode = 2
 number_label = "0"
 is_inventory = false
 
-[node name="Mapa" parent="." instance=ExtResource("7_nejjq")]
+[node name="Mapa" parent="CanvasLayer" instance=ExtResource("7_nejjq")]
 visible = false
 z_index = 2
 z_as_relative = false
-layout_mode = 1
 offset_left = 33.0
 offset_top = 16.0
 offset_right = 33.0
 offset_bottom = 16.0
 
-[node name="INVHechizos" parent="." instance=ExtResource("8_ulw1u")]
+[node name="INVHechizos" parent="CanvasLayer" instance=ExtResource("8_ulw1u")]
 visible = false
 z_index = 2
 z_as_relative = false
-layout_mode = 1
 offset_left = 33.0
 offset_top = 16.0
 offset_right = 33.0
 offset_bottom = 16.0
 
-[node name="Shader" parent="." instance=ExtResource("9_xvreh")]
-z_index = 1
-z_as_relative = false
-scale = Vector2(28.439, 20)
-
-[node name="Fog" parent="." instance=ExtResource("10_3v15b")]
+[node name="Fog" parent="CanvasLayer" instance=ExtResource("10_3v15b")]
 visible = false
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
+
+[node name="Light" type="Node2D" parent="CanvasLayer"]
+z_index = 2
+z_as_relative = false
+position = Vector2(536, 344)
+scale = Vector2(3, 3)
+
+[node name="TextureLight" type="PointLight2D" parent="CanvasLayer/Light"]
+texture_filter = 1
+energy = 0.5
+shadow_filter = 1
+texture = ExtResource("11_wbhej")
+
+[node name="Shadows" type="PointLight2D" parent="CanvasLayer/Light"]
+energy = 0.4
+shadow_filter = 1
+shadow_filter_smooth = 2.0
+texture = ExtResource("11_wbhej")
+texture_scale = 0.7

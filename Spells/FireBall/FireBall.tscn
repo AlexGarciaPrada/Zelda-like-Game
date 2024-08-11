@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4yl5dsh12o4d"]
+[gd_scene load_steps=14 format=3 uid="uid://c4yl5dsh12o4d"]
 
 [ext_resource type="Script" path="res://Spells/FireBall/FireBall.gd" id="1_tfcvn"]
 [ext_resource type="Texture2D" uid="uid://co0g3yt6xhf5j" path="res://Assets Videojuego/Sprites/Spells/Fireball/Explosión fireball.png" id="2_yig63"]
 [ext_resource type="Texture2D" uid="uid://cfk7esr8rgs4p" path="res://Assets Videojuego/Sprites/Spells/Fireball/Fireball.png" id="3_hiqok"]
+[ext_resource type="Texture2D" uid="uid://dlxaum2pw16k" path="res://Assets Videojuego/Sprites/Tileset/Cueva/luz.png" id="4_3lxj4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jrl6q"]
 radius = 46.0977
@@ -103,6 +104,22 @@ light_mask = 2
 visibility_layer = 2
 position = Vector2(0, -11.405)
 shape = SubResource("CircleShape2D_jrl6q")
+
+[node name="Light" type="Node2D" parent="."]
+position = Vector2(7.27596e-12, -11.1111)
+
+[node name="TextureLight" type="PointLight2D" parent="Light"]
+texture_filter = 1
+energy = 0.5
+shadow_filter = 1
+texture = ExtResource("4_3lxj4")
+
+[node name="Shadows" type="PointLight2D" parent="Light"]
+energy = 0.4
+shadow_filter = 1
+shadow_filter_smooth = 2.0
+texture = ExtResource("4_3lxj4")
+texture_scale = 0.7
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

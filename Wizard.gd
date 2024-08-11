@@ -515,3 +515,10 @@ func _activate_fog():
 
 func _desactivate_fog():
 	hud._desactivate_fog()
+
+func _cave_mode():
+	hud._cave_mode()
+
+#----------------------- Getters -----------------------
+func _get_life():
+	return self.life

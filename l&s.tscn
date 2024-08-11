@@ -4,18 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://dlxaum2pw16k" path="res://Assets Videojuego/Sprites/Tileset/Cueva/luz.png" id="1_i2xu1"]
 
 [node name="L&S" type="Node2D"]
+position = Vector2(0, -16)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(408, 192)
+position = Vector2(416, 200)
 scale = Vector2(4.25, 2.875)
 texture = ExtResource("1_38ouk")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(128, 88)
 color = Color(0, 0, 0, 1)
 
 [node name="Light" type="Node2D" parent="."]
-position = Vector2(400, 200)
+position = Vector2(248, 152)
 
 [node name="TextureLight" type="PointLight2D" parent="Light"]
 texture_filter = 1

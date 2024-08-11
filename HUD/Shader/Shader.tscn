@@ -1,11 +1,19 @@
-[gd_scene format=3 uid="uid://bfr4yer8yhh0c"]
+[gd_scene load_steps=2 format=3 uid="uid://bfr4yer8yhh0c"]
+
+[ext_resource type="Script" path="res://HUD/Shader/Shader.gd" id="1_w34sl"]
 
 [node name="Shader" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+scale = Vector2(13.619, 11)
+script = ExtResource("1_w34sl")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.286275, 0.286275, 0.352941, 0)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(10, 10)
+transform = Transform2D(10, 0, 0, 10, 0, 0)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 509.0
+offset_bottom = 187.0
+scale = Vector2(0.114711, 0.145132)
+color = Color(0.196078, 0.196078, 0.196078, 1)
