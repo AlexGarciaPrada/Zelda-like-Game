@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://HUD/HUD.gd" id="1_fhhq4"]
 [ext_resource type="PackedScene" uid="uid://hqa8in30kvgo" path="res://Dialogues/Dialogues.tscn" id="2_3y1ny"]
 [ext_resource type="FontFile" uid="uid://bgcjl3ucwhxgk" path="res://Assets Videojuego/Font/pixellari/Pixellari.ttf" id="2_ftl7u"]
-[ext_resource type="Texture2D" uid="uid://dsle5dy1ns6ts" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Vida/Corazón.png" id="3_kosq6"]
+[ext_resource type="Texture2D" uid="uid://cbu1mjn6uuvqb" path="res://Assets Videojuego/Sprites/Iconos/Menú/Vidausuario.png" id="3_84kot"]
+[ext_resource type="Texture2D" uid="uid://brkqsp437eb30" path="res://Assets Videojuego/Sprites/Iconos/Menú/Monedasusuario.png" id="4_02kct"]
 [ext_resource type="PackedScene" uid="uid://dfo17tgk3shw0" path="res://HUD/Inventory/Inventory.tscn" id="6_jqvny"]
 [ext_resource type="PackedScene" uid="uid://c5sncxqjc57e5" path="res://HUD/IconsContainerV2/IconsContainerControlV2.tscn" id="6_tkmat"]
 [ext_resource type="PackedScene" uid="uid://cx7e86hy7inki" path="res://HUD/mapa.tscn" id="7_nejjq"]
@@ -15,6 +16,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_i2n0l"]
 font = ExtResource("2_ftl7u")
 font_size = 30
+font_color = Color(0.889147, 0.889147, 0.889147, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qg576"]
 font = ExtResource("2_ftl7u")
@@ -67,7 +69,7 @@ show_behind_parent = true
 texture_filter = 3
 position = Vector2(9.00001, 14)
 scale = Vector2(3.36, 3.36)
-texture = ExtResource("3_kosq6")
+texture = ExtResource("3_84kot")
 
 [node name="Dialogues" parent="CanvasLayer" instance=ExtResource("2_3y1ny")]
 visible = false
@@ -184,6 +186,7 @@ visible = false
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 
+<<<<<<< HEAD
 [node name="Light" type="Node2D" parent="CanvasLayer"]
 z_index = 2
 z_as_relative = false
@@ -202,3 +205,11 @@ shadow_filter = 1
 shadow_filter_smooth = 2.0
 texture = ExtResource("11_wbhej")
 texture_scale = 0.7
+=======
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture_filter = 3
+position = Vector2(74, 418)
+scale = Vector2(2.3751, 2.3751)
+texture = ExtResource("4_02kct")
+>>>>>>> 7137c55edfa4ef7b4983cc53131885bf0ea14354
