@@ -37,7 +37,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Shader" parent="." instance=ExtResource("9_xvreh")]
 z_index = 1
 z_as_relative = false
-scale = Vector2(4507.24, 38.4264)
+scale = Vector2(63949.7, -98.6776)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
