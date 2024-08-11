@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://go6fn4mpqg8e"]
+[gd_scene load_steps=11 format=3 uid="uid://go6fn4mpqg8e"]
 
 [ext_resource type="Texture2D" uid="uid://c3l82gtan865a" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/IntCASA.png" id="2_pybio"]
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="2_q2hy7"]
 [ext_resource type="Texture2D" uid="uid://cpnuwb20fpbmg" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/tileset int casas.png" id="3_y8b8n"]
+[ext_resource type="Texture2D" uid="uid://be1apurxxslps" path="res://Assets Videojuego/Sprites/Personajes/NPC'S/2/NPC2 abajo.png" id="4_73iqf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pk2wb"]
 texture = ExtResource("2_pybio")
@@ -50,6 +51,28 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_pk2wb")
 sources/1 = SubResource("TileSetAtlasSource_iwr4p")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fygum"]
+atlas = ExtResource("4_73iqf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d685q"]
+atlas = ExtResource("4_73iqf")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k7ebx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fygum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d685q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Wizard" parent="." instance=ExtResource("2_q2hy7")]
@@ -68,3 +91,10 @@ layer_2/name = "Paredes"
 layer_2/tile_data = PackedInt32Array(196611, 0, 0, 196621, 131072, 0, 720899, 0, 2, 720909, 131072, 2, 720905, 131072, 3, 720903, 65536, 2, 720900, 65536, 2, 720901, 65536, 2, 720902, 65536, 2, 655363, 0, 1, 589827, 0, 1, 524291, 0, 1, 458755, 0, 1, 262147, 0, 1, 327683, 0, 1, 393219, 0, 1, 196612, 65536, 0, 196613, 65536, 0, 196614, 65536, 0, 196615, 65536, 0, 196616, 65536, 0, 196617, 65536, 3, 196618, 65536, 0, 196619, 65536, 0, 196620, 65536, 0, 262157, 131072, 1, 327693, 131072, 1, 393229, 131072, 1, 458765, 131072, 1, 524301, 131072, 1, 589837, 131072, 1, 655373, 131072, 1, 720908, 65536, 2, 720907, 65536, 2, 720906, 65536, 2, 393225, 65536, 4, 327689, 65536, 5, 262153, 65536, 5, 393226, 65536, 2, 393227, 0, 3, 393224, 65536, 2, 393223, 65536, 2, 393222, 65536, 2, 393221, 131072, 3)
 layer_3/name = "Deco2"
 layer_3/tile_data = PackedInt32Array(720900, 1, 0, 720906, 65537, 0, 720907, 131073, 0, 720902, 1, 0, 196620, 1, 0, 196618, 196609, 2, 262154, 196609, 3, 393225, 262145, 2, 458761, 262145, 3, 393226, 196609, 2, 458762, 196609, 3, 393227, 262145, 2, 458763, 262145, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(343, 269)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_k7ebx")
+frame_progress = 0.293501

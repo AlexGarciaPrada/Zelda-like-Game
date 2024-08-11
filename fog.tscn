@@ -44,6 +44,7 @@ shader_parameter/noise_texture = SubResource("NoiseTexture2D_pah02")
 
 [node name="Fog" type="ParallaxBackground"]
 layer = 2
+follow_viewport_enabled = true
 scroll_base_scale = Vector2(2, 2)
 scroll_limit_begin = Vector2(-300, -300)
 scroll_limit_end = Vector2(300, 300)
@@ -54,5 +55,6 @@ motion_mirroring = Vector2(320, 180)
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxLayer"]
 material = SubResource("ShaderMaterial_05ka4")
-offset_right = 320.0
+offset_left = -1.0
+offset_right = 319.0
 offset_bottom = 180.0
