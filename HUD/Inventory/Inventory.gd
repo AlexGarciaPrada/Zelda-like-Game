@@ -107,7 +107,7 @@ func _create_num_input():
 
 func _equip_spell(input:String):
 	if self.visible:
-		var square = get_parent()._get_spell_square(int(input))
-		get_parent()._correct_equipment(_get_element_square_texture_path(show_element,show_num))
+		var square = get_parent().get_parent()._get_spell_square(int(input))
+		get_parent().get_parent()._correct_equipment(_get_element_square_texture_path(show_element,show_num))
 		square._assign_texture(_get_element_square_texture_path(show_element,show_num))
 	return ""

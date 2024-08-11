@@ -184,14 +184,20 @@ visible = false
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 
-[node name="Light" type="Node2D" parent="CanvasLayer"]
+[node name="Light" type="Control" parent="CanvasLayer"]
 z_index = 2
 z_as_relative = false
-position = Vector2(536, 344)
-scale = Vector2(3, 3)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 536.0
+offset_top = 344.0
+offset_right = 536.0
+offset_bottom = 344.0
+scale = Vector2(2, 2)
 
 [node name="TextureLight" type="PointLight2D" parent="CanvasLayer/Light"]
 texture_filter = 1
+color = Color(0.758192, 0.758192, 0.758192, 0.258824)
 energy = 0.5
 shadow_filter = 1
 texture = ExtResource("11_wbhej")

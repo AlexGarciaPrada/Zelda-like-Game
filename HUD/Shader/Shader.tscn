@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfr4yer8yhh0c"]
+[gd_scene load_steps=3 format=3 uid="uid://bfr4yer8yhh0c"]
 
 [ext_resource type="Script" path="res://HUD/Shader/Shader.gd" id="1_w34sl"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gf1c4"]
+blend_mode = 3
 
 [node name="Shader" type="Control"]
 layout_mode = 3
@@ -9,12 +12,13 @@ scale = Vector2(115.017, -23.1238)
 script = ExtResource("1_w34sl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -1
+layer = 0
 scale = Vector2(10, 10)
 transform = Transform2D(10, 0, 0, 10, 0, 0)
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("CanvasItemMaterial_gf1c4")
 offset_right = 509.0
 offset_bottom = 187.0
 scale = Vector2(0.228162, 0.352001)
-color = Color(0.196078, 0.196078, 0.196078, 0.6)
+color = Color(0.241156, 0.241156, 0.241156, 1)
