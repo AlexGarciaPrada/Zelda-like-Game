@@ -601,13 +601,14 @@ offset_bottom = 233.1
 
 [node name="TextureLight" type="PointLight2D" parent="Light"]
 texture_filter = 1
+color = Color(0.994374, 1, 0.611, 1)
 energy = 0.7
 shadow_filter = 1
 texture = ExtResource("20_ynpl3")
 
 [node name="Shadows" type="PointLight2D" parent="Light"]
-color = Color(1, 1, 1, 0.843137)
-energy = 0.6
+color = Color(0.996078, 1, 0.611765, 1)
+energy = 0.3
 shadow_filter = 1
 shadow_filter_smooth = 2.0
 texture = ExtResource("20_ynpl3")
