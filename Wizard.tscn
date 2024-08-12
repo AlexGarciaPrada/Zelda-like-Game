@@ -598,6 +598,7 @@ offset_right = 414.112
 offset_bottom = 233.1
 
 [node name="Light" type="Node2D" parent="."]
+visible = false
 
 [node name="TextureLight" type="PointLight2D" parent="Light"]
 texture_filter = 1
