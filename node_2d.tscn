@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cb6vrxfgwgler"]
+[gd_scene load_steps=8 format=3 uid="uid://cb6vrxfgwgler"]
 
 [ext_resource type="Texture2D" uid="uid://b1pefnjyf67v" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/IntCASA.png" id="1_cp333"]
 [ext_resource type="Texture2D" uid="uid://cpnuwb20fpbmg" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/tileset int casas.png" id="2_18mbx"]
 [ext_resource type="PackedScene" uid="uid://burn3ir5takxb" path="res://Destructibles/Jar/Jar.tscn" id="3_5mpso"]
+[ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="4_58q8x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5qnkf"]
 texture = ExtResource("1_cp333")
@@ -82,3 +83,42 @@ position = Vector2(232, 328)
 [node name="Jar4" parent="." instance=ExtResource("3_5mpso")]
 position = Vector2(152, 368)
 rotation = -6.28319
+
+[node name="Jar5" parent="." instance=ExtResource("3_5mpso")]
+position = Vector2(152, 104)
+rotation = -6.28319
+
+[node name="Jar6" parent="." instance=ExtResource("3_5mpso")]
+position = Vector2(216, 224)
+rotation = -6.28319
+
+[node name="Jar7" parent="." instance=ExtResource("3_5mpso")]
+position = Vector2(24, 280)
+rotation = -6.28319
+
+[node name="Jar8" parent="." instance=ExtResource("3_5mpso")]
+position = Vector2(280, 176)
+rotation = -6.28319
+
+[node name="Jar9" parent="." instance=ExtResource("3_5mpso")]
+position = Vector2(64, 136)
+rotation = -6.28319
+
+[node name="Jar10" parent="." instance=ExtResource("3_5mpso")]
+position = Vector2(40, 72)
+rotation = -6.28319
+
+[node name="Jar11" parent="." instance=ExtResource("3_5mpso")]
+position = Vector2(152, 176)
+rotation = -6.28319
+
+[node name="Jar12" parent="." instance=ExtResource("3_5mpso")]
+position = Vector2(256, 88)
+rotation = -6.28319
+
+[node name="Jar13" parent="." instance=ExtResource("3_5mpso")]
+position = Vector2(104, 24)
+rotation = -6.28319
+
+[node name="Wizard" parent="." instance=ExtResource("4_58q8x")]
+position = Vector2(248, 400)

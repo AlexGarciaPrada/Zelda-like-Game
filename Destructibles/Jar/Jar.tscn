@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://burn3ir5takxb"]
 
-[ext_resource type="Texture2D" uid="uid://b73ue338fpsyg" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Vasija/Vasija.png" id="1_itn2u"]
+[ext_resource type="Texture2D" uid="uid://bsplsfkbfd048" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Vasija/Vasija.png" id="1_itn2u"]
 [ext_resource type="Script" path="res://Destructibles/Jar/Jar.gd" id="1_t4fxa"]
 [ext_resource type="Texture2D" uid="uid://cajbp86mc0ukk" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Vasija/Vasija rota.png" id="2_3uwcc"]
 
