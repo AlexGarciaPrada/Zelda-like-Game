@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" path="res://HUD/Shader/Shader.gd" id="1_w34sl"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gf1c4"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rgqrt"]
 blend_mode = 3
+light_mode = 2
 
 [node name="Shader" type="Control"]
 layout_mode = 3
@@ -17,8 +18,8 @@ scale = Vector2(10, 10)
 transform = Transform2D(10, 0, 0, 10, 0, 0)
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("CanvasItemMaterial_gf1c4")
+material = SubResource("CanvasItemMaterial_rgqrt")
 offset_right = 509.0
 offset_bottom = 187.0
 scale = Vector2(0.228162, 0.352001)
-color = Color(0.241156, 0.241156, 0.241156, 1)
+color = Color(0.0189402, 0.0189402, 0.0189402, 1)

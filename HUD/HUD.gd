@@ -11,7 +11,6 @@ extends Control
 func _ready():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_spellset_mode_gameplay()
-	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	life_label.text = str(get_parent().get_parent()._get_life())

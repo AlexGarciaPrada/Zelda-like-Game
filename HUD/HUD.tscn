@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ce6bwbo4htu22"]
+[gd_scene load_steps=13 format=3 uid="uid://ce6bwbo4htu22"]
 
 [ext_resource type="Script" path="res://HUD/HUD.gd" id="1_fhhq4"]
 [ext_resource type="PackedScene" uid="uid://hqa8in30kvgo" path="res://Dialogues/Dialogues.tscn" id="2_3y1ny"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://bmlwc6xc6kqj5" path="res://HUD/inv_hechizos.tscn" id="8_ulw1u"]
 [ext_resource type="PackedScene" uid="uid://bfr4yer8yhh0c" path="res://HUD/Shader/Shader.tscn" id="9_xvreh"]
 [ext_resource type="PackedScene" uid="uid://b8w6nn5eqomc2" path="res://fog.tscn" id="10_3v15b"]
-[ext_resource type="Texture2D" uid="uid://dlxaum2pw16k" path="res://Assets Videojuego/Sprites/Tileset/Cueva/luz.png" id="11_wbhej"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i2n0l"]
 font = ExtResource("2_ftl7u")
@@ -183,28 +182,3 @@ offset_bottom = 16.0
 visible = false
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
-
-[node name="Light" type="Control" parent="CanvasLayer"]
-z_index = 2
-z_as_relative = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 536.0
-offset_top = 344.0
-offset_right = 536.0
-offset_bottom = 344.0
-scale = Vector2(2, 2)
-
-[node name="TextureLight" type="PointLight2D" parent="CanvasLayer/Light"]
-texture_filter = 1
-color = Color(0.758192, 0.758192, 0.758192, 0.258824)
-energy = 0.5
-shadow_filter = 1
-texture = ExtResource("11_wbhej")
-
-[node name="Shadows" type="PointLight2D" parent="CanvasLayer/Light"]
-energy = 0.4
-shadow_filter = 1
-shadow_filter_smooth = 2.0
-texture = ExtResource("11_wbhej")
-texture_scale = 0.7
