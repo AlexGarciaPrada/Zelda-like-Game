@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1pefnjyf67v"
-path="res://.godot/imported/IntCASA.png-b405363366b911acfd948cdfc6c6ca08.ctex"
+uid="uid://iei5ktgx4ffs"
+path="res://.godot/imported/NPC1 arriba.png-0d2b847dbe413086e3d688be6c789f48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/IntCASA.png"
-dest_files=["res://.godot/imported/IntCASA.png-b405363366b911acfd948cdfc6c6ca08.ctex"]
+source_file="res://Assets Videojuego/Sprites/Personajes/NPC'S/1/NPC1 arriba.png"
+dest_files=["res://.godot/imported/NPC1 arriba.png-0d2b847dbe413086e3d688be6c789f48.ctex"]
 
 [params]
 
