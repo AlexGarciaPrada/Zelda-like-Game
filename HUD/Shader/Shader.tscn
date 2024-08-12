@@ -22,4 +22,4 @@ material = SubResource("CanvasItemMaterial_rgqrt")
 offset_right = 509.0
 offset_bottom = 187.0
 scale = Vector2(0.228162, 0.352001)
-color = Color(0.0189402, 0.0189402, 0.0189402, 1)
+color = Color(0.12103, 0.12103, 0.12103, 0.415686)

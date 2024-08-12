@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://HUD/HUD.gd" id="1_fhhq4"]
 [ext_resource type="PackedScene" uid="uid://hqa8in30kvgo" path="res://Dialogues/Dialogues.tscn" id="2_3y1ny"]
 [ext_resource type="FontFile" uid="uid://bgcjl3ucwhxgk" path="res://Assets Videojuego/Font/pixellari/Pixellari.ttf" id="2_ftl7u"]
-[ext_resource type="Texture2D" uid="uid://dsle5dy1ns6ts" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Vida/Corazón.png" id="3_kosq6"]
+[ext_resource type="Texture2D" uid="uid://cbu1mjn6uuvqb" path="res://Assets Videojuego/Sprites/Iconos/Menú/Vidausuario.png" id="4_t6aly"]
 [ext_resource type="PackedScene" uid="uid://dfo17tgk3shw0" path="res://HUD/Inventory/Inventory.tscn" id="6_jqvny"]
 [ext_resource type="PackedScene" uid="uid://c5sncxqjc57e5" path="res://HUD/IconsContainerV2/IconsContainerControlV2.tscn" id="6_tkmat"]
 [ext_resource type="PackedScene" uid="uid://cx7e86hy7inki" path="res://HUD/mapa.tscn" id="7_nejjq"]
@@ -66,7 +66,7 @@ show_behind_parent = true
 texture_filter = 3
 position = Vector2(9.00001, 14)
 scale = Vector2(3.36, 3.36)
-texture = ExtResource("3_kosq6")
+texture = ExtResource("4_t6aly")
 
 [node name="Dialogues" parent="CanvasLayer" instance=ExtResource("2_3y1ny")]
 visible = false
