@@ -178,6 +178,15 @@ offset_top = 16.0
 offset_right = 33.0
 offset_bottom = 16.0
 
+[node name="Pantallainicio" parent="CanvasLayer" instance=ExtResource("8_ulw1u")]
+visible = false
+z_index = 2
+z_as_relative = false
+offset_left = 33.0
+offset_top = 16.0
+offset_right = 33.0
+offset_bottom = 16.0
+
 [node name="Fog" parent="CanvasLayer" instance=ExtResource("10_3v15b")]
 visible = false
 scale = Vector2(3, 3)

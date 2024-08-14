@@ -1,20 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmlwc6xc6kqj5"]
+[gd_scene load_steps=8 format=3 uid="uid://bmlwc6xc6kqj5"]
 
 [ext_resource type="FontFile" uid="uid://dep6g8xgcfa6y" path="res://Assets Videojuego/Font/crang/Crang.ttf" id="1_h8w7t"]
+[ext_resource type="Texture2D" uid="uid://b401i24m627fg" path="res://Assets Videojuego/Sprites/Iconos/Menú/Botón menu azul.png" id="1_s0s1q"]
+[ext_resource type="Texture2D" uid="uid://c1bgulsbc2plh" path="res://Assets Videojuego/Sprites/Iconos/Menú/BotÃ³n menu rojo c.png" id="2_7sk28"]
+[ext_resource type="Texture2D" uid="uid://c5uq1t4cu3iof" path="res://Assets Videojuego/Sprites/Iconos/Menú/d7uqdfz-5f6114f6-2035-4024-a74a-612c091b1269.png" id="3_0l7wr"]
+[ext_resource type="Texture2D" uid="uid://b7m2hro1l5b6" path="res://Assets Videojuego/Sprites/Iconos/Menú/boton exit.png" id="3_3fag4"]
+[ext_resource type="Texture2D" uid="uid://gfs3ovxyfsiv" path="res://icon.svg" id="6_edlwj"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_ph4gs"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_0qoa8"]
+[sub_resource type="LabelSettings" id="LabelSettings_0jmo4"]
 font = ExtResource("1_h8w7t")
-font_size = 22
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ns03l"]
-font = ExtResource("1_h8w7t")
-font_size = 30
-font_color = Color(0.972788, 0.915745, 0.604217, 1)
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
+font_size = 38
 
 [node name="INVHechizos" type="Control"]
 layout_mode = 3
@@ -24,64 +19,57 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.760784, 1, 0.964706, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(974.12, 262.24)
+scale = Vector2(9.2575, 9.53875)
+texture = ExtResource("1_s0s1q")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+top_level = true
+offset_left = 921.0
+offset_top = 94.0
+offset_right = 1034.0
+offset_bottom = 133.0
+text = "PLAY"
+label_settings = SubResource("LabelSettings_0jmo4")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(974.12, 408.62)
+scale = Vector2(9.2575, 9.53875)
+texture = ExtResource("1_s0s1q")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(974.12, 111.62)
+scale = Vector2(9.2575, 9.53875)
+texture = ExtResource("1_s0s1q")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.317647)
 show_behind_parent = true
-layout_mode = 0
-offset_left = -112.0
-offset_top = -64.0
-offset_right = 863.0
-offset_bottom = 540.0
-scale = Vector2(0.998534, 1)
-texture = SubResource("CanvasTexture_ph4gs")
+texture_filter = 1
+position = Vector2(455, 343)
+scale = Vector2(2.163, 2.229)
+texture = ExtResource("3_0l7wr")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-modulate = Color(0.447059, 0.0627451, 0.411765, 1)
-show_behind_parent = true
-layout_mode = 0
-offset_left = -113.0
-offset_top = -63.0
-offset_right = 862.0
-offset_bottom = 75.0
-texture = SubResource("CanvasTexture_ph4gs")
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1033, 567)
+scale = Vector2(4.838, 4.058)
+texture = ExtResource("2_7sk28")
 
-[node name="TextureRect4" type="TextureRect" parent="."]
-modulate = Color(0.258824, 0.752941, 0.745098, 1)
-show_behind_parent = true
-layout_mode = 0
-offset_left = -22.0
-offset_top = -3.0
-offset_right = 784.0
-offset_bottom = 62.0
-texture = SubResource("CanvasTexture_ph4gs")
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D3"]
+texture_filter = 1
+position = Vector2(-0.540108, -0.257561)
+scale = Vector2(0.325142, 0.387637)
+texture = ExtResource("3_3fag4")
 
-[node name="Label" type="Label" parent="."]
-texture_filter = 3
+[node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 347.0
-offset_top = 20.0
-offset_right = 531.0
-offset_bottom = 97.0
-text = "Mapa"
-label_settings = SubResource("LabelSettings_0qoa8")
-
-[node name="Label2" type="Label" parent="."]
-texture_filter = 3
-layout_mode = 0
-offset_left = 593.0
-offset_top = 17.0
-offset_right = 915.0
-offset_bottom = 94.0
-text = "Hechizos"
-label_settings = SubResource("LabelSettings_ns03l")
-
-[node name="Label3" type="Label" parent="."]
-modulate = Color(0, 0.855092, 0.185508, 1)
-texture_filter = 3
-layout_mode = 0
-offset_left = 44.0
-offset_top = 18.0
-offset_right = 366.0
-offset_bottom = 95.0
-text = "Inventario"
-label_settings = SubResource("LabelSettings_0qoa8")
+offset_left = 280.0
+offset_top = 246.0
+offset_right = 416.0
+offset_bottom = 382.0
+icon = ExtResource("6_edlwj")
