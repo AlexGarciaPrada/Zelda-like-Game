@@ -8,6 +8,8 @@ size = Vector2(20, 19)
 
 [node name="Sign" type="CharacterBody2D" groups=["NPC"]]
 show_behind_parent = true
+z_index = 1
+z_as_relative = false
 collision_layer = 4
 collision_mask = 15
 script = ExtResource("1_242ad")
