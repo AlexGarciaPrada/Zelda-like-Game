@@ -35,4 +35,3 @@ func _on_area_2d_area_entered(area):
 		selfarea.queue_free()
 		velocity = Vector2.ZERO
 		queue_free()
-

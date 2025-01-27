@@ -518,6 +518,7 @@ func _desactivate_fog():
 
 func _cave_mode():
 	hud._cave_mode()
+	$Light.visible = true
 
 #----------------------- Getters -----------------------
 func _get_life():

@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/Crang.ttf-9c89a8ed7a3fc3eb60cbba761ebb5cac.fo
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

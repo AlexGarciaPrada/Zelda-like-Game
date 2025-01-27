@@ -12,10 +12,10 @@ anchors_preset = 0
 scale = Vector2(115.017, -23.1238)
 script = ExtResource("1_w34sl")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 0
+[node name="CanvasLayer" type="CanvasModulate" parent="."]
+visible = false
 scale = Vector2(10, 10)
-transform = Transform2D(10, 0, 0, 10, 0, 0)
+color = Color(0.0807833, 0.0807834, 0.0807833, 1)
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("CanvasItemMaterial_rgqrt")

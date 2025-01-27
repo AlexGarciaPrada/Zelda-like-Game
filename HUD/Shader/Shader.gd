@@ -10,5 +10,4 @@ func _ready():
 func _process(delta):
 	pass
 func _cave_mode():
-	$ColorRect.visible = false
-	$CanvasModulate.visible = true
+	$CanvasLayer.visible = true

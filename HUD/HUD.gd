@@ -44,7 +44,7 @@ func _spellset_mode_gameplay():
 	for square in spellSet.get_children():
 		square._gameplay_mode()
 func _spellset_mode_inventory():
-	spellSet.position = Vector2(104,424)
+	spellSet.position = Vector2(250,570)
 	spellSet.scale = Vector2 (1,1)
 	for square in spellSet.get_children():
 		square._inventory_mode()
@@ -87,4 +87,4 @@ func _desactivate_fog():
 	$Fog.visible = false
 
 func _cave_mode():
-	pass
+	$Shader._cave_mode()
