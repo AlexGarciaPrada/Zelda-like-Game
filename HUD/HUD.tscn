@@ -67,7 +67,6 @@ scale = Vector2(3.36, 3.36)
 texture = ExtResource("4_t6aly")
 
 [node name="Dialogues" parent="CanvasLayer" instance=ExtResource("2_3y1ny")]
-visible = false
 z_index = 2
 z_as_relative = false
 offset_left = 1106.75

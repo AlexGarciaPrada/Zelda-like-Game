@@ -147,6 +147,7 @@ texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/invisibl
 
 [node name="IconsV4" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/spikes/nature_spikes_3.png"
 
 [node name="IconsV5" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
@@ -154,9 +155,11 @@ texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/astralba
 
 [node name="IconsV6" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/lure/dark_lure_3.png"
 
 [node name="IconsV7" parent="Dark" instance=ExtResource("2_iexv7")]
 layout_mode = 2
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV2/rotatefireball/fire_rotatefireball_3.png"
 
 [node name="IconDark" type="Sprite2D" parent="."]
 texture_filter = 3

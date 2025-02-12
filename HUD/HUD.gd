@@ -81,7 +81,7 @@ func _get_canva_modulate():
 	return $Shader.get_child(0)
 
 func _activate_fog():
-	$Fog.visible = true
+	pass
 	
 func _desactivate_fog():
 	$Fog.visible = false
