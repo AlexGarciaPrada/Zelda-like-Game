@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dfo17tgk3shw0" path="res://HUD/Inventory/Inventory.tscn" id="6_jqvny"]
 [ext_resource type="PackedScene" uid="uid://c5sncxqjc57e5" path="res://HUD/IconsContainerV2/IconsContainerControlV2.tscn" id="6_tkmat"]
 [ext_resource type="PackedScene" uid="uid://cx7e86hy7inki" path="res://HUD/mapa.tscn" id="7_nejjq"]
-[ext_resource type="PackedScene" uid="uid://bmlwc6xc6kqj5" path="res://HUD/inv_hechizos.tscn" id="8_ulw1u"]
+[ext_resource type="PackedScene" uid="uid://bmlwc6xc6kqj5" path="res://HUD/MENU_INICIO.tscn" id="8_ulw1u"]
 [ext_resource type="PackedScene" uid="uid://bfr4yer8yhh0c" path="res://HUD/Shader/Shader.tscn" id="9_xvreh"]
 [ext_resource type="PackedScene" uid="uid://b8w6nn5eqomc2" path="res://fog.tscn" id="10_3v15b"]
 

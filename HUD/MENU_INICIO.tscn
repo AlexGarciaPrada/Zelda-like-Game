@@ -11,7 +11,7 @@
 font = ExtResource("1_h8w7t")
 font_size = 38
 
-[node name="INVHechizos" type="Control"]
+[node name="MENU_INICIO" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,8 +50,8 @@ texture = ExtResource("1_s0s1q")
 modulate = Color(1, 1, 1, 0.317647)
 show_behind_parent = true
 texture_filter = 1
-position = Vector2(455, 343)
-scale = Vector2(2.163, 2.229)
+position = Vector2(459.037, 345.6)
+scale = Vector2(2.17562, 2.242)
 texture = ExtResource("3_0l7wr")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]

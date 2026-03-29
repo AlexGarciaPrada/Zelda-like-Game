@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://srjamhonku6h"
-path="res://.godot/imported/Icono hechizos fuego.png-499d91cefc624e90fee24d85811ace1a.ctex"
+uid="uid://byvvv2f6qymu6"
+path="res://.godot/imported/New Piskel.png-7344d5628befa1134dda205e7f4c66bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos fuego.png"
-dest_files=["res://.godot/imported/Icono hechizos fuego.png-499d91cefc624e90fee24d85811ace1a.ctex"]
+source_file="res://Assets Videojuego/Sprites/Iconos/Menú/New Piskel.png"
+dest_files=["res://.godot/imported/New Piskel.png-7344d5628befa1134dda205e7f4c66bd.ctex"]
 
 [params]
 
