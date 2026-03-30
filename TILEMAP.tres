@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://6o5vhramsaga"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://bjmgl8abibhfy"]
 
 [ext_resource type="Texture2D" uid="uid://bnyoq05waaobp" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset altura.png" id="1_1qgoe"]
 [ext_resource type="Texture2D" uid="uid://vl6sjjmopt4y" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset Bosque.png" id="2_fmimg"]

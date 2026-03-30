@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0bjrqgi1p8oy"]
+[gd_scene load_steps=7 format=3 uid="uid://bpoescbw1buth"]
 
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="1_ifjja"]
-[ext_resource type="TileSet" uid="uid://6o5vhramsaga" path="res://TILEMAP.tres" id="2_5tbcx"]
+[ext_resource type="TileSet" uid="uid://bjmgl8abibhfy" path="res://TILEMAP.tres" id="2_5tbcx"]
 [ext_resource type="PackedScene" uid="uid://kq508wjfnsd2" path="res://Dialogues/Sign/Sign.tscn" id="8_sdxci"]
 [ext_resource type="PackedScene" uid="uid://btej75ff0gnky" path="res://Enemies/Slime/Slime.tscn" id="10_xs8v3"]
 [ext_resource type="PackedScene" uid="uid://bipb1ie2txlij" path="res://Enemies/Eye/Eye.tscn" id="13_lqsy6"]
 [ext_resource type="PackedScene" uid="uid://dyoe4g6ym7s7j" path="res://Animals/Bird/Bird.tscn" id="14_5gy31"]
 
-[node name="Guille" type="Node2D"]
+[node name="Guille2" type="Node2D"]
 y_sort_enabled = true
 
 [node name="Wizard" parent="." instance=ExtResource("1_ifjja")]
@@ -36,7 +36,6 @@ layer_2/tile_data = PackedInt32Array(-6946964, 131075, 3, -7078034, 4, 0, -70780
 position = Vector2(-9259, -1587)
 
 [node name="Eye" parent="Enemigos" instance=ExtResource("13_lqsy6")]
-z_index = 0
 position = Vector2(-9209.57, -1287.27)
 
 [node name="Carteles" type="Node" parent="."]
