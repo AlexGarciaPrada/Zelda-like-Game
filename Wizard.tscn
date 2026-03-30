@@ -542,15 +542,17 @@ animations = [{
 }]
 
 [node name="Wizard" type="CharacterBody2D" groups=["Player"]]
+y_sort_enabled = true
 scale = Vector2(0.695, 0.695)
 collision_mask = 4
 script = ExtResource("1_oux7l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.719425, -3.59712)
+position = Vector2(0, -0.325)
 shape = SubResource("RectangleShape2D_glctq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 texture_filter = 1
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_p3m2i")
@@ -583,7 +585,7 @@ scale = Vector2(3.5, 3.5)
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.187358, -1.94739)
+position = Vector2(0.187, -0.152)
 scale = Vector2(1.2, 1.2)
 shape = SubResource("RectangleShape2D_glctq")
 

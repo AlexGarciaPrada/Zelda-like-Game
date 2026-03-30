@@ -5,7 +5,7 @@ var scene = Node
 var areas = []
 
 func _ready():
-	scene = load(scene_path).instantiate()
+		scene = load(scene_path).instantiate()
 
 func _process(delta):
 	if !areas.is_empty():

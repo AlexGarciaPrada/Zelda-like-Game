@@ -12,7 +12,7 @@
 [ext_resource type="FontFile" uid="uid://e7fhnvqovtac" path="res://Assets Videojuego/Font/easvhs/easvhs.ttf" id="10_0rmxj"]
 [ext_resource type="Texture2D" uid="uid://crd7qilahulvs" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos agua.png" id="11_fm481"]
 [ext_resource type="Texture2D" uid="uid://bs52fkv5hu3hh" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos naturaleza.png" id="12_qxt6e"]
-[ext_resource type="Texture2D" uid="uid://srjamhonku6h" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos fuego.png" id="13_milhl"]
+[ext_resource type="Texture2D" uid="uid://byvvv2f6qymu6" path="res://Assets Videojuego/Sprites/Iconos/Menú/New Piskel.png" id="13_milhl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ha0wk"]
 atlas = ExtResource("7_eomi6")

@@ -116,9 +116,11 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fqwum"]
-radius = 80.0
+radius = 55.0818
 
 [node name="Bird" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_d87e0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
