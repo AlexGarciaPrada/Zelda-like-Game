@@ -27,6 +27,7 @@ var inmunity_timer = 0
 
 
 var life = 5
+var max_life = 10
 #await get_tree().create_timer(5).timeout Para acordarme
 var enemies_in_area = []
 var clue = "down"
@@ -50,16 +51,8 @@ func _physics_process(delta):
 			if is_not_acting():
 				_movement()
 				_speak()
-				_spell_10()
-				_spell_1()
-				_spell_2()
-				_spell_3()
-				_spell_4()
-				_spell_5()
-				_spell_6()
-				_spell_7()
-				_spell_8()
-				_spell_9()
+				for i in range(10):
+					_spell_n(i)
 				_short_attack()
 				_show_inventory()
 		if inmunity_mode:
@@ -68,16 +61,8 @@ func _physics_process(delta):
 		if is_not_acting() && !knockback_mode:
 			_movement()
 			_speak()
-			_spell_10()
-			_spell_1()
-			_spell_2()
-			_spell_3()
-			_spell_4()
-			_spell_5()
-			_spell_6()
-			_spell_7()
-			_spell_8()
-			_spell_9()
+			for i in range(10):
+				_spell_n(i)
 			_short_attack()
 			_show_inventory()
 		
@@ -323,6 +308,9 @@ func _spikes_3():
 func _health_1():
 	var health = health_scene.instantiate()
 	self.add_child(health)
+	if life < max_life:
+		life += 1
+	
 func _rotatefireball_1():
 	var rotatefireball_instance = rotatefireball_scene.instantiate()
 	rotatefireball_instance.center = self
@@ -385,58 +373,11 @@ func _astralball_1():
 			astralball.position = weapond.global_position
 			astralball.rotate(PI)
 			astralball.velocity = Vector2(0,astralball.SPEED)
-func _spell_1():
-	if Input.is_action_just_pressed("1"):
-		var icon = hud._get_spell_square(1)
+func _spell_n(number:int):
+	if Input.is_action_just_pressed(str(number)):
+		var icon = hud._get_spell_square(number)
 		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
 		
-func _spell_2():
-	if Input.is_action_just_pressed("2"):
-		var icon = hud._get_spell_square(2)
-		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
-
-func _spell_3():
-	if Input.is_action_just_pressed("3"):
-		var icon = hud._get_spell_square(3)
-		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
-
-func _spell_4():
-	if Input.is_action_just_pressed("4"):
-		var icon = hud._get_spell_square(4)
-		print(icon)
-		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
-
-func _spell_5():
-	if Input.is_action_just_pressed("5"):
-		var icon = hud._get_spell_square(5)
-		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
-
-func _spell_6():
-	if Input.is_action_just_pressed("6"):
-		var icon = hud._get_spell_square(6)
-		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
-
-func _spell_7():
-	if Input.is_action_just_pressed("7"):
-		var icon = hud._get_spell_square(7)
-		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
-
-func _spell_8():
-	if Input.is_action_just_pressed("8"):
-		var icon = hud._get_spell_square(8)
-		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
-
-func _spell_9():
-	if Input.is_action_just_pressed("9"):
-		var icon = hud._get_spell_square(9)
-		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
-		
-func _spell_10():
-	if Input.is_action_just_pressed("0"):
-		var icon = hud._get_spell_square(10)
-		_sorcery(icon._get_element(),icon._get_spell(),icon._get_level())
-		
-
 
 #----------------------- Inventario Hechizos -----------------------
 func _sorcery(element,spell,level):
