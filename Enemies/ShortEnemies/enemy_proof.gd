@@ -1,130 +1,145 @@
+class_name Enemy
 extends CharacterBody2D
 
-@onready var player = $"../../Wizard"
-@export var speed = 150
-@export var range = 250
-@export var life = 2
-var weapons_in_area = []
-var clue ="down"
-var is_dying = false
-var knockback_mode = false
-@onready var animation= $AnimatedSprite2D
-@onready var enemyarea=$Area2D
-@onready var enemycollision= $CollisionShape2D
-var knockback_speed = 450
-var current_frame = 0
-var newdirection = Vector2(0,0)
+@onready var player = get_tree().get_first_node_in_group("Player")
+@onready var animation = $AnimatedSprite2D
+@onready var enemy_area = $Area2D
+@onready var enemy_collision = $CollisionShape2D
 
-func _on_area_2d_area_entered(area):
-	if area.is_in_group("Weapon"):
-		weapons_in_area.append(area)
+@export var speed := 150
+@export var range := 250
+@export var life := 2
+@export var knockback_speed := 450
+@export var knockback_duration := 0.2
+@export var invulnerability_time := 0.4
+
+var clue := "down"
+var is_dying := false
+var is_knockback := false
+var is_invulnerable := false
+var knockback_direction := Vector2.ZERO
 
 func _physics_process(delta):
-	if !Singleton.is_stopped:
-		if knockback_mode:
-			velocity = newdirection * knockback_speed
-			collision_layer =2
-			move_and_slide()
-			current_frame +=1
-			if current_frame == 15:
-				knockback_mode=false
-				collision_layer=6
-				enemycollision.disabled=false
-				current_frame=0
-		elif !is_dying:
-			_movement()	
-			for weapon in weapons_in_area:
-				if weapon.is_visible_in_tree():
-					life -= 1
-					weapons_in_area.erase(weapon)
-					if (weapon.is_in_group("ShortAttack") or weapon.is_in_group("Lure")) && life > 0:
-						knockback_mode= true
-						newdirection = (position - player.position).normalized()
-						current_frame=0
-					if life >=1:
-						animation.modulate.r=255
-						await get_tree().create_timer(0.5).timeout
-						animation.modulate.r=1
-					break
-				else:
-					weapons_in_area.erase(weapon)	
-			_short_attack_area()		
-			if life < 1:
-				if enemycollision!=null:
-					enemycollision.queue_free()
-				if enemycollision != null:
-					enemyarea.queue_free()
-				is_dying=true
-				animation.play("death")
-				
-		
-	
-	
+	if Singleton.is_stopped or is_dying:
+		return
 
-
-func _on_area_2d_area_exited(area):
-	if area.is_in_group("Weapon"):
-		weapons_in_area.erase(area)
-		
-func _movement():
-	var targets = get_objects_within_distance("Player",range)
-	if !targets.is_empty():
-		var objective = get_min_distance_obj(targets)
-		if objective != null && !is_player_in_area():
-			var direction= position.direction_to(objective.position)	
-			velocity = direction * speed
-			move_and_slide()
-			if abs(direction.y) > abs(direction.x):
-				if direction.y > 0:
-					animation.play("walk down")
-					clue = "down"
-				elif direction.y < 0 :
-					animation.play("walk up")
-					clue = "up"
-			else:
-				if direction.x > 0 :
-					animation.play("walk right")
-					clue = "right"
-				elif direction.x < 0:
-					animation.play("walk left")
-					clue = "left"
+	if is_knockback:
+		_apply_knockback()
 	else:
-		animation.play("idle "+ clue)	
-func _short_attack_area():
-	if enemyarea != null && enemyarea.has_overlapping_areas && !is_dying: 
-		for weapon in enemyarea.get_overlapping_areas():
-			if (weapon.is_in_group("ShortAttack") or weapon.is_in_group("Lure")) && !weapons_in_area.has(weapon) && !weapon.is_visible_in_tree() && !weapon == null:
-				weapons_in_area.append(weapon)
+		_movement()
+
+func _on_area_2d_area_entered(area):
+	if is_dying or is_invulnerable:
+		return
+		
+	if area.is_in_group("Weapon") and area.is_visible_in_tree():
+		_take_damage(area)
+
+func _take_damage(weapon):
+	life -= 1
+	
+	knockback_direction = (global_position - player.global_position).normalized()
+	_start_knockback()
+
+	_flash_damage()
+
+	if life <= 0:
+		_die()
+
+func _start_knockback():
+	is_knockback = true
+	is_invulnerable = true
+	enemy_collision.disabled = true
+	
+	await get_tree().create_timer(knockback_duration).timeout
+	
+	is_knockback = false
+	enemy_collision.disabled = false
+	
+	await get_tree().create_timer(invulnerability_time).timeout
+	is_invulnerable = false
+
+func _apply_knockback():
+	velocity = knockback_direction * knockback_speed
+	move_and_slide()
+
+func _movement():
+	var targets = get_objects_within_distance("Player", range)
+	
+	if targets.is_empty():
+		animation.play("idle_" + clue)
+		return
+	
+	var objective = get_min_distance_obj(targets)
+	if objective == null or is_player_in_area():
+		velocity = Vector2.ZERO
+		return
+	
+	var direction = global_position.direction_to(objective.global_position)
+	velocity = direction * speed
+	move_and_slide()
+	
+	_update_animation(direction)
+
+func _update_animation(direction):
+	if abs(direction.y) > abs(direction.x):
+		if direction.y > 0:
+			animation.play("walk_down")
+			clue = "down"
+		else:
+			animation.play("walk_up")
+			clue = "up"
+	else:
+		if direction.x > 0:
+			animation.play("walk_right")
+			clue = "right"
+		else:
+			animation.play("walk_left")
+			clue = "left"
+
+func _die():
+	is_dying = true
+	velocity = Vector2.ZERO
+	enemy_collision.disabled = true
+	animation.play("death")
 
 func _on_animated_sprite_2d_animation_finished():
 	if is_dying:
-		animation.visible=false
 		queue_free()
-func get_objects_within_distance(group_name, distance):
-	var nodes_in_group = get_tree().get_nodes_in_group(group_name)
-	var objects_within_distance = []
-	for node in nodes_in_group:
-		var node_distance = global_position.distance_to(node.global_position)
-		if node_distance <= distance:
-			objects_within_distance.append(node)
-	return objects_within_distance
 
-func get_min_distance_obj(ObjectList):
-	var result = range
-	var object
-	for target in ObjectList:
-		if result >= position.distance_to(target.global_position) && !is_dying:
+func _flash_damage():
+	animation.modulate = Color(1, 0, 0)
+	await get_tree().create_timer(0.1).timeout
+	animation.modulate = Color(1, 1, 1)
+
+func get_objects_within_distance(group_name, distance):
+	var result = []
+	for node in get_tree().get_nodes_in_group(group_name):
+		if global_position.distance_to(node.global_position) <= distance:
+			result.append(node)
+	return result
+
+func get_min_distance_obj(object_list):
+	var min_dist = range
+	var closest = null
+	
+	for target in object_list:
+		if is_dying:
+			continue
+			
+		var dist = global_position.distance_to(target.global_position)
+		
+		if dist < min_dist:
 			if target == player:
-				if !player.is_invisible && !player.is_invisible_max:
-					result= position.distance_to(target.global_position)
-					object= player
-			else:
-				result= position.distance_to(target.global_position)
-				object= target
-	return object
+				if player.is_invisible or player.is_invisible_max:
+					continue
+			min_dist = dist
+			closest = target
+	
+	return closest
 
 func is_player_in_area():
-	for area in enemyarea.get_overlapping_areas():
+	for area in enemy_area.get_overlapping_areas():
 		if area.get_parent().is_in_group("Player"):
 			return true
 	return false
