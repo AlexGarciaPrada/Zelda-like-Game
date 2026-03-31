@@ -7,6 +7,8 @@ extends Control
 @onready var inventory = $CanvasLayer/Inventory
 @onready var map = $CanvasLayer/Mapa
 @onready var spells =$CanvasLayer/INVHechizos
+@onready var fog = $CanvasLayer/Fog
+@onready var shader = $Shader
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -81,10 +83,13 @@ func _get_canva_modulate():
 	return $Shader.get_child(0)
 
 func _activate_fog():
-	pass
+	fog.visible = true
 	
 func _desactivate_fog():
-	$Fog.visible = false
+	fog.visible = false
 
 func _cave_mode():
-	$Shader._cave_mode()
+	shader._cave_mode()
+
+func _night_mode():
+	shader._night_mode()

@@ -446,10 +446,10 @@ func _sorcery(element,spell,level):
 
 #----------------------- Funciones atmosféricas -----------------------
 func _day_mode():
-	hud._get_canva_modulate().color.a8 =0 
+	hud._day_mode()
 
 func _night_mode():
-	hud._get_canva_modulate().color.a8= 100
+	hud._night_mode()
 
 func _activate_fog():
 	hud._activate_fog()
