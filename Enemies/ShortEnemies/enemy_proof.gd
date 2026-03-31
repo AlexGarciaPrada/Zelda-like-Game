@@ -67,7 +67,7 @@ func _movement():
 	var targets = get_objects_within_distance("Player", range)
 	
 	if targets.is_empty():
-		animation.play("idle_" + clue)
+		animation.play("idle " + clue)
 		return
 	
 	var objective = get_min_distance_obj(targets)
@@ -84,17 +84,17 @@ func _movement():
 func _update_animation(direction):
 	if abs(direction.y) > abs(direction.x):
 		if direction.y > 0:
-			animation.play("walk_down")
+			animation.play("walk down")
 			clue = "down"
 		else:
-			animation.play("walk_up")
+			animation.play("walk up")
 			clue = "up"
 	else:
 		if direction.x > 0:
-			animation.play("walk_right")
+			animation.play("walk right")
 			clue = "right"
 		else:
-			animation.play("walk_left")
+			animation.play("walk left")
 			clue = "left"
 
 func _die():
