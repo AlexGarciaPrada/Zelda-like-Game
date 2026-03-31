@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var player = $"../../Wizard"
+@onready var player = $"../Wizard"
 @export var speed = 150
 @export var range = 250
 @export var life = 2

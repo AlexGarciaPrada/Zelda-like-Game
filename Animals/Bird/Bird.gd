@@ -3,9 +3,15 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 var speed = 500
 var is_flying = false
-var direction = Vector2 (randf_range(-1,1),randf_range(-1,0))
+var rng = RandomNumberGenerator.new()
+var direction = Vector2(0,0)
+ 
 
 func _ready():
+	rng.randomize() 
+	direction = Vector2(rng.randf_range(-1, 1),rng.randf_range(-1, 1)).normalized()
+	if direction.length_squared() == 0:
+		direction = Vector2(1,1).normalized()
 	animation.play("stop")
 	velocity = speed * direction
 	if direction.x > 0 :
