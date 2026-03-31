@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dlxaum2pw16k" path="res://Assets Videojuego/Sprites/Tileset/Cueva/luz.png" id="20_ynpl3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glctq"]
-size = Vector2(33.0935, 40.9328)
+size = Vector2(33.0935, 28.7745)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_upgg6"]
 atlas = ExtResource("3_sou3v")
@@ -543,12 +543,13 @@ animations = [{
 
 [node name="Wizard" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
+position = Vector2(0, -16)
 scale = Vector2(0.695, 0.695)
 collision_mask = 4
 script = ExtResource("1_oux7l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.325)
+position = Vector2(0, 5.75415)
 shape = SubResource("RectangleShape2D_glctq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -27,6 +27,7 @@ animations = [{
 
 [node name="Jar" type="CharacterBody2D"]
 show_behind_parent = true
+y_sort_enabled = true
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_t4fxa")
