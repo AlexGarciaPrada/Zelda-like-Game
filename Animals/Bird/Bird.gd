@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var animation = $AnimatedSprite2D
-var speed = 500
+var speed = 300
 var is_flying = false
 var rng = RandomNumberGenerator.new()
 var direction = Vector2(0,0)

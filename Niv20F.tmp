@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0bjrqgi1p8oy"]
+[gd_scene load_steps=8 format=3 uid="uid://c0bjrqgi1p8oy"]
 
 [ext_resource type="PackedScene" uid="uid://2ub8tjjgslhi" path="res://Wizard.tscn" id="1_ifjja"]
 [ext_resource type="TileSet" uid="uid://6o5vhramsaga" path="res://TILEMAP.tres" id="2_5tbcx"]
 [ext_resource type="PackedScene" uid="uid://burn3ir5takxb" path="res://Destructibles/Jar/Jar.tscn" id="3_8uxxd"]
 [ext_resource type="PackedScene" uid="uid://kq508wjfnsd2" path="res://Dialogues/Sign/Sign.tscn" id="8_sdxci"]
 [ext_resource type="PackedScene" uid="uid://btej75ff0gnky" path="res://Enemies/Slime/Slime.tscn" id="10_xs8v3"]
+[ext_resource type="PackedScene" uid="uid://bipb1ie2txlij" path="res://Enemies/Eye/Eye.tscn" id="13_lqsy6"]
 [ext_resource type="PackedScene" uid="uid://dyoe4g6ym7s7j" path="res://Animals/Bird/Bird.tscn" id="14_5gy31"]
 
 [node name="Guille2" type="Node2D"]
@@ -63,6 +64,11 @@ y_sort_enabled = true
 
 [node name="EnemyProof" parent="Enemigos" instance=ExtResource("10_xs8v3")]
 position = Vector2(-8642, -1842)
+
+[node name="Eye" parent="Enemigos" instance=ExtResource("13_lqsy6")]
+position = Vector2(-8751, -1806)
+life = null
+cooldown = null
 
 [node name="Jarrones" type="Node2D" parent="."]
 y_sort_enabled = true
