@@ -867,13 +867,6 @@ position = Vector2(350, -192)
 
 [node name="Mushroom" parent="." instance=ExtResource("10_q1kkd")]
 position = Vector2(291, 117)
-speed = null
-range = null
-cloud_range = null
-life = null
-cooldown = null
 
 [node name="EnemyProof3" parent="." instance=ExtResource("14_pk42u")]
 position = Vector2(-322, -39)
-life = null
-cooldown = null
