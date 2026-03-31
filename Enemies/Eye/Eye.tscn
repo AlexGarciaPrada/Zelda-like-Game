@@ -423,6 +423,7 @@ radius = 15.3478
 
 [node name="Eye" type="CharacterBody2D" groups=["Enemy"]]
 y_sort_enabled = true
+position = Vector2(1, -44)
 scale = Vector2(1.5, 1.5)
 collision_layer = 2
 collision_mask = 4
@@ -433,10 +434,12 @@ range = 200
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
 light_mask = 4
 visibility_layer = 4
+position = Vector2(-0.666667, 14.6667)
 shape = SubResource("RectangleShape2D_420e7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
 texture_filter = 3
+position = Vector2(-0.666667, 15.3333)
 sprite_frames = SubResource("SpriteFrames_k62fx")
 animation = &"attack down"
 
@@ -447,6 +450,7 @@ collision_mask = 13
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Enemy"]]
 light_mask = 2
 visibility_layer = 2
+position = Vector2(-0.666667, 14.6667)
 shape = SubResource("CircleShape2D_18ce5")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
