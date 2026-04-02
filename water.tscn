@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://d25ufnuuh05ci"]
+
+[ext_resource type="Script" path="res://Water.gd" id="1_26pm3"]
+[ext_resource type="Shader" path="res://water.gdshader" id="2_a1vp3"]
+[ext_resource type="Texture2D" uid="uid://blj4gxv6n0or3" path="res://Assets Videojuego/Sprites/087ee4177d8b6c9fe6b440e8822eeb1608de7eb7_2_250x250.jpeg" id="3_ybj0k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i1657"]
+shader = ExtResource("2_a1vp3")
+shader_parameter/color_superficie = Color(0.368627, 0.643137, 0.929412, 0.811765)
+shader_parameter/color_profundo = Color(0.0823529, 0.258824, 0.435294, 0.972549)
+shader_parameter/color_espuma = Color(1, 1, 1, 1)
+shader_parameter/grosor_espuma = 0.011
+shader_parameter/suavizado_profundidad = 1.655
+shader_parameter/velocidad_ruido = Vector2(0.001, 0.001)
+shader_parameter/intensidad_ruido = 0.15
+shader_parameter/escala_ruido = Vector2(5, 5)
+shader_parameter/world_offset = Vector2(0, 0)
+shader_parameter/textura_ruido = ExtResource("3_ybj0k")
+
+[sub_resource type="Gradient" id="Gradient_vr81y"]
+offsets = PackedFloat32Array(0, 0.256705, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lu0d8"]
+gradient = SubResource("Gradient_vr81y")
+
+[node name="Water" type="Node2D"]
+script = ExtResource("1_26pm3")
+max_tide_height = 40.0
+
+[node name="Line2D" type="Line2D" parent="."]
+joint_mode = 2
+antialiased = true
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_i1657")
+texture = SubResource("GradientTexture1D_lu0d8")

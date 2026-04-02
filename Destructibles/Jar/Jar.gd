@@ -13,6 +13,7 @@ func _physics_process(delta):
 			animation.play("roto")
 			if collision != null:
 				collision.queue_free()
+				animation.z_index = -1
 			if area != null:
 				area.queue_free()
 

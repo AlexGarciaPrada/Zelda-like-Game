@@ -23,6 +23,6 @@ func _day_mode():
 
 func _night_mode():
 	canvas_layer.visible = true
-	canvas_layer.color = Color(base_color.r, base_color.g, base_color.b, 0.3)
-	overlay.color = Color(base_color.r, base_color.g, base_color.b, 0.3)
+	canvas_layer.color = Color(base_color.r, base_color.g, base_color.b, 0.6)
+	overlay.color = Color(base_color.r, base_color.g, base_color.b, 0.6)
 	
