@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blj4gxv6n0or3"
-path="res://.godot/imported/087ee4177d8b6c9fe6b440e8822eeb1608de7eb7_2_250x250.jpeg-207ef257e227276a1cd6f4b5c402522d.ctex"
+uid="uid://ch62m03qaql6g"
+path="res://.godot/imported/walk_up.png-d20a8f439fdd4090055d7850bafb53ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Videojuego/Sprites/087ee4177d8b6c9fe6b440e8822eeb1608de7eb7_2_250x250.jpeg"
-dest_files=["res://.godot/imported/087ee4177d8b6c9fe6b440e8822eeb1608de7eb7_2_250x250.jpeg-207ef257e227276a1cd6f4b5c402522d.ctex"]
+source_file="res://Assets Videojuego/Sprites/Enemigos/Relleno/Gusano/walk_up.png"
+dest_files=["res://.godot/imported/walk_up.png-d20a8f439fdd4090055d7850bafb53ad.ctex"]
 
 [params]
 

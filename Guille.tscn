@@ -867,6 +867,13 @@ position = Vector2(350, -192)
 
 [node name="Mushroom" parent="." instance=ExtResource("10_q1kkd")]
 position = Vector2(291, 117)
+cloud_range = 100
+cooldown = 5
+speed = 150
+range = 250
+life = 2
 
 [node name="EnemyProof3" parent="." instance=ExtResource("14_pk42u")]
 position = Vector2(-322, -39)
+cooldown = 3
+life = 2

@@ -3,23 +3,23 @@
 [ext_resource type="Script" path="res://Enemies/Boss/LifeBar.gd" id="1_2we0l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nimhv"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.133333, 0.133333, 0.133333, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v72pn"]
-bg_color = Color(1, 0.0392157, 0.0392157, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.834819, 0.811583, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+bg_color = Color(0.741176, 0, 0.00784314, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
 
 [node name="LifeBar" type="Control"]
 texture_filter = 3

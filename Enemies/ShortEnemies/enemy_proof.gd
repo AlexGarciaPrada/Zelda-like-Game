@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 @onready var enemy_area = $Area2D
 @onready var enemy_collision = $CollisionShape2D
+@onready var death_particles = $DeathParticles # Referencia a las partículas
 
 @export var speed := 150
 @export var range := 250
@@ -39,13 +40,14 @@ func _take_damage(weapon):
 	life -= 1
 	
 	knockback_direction = (global_position - player.global_position).normalized()
-	_start_knockback()
 
-	_flash_damage()
 
 	if life <= 0:
 		_die()
-
+		
+	else:
+		_start_knockback()
+		_flash_damage()
 func _start_knockback():
 	is_knockback = true
 	is_invulnerable = true
@@ -101,11 +103,18 @@ func _die():
 	is_dying = true
 	velocity = Vector2.ZERO
 	enemy_collision.disabled = true
-	animation.play("death")
-
-func _on_animated_sprite_2d_animation_finished():
-	if is_dying:
-		queue_free()
+	enemy_area.monitoring = false
+	enemy_area.monitorable = false
+	
+	animation.hide()
+	$LifeBar.hide()
+	
+	death_particles.emitting = true
+	
+	enemy_area.queue_free()
+	enemy_collision.queue_free()
+	await get_tree().create_timer(death_particles.lifetime).timeout
+	queue_free()
 
 func _flash_damage():
 	animation.modulate = Color(1, 0, 0)

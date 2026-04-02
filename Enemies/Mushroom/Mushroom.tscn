@@ -260,11 +260,9 @@ y_sort_enabled = true
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_wglv6")
-cloud_range = null
-cooldown = null
-speed = null
-range = null
-life = null
+speed = 150
+range = 250
+life = 2
 metadata/_edit_pinned_properties_ = [&"speed", &"range", &"life"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]

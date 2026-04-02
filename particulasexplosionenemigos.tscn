@@ -8,7 +8,7 @@ max_value = 5.0
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_ighoo"]
+[sub_resource type="CurveTexture" id="CurveTexture_y01ca"]
 curve = SubResource("Curve_wvhns")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uu7gr"]
@@ -20,17 +20,19 @@ spread = 90.0
 initial_velocity_min = 100.0
 initial_velocity_max = 120.0
 gravity = Vector3(0, 75, 0)
-scale_min = 3.0
-scale_max = 3.0
-scale_curve = SubResource("CurveTexture_ighoo")
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_y01ca")
 
-[node name="Node2D" type="Node2D"]
+[node name="DeathParticles" type="Node2D"]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="DeathParticles" type="GPUParticles2D" parent="."]
 texture_filter = 1
-amount = 10
+scale = Vector2(2.025, 2.025)
+emitting = false
+amount = 13
 process_material = SubResource("ParticleProcessMaterial_uu7gr")
 texture = ExtResource("1_ei3b5")
 lifetime = 1.5
+one_shot = true
 speed_scale = 2.0
 explosiveness = 1.0
