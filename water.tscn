@@ -25,6 +25,8 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 gradient = SubResource("Gradient_vr81y")
 
 [node name="Water" type="Node2D"]
+z_index = -1
+position = Vector2(0, -6)
 script = ExtResource("1_26pm3")
 max_tide_height = 40.0
 

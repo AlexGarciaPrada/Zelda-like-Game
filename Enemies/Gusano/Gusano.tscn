@@ -463,12 +463,12 @@ offset_right = -23.0
 offset_bottom = -0.675
 
 [node name="DeathParticles" type="GPUParticles2D" parent="."]
-modulate = Color(0.623529, 0, 0.0745098, 1)
+modulate = Color(0.14902, 0.427451, 0.160784, 1)
 texture_filter = 1
 position = Vector2(0, 12)
 scale = Vector2(0.36, 0.36)
 emitting = false
-amount = 20
+amount = 30
 process_material = SubResource("ParticleProcessMaterial_21geg")
 texture = ExtResource("7_tueuw")
 lifetime = 5.5

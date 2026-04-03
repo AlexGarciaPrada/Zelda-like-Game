@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=31 format=3 uid="uid://6o5vhramsaga"]
+[gd_resource type="TileSet" load_steps=33 format=3 uid="uid://6o5vhramsaga"]
 
 [ext_resource type="Texture2D" uid="uid://bnyoq05waaobp" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Tileset Bosque/Tileset altura.png" id="1_1qgoe"]
 [ext_resource type="Texture2D" uid="uid://dnsjpywpob1dt" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa1.png" id="1_8bkfl"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b27e866ewka1e" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Árbol/Arbol tileset.png" id="3_kttdj"]
 [ext_resource type="Texture2D" uid="uid://dct4y8uv1cqpd" path="res://Assets Videojuego/Sprites/Tileset/Cueva/Tileset cueva.png" id="4_xjmjq"]
 [ext_resource type="Texture2D" uid="uid://bgxfmf2vkcel" path="res://Assets Videojuego/Sprites/Tileset/Playa/Tileset_Playa.png" id="5_h2c7f"]
+[ext_resource type="Texture2D" uid="uid://rmu3rs3mam4f" path="res://Assets Videojuego/Sprites/Tileset/Playa/New Piskel.png" id="5_tox73"]
 [ext_resource type="Texture2D" uid="uid://cmg03b2l6vgv5" path="res://Assets Videojuego/Sprites/Tileset/Playa/Palmera (1).png" id="6_fs2ni"]
 [ext_resource type="Texture2D" uid="uid://cj3qy30sjqy43" path="res://Assets Videojuego/Sprites/Tileset/Bosque/Casa/casa3.png" id="6_oy7h4"]
 [ext_resource type="Texture2D" uid="uid://bkxdwgsiuos5u" path="res://Assets Videojuego/Sprites/Tileset/Playa/Baston_GemaRoja.png" id="7_288c4"]
@@ -318,6 +319,13 @@ texture_region_size = Vector2i(32, 32)
 3:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:7/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fe47b"]
+texture = ExtResource("5_tox73")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c4otm"]
 texture = ExtResource("5_h2c7f")
 texture_region_size = Vector2i(32, 32)
@@ -363,6 +371,7 @@ texture_region_size = Vector2i(32, 32)
 1:3/0 = 0
 1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.1369, -3.0052, 7.95495, -11.4905, 11.844, -4.06586, 9.72272, -1.94454, -5.83363, 4.41942, -11.844, 3.35876)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trbia"]
 texture = ExtResource("6_fs2ni")
@@ -796,3 +805,4 @@ sources/11 = SubResource("TileSetAtlasSource_d7rgc")
 sources/15 = SubResource("TileSetAtlasSource_trbia")
 sources/14 = SubResource("TileSetAtlasSource_c4otm")
 sources/16 = SubResource("TileSetAtlasSource_e2svk")
+sources/12 = SubResource("TileSetAtlasSource_fe47b")
