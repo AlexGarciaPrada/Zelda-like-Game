@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dpxss7cgak2mi"]
+[gd_scene load_steps=62 format=3 uid="uid://dpxss7cgak2mi"]
 
 [ext_resource type="Script" path="res://Enemies/ShortEnemies/enemy_proof.gd" id="1_fly80"]
 [ext_resource type="Texture2D" uid="uid://wlne20dolly0" path="res://Assets Videojuego/Sprites/Enemigos/Relleno/Gusano/walk_down.png" id="2_jecu6"]
@@ -400,15 +400,6 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_sx1pa"]
 curve = SubResource("Curve_osa7o")
 
-[sub_resource type="Curve" id="Curve_n7hpg"]
-min_value = 1.0
-max_value = 5.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_ytshw"]
-curve = SubResource("Curve_n7hpg")
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_21geg"]
 particle_flag_disable_z = true
 emission_shape = 1
@@ -421,8 +412,8 @@ gravity = Vector3(0, 75, 0)
 damping_min = 44.628
 damping_max = 77.199
 damping_curve = SubResource("CurveTexture_sx1pa")
-scale_max = 2.0
-scale_curve = SubResource("CurveTexture_ytshw")
+scale_min = 0.5
+scale_max = 2.5
 
 [node name="EnemyProof" type="CharacterBody2D" groups=["Enemy"]]
 y_sort_enabled = true
@@ -464,11 +455,12 @@ offset_bottom = -0.675
 
 [node name="DeathParticles" type="GPUParticles2D" parent="."]
 modulate = Color(0.14902, 0.427451, 0.160784, 1)
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, 12)
-scale = Vector2(0.36, 0.36)
+scale = Vector2(0.24, 0.24)
 emitting = false
-amount = 30
+amount = 20
 process_material = SubResource("ParticleProcessMaterial_21geg")
 texture = ExtResource("7_tueuw")
 lifetime = 5.5
