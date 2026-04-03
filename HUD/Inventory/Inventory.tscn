@@ -47,7 +47,7 @@ columns = 2
 [node name="IconsV2" parent="Fuego" instance=ExtResource("2_iexv7")]
 texture_filter = 3
 layout_mode = 2
-texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV3/fireball/Bolafuego_icon_1.png"
+texture_path = "res://Assets Videojuego/Sprites/Iconos/Hechizos/IconoV3/fireball/fire_fireball_1.png"
 
 [node name="IconsV3" parent="Fuego" instance=ExtResource("2_iexv7")]
 layout_mode = 2
