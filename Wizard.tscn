@@ -1,10 +1,9 @@
-[gd_scene load_steps=85 format=3 uid="uid://2ub8tjjgslhi"]
+[gd_scene load_steps=86 format=3 uid="uid://2ub8tjjgslhi"]
 
 [ext_resource type="Script" path="res://Wizard.gd" id="1_oux7l"]
 [ext_resource type="Texture2D" uid="uid://drw8hnhfx6w5s" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Attack/Close Attack/Green/Abajo prota attack verde.png" id="3_sou3v"]
 [ext_resource type="Texture2D" uid="uid://dkt4kd4eks0j8" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Attack/Close Attack/Green/Izquierda prota attack verde.png" id="5_btylt"]
 [ext_resource type="Texture2D" uid="uid://b1rt7ejtw0kta" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Attack/Close Attack/Green/Derecha prota attack verde.png" id="7_7opwa"]
-[ext_resource type="Texture2D" uid="uid://bbgllh2tar76v" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Idle/Abajo prota idle.png" id="7_fltrc"]
 [ext_resource type="Texture2D" uid="uid://cwxiw758l4od5" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Idle/Izquierda idle prota.png" id="9_7jxq4"]
 [ext_resource type="Texture2D" uid="uid://celmmawhxcnvp" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Up/Attack/Close Attack/Green/Arriba prota attack verde (1).png" id="9_nih7w"]
 [ext_resource type="Texture2D" uid="uid://cplfff6ck2t50" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Attack/Large Attack/Green/Abajo prota attack verde.png" id="10_bqqb2"]
@@ -14,12 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://dtqdvejtf0bqu" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Attack/Large Attack/Green/Derecha prota attack verde.png" id="12_tjoxb"]
 [ext_resource type="Texture2D" uid="uid://d0qfapmgt6knp" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Up/Attack/Large Attack/Green/Arriba prota attack verde.png" id="13_2l1od"]
 [ext_resource type="Texture2D" uid="uid://dej67sfcvt0up" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Down/Walk/walk abajo prota.png" id="14_8rqe3"]
+[ext_resource type="Texture2D" uid="uid://b321hdyvd7xo1" path="res://Assets Videojuego/Sprites/Personajes/Wizard_provisional/Wizard_Idle_Down (1).png" id="14_m8t5f"]
 [ext_resource type="Texture2D" uid="uid://cb5i53jjjri1j" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Left/Walk/Izquierda walk prota.png" id="16_4ultb"]
 [ext_resource type="Texture2D" uid="uid://d2tmnswrkn1af" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Up/Walk/walk up protagonista.png" id="17_l5p7h"]
 [ext_resource type="PackedScene" uid="uid://bjbcy3deg87lu" path="res://Spells/ShortAttack/ShortAttack.tscn" id="18_i03lr"]
 [ext_resource type="Texture2D" uid="uid://oudr7k6mrpwr" path="res://Assets Videojuego/Sprites/Personajes/Protagonista/Right/Walk/Derecha walk prota.png" id="18_rr3e5"]
 [ext_resource type="PackedScene" uid="uid://ce6bwbo4htu22" path="res://HUD/HUD.tscn" id="19_shcxt"]
 [ext_resource type="Texture2D" uid="uid://dlxaum2pw16k" path="res://Assets Videojuego/Sprites/Tileset/Cueva/luz.png" id="20_ynpl3"]
+[ext_resource type="Texture2D" uid="uid://dilsfvot3b07o" path="res://Assets Videojuego/Sprites/Iconos/Menú/particula.png" id="21_a0jnp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glctq"]
 size = Vector2(33.0935, 28.7745)
@@ -72,21 +73,9 @@ region = Rect2(32, 0, 32, 32)
 atlas = ExtResource("9_nih7w")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_70y8m"]
-atlas = ExtResource("7_fltrc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtkde"]
+atlas = ExtResource("14_m8t5f")
 region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vu3gd"]
-atlas = ExtResource("7_fltrc")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tv50y"]
-atlas = ExtResource("7_fltrc")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nx176"]
-atlas = ExtResource("7_fltrc")
-region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cfkmm"]
 atlas = ExtResource("9_7jxq4")
@@ -331,21 +320,12 @@ animations = [{
 "speed": 4.0
 }, {
 "frames": [{
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_70y8m")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_vu3gd")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_tv50y")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_nx176")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtkde")
 }],
 "loop": true,
 "name": &"idle down wizard",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.5,
@@ -541,6 +521,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve" id="Curve_wodag"]
+_data = [Vector2(0.00371747, 0.0145482), 0.0, 0.0, 0, 0, Vector2(0.211896, 1), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_sx1pa"]
+curve = SubResource("Curve_wodag")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ventn"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector3(0, -2, 0)
+spread = 90.0
+initial_velocity_min = 100.0
+initial_velocity_max = 120.0
+gravity = Vector3(0, 50, 0)
+damping_min = 44.628
+damping_max = 77.199
+damping_curve = SubResource("CurveTexture_sx1pa")
+scale_min = 0.5
+scale_max = 1.5
+
 [node name="Wizard" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
 position = Vector2(0, -16)
@@ -557,6 +559,7 @@ texture_filter = 1
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_p3m2i")
 animation = &"idle down wizard"
+frame_progress = 0.272187
 
 [node name="Weapon" parent="." instance=ExtResource("18_i03lr")]
 visible = false
@@ -618,6 +621,20 @@ shadow_filter = 1
 shadow_filter_smooth = 2.0
 texture = ExtResource("20_ynpl3")
 texture_scale = 0.8
+
+[node name="HitParticles" type="GPUParticles2D" parent="."]
+modulate = Color(0.67451, 0.0745098, 0, 1)
+texture_filter = 1
+position = Vector2(0, 12)
+scale = Vector2(0.175, 0.175)
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_ventn")
+texture = ExtResource("21_a0jnp")
+lifetime = 5.5
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

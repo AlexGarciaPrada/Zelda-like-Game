@@ -9,6 +9,7 @@ var SPEED= 300
 @onready var weaponu = $Weapon4
 @onready var hud = $Camera2D/Hud
 @onready var camera = $Camera2D
+@onready var hit_particles = $HitParticles
 
 @onready var fireball_scene = preload("res://Spells/FireBall/FireBall.tscn")
 @onready var lure_scene = preload("res://Spells/Lure/Lure.tscn")
@@ -116,7 +117,7 @@ func _movement():
 	move_and_slide()
 
 func _short_attack():
-	if Input.is_action_just_pressed("Attack") and is_not_previously_attacking() and is_not_acting:
+	if Input.is_action_just_pressed("Attack") and is_not_previously_attacking() and is_not_acting():
 		is_attacking = true
 		if is_invisible:
 			modulate.a8=255
@@ -176,7 +177,7 @@ func _on_area_2d_area_entered(area):
 				inmunity_mode = true
 			
 			life-=1	
-				
+			hit_particles.restart()			
 		
 func _inmunity():
 	animation.modulate.r8=0
@@ -191,6 +192,7 @@ func _inmunity():
 			else:
 				inmunity_mode = true
 			life-=1
+			hit_particles.restart() # Partículas si sigue tocando enemigo al terminar inmunidad
 			return
 		return
 		

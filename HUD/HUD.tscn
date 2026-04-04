@@ -76,6 +76,7 @@ offset_right = 1050.75
 offset_bottom = 152.0
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("6_jqvny")]
+visible = false
 z_index = 2
 z_as_relative = false
 offset_right = 113.0
@@ -96,12 +97,14 @@ text = "¡No tienes ningún hechizo equipado en esa casilla!"
 label_settings = SubResource("LabelSettings_qg576")
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
-z_index = 2
-offset_left = 192.0
-offset_top = 40.0
-offset_right = 912.0
-offset_bottom = 80.0
-scale = Vector2(0.9, 0.9)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_right = 624.0
+offset_bottom = 40.0
+grow_horizontal = 2
+scale = Vector2(1.19, 1.19)
 mouse_filter = 2
 theme_override_constants/h_separation = 70
 columns = 10
