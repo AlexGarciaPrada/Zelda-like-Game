@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://crd7qilahulvs" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos agua.png" id="2_j83ug"]
 [ext_resource type="Texture2D" uid="uid://bs52fkv5hu3hh" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos naturaleza.png" id="3_2abyp"]
-[ext_resource type="Texture2D" uid="uid://srjamhonku6h" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos fuego.png" id="4_xmwyf"]
+[ext_resource type="Texture2D" uid="uid://c6v2er01gws5r" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos fuego.png" id="4_xmwyf"]
 [ext_resource type="Texture2D" uid="uid://b7nypljqsypkf" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos dark.png" id="5_6ere3"]
 [ext_resource type="Texture2D" uid="uid://cm4j06ttoemjy" path="res://Assets Videojuego/Sprites/Iconos/Menú/Abrir menú hechizos.png" id="6_ypws0"]
 [ext_resource type="Texture2D" uid="uid://ch150tcynp6kq" path="res://Assets Videojuego/Sprites/Iconos/Menú/Pergamino.png" id="8_kiws2"]

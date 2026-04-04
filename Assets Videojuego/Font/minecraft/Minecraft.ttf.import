@@ -13,9 +13,8 @@ dest_files=["res://.godot/imported/Minecraft.ttf-c889612f10c36b04d4161ac7831c74e
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
-disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

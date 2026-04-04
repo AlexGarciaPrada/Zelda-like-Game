@@ -2,18 +2,18 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bgcjl3ucwhxgk"
-path="res://.godot/imported/Pixellari.ttf-f0039d4c6ffefad5a5c5828069794353.fontdata"
+uid="uid://boijmfeysrjoi"
+path="res://.godot/imported/GamePocket-Regular.woff2-2fc858277720995ac51025ed88a70335.fontdata"
 
 [deps]
 
-source_file="res://Assets Videojuego/Font/pixellari/Pixellari.ttf"
-dest_files=["res://.godot/imported/Pixellari.ttf-f0039d4c6ffefad5a5c5828069794353.fontdata"]
+source_file="res://Assets Videojuego/Font/gamepocket/GamePocket-Regular.woff2"
+dest_files=["res://.godot/imported/GamePocket-Regular.woff2-2fc858277720995ac51025ed88a70335.fontdata"]
 
 [params]
 
 Rendering=null
-antialiasing=0
+antialiasing=1
 generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8

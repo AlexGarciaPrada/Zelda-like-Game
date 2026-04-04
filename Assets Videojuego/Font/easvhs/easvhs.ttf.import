@@ -13,9 +13,8 @@ dest_files=["res://.godot/imported/easvhs.ttf-34ee826e223a98bab370ba63c987697f.f
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
-disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

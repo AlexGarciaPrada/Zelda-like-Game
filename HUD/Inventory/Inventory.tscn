@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfo17tgk3shw0"]
+[gd_scene load_steps=13 format=3 uid="uid://dfo17tgk3shw0"]
 
 [ext_resource type="Script" path="res://HUD/Inventory/Inventory.gd" id="1_y1lf0"]
 [ext_resource type="PackedScene" uid="uid://c5sncxqjc57e5" path="res://HUD/IconsContainerV2/IconsContainerControlV2.tscn" id="2_iexv7"]
 [ext_resource type="Texture2D" uid="uid://b7nypljqsypkf" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos dark.png" id="3_x3wyj"]
+[ext_resource type="Texture2D" uid="uid://c6v2er01gws5r" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos fuego.png" id="4_7ghd0"]
 [ext_resource type="Texture2D" uid="uid://bs52fkv5hu3hh" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos naturaleza.png" id="5_py1vt"]
 [ext_resource type="Texture2D" uid="uid://crd7qilahulvs" path="res://Assets Videojuego/Sprites/Iconos/Menú/Icono hechizos agua.png" id="6_cpuk3"]
 [ext_resource type="FontFile" uid="uid://dep6g8xgcfa6y" path="res://Assets Videojuego/Font/crang/Crang.ttf" id="7_5xe16"]
+[ext_resource type="Texture2D" uid="uid://p6w5gsfni5g2" path="res://Assets Videojuego/Sprites/Iconos/New Piskel.png" id="7_h1utu"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_pdyw7"]
 
@@ -19,12 +21,14 @@ font = ExtResource("7_5xe16")
 font_size = 22
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_j7wpe"]
+[sub_resource type="LabelSettings" id="LabelSettings_lpln6"]
 font = ExtResource("7_5xe16")
-font_size = 30
-font_color = Color(0.972788, 0.915745, 0.604217, 1)
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+outline_size = 9
+shadow_size = 11
+shadow_color = Color(0.0235294, 0, 0, 0.219608)
+shadow_offset = Vector2(4.85, 2.92)
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -168,8 +172,9 @@ texture = ExtResource("3_x3wyj")
 
 [node name="IconFuego" type="Sprite2D" parent="."]
 texture_filter = 3
-position = Vector2(240, 224)
-scale = Vector2(1.38, 1.38)
+position = Vector2(236.656, 226.441)
+scale = Vector2(0.699501, 0.699501)
+texture = ExtResource("4_7ghd0")
 
 [node name="IconNaturaleza" type="Sprite2D" parent="."]
 texture_filter = 3
@@ -183,61 +188,97 @@ position = Vector2(650, 224)
 scale = Vector2(1.23, 1.23)
 texture = ExtResource("6_cpuk3")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.760784, 1, 0.964706, 1)
+[node name="Flechas" type="Sprite2D" parent="."]
+modulate = Color(0.282353, 0.0196078, 0.258824, 1)
+texture_filter = 3
+position = Vector2(359.088, 100.442)
+scale = Vector2(1.58, 1.58)
+texture = ExtResource("7_h1utu")
+
+[node name="Flechas2" type="Sprite2D" parent="."]
+modulate = Color(0.282353, 0.0196078, 0.258824, 1)
+texture_filter = 3
+position = Vector2(742.115, 99.4471)
+scale = Vector2(1.58, 1.58)
+texture = ExtResource("7_h1utu")
+flip_h = true
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.835294)
 show_behind_parent = true
 layout_mode = 0
-offset_right = 1154.0
-offset_bottom = 648.0
+offset_right = 1151.0
+offset_bottom = 644.0
+scale = Vector2(0.998534, 1)
+texture = SubResource("CanvasTexture_pdyw7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.823529, 0.72549, 0.74902, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 71.8176
+offset_top = 31.8231
+offset_right = 1070.82
+offset_bottom = 548.823
 scale = Vector2(0.998534, 1)
 texture = SubResource("CanvasTexture_pdyw7")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-modulate = Color(0.447059, 0.0627451, 0.411765, 1)
+modulate = Color(0.282353, 0.0196078, 0.258824, 1)
 show_behind_parent = true
 layout_mode = 0
-offset_left = 88.0
-offset_top = 56.0
-offset_right = 1063.0
-offset_bottom = 194.0
+offset_left = 72.0
+offset_top = 32.0
+offset_right = 1069.0
+offset_bottom = 167.0
+texture = SubResource("CanvasTexture_pdyw7")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.447059)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 72.0
+offset_top = 167.0
+offset_right = 1072.0
+offset_bottom = 172.285
 texture = SubResource("CanvasTexture_pdyw7")
 
 [node name="TextureRect4" type="TextureRect" parent="."]
-modulate = Color(0.258824, 0.752941, 0.745098, 1)
+modulate = Color(0.945098, 0.905882, 0.992157, 1)
 show_behind_parent = true
 layout_mode = 0
-offset_left = 176.0
-offset_top = 96.0
-offset_right = 982.0
-offset_bottom = 161.0
+offset_left = 88.0
+offset_top = 48.0
+offset_right = 1045.0
+offset_bottom = 151.0
 texture = SubResource("CanvasTexture_pdyw7")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 3
 layout_mode = 0
-offset_left = 536.0
-offset_top = 120.0
-offset_right = 720.0
-offset_bottom = 197.0
+offset_left = 151.615
+offset_top = 87.5134
+offset_right = 335.615
+offset_bottom = 164.513
 text = "Mapa"
 label_settings = SubResource("LabelSettings_bfwh2")
 
 [node name="Label2" type="Label" parent="."]
 texture_filter = 3
 layout_mode = 0
-offset_left = 784.0
-offset_top = 112.0
-offset_right = 1106.0
-offset_bottom = 189.0
+offset_left = 861.811
+offset_top = 87.5134
+offset_right = 1183.81
+offset_bottom = 164.513
 text = "Hechizos"
 label_settings = SubResource("LabelSettings_fw0ru")
 
 [node name="Label3" type="Label" parent="."]
 texture_filter = 3
 layout_mode = 0
-offset_left = 216.0
-offset_top = 112.0
-offset_right = 538.0
-offset_bottom = 189.0
-text = "Inventario"
-label_settings = SubResource("LabelSettings_j7wpe")
+offset_left = 415.944
+offset_top = 79.5577
+offset_right = 710.944
+offset_bottom = 123.558
+text = "INVENTARIO"
+label_settings = SubResource("LabelSettings_lpln6")

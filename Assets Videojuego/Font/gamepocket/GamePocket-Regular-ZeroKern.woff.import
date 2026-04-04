@@ -2,18 +2,18 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bgcjl3ucwhxgk"
-path="res://.godot/imported/Pixellari.ttf-f0039d4c6ffefad5a5c5828069794353.fontdata"
+uid="uid://dpe4qjru7j17g"
+path="res://.godot/imported/GamePocket-Regular-ZeroKern.woff-c4e299ebefcca0c1adfce9fbe50a897d.fontdata"
 
 [deps]
 
-source_file="res://Assets Videojuego/Font/pixellari/Pixellari.ttf"
-dest_files=["res://.godot/imported/Pixellari.ttf-f0039d4c6ffefad5a5c5828069794353.fontdata"]
+source_file="res://Assets Videojuego/Font/gamepocket/GamePocket-Regular-ZeroKern.woff"
+dest_files=["res://.godot/imported/GamePocket-Regular-ZeroKern.woff-c4e299ebefcca0c1adfce9fbe50a897d.fontdata"]
 
 [params]
 
 Rendering=null
-antialiasing=0
+antialiasing=1
 generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
