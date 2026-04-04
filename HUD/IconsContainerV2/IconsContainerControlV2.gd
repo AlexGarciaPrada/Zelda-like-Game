@@ -43,6 +43,7 @@ func _make_texture():
 	spell = parts[1]
 	level = int(parts[2])	
 	get_child(0).this_texture.texture = load(texture_path)
+	get_child(0).this_texture.set_expand_mode(1)
 	get_child(0).border.visible = false
 func _gameplay_mode():
 	get_child(0)._gameplay_mode()
