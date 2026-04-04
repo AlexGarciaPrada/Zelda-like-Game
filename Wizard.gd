@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var SPEED= 300
+var SPEED= 8000
 @onready var animation = $AnimatedSprite2D
 @onready var shape = $CollisionShape2D
 @onready var selfarea= $Area2D
@@ -50,7 +50,7 @@ func _physics_process(delta):
 			_knockback()
 			
 			if is_not_acting():
-				_movement()
+				_movement(delta)
 				_speak()
 				for i in range(10):
 					_spell_n(i)
@@ -60,7 +60,7 @@ func _physics_process(delta):
 			_inmunity()
 			inmunity_timer += delta
 		if is_not_acting() && !knockback_mode:
-			_movement()
+			_movement(delta)
 			_speak()
 			for i in range(10):
 				_spell_n(i)
@@ -88,7 +88,7 @@ func _hide_inventory():
 		inventory_mode = false
 		hud._change_to_inventory()
 		hud._hide_inventory()
-func _movement():
+func _movement(delta):
 	var directionx = Input.get_axis("ui_left", "ui_right")
 	var directiony = Input.get_axis("ui_up", "ui_down")
 	
@@ -106,10 +106,11 @@ func _movement():
 			animation.play("walk left wizard")
 			clue = "left"
 		
-		velocity.x = directionx * SPEED
-		velocity.y = directiony * SPEED
+		velocity.x = directionx * SPEED * delta
+		velocity.y = directiony * SPEED * delta
 		if directionx != 0 and directiony != 0:
 			velocity /= 1.41
+
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)

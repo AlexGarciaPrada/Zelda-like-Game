@@ -27,7 +27,7 @@ func _physics_process(delta):
 	if is_knockback:
 		_apply_knockback()
 	else:
-		_movement()
+		_movement(delta)
 
 func _on_area_2d_area_entered(area):
 	if is_dying or is_invulnerable:
@@ -65,7 +65,7 @@ func _apply_knockback():
 	velocity = knockback_direction * knockback_speed
 	move_and_slide()
 
-func _movement():
+func _movement(delta):
 	var targets = get_objects_within_distance("Player", range)
 	
 	if targets.is_empty():
@@ -78,7 +78,8 @@ func _movement():
 		return
 	
 	var direction = global_position.direction_to(objective.global_position)
-	velocity = direction * speed
+	velocity = direction * speed * delta
+	
 	move_and_slide()
 	
 	_update_animation(direction)
