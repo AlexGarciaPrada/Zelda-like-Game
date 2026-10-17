@@ -6,10 +6,18 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 var explosion = false
 var can_explode : bool
+var fuse_remaining: float = 3.0
 func _ready():
 	animation.play("idle")
 	area.visible=false
-	await get_tree().create_timer(3).timeout
+
+
+func _physics_process(delta: float) -> void:
+	if Singleton.is_stopped or explosion:
+		return
+	fuse_remaining -= delta
+	if fuse_remaining > 0.0:
+		return
 	animation.scale = animation.scale * 1.2
 	if can_explode:
 		animation.play("explosion")

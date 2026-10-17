@@ -13,4 +13,7 @@ func _process(delta):
 
 
 func _on_gpu_particles_2d_finished():
-	get_parent().life += 1
+	var caster = get_parent()
+	if is_instance_valid(caster) and caster.has_method("heal"):
+		caster.heal(1)
+	queue_free()

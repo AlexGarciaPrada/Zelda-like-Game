@@ -1,13 +1,7 @@
-extends CharacterBody2D
+extends Projectile2D
 
-@export var SPEED = 200
-
-
-func _process(delta):
-	position += velocity * delta
-	var collision = move_and_collide( velocity * delta)
-	if collision:
-		queue_free()
+func _ready() -> void:
+	projectile_speed = 200.0
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 

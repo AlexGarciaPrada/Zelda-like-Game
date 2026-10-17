@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Singleton="*res://Singleton.gd"
+SpellRegistry="*res://Spells/SpellRegistry.gd"
 
 [display]
 

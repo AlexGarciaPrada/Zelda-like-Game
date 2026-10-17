@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SpellDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Spells/SpellDefinition.gd" id="1_definition"]
+[ext_resource type="Script" path="res://Spells/Effects/OrbitFireballEffect.gd" id="2_effect"]
+
+[resource]
+script = ExtResource("1_definition")
+element = &"fire"
+spell_id = &"rotatefireball"
+supported_levels = PackedInt32Array(1, 2, 3)
+effect_script = ExtResource("2_effect")

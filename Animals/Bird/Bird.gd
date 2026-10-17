@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends TopDownBody2D
 
 @onready var animation = $AnimatedSprite2D
 var speed = 300
@@ -16,9 +16,9 @@ func _ready():
 	velocity = speed * direction
 	if direction.x > 0 :
 		animation.flip_h = true
-func _physics_process(delta):
-	if is_flying:
-		move_and_slide()
+func _physics_process(_delta: float) -> void:
+	if is_flying and not Singleton.is_stopped:
+		move_at_current_velocity()
 
 func _on_area_2d_area_entered(area):
 	animation.play("fly")

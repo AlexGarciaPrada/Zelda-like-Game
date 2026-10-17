@@ -8,10 +8,10 @@ var direction : Vector2
 var is_attacking = false
 @onready var energyball_scene = preload("res://Enemies/Eye/EnergyBall.tscn")
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
+	if not Singleton.is_stopped and not is_dying:
+		time += delta
 	super._physics_process(delta)
-	time += delta
-	_try_attack()
 func _on_animated_sprite_2d_animation_finished():
 	if is_dying:
 		animation.visible=false
@@ -20,57 +20,37 @@ func _on_animated_sprite_2d_animation_finished():
 		_energyball(direction)
 		is_attacking= false
 
-func _energyball(direction: Vector2):
-	var energyball = energyball_scene.instantiate()
-	match clue:
-		"up":
-			energyball.position = self.position + Vector2(0,-28)
-		"down":
-			energyball.position = self.position + Vector2(0,28)
-		"left":
-			energyball.position = self.position + Vector2(-28,0)
-		"right":
-			energyball.position = self.position + Vector2(28,0)
-			
-	energyball.velocity = energyball.SPEED * direction
+func _energyball(shot_direction: Vector2) -> void:
+	var energyball := energyball_scene.instantiate() as Projectile2D
+	if energyball == null:
+		return
 	get_parent().add_child(energyball)
+	energyball.global_position = global_position + shot_direction * 28.0
+	energyball.launch(shot_direction)
 	
-func _movement():
+func _movement(delta: float) -> void:
 	var targets = get_objects_within_distance("Player",range)
-	if !targets.is_empty():
-		var objective = get_min_distance_obj(targets)
-		if objective != null && !is_player_in_area():
-			direction= position.direction_to(objective.position)	
-			if time >= cooldown:
-				animation.play("attack "+ clue)
-				is_attacking = true
-				time = 0
-			velocity = direction * speed
-			move_and_slide()
-			if !is_attacking:
-				if abs(direction.y) > abs(direction.x):
-					if direction.y > 0:
-						animation.play("walk down")
-						clue = "down"
-					elif direction.y < 0 :
-						animation.play("walk up")
-						clue = "up"
-				else:
-					if direction.x > 0 :
-						animation.play("walk right")
-						clue = "right"
-					elif direction.x < 0:
-						animation.play("walk left")
-						clue = "left"
+	var objective = get_min_distance_obj(targets)
+	if objective == null:
+		animation.play("idle " + clue)
+		move_in_direction(Vector2.ZERO, speed, delta)
+		return
+
+	direction = global_position.direction_to(objective.global_position)
+	if is_attacking:
+		move_in_direction(Vector2.ZERO, speed, delta)
+		return
+	_update_animation(direction)
+
+	if time >= cooldown:
+		is_attacking = true
+		time = 0.0
+		velocity = Vector2.ZERO
+		animation.play("attack " + clue)
+		move_at_current_velocity()
+		return
+
+	if is_player_in_area():
+		move_in_direction(Vector2.ZERO, speed, delta)
 	else:
-		animation.play("walk "+ clue)	
-		
-func _try_attack():
-	if time < cooldown or is_dying:
-		return false
-	
-	is_attacking = true
-	time = 0
-	animation.play("attack " + clue)
-	
-	return true
+		move_in_direction(direction, speed, delta)
